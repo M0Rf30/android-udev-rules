@@ -1,258 +1,261 @@
-#      Acer
+#	Acer
 SUBSYSTEM=="usb", ATTR{idVendor}=="0502", MODE="0666", GROUP="adbusers"
-#      Iconia Tab A500
+#		Iconia Tab A500
 SUBSYSTEM=="usb", ATTR{idVendor}=="0502", ATTR{idProduct}=="3325", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0502", ATTR{idProduct}=="3325", SYMLINK+="android_fastboot" 
-#      Liquid
+#		Liquid
 SUBSYSTEM=="usb", ATTR{idVendor}=="0502", ATTR{idProduct}=="3202"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0502", ATTR{idProduct}=="3203", SYMLINK+="android_adb"
 
-#      Archos
+#	Archos
 SUBSYSTEM=="usb", ATTR{idVendor}=="0e79", MODE="0666", GROUP="adbusers"
-#      43
+#		43
 SUBSYSTEM=="usb", ATTR{idVendor}=="0e79", ATTR{idProduct}=="1417", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0e79", ATTR{idProduct}=="1417", SYMLINK+="android_fastboot" 
-#      101
+#		101
 SUBSYSTEM=="usb", ATTR{idVendor}=="0e79", ATTR{idProduct}=="1411", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0e79", ATTR{idProduct}=="1411", SYMLINK+="android_fastboot" 
 
-#      Asus
+#	Asus
 SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", MODE="0666", GROUP="adbusers" 
 
-#      Dell
+#	Dell
 SUBSYSTEM=="usb", ATTR{idVendor}=="413c", MODE="0666", GROUP="adbusers"
 
-#      Foxconn
+#	Foxconn
 SUBSYSTEM=="usb", ATTR{idVendor}=="0489", MODE="0666", GROUP="adbusers"
 
-#      Fujitsu/Fujitsu Toshiba
+#	Fujitsu/Fujitsu Toshiba
 SUBSYSTEM=="usb", ATTR{idVendor}=="04c5", MODE="0666", GROUP="adbusers"
 
-#      Garmin-Asus
+#	Garmin-Asus
 SUBSYSTEM=="usb", ATTR{idVendor}=="091e", MODE="0666", GROUP="adbusers"
 
-#      Google
+#	Google
 SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="adbusers"
-#      NEXUS S
+#		Nexus S
 SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e21", 
 SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e22", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e20", SYMLINK+="android_fastboot" 
-#      Nexus One
+#		Nexus One
 SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e11", 
 SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e12", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
-#      Generic and unspecified debug interface
+#		Generic and unspecified debug interface
 SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="d00d", SYMLINK+="android_fastboot" 
 
-#      Hisense
+#	Hisense
 SUBSYSTEM=="usb", ATTR{idVendor}=="109B", MODE="0666", GROUP="adbusers"
 
-#      HTC
+#	HTC
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", MODE="0666", GROUP="adbusers"
-#      ChaCha
+#		ChaCha
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0cb2", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0cb2", SYMLINK+="android_fastboot"
-#      Desire (Bravo)
+#		Desire (Bravo)
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9", 
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c87", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
-#      Desire HD 
+#		Desire HD 
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ca2", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
-#      Desire Z
+#		Desire Z
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c91", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c91", SYMLINK+="android_fastboot"
-#      Evo Shift
+#		Evo Shift
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9", 
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ca5", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
-#      HD2
+#		HD2
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c02", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c02", SYMLINK+="android_fastboot"
-#      Hero H2000
+#		Hero H2000
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0001", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0001", SYMLINK+="android_fastboot" 
-#      Hero (GSM), Desire
+#		Hero (GSM), Desire
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9", 
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c99", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
-#      Hero (CDMA)
+#		Hero (CDMA)
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9", 
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c9a", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
-#      Incredible
+#		Incredible
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9", 
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c9e", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
-#      Incredible rev 0002
+#		Incredible rev 0002
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9", 
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c8d", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
-#      MyTouch 4G
+#		MyTouch 4G
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9", 
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c96", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot" 
-#      Slide
+#		Slide
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9", 
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0e03", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
-#      Tatoo, Dream, ADP1 , G1, Magic
+#		Tatoo, Dream, ADP1, G1, Magic
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c01"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c02", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c02", SYMLINK+="android_fastboot"
-#      Vision
+#		Vision
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9", 
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c91", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
-#      Wildfire
+#		Wildfire
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c8b", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c8b", SYMLINK+="android_fastboot"
-#      Wildfire S
+#		Wildfire S
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c86", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c86", SYMLINK+="android_fastboot"
 
-#      Huawei
+#	Huawei
 SUBSYSTEM=="usb", ATTR{idVendor}=="12d1", MODE="0666", GROUP="adbusers"
 SUBSYSTEM=="usb", ATTR{idVendor}=="12d1", ATTR{idProduct}=="1038", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="12d1", ATTR{idProduct}=="1038", SYMLINK+="android_fastboot"
 
-#      K-Touch
+#	K-Touch
 SUBSYSTEM=="usb", ATTR{idVendor}=="24e3", MODE="0666", GROUP="adbusers"
 
-#      KT Tech
+#	KT Tech
 SUBSYSTEM=="usb", ATTR{idVendor}=="2116", MODE="0666", GROUP="adbusers"
 
-#      Kyocera
+#	Kyocera
 SUBSYSTEM=="usb", ATTR{idVendor}=="0482", MODE="0666", GROUP="adbusers"
 
-#      Lab126
+#	Lab126
 SUBSYSTEM=="usb", ATTR{idVendor}=="1949", MODE="0666", GROUP="adbusers"
-#      Amazon Kindle Fire
+#		Amazon Kindle Fire
 SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="0006", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="0006", SYMLINK+="android_fastboot"
 
-#      Lenovo
+#	Lenovo
 SUBSYSTEM=="usb", ATTR{idVendor}=="17ef", MODE="0666", GROUP="adbusers"
 
-#      LG
+#	LG
 SUBSYSTEM=="usb", ATTR{idVendor}=="1004", MODE="0666", GROUP="adbusers"
-#      Ally, Vortex, P500
+#		Ally, Vortex, P500
 SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="618f"
 SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="618e", SYMLINK+="android_adb"
-#      Optimus One
+#		Optimus One
 SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61c5", SYMLINK+="android_adb"
-#      Swift GT540
+#		Swift GT540
 SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61b4", SYMLINK+="android_adb"
 
 
-#      Motorola
+#	Motorola
 SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", MODE="0666", GROUP="adbusers"
-#      CLIQ XT/Quench
+#		CLIQ XT/Quench
 SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="2d66"
-#      Defy/MB525
+#		Defy/MB525
 SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="428c"
-#      Droid 
+#		Droid 
 SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="41db"
-#      -- Xoom ID 1
+#		Xoom ID 1
 SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a8", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a8", SYMLINK+="android_fastboot"
-#      -- Xoom ID 2
+#		Xoom ID 2
 SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a9", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a9", SYMLINK+="android_fastboot" 
 
-#      NEC
+#	NEC
 SUBSYSTEM=="usb", ATTR{idVendor}=="0409", MODE="0666", GROUP="adbusers"
 
-#      Nook
+#	Nook
 SUBSYSTEM=="usb", ATTR{idVendor}=="2080", MODE="0666", GROUP="adbusers"
 
-#      Nvidia
+#	Nvidia
 SUBSYSTEM=="usb", ATTR{idVendor}=="0955", MODE="0666", GROUP="adbusers"
 
-#      OTGV
+#	OTGV
 SUBSYSTEM=="usb", ATTR{idVendor}=="2257", MODE="0666", GROUP="adbusers"
 
-#      Pantech
+#	Pantech
 SUBSYSTEM=="usb", ATTR{idVendor}=="10a9", MODE="0666", GROUP="adbusers"
 
-#      Pegatron
+#	Pegatron
 SUBSYSTEM=="usb", ATTR{idVendor}=="1d4d", MODE="0666", GROUP="adbusers"
 
-#      Philips
+#	Philips
 SUBSYSTEM=="usb", ATTR{idVendor}=="0471", MODE="0666", GROUP="adbusers"
 
-#      PMC-Sierra
+#	PMC-Sierra
 SUBSYSTEM=="usb", ATTR{idVendor}=="04da", MODE="0666", GROUP="adbusers"
 
-#      Qualcomm
+#	Qualcomm
 SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", MODE="0666", GROUP="adbusers"
 
-#      SK Telesys
+#	SK Telesys
 SUBSYSTEM=="usb", ATTR{idVendor}=="1f53", MODE="0666", GROUP="adbusers"
 
-#      Samsung
+#	Samsung
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="adbusers"
-#      Galaxy i5700
+#		Galaxy i5700
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="681c", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="681c", SYMLINK+="android_fastboot"
-#      Galaxy i5800
+#		Galaxy i5800
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="681c", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6601", SYMLINK+="android_fastboot"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="68a9", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
-#      Galaxy i7500
+#		Galaxy i7500
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6640", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6640", SYMLINK+="android_fastboot" 
-#      Galaxy i9000 S, i9300 S3
+#		Galaxy i9000 S, i9300 S3
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6601", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="685d", MODE="0666"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="68c3", MODE="0666"
-#      Galaxy Ace (S5830) "Cooper"
+#		Galaxy Ace (S5830) "Cooper"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="689e", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="689e", SYMLINK+="android_fastboot"
-#      Galaxy Tab
+#		Galaxy Tab
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6877", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6877", SYMLINK+="android_fastboot" 
-#      Galaxy Tab 10.1, i9100 S2, i9300 S3
+#		Galaxy Tab 10.1, i9100 S2, i9300 S3
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="685e", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="685e", SYMLINK+="android_fastboot"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
-#      Galaxy i9300 S3
+#		Galaxy i9300 S3
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6866", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 
-#      Sharp
+#	Sharp
 SUBSYSTEM=="usb", ATTR{idVendor}=="04dd", MODE="0666", GROUP="adbusers"
 
-#      Sony
+#	Sony
 SUBSYSTEM=="usb", ATTR{idVendor}=="054c", MODE="0666", GROUP="adbusers"
 
-#      Sony Ericsson
+#	Sony Ericsson
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", MODE="0666", GROUP="adbusers"
-#      Xperia X10 mini
+#		Xperia X10 mini
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="3137"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="2137", SYMLINK+="android_adb"
-#      Xperia X10 mini pro
+#		Xperia X10 mini pro
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="3138"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="2138", SYMLINK+="android_adb"
-#      Xperia X8
+#		Xperia X8
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="3149"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="2149", SYMLINK+="android_adb"
-#      Xperia X12
+#		Xperia X12
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="e14f"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="614f", SYMLINK+="android_adb"
-#      Xperia Arc S
+#		Xperia Arc S
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="414f", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="414f", SYMLINK+="android_fastboot"
 
-#      Teleepoch
+#	Teleepoch
 SUBSYSTEM=="usb", ATTR{idVendor}=="2340", MODE="0666", GROUP="adbusers"
 
-#      Toshiba
+#	Toshiba
 SUBSYSTEM=="usb", ATTR{idVendor}=="0930", MODE="0666", GROUP="adbusers"
 
-#      ZTE
+#	ZTE
 SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", MODE="0666", GROUP="adbusers"
-#      Blade
+#		Blade
 SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1353", 
 SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1351", SYMLINK+="android_adb"
+#		Blade S (Crescent, Orange San Francisco 2)
+SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1355",
+SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1354", SYMLINK+="android_adb"
 
