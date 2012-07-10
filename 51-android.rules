@@ -202,7 +202,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="68a9", SYMLINK+="lib
 #      Galaxy i7500
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6640", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6640", SYMLINK+="android_fastboot" 
-#      Galaxy S
+#      Galaxy i9000 S, i9300 S3
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6601", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="685d", MODE="0666"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="68c3", MODE="0666"
@@ -212,11 +212,13 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="689e", SYMLINK+="and
 #      Galaxy Tab
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6877", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6877", SYMLINK+="android_fastboot" 
-#      Galaxy Tab 10.1, i9100 S2
+#      Galaxy Tab 10.1, i9100 S2, i9300 S3
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="685e", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="685e", SYMLINK+="android_fastboot"
 SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+#      Galaxy i9300 S3
+SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6866", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 
 #      Sharp
 SUBSYSTEM=="usb", ATTR{idVendor}=="04dd", MODE="0666", GROUP="adbusers"
