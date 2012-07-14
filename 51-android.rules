@@ -28,6 +28,11 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="0489", MODE="0660", GROUP="adbusers"
 #	Fujitsu/Fujitsu Toshiba
 SUBSYSTEM=="usb", ATTR{idVendor}=="04c5", MODE="0660", GROUP="adbusers"
 
+#	Fuzhou Rockchip Electronics
+SUBSYSTEM=="usb", ATTR{idVendor}=="2207", MODE="0660", GROUP="adbusers"
+#		Mediacom Smartpad 715i
+SUBSYSTEM=="usb", ATTR{idVendor}=="2207", ATTR{idProduct}=="0000", SYMLINK+="android_adb"
+
 #	Garmin-Asus
 SUBSYSTEM=="usb", ATTR{idVendor}=="091e", MODE="0660", GROUP="adbusers"
 
