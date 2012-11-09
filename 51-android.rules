@@ -254,6 +254,11 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="614f", SYMLINK+="and
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="414f", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="414f", SYMLINK+="android_fastboot"
 
+#       T & A Mobile Phones
+SUBSYSTEM=="usb", ATTR{idVendor}=="1bbb", MODE="0660", GROUP="adbusers"
+#	Alcatel OT991D
+SUBSYSTEM=="usb", ATTR{idVendor}=="1bbb", ATTR{idProduct}=="00f2", SYMLINK+="android_adb"
+
 #	Teleepoch
 SUBSYSTEM=="usb", ATTR{idVendor}=="2340", MODE="0660", GROUP="adbusers"
 
