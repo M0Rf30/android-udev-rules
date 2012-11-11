@@ -256,7 +256,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="414f", SYMLINK+="and
 
 #       T & A Mobile Phones
 SUBSYSTEM=="usb", ATTR{idVendor}=="1bbb", MODE="0660", GROUP="adbusers"
-#	Alcatel OT991D
+#		Alcatel OT991D
 SUBSYSTEM=="usb", ATTR{idVendor}=="1bbb", ATTR{idProduct}=="00f2", SYMLINK+="android_adb"
 
 #	Teleepoch
