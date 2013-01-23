@@ -129,6 +129,9 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c86", SYMLINK+="and
 SUBSYSTEM=="usb", ATTR{idVendor}=="12d1", MODE="0660", GROUP="adbusers"
 SUBSYSTEM=="usb", ATTR{idVendor}=="12d1", ATTR{idProduct}=="1038", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="12d1", ATTR{idProduct}=="1038", SYMLINK+="android_fastboot"
+#		U8850 Vision
+SUBSYSTEM=="usb", ATTR{idVendor}=="12d1", ATTR{idProduct}=="1021", SYMLINK+="android_adb"
+SUBSYSTEM=="usb", ATTR{idVendor}=="12d1", ATTR{idProduct}=="1021", SYMLINK+="android_fastboot"
 
 #	K-Touch
 SUBSYSTEM=="usb", ATTR{idVendor}=="24e3", MODE="0660", GROUP="adbusers"
