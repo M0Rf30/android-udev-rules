@@ -73,6 +73,8 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="and
 #		Desire HD
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ca2", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
+#		Desire S (Saga)
+SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0cab", SYMLINK+="android_adb"
 #		Desire Z
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c91", SYMLINK+="android_adb"
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c91", SYMLINK+="android_fastboot"
