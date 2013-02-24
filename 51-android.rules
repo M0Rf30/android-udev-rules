@@ -296,3 +296,5 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1351", SYMLINK+="and
 SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1355"
 SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1354", SYMLINK+="android_adb"
 
+#WEARNERS
+SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", MODE="0666", GROUP="plugdev"
