@@ -4,7 +4,7 @@ SUBSYSTEM!="usb", GOTO="android_usb_rules_end"
 LABEL="android_usb_rules_begin"
 # Devices listed here in android_usb_rules_{begin...end} are connected by USB
 #	Acer
-ATTR{idVendor}=="0502", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="0502", ENV{adb_user}="yes"
 #		Iconia Tab A500
 ATTR{idVendor}=="0502", ATTR{idProduct}=="3325", SYMLINK+="android_adb"
 ATTR{idVendor}=="0502", ATTR{idProduct}=="3325", SYMLINK+="android_fastboot"
@@ -13,7 +13,7 @@ ATTR{idVendor}=="0502", ATTR{idProduct}=="3202"
 ATTR{idVendor}=="0502", ATTR{idProduct}=="3203", SYMLINK+="android_adb"
 
 #	Archos
-ATTR{idVendor}=="0e79", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="0e79", ENV{adb_user}="yes"
 #		43
 ATTR{idVendor}=="0e79", ATTR{idProduct}=="1417", SYMLINK+="android_adb"
 ATTR{idVendor}=="0e79", ATTR{idProduct}=="1417", SYMLINK+="android_fastboot"
@@ -22,27 +22,27 @@ ATTR{idVendor}=="0e79", ATTR{idProduct}=="1411", SYMLINK+="android_adb"
 ATTR{idVendor}=="0e79", ATTR{idProduct}=="1411", SYMLINK+="android_fastboot"
 
 #	Asus
-ATTR{idVendor}=="0b05", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="0b05", ENV{adb_user}="yes"
 
 #	Dell
-ATTR{idVendor}=="413c", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="413c", ENV{adb_user}="yes"
 
 #	Foxconn
-ATTR{idVendor}=="0489", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="0489", ENV{adb_user}="yes"
 
 #	Fujitsu/Fujitsu Toshiba
-ATTR{idVendor}=="04c5", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="04c5", ENV{adb_user}="yes"
 
 #	Fuzhou Rockchip Electronics
-ATTR{idVendor}=="2207", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="2207", ENV{adb_user}="yes"
 #		Mediacom Smartpad 715i
 ATTR{idVendor}=="2207", ATTR{idProduct}=="0000", SYMLINK+="android_adb"
 
 #	Garmin-Asus
-ATTR{idVendor}=="091e", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="091e", ENV{adb_user}="yes"
 
 #	Google
-ATTR{idVendor}=="18d1", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="18d1", ENV{adb_user}="yes"
 #		Nexus 4
 ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee2", SYMLINK+="android_adb"
 ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee2", SYMLINK+="android_fastboot"
@@ -64,7 +64,7 @@ ATTR{idVendor}=="18d1", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 ATTR{idVendor}=="18d1", ATTR{idProduct}=="d00d", SYMLINK+="android_fastboot"
 
 #	Hisense
-ATTR{idVendor}=="109B", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="109B", ENV{adb_user}="yes"
 
 #	HTC
 ATTR{idVendor}=="0bb4", MODE="0660", GROUP="adbusers"
@@ -133,7 +133,7 @@ ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c86", SYMLINK+="android_adb"
 ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c86", SYMLINK+="android_fastboot"
 
 #	Huawei
-ATTR{idVendor}=="12d1", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="12d1", ENV{adb_user}="yes"
 ATTR{idVendor}=="12d1", ATTR{idProduct}=="1038", SYMLINK+="android_adb"
 ATTR{idVendor}=="12d1", ATTR{idProduct}=="1038", SYMLINK+="android_fastboot"
 #		U8850 Vision
@@ -141,25 +141,25 @@ ATTR{idVendor}=="12d1", ATTR{idProduct}=="1021", SYMLINK+="android_adb"
 ATTR{idVendor}=="12d1", ATTR{idProduct}=="1021", SYMLINK+="android_fastboot"
 
 #	K-Touch
-ATTR{idVendor}=="24e3", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="24e3", ENV{adb_user}="yes"
 
 #	KT Tech
-ATTR{idVendor}=="2116", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="2116", ENV{adb_user}="yes"
 
 #	Kyocera
-ATTR{idVendor}=="0482", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="0482", ENV{adb_user}="yes"
 
 #	Lab126
-ATTR{idVendor}=="1949", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="1949", ENV{adb_user}="yes"
 #		Amazon Kindle Fire
 ATTR{idVendor}=="1949", ATTR{idProduct}=="0006", SYMLINK+="android_adb"
 ATTR{idVendor}=="1949", ATTR{idProduct}=="0006", SYMLINK+="android_fastboot"
 
 #	Lenovo
-ATTR{idVendor}=="17ef", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="17ef", ENV{adb_user}="yes"
 
 #	LG
-ATTR{idVendor}=="1004", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="1004", ENV{adb_user}="yes"
 #		Ally, Vortex, P500
 ATTR{idVendor}=="1004", ATTR{idProduct}=="618f"
 ATTR{idVendor}=="1004", ATTR{idProduct}=="618e", SYMLINK+="android_adb"
@@ -170,7 +170,7 @@ ATTR{idVendor}=="1004", ATTR{idProduct}=="61b4", SYMLINK+="android_adb"
 
 
 #	Motorola
-ATTR{idVendor}=="22b8", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="22b8", ENV{adb_user}="yes"
 #		CLIQ XT/Quench
 ATTR{idVendor}=="22b8", ATTR{idProduct}=="2d66"
 #		Defy/MB525
@@ -185,37 +185,37 @@ ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a9", SYMLINK+="android_adb"
 ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a9", SYMLINK+="android_fastboot"
 
 #	NEC
-ATTR{idVendor}=="0409", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="0409", ENV{adb_user}="yes"
 
 #	Nook
-ATTR{idVendor}=="2080", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="2080", ENV{adb_user}="yes"
 
 #	Nvidia
-ATTR{idVendor}=="0955", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="0955", ENV{adb_user}="yes"
 
 #	OTGV
-ATTR{idVendor}=="2257", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="2257", ENV{adb_user}="yes"
 
 #	Pantech
-ATTR{idVendor}=="10a9", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="10a9", ENV{adb_user}="yes"
 
 #	Pegatron
-ATTR{idVendor}=="1d4d", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="1d4d", ENV{adb_user}="yes"
 
 #	Philips
-ATTR{idVendor}=="0471", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="0471", ENV{adb_user}="yes"
 
 #	PMC-Sierra
-ATTR{idVendor}=="04da", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="04da", ENV{adb_user}="yes"
 
 #	Qualcomm
-ATTR{idVendor}=="05c6", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="05c6", ENV{adb_user}="yes"
 
 #	SK Telesys
-ATTR{idVendor}=="1f53", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="1f53", ENV{adb_user}="yes"
 
 #	Samsung
-ATTR{idVendor}=="04e8", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="04e8", ENV{adb_user}="yes"
 #		Galaxy i5700
 ATTR{idVendor}=="04e8", ATTR{idProduct}=="681c", SYMLINK+="android_adb"
 ATTR{idVendor}=="04e8", ATTR{idProduct}=="681c", SYMLINK+="android_fastboot"
@@ -258,13 +258,13 @@ ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", SYMLINK+="libmtp-%k", ENV{ID_MT
 ATTR{idVendor}=="04e8", ATTR{idProduct}=="6866", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 
 #	Sharp
-ATTR{idVendor}=="04dd", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="04dd", ENV{adb_user}="yes"
 
 #	Sony
-ATTR{idVendor}=="054c", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="054c", ENV{adb_user}="yes"
 
 #	Sony Ericsson
-ATTR{idVendor}=="0fce", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="0fce", ENV{adb_user}="yes"
 #		Xperia X10 mini
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="3137"
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="2137", SYMLINK+="android_adb"
@@ -282,21 +282,21 @@ ATTR{idVendor}=="0fce", ATTR{idProduct}=="414f", SYMLINK+="android_adb"
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="414f", SYMLINK+="android_fastboot"
 
 #       T & A Mobile Phones
-ATTR{idVendor}=="1bbb", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="1bbb", ENV{adb_user}="yes"
 #		Alcatel OT991D
 ATTR{idVendor}=="1bbb", ATTR{idProduct}=="00f2", SYMLINK+="android_adb"
 
 #	Teleepoch
-ATTR{idVendor}=="2340", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="2340", ENV{adb_user}="yes"
 
 #	Toshiba
-ATTR{idVendor}=="0930", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="0930", ENV{adb_user}="yes"
 
 #	WEARNERS
-ATTR{idVendor}=="05c6", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="05c6", ENV{adb_user}="yes"
 
 #	ZTE
-ATTR{idVendor}=="19d2", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}=="19d2", ENV{adb_user}="yes"
 #		Blade
 ATTR{idVendor}=="19d2", ATTR{idProduct}=="1353"
 ATTR{idVendor}=="19d2", ATTR{idProduct}=="1351", SYMLINK+="android_adb"
@@ -304,5 +304,8 @@ ATTR{idVendor}=="19d2", ATTR{idProduct}=="1351", SYMLINK+="android_adb"
 ATTR{idVendor}=="19d2", ATTR{idProduct}=="1355"
 ATTR{idVendor}=="19d2", ATTR{idProduct}=="1354", SYMLINK+="android_adb"
 
-#Devices listed here {begin...end} are connected by USB
+# Enable device as a user device if found
+ENV{adb_user}=="yes", MODE="0660", GROUP="adbusers"
+
+# Devices listed here {begin...end} are connected by USB
 LABEL="android_usb_rules_end"
