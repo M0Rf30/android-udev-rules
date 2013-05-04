@@ -12,6 +12,10 @@ ATTR{idVendor}=="0502", ATTR{idProduct}=="3325", SYMLINK+="android_fastboot"
 ATTR{idVendor}=="0502", ATTR{idProduct}=="3202"
 ATTR{idVendor}=="0502", ATTR{idProduct}=="3203", SYMLINK+="android_adb"
 
+#	ADVANCE 
+ATTR{idVendor}=="0a5c", ENV{adb_user}="yes"
+#		S5
+ATTR{idVendor}=="0a5c", ATTR{idProduct}=="e681", SYMLINK+="android_adb"
 #	Archos
 ATTR{idVendor}=="0e79", ENV{adb_user}="yes"
 #		43
