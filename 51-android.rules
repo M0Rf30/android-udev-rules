@@ -132,9 +132,12 @@ ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Wildfire
 ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c8b", SYMLINK+="android_adb"
 ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c8b", SYMLINK+="android_fastboot"
-#		Wildfire S
+#  	Wildfire S
 ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c86", SYMLINK+="android_adb"
 ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c86", SYMLINK+="android_fastboot"
+#   Zopo ZP900
+ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c03", SYMLINK+="android_adb"
+ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c03", SYMLINK+="android_fastboot"
 
 #	Huawei
 ATTR{idVendor}=="12d1", ENV{adb_user}="yes"
