@@ -289,6 +289,9 @@ ATTR{idVendor}=="0fce", ATTR{idProduct}=="614f", SYMLINK+="android_adb"
 #		Xperia Arc S
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="414f", SYMLINK+="android_adb"
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="414f", SYMLINK+="android_fastboot"
+#		Xperia Neo V
+ATTR{idVendor}=="0fce", ATTR{idProduct}=="6156", SYMLINK+="android_adb"
+ATTR{idVendor}=="0fce", ATTR{idProduct}=="0dde", SYMLINK+="android_fastboot"
 
 #       T & A Mobile Phones
 ATTR{idVendor}=="1bbb", ENV{adb_user}="yes"
