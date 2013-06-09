@@ -205,6 +205,12 @@ ATTR{idVendor}=="2080", ENV{adb_user}="yes"
 #	Nvidia
 ATTR{idVendor}=="0955", ENV{adb_user}="yes"
 
+#	Oppo
+ATTR{idVendor}=="22d9", ENV{adb_user}="yes"
+#		Find 5
+ATTR{idVendor}=="22d9", ATTR{idProduct}=="2767", SYMLINK+="android_adb"
+ATTR{idVendor}=="22d9", ATTR{idProduct}=="2764", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+
 #	OTGV
 ATTR{idVendor}=="2257", ENV{adb_user}="yes"
 
