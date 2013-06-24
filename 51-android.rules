@@ -259,8 +259,6 @@ ATTR{idVendor}=="04e8", ATTR{idProduct}=="685c"
 ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", SYMLINK+="android_adb"
 ATTR{idVendor}=="18d1", ATTR{idProduct}=="d001"
 ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e30", SYMLINK+="android_fastboot"
-
-
 #		Galaxy Tab 10.1, i9100 S2, i9300 S3
 ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860"
 ATTR{idVendor}=="04e8", ATTR{idProduct}=="685e", SYMLINK+="android_adb"
