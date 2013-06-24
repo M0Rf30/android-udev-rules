@@ -49,13 +49,13 @@ ATTR{idVendor}=="091e", ENV{adb_user}="yes"
 ATTR{idVendor}=="18d1", ENV{adb_user}="yes"
 #		Nexus 4
 ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee2", SYMLINK+="android_adb"
-ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee2", SYMLINK+="android_fastboot"
+ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", SYMLINK+="android_fastboot"
 #		Nexus 7
-ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e41", SYMLINK+="android_adb"
-ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e41", SYMLINK+="android_fastboot"
+ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e42", SYMLINK+="android_adb"
+ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e40", SYMLINK+="android_fastboot"
 #		Nexus 10
-ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee1", SYMLINK+="android_adb"
-ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee1", SYMLINK+="android_fastboot"
+#ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee1", SYMLINK+="android_adb"
+#ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee1", SYMLINK+="android_fastboot"
 #		Nexus S
 ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e21"
 ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e22", SYMLINK+="android_adb"
@@ -259,12 +259,6 @@ ATTR{idVendor}=="04e8", ATTR{idProduct}=="685c"
 ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", SYMLINK+="android_adb"
 ATTR{idVendor}=="18d1", ATTR{idProduct}=="d001"
 ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e30", SYMLINK+="android_fastboot"
-#		Nexus 4
-SUBSYSTEM=="usb",ATTR{idVendor}=="18d1",ATTR{idProduct}=="4ee2",SYMLINK+="android_adb"
-SUBSYSTEM=="usb",ATTR{idVendor}=="18d1",ATTR{idProduct}=="4ee2",SYMLINK+="android_fastboot"
-#		Nexus 7
-SUBSYSTEM=="usb",ATTR{idVendor}=="18d1",ATTR{idProduct}=="4e41",SYMLINK+="android_adb"
-SUBSYSTEM=="usb",ATTR{idVendor}=="18d1",ATTR{idProduct}=="4e41",SYMLINK+="android_fastboot"
 
 
 #		Galaxy Tab 10.1, i9100 S2, i9300 S3
