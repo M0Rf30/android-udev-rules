@@ -24,6 +24,9 @@ ATTR{idVendor}=="0e79", ATTR{idProduct}=="1417", SYMLINK+="android_fastboot"
 #		101
 ATTR{idVendor}=="0e79", ATTR{idProduct}=="1411", SYMLINK+="android_adb"
 ATTR{idVendor}=="0e79", ATTR{idProduct}=="1411", SYMLINK+="android_fastboot"
+#		101 xs
+ATTR{idVendor}=="0e79", ATTR{idProduct}=="1549", SYMLINK+="android_adb"
+ATTR{idVendor}=="0e79", ATTR{idProduct}=="1549", SYMLINK+="android_fastboot"
 
 #	Asus
 ATTR{idVendor}=="0b05", ENV{adb_user}="yes"
