@@ -73,8 +73,11 @@ ATTR{idVendor}=="18d1", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Generic and unspecified debug interface
 ATTR{idVendor}=="18d1", ATTR{idProduct}=="d00d", SYMLINK+="android_fastboot"
 
+#	Haier
+ATTR{idVendor}=="201e", ENV{adb_user}="yes"
+
 #	Hisense
-ATTR{idVendor}=="109B", ENV{adb_user}="yes"
+ATTR{idVendor}=="109b", ENV{adb_user}="yes"
 
 #	HTC
 ATTR{idVendor}=="0bb4", MODE="0660", GROUP="adbusers"
@@ -198,6 +201,9 @@ ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a8", SYMLINK+="android_fastboot"
 #		Xoom ID 2
 ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a9", SYMLINK+="android_adb"
 ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a9", SYMLINK+="android_fastboot"
+
+#	MTK
+ATTR{idVendor}=="0e8d", ENV{adb_user}="yes"
 
 #	NEC
 ATTR{idVendor}=="0409", ENV{adb_user}="yes"
