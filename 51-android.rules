@@ -336,6 +336,12 @@ ATTR{idVendor}=="19d2", ATTR{idProduct}=="1351", SYMLINK+="android_adb"
 ATTR{idVendor}=="19d2", ATTR{idProduct}=="1355"
 ATTR{idVendor}=="19d2", ATTR{idProduct}=="1354", SYMLINK+="android_adb"
 
+#	XiaoMi
+ATTR{idVendor}=="2717", ENV{adb_user}="yes"
+#		Mi2A
+ATTR{idVendor}=="2717", ATTR{idProduct}=="904e", SYMLINK+="android_adb"
+ATTR{idVendor}=="2717", ATTR{idProduct}=="9039", SYMLINK+="android_adb"
+
 # Enable device as a user device if found
 ENV{adb_user}=="yes", MODE="0660", GROUP="adbusers", TAG+="uaccess"
 
