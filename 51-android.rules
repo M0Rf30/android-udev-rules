@@ -181,6 +181,9 @@ ATTR{idVendor}=="1004", ENV{adb_user}="yes"
 #		Ally, Vortex, P500
 ATTR{idVendor}=="1004", ATTR{idProduct}=="618f"
 ATTR{idVendor}=="1004", ATTR{idProduct}=="618e", SYMLINK+="android_adb"
+#		Optimus LTE
+ATTR{idVendor}=="1004", ATTR{idProduct}=="6315", SYMLINK+="android_adb"
+ATTR{idVendor}=="1004", ATTR{idProduct}=="61f9", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 #		Optimus One
 ATTR{idVendor}=="1004", ATTR{idProduct}=="61c5", SYMLINK+="android_adb"
 #		Swift GT540
