@@ -206,6 +206,10 @@ ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a8", SYMLINK+="android_fastboot"
 #		Xoom ID 2
 ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a9", SYMLINK+="android_adb"
 ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a9", SYMLINK+="android_fastboot"
+#   Razr XT912
+ATTR{idVendor}=="22b8",ATTR{idProduct}=="4362",SYMLINK+="android_adb"
+ATTR{idVendor}=="22b8",ATTR{idProduct}=="4362",SYMLINK+="android_fastboot"
+
 
 #	MTK
 ATTR{idVendor}=="0e8d", ENV{adb_user}="yes"
