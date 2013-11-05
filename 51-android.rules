@@ -1,4 +1,4 @@
-'# Skip this section below if this device is not connected by USB
+# Skip this section below if this device is not connected by USB
 SUBSYSTEM!="usb", GOTO="android_usb_rules_end"
 
 LABEL="android_usb_rules_begin"
