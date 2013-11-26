@@ -190,6 +190,8 @@ ATTR{idVendor}=="1004", ATTR{idProduct}=="61c5", SYMLINK+="android_adb"
 ATTR{idVendor}=="1004", ATTR{idProduct}=="61b4", SYMLINK+="android_adb"
 #		P500 CM10
 ATTR{idVendor}=="1004", ATTR{idProduct}=="61a6", SYMLINK+="android_adb"
+#   4X HD P880
+ATTR{idVendor}=="1004", ATTR{idProduct}=="61f9", SYMLINK+="android_adb"
 
 
 #	Motorola
