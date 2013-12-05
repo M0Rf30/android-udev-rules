@@ -328,6 +328,10 @@ ATTR{idVendor}=="1bbb", ATTR{idProduct}=="00f2", SYMLINK+="android_adb"
 #	Teleepoch
 ATTR{idVendor}=="2340", ENV{adb_user}="yes"
 
+#	Texas Instruments UsbBoot
+ATTR{idVendor}=="0451", ATTR{idProduct}=="d00f"
+ATTR{idVendor}=="0451", ATTR{idProduct}=="d010"
+
 #	Toshiba
 ATTR{idVendor}=="0930", ENV{adb_user}="yes"
 
