@@ -126,6 +126,10 @@ ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9"
 ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c96", SYMLINK+="android_adb"
 ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
+#		One (m7)
+ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c93"
+ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0f87", SYMLINK+="android_adb"
+ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff0", SYMLINK+="android_fastboot"
 #		Slide
 ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9"
 ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0e03", SYMLINK+="android_adb"
@@ -190,6 +194,8 @@ ATTR{idVendor}=="1004", ATTR{idProduct}=="61c5", SYMLINK+="android_adb"
 ATTR{idVendor}=="1004", ATTR{idProduct}=="61b4", SYMLINK+="android_adb"
 #		P500 CM10
 ATTR{idVendor}=="1004", ATTR{idProduct}=="61a6", SYMLINK+="android_adb"
+#		4X HD P880
+ATTR{idVendor}=="1004", ATTR{idProduct}=="61f9", SYMLINK+="android_adb"
 
 
 #	Motorola
