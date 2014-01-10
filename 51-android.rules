@@ -56,7 +56,7 @@ ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", SYMLINK+="android_fastboot"
 #		Nexus 7
 ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e42", SYMLINK+="android_adb"
 ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e40", SYMLINK+="android_fastboot"
-#		Nexus 10
+#		Nexus 10 / Nexus 5
 ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee1", SYMLINK+="android_adb"
 ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee1", SYMLINK+="android_fastboot"
 #		Nexus S
