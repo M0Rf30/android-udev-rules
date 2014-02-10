@@ -332,7 +332,7 @@ ATTR{idVendor}=="0fce", ATTR{idProduct}=="5192", SYMLINK+="android_fastboot"
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="0166", SYMLINK+="android_adb"
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="0166", SYMLINK+="android_fastboot"
 
-# Spreadtrum
+#	Spreadtrum
 ATTR{idVendor}=="1782", ENV{adb_user}="yes"
 
 #       T & A Mobile Phones
