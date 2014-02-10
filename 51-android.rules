@@ -332,6 +332,9 @@ ATTR{idVendor}=="0fce", ATTR{idProduct}=="5192", SYMLINK+="android_fastboot"
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="0166", SYMLINK+="android_adb"
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="0166", SYMLINK+="android_fastboot"
 
+# Spreadtrum
+ATTR{idVendor}=="1782", ENV{adb_user}="yes"
+
 #       T & A Mobile Phones
 ATTR{idVendor}=="1bbb", ENV{adb_user}="yes"
 #		Alcatel OT991D
