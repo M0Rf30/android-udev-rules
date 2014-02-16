@@ -148,7 +148,7 @@ ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c8b", SYMLINK+="android_fastboot"
 #		Wildfire S
 ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c86", SYMLINK+="android_adb"
 ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c86", SYMLINK+="android_fastboot"
-#		Zopo ZP900
+#		Zopo ZP900 / Fairphone
 ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c03", SYMLINK+="android_adb"
 ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c03", SYMLINK+="android_fastboot"
 #		Zopo C2
