@@ -44,6 +44,8 @@ ATTR{idVendor}=="04c5", ENV{adb_user}="yes"
 ATTR{idVendor}=="2207", ENV{adb_user}="yes"
 #		Mediacom Smartpad 715i
 ATTR{idVendor}=="2207", ATTR{idProduct}=="0000", SYMLINK+="android_adb"
+#		Ubislate 7Ci
+ATTR{idVendor}=="2207", ATTR{idProduct}=="0010", SYMLINK+="android_adb"
 
 #	Garmin-Asus
 ATTR{idVendor}=="091e", ENV{adb_user}="yes"
