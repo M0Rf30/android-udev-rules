@@ -340,6 +340,9 @@ ATTR{idVendor}=="0fce", ATTR{idProduct}=="0dde", SYMLINK+="android_fastboot"
 #		Xperia S
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="5169", SYMLINK+="android_adb"
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="5169", SYMLINK+="android_fastboot"
+#		Xperia SP
+ATTR{idVendor}=="0fce", ATTR{idProduct}=="6195", SYMLINK+="android_adb"
+ATTR{idVendor}=="0fce", ATTR{idProduct}=="6195", SYMLINK+="android_fastboot"
 #		Xperia L
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="5192", SYMLINK+="android_adb"
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="5192", SYMLINK+="android_fastboot"
