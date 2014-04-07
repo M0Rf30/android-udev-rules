@@ -349,9 +349,12 @@ ATTR{idVendor}=="0fce", ATTR{idProduct}=="5192", SYMLINK+="android_fastboot"
 #		Xperia Mini Pro
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="0166", SYMLINK+="android_adb"
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="0166", SYMLINK+="android_fastboot"
-#               Xperia V
+#		Xperia V
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="0186", SYMLINK+="android_adb"
 ATTR{idVendor}=="0fce", ATTR{idProduct}=="0186", SYMLINK+="android_fastboot"
+#		Xperia Acro S
+ATTR{idVendor}=="0fce", ATTR{idProduct}=="5176", SYMLINK+="android_adb"
+ATTR{idVendor}=="0fce", ATTR{idProduct}=="5176", SYMLINK+="android_fastboot"
 
 #	Spreadtrum
 ATTR{idVendor}=="1782", ENV{adb_user}="yes"
