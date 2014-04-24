@@ -191,24 +191,26 @@ ATTR{idVendor}=="1949", ATTR{idProduct}=="0006", SYMLINK+="android_fastboot"
 ATTR{idVendor}=="17ef", ENV{adb_user}="yes"
 
 #	LG
-ATTR{idVendor}=="1004", ENV{adb_user}="yes"
+ATTR{idVendor}!="1004", GOTO="not_LG"
+ENV{adb_user}="yes"
 #		Ally, Vortex, P500
-ATTR{idVendor}=="1004", ATTR{idProduct}=="618f"
-ATTR{idVendor}=="1004", ATTR{idProduct}=="618e", SYMLINK+="android_adb"
+ATTR{idProduct}=="618f"
+ATTR{idProduct}=="618e", SYMLINK+="android_adb"
 #		G2 D803
-ATTR{idVendor}=="1004", ATTR{idProduct}=="631f", SYMLINK+="android_adb"
+ATTR{idProduct}=="631f", SYMLINK+="android_adb"
 #		Optimus LTE
-ATTR{idVendor}=="1004", ATTR{idProduct}=="6315", SYMLINK+="android_adb"
-ATTR{idVendor}=="1004", ATTR{idProduct}=="61f9", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+ATTR{idProduct}=="6315", SYMLINK+="android_adb"
+ATTR{idProduct}=="61f9", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 #		Optimus One
-ATTR{idVendor}=="1004", ATTR{idProduct}=="61c5", SYMLINK+="android_adb"
+ATTR{idProduct}=="61c5", SYMLINK+="android_adb"
 #		Swift GT540
-ATTR{idVendor}=="1004", ATTR{idProduct}=="61b4", SYMLINK+="android_adb"
+ATTR{idProduct}=="61b4", SYMLINK+="android_adb"
 #		P500 CM10
-ATTR{idVendor}=="1004", ATTR{idProduct}=="61a6", SYMLINK+="android_adb"
+ATTR{idProduct}=="61a6", SYMLINK+="android_adb"
 #		4X HD P880
-ATTR{idVendor}=="1004", ATTR{idProduct}=="61f9", SYMLINK+="android_adb"
-
+ATTR{idProduct}=="61f9", SYMLINK+="android_adb"
+GOTO="android_usb_rule_match"
+LABEL="not_LG"
 
 #	Motorola
 ATTR{idVendor}=="22b8", ENV{adb_user}="yes"
