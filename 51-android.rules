@@ -315,43 +315,39 @@ ATTR{idVendor}=="04dd", ENV{adb_user}="yes"
 ATTR{idVendor}=="054c", ENV{adb_user}="yes"
 
 #	Sony Ericsson
-ATTR{idVendor}=="0fce", ENV{adb_user}="yes"
+ATTR{idVendor}!="0fce", GOTO="not_Sony_Ericsson"
+ENV{adb_user}="yes"
 #		Xperia X10 mini
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="3137"
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="2137", SYMLINK+="android_adb"
+ATTR{idProduct}=="3137"
+ATTR{idProduct}=="2137", SYMLINK+="android_adb"
 #		Xperia X10 mini pro
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="3138"
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="2138", SYMLINK+="android_adb"
+ATTR{idProduct}=="3138"
+ATTR{idProduct}=="2138", SYMLINK+="android_adb"
 #		Xperia X8
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="3149"
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="2149", SYMLINK+="android_adb"
+ATTR{idProduct}=="3149"
+ATTR{idProduct}=="2149", SYMLINK+="android_adb"
 #		Xperia X12
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="e14f"
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="614f", SYMLINK+="android_adb"
+ATTR{idProduct}=="e14f"
+ATTR{idProduct}=="614f", SYMLINK+="android_adb"
 #		Xperia Arc S
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="414f", SYMLINK+="android_adb"
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="414f", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="414f", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Xperia Neo V
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="6156", SYMLINK+="android_adb"
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="0dde", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="6156", SYMLINK+="android_adb"
+ATTR{idProduct}=="0dde", SYMLINK+="android_fastboot"
 #		Xperia S
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="5169", SYMLINK+="android_adb"
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="5169", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="5169", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Xperia SP
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="6195", SYMLINK+="android_adb"
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="6195", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="6195", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Xperia L
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="5192", SYMLINK+="android_adb"
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="5192", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="5192", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Xperia Mini Pro
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="0166", SYMLINK+="android_adb"
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="0166", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0166", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Xperia V
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="0186", SYMLINK+="android_adb"
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="0186", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0186", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Xperia Acro S
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="5176", SYMLINK+="android_adb"
-ATTR{idVendor}=="0fce", ATTR{idProduct}=="5176", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="5176", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
+GOTO="android_usb_rule_match"
+LABEL="not_Sony_Ericsson"
 
 #	Spreadtrum
 ATTR{idVendor}=="1782", ENV{adb_user}="yes"
