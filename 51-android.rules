@@ -18,17 +18,18 @@ LABEL="not_Acer"
 ATTR{idVendor}=="0a5c", ENV{adb_user}="yes"
 #		S5
 ATTR{idVendor}=="0a5c", ATTR{idProduct}=="e681", SYMLINK+="android_adb"
+
 #	Archos
-ATTR{idVendor}=="0e79", ENV{adb_user}="yes"
+ATTR{idVendor}!="0e79", GOTO="not_Archos"
+ENV{adb_user}="yes"
 #		43
-ATTR{idVendor}=="0e79", ATTR{idProduct}=="1417", SYMLINK+="android_adb"
-ATTR{idVendor}=="0e79", ATTR{idProduct}=="1417", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="1417", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		101
-ATTR{idVendor}=="0e79", ATTR{idProduct}=="1411", SYMLINK+="android_adb"
-ATTR{idVendor}=="0e79", ATTR{idProduct}=="1411", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="1411", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		101 xs
-ATTR{idVendor}=="0e79", ATTR{idProduct}=="1549", SYMLINK+="android_adb"
-ATTR{idVendor}=="0e79", ATTR{idProduct}=="1549", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="1549", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
+GOTO="android_usb_rule_match"
+LABEL="not_Archos"
 
 #	Asus
 ATTR{idVendor}=="0b05", ENV{adb_user}="yes"
