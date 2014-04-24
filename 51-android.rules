@@ -276,39 +276,37 @@ ATTR{idVendor}=="05c6", ATTR{idProduct}=="9025", SYMLINK+="android_adb"
 ATTR{idVendor}=="1f53", ENV{adb_user}="yes"
 
 #	Samsung
-ATTR{idVendor}=="04e8", ENV{adb_user}="yes"
+ATTR{idVendor}!="04e8", GOTO="not_Samsung"
+ENV{adb_user}="yes"
 #		Galaxy i5700
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="681c", SYMLINK+="android_adb"
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="681c", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="681c", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Galaxy i5800
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="681c", SYMLINK+="android_adb"
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="6601", SYMLINK+="android_fastboot"
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="68a9", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+ATTR{idProduct}=="681c", SYMLINK+="android_adb"
+ATTR{idProduct}=="6601", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="68a9", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 #		Galaxy i7500
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="6640", SYMLINK+="android_adb"
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="6640", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="6640", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Galaxy i9000 S, i9300 S3
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="6601", SYMLINK+="android_adb"
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="685d", MODE="0660"
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="68c3", MODE="0660"
+ATTR{idProduct}=="6601", SYMLINK+="android_adb"
+ATTR{idProduct}=="685d", MODE="0660"
+ATTR{idProduct}=="68c3", MODE="0660"
 #		Galaxy Ace (S5830) "Cooper"
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="689e", SYMLINK+="android_adb"
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="689e", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="689e", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Galaxy Tab
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="6877", SYMLINK+="android_adb"
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="6877", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="6877", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Galaxy Nexus (GSM)
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="685c"
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", SYMLINK+="android_adb"
+ATTR{idProduct}=="685c"
+ATTR{idProduct}=="6860", SYMLINK+="android_adb"
 #		Galaxy Tab 10.1, i9100 S2, i9300 S3, N5100 Note (8.0)
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860"
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="685e", SYMLINK+="android_adb"
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="685e", SYMLINK+="android_fastboot"
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+ATTR{idProduct}=="6860"
+ATTR{idProduct}=="685e", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="6860", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 #		Galaxy i9300 S3
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="6866", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+ATTR{idProduct}=="6866", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 #		Galaxy S4 GT-I9500
-ATTR{idVendor}=="04e8", ATTR{idProduct}=="685d", SYMLINK+="android_adb"
+ATTR{idProduct}=="685d", SYMLINK+="android_adb"
+GOTO="android_usb_rule_match"
+LABEL="not_Samsung"
 
 #	Sharp
 ATTR{idVendor}=="04dd", ENV{adb_user}="yes"
