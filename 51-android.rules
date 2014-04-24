@@ -90,79 +90,74 @@ ATTR{idVendor}=="201e", ENV{adb_user}="yes"
 ATTR{idVendor}=="109b", ENV{adb_user}="yes"
 
 #	HTC
-ATTR{idVendor}=="0bb4", MODE="0660", GROUP="adbusers"
+ATTR{idVendor}!="0bb4", GOTO="not_HTC"
+MODE="0660", GROUP="adbusers"
 #		ChaCha
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0cb2", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0cb2", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0cb2", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Desire (Bravo)
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c87", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0ff9"
+ATTR{idProduct}=="0c87", SYMLINK+="android_adb"
+ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Desire HD
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ca2", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0ca2", SYMLINK+="android_adb"
+ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Desire S (Saga)
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0cab", SYMLINK+="android_adb"
+ATTR{idProduct}=="0cab", SYMLINK+="android_adb"
 #		Desire Z
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c91", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c91", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0c91", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Evo Shift
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ca5", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0ff9"
+ATTR{idProduct}=="0ca5", SYMLINK+="android_adb"
+ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		HD2
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c02", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c02", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0c02", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Hero H2000
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0001", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0001", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0001", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Hero (GSM), Desire
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c99", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0ff9"
+ATTR{idProduct}=="0c99", SYMLINK+="android_adb"
+ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Hero (CDMA)
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c9a", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0ff9"
+ATTR{idProduct}=="0c9a", SYMLINK+="android_adb"
+ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Incredible
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c9e", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0ff9"
+ATTR{idProduct}=="0c9e", SYMLINK+="android_adb"
+ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Incredible rev 0002
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c8d", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0ff9"
+ATTR{idProduct}=="0c8d", SYMLINK+="android_adb"
+ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		MyTouch 4G
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c96", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0ff9"
+ATTR{idProduct}=="0c96", SYMLINK+="android_adb"
+ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		One (m7)
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c93"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0f87", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff0", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0c93"
+ATTR{idProduct}=="0f87", SYMLINK+="android_adb"
+ATTR{idProduct}=="0ff0", SYMLINK+="android_fastboot"
 #		Slide
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0e03", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0ff9"
+ATTR{idProduct}=="0e03", SYMLINK+="android_adb"
+ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Tatoo, Dream, ADP1, G1, Magic
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c01"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c02", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c02", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0c01"
+ATTR{idProduct}=="0c02", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Vision
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0ff9"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c91", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0ff9"
+ATTR{idProduct}=="0c91", SYMLINK+="android_adb"
+ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Wildfire
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c8b", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c8b", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0c8b", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Wildfire S
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c86", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c86", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0c86", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Zopo ZP900, Fairphone
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c03", SYMLINK+="android_adb"
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c03", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0c03", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Zopo C2
-ATTR{idVendor}=="0bb4", ATTR{idProduct}=="2008", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+ATTR{idProduct}=="2008", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+GOTO="android_usb_rule_match"
+LABEL="not_HTC"
 
 #	Huawei
 ATTR{idVendor}=="12d1", ENV{adb_user}="yes"
