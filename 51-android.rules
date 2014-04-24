@@ -4,15 +4,17 @@ SUBSYSTEM!="usb", GOTO="android_usb_rules_end"
 LABEL="android_usb_rules_begin"
 # Devices listed here in android_usb_rules_{begin...end} are connected by USB
 #	Acer
-ATTR{idVendor}=="0502", ENV{adb_user}="yes"
+ATTR{idVendor}!="0502", GOTO="not_Acer"
+ENV{adb_user}="yes"
 #		Iconia Tab A500
-ATTR{idVendor}=="0502", ATTR{idProduct}=="3325", SYMLINK+="android_adb"
-ATTR{idVendor}=="0502", ATTR{idProduct}=="3325", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="3325", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Liquid
-ATTR{idVendor}=="0502", ATTR{idProduct}=="3202"
-ATTR{idVendor}=="0502", ATTR{idProduct}=="3203", SYMLINK+="android_adb"
+ATTR{idProduct}=="3202"
+ATTR{idProduct}=="3203", SYMLINK+="android_adb"
+GOTO="android_usb_rule_match"
+LABEL="not_Acer"
 
-#	ADVANCE 
+#	ADVANCE
 ATTR{idVendor}=="0a5c", ENV{adb_user}="yes"
 #		S5
 ATTR{idVendor}=="0a5c", ATTR{idProduct}=="e681", SYMLINK+="android_adb"
@@ -391,6 +393,9 @@ ATTR{idVendor}=="2717", ENV{adb_user}="yes"
 #		Mi2A
 ATTR{idVendor}=="2717", ATTR{idProduct}=="904e", SYMLINK+="android_adb"
 ATTR{idVendor}=="2717", ATTR{idProduct}=="9039", SYMLINK+="android_adb"
+
+# Skip other vendor tests
+LABEL="android_usb_rule_match"
 
 # Enable device as a user device if found
 ENV{adb_user}=="yes", MODE="0660", GROUP="adbusers", TAG+="uaccess"
