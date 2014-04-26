@@ -91,7 +91,7 @@ ATTR{idVendor}=="109b", ENV{adb_user}="yes"
 
 #	HTC
 ATTR{idVendor}!="0bb4", GOTO="not_HTC"
-MODE="0660", GROUP="adbusers"
+ENV{adb_user}="yes"
 #		ChaCha
 ATTR{idProduct}=="0cb2", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Desire (Bravo)
