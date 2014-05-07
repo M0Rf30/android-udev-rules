@@ -6,6 +6,8 @@ LABEL="android_usb_rules_begin"
 #	Acer
 ATTR{idVendor}!="0502", GOTO="not_Acer"
 ENV{adb_user}="yes"
+#		Iconia Tab A1-830
+ATTR{idProduct}=="3604", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Iconia Tab A500
 ATTR{idProduct}=="3325", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Liquid
