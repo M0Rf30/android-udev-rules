@@ -82,6 +82,8 @@ ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 ATTR{idProduct}=="d00d", SYMLINK+="android_fastboot"
 #		Include: Samsung Galaxy Nexus (GSM)
 ATTR{idProduct}=="4e30", SYMLINK+="android_fastboot"
+#		Recovery adb entry for Nexus Family
+ATTR{idProduct}=="d001", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Google"
 
