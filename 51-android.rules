@@ -390,6 +390,8 @@ ATTR{idVendor}=="2717", ENV{adb_user}="yes"
 #		Mi2A
 ATTR{idVendor}=="2717", ATTR{idProduct}=="904e", SYMLINK+="android_adb"
 ATTR{idVendor}=="2717", ATTR{idProduct}=="9039", SYMLINK+="android_adb"
+#   Mi3
+ATTR{idVendor}=="2717", ATTR{idProduct}=="0368", SYMLINK+="android_adb"
 
 # Skip other vendor tests
 LABEL="android_usb_rule_match"
