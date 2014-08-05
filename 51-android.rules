@@ -233,6 +233,8 @@ ATTR{idProduct}=="70a9", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 ATTR{idProduct}=="4362", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Moto G
 ATTR{idProduct}=="2e76", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
+#		Moto G (Dual SIM)
+ATTR{idProduct}=="2e80", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Moto G (Global GSM)
 ATTR{idProduct}=="2e82", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 GOTO="android_usb_rule_match"
