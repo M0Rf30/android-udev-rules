@@ -277,6 +277,8 @@ ATTR{idVendor}=="04da", ENV{adb_user}="yes"
 ATTR{idVendor}=="05c6", ENV{adb_user}="yes"
 #		Geeksphone Zero
 ATTR{idVendor}=="05c6", ATTR{idProduct}=="9025", SYMLINK+="android_adb"
+#   OnePlus One
+ATTR{idVendor}=="05c6", ATTR{idProduct}=="6769", SYMLINK+="android_adb"
 
 #	SK Telesys
 ATTR{idVendor}=="1f53", ENV{adb_user}="yes"
