@@ -36,6 +36,9 @@ LABEL="not_Archos"
 #	Asus
 ATTR{idVendor}=="0b05", ENV{adb_user}="yes"
 
+#	Azpen Onda
+ATTR{idVendor}=="1f3a", ENV{adb_user}="yes"
+
 #	Dell
 ATTR{idVendor}=="413c", ENV{adb_user}="yes"
 
@@ -113,6 +116,8 @@ ATTR{idProduct}=="0c91", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 ATTR{idProduct}=="0ff9"
 ATTR{idProduct}=="0ca5", SYMLINK+="android_adb"
 ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
+#		G1
+ATTR{idProduct}=="0c01", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		HD2
 ATTR{idProduct}=="0c02", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Hero H2000
