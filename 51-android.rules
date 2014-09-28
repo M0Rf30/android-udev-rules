@@ -36,6 +36,9 @@ LABEL="not_Archos"
 #	Asus
 ATTR{idVendor}=="0b05", ENV{adb_user}="yes"
 
+#	Azpen Onda
+ATTR{idVendor}=="1f3a", ENV{adb_user}="yes"
+
 #	Dell
 ATTR{idVendor}=="413c", ENV{adb_user}="yes"
 
