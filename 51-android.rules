@@ -318,6 +318,8 @@ ATTR{idProduct}=="6860", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_ME
 ATTR{idProduct}=="6866", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 #		Galaxy S4 GT-I9500
 ATTR{idProduct}=="685d", SYMLINK+="android_adb"
+#		False positive printer
+ATTR{idProduct}=="3252", OPTIONS==”ignore_device”
 GOTO="android_usb_rule_match"
 LABEL="not_Samsung"
 
