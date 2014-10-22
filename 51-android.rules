@@ -41,6 +41,15 @@ ATTR{idProduct}=="4daf", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #	Azpen Onda
 ATTR{idVendor}=="1f3a", ENV{adb_user}="yes"
 
+#	BQ
+ATTR{idVendor}!="2a47", GOTO="not_BQ"
+ENV{adb_user}="yes"
+#		Aquaris 4.5
+ATTR{idProduct}=="0c02", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="2008", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
+GOTO="android_usb_rule_match"
+LABEL="not_BQ"
+
 #	Dell
 ATTR{idVendor}=="413c", ENV{adb_user}="yes"
 
