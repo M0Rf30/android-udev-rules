@@ -295,6 +295,7 @@ ATTR{idVendor}=="05c6", ENV{adb_user}="yes"
 ATTR{idVendor}=="05c6", ATTR{idProduct}=="9025", SYMLINK+="android_adb"
 #		OnePlus One
 ATTR{idVendor}=="05c6", ATTR{idProduct}=="6769", SYMLINK+="android_adb"
+ATTR{idVendor}=="05c6", ATTR{idProduct}=="6764", SYMLINK+="android_adb"
 
 #	SK Telesys
 ATTR{idVendor}=="1f53", ENV{adb_user}="yes"
