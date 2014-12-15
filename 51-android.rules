@@ -19,7 +19,7 @@ LABEL="not_Acer"
 #	ADVANCE
 ATTR{idVendor}=="0a5c", ENV{adb_user}="yes"
 #		S5
-ATTR{idVendor}=="0a5c", ATTR{idProduct}=="e681", SYMLINK+="android_adb"
+ATTR{idProduct}=="e681", SYMLINK+="android_adb"
 
 #	Archos
 ATTR{idVendor}!="0e79", GOTO="not_Archos"
@@ -181,11 +181,12 @@ LABEL="not_HTC"
 
 #	Huawei
 ATTR{idVendor}=="12d1", ENV{adb_user}="yes"
-ATTR{idVendor}=="12d1", ATTR{idProduct}=="1038", SYMLINK+="android_adb"
-ATTR{idVendor}=="12d1", ATTR{idProduct}=="1038", SYMLINK+="android_fastboot"
+#		IDEOS
+ATTR{idProduct}=="1038", SYMLINK+="android_adb"
+ATTR{idProduct}=="1038", SYMLINK+="android_fastboot"
 #		U8850 Vision
-ATTR{idVendor}=="12d1", ATTR{idProduct}=="1021", SYMLINK+="android_adb"
-ATTR{idVendor}=="12d1", ATTR{idProduct}=="1021", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="1021", SYMLINK+="android_adb"
+ATTR{idProduct}=="1021", SYMLINK+="android_fastboot"
 
 #	Intel
 ATTR{idVendor}=="8087", ENV{adb_user}="yes"
@@ -204,8 +205,8 @@ ATTR{idVendor}=="0482", ENV{adb_user}="yes"
 #	Lab126
 ATTR{idVendor}=="1949", ENV{adb_user}="yes"
 #		Amazon Kindle Fire
-ATTR{idVendor}=="1949", ATTR{idProduct}=="0006", SYMLINK+="android_adb"
-ATTR{idVendor}=="1949", ATTR{idProduct}=="0006", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0006", SYMLINK+="android_adb"
+ATTR{idProduct}=="0006", SYMLINK+="android_fastboot"
 
 #	Lenovo
 ATTR{idVendor}=="17ef", ENV{adb_user}="yes"
@@ -273,8 +274,8 @@ ATTR{idVendor}=="0955", ENV{adb_user}="yes"
 #	Oppo
 ATTR{idVendor}=="22d9", ENV{adb_user}="yes"
 #		Find 5
-ATTR{idVendor}=="22d9", ATTR{idProduct}=="2767", SYMLINK+="android_adb"
-ATTR{idVendor}=="22d9", ATTR{idProduct}=="2764", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+ATTR{idProduct}=="2767", SYMLINK+="android_adb"
+ATTR{idProduct}=="2764", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 
 #	OTGV
 ATTR{idVendor}=="2257", ENV{adb_user}="yes"
@@ -294,10 +295,10 @@ ATTR{idVendor}=="04da", ENV{adb_user}="yes"
 #	Qualcomm
 ATTR{idVendor}=="05c6", ENV{adb_user}="yes"
 #		Geeksphone Zero
-ATTR{idVendor}=="05c6", ATTR{idProduct}=="9025", SYMLINK+="android_adb"
+ATTR{idProduct}=="9025", SYMLINK+="android_adb"
 #		OnePlus One
-ATTR{idVendor}=="05c6", ATTR{idProduct}=="6769", SYMLINK+="android_adb"
-ATTR{idVendor}=="05c6", ATTR{idProduct}=="6764", SYMLINK+="android_adb"
+ATTR{idProduct}=="6769", SYMLINK+="android_adb"
+ATTR{idProduct}=="6764", SYMLINK+="android_adb"
 
 #	SK Telesys
 ATTR{idVendor}=="1f53", ENV{adb_user}="yes"
@@ -386,7 +387,7 @@ ATTR{idVendor}=="1782", ENV{adb_user}="yes"
 #       T & A Mobile Phones
 ATTR{idVendor}=="1bbb", ENV{adb_user}="yes"
 #		Alcatel OT991D
-ATTR{idVendor}=="1bbb", ATTR{idProduct}=="00f2", SYMLINK+="android_adb"
+ATTR{idProduct}=="00f2", SYMLINK+="android_adb"
 
 #	Teleepoch
 ATTR{idVendor}=="2340", ENV{adb_user}="yes"
@@ -404,19 +405,19 @@ ATTR{idVendor}=="05c6", ENV{adb_user}="yes"
 #	ZTE
 ATTR{idVendor}=="19d2", ENV{adb_user}="yes"
 #		Blade
-ATTR{idVendor}=="19d2", ATTR{idProduct}=="1353"
-ATTR{idVendor}=="19d2", ATTR{idProduct}=="1351", SYMLINK+="android_adb"
+ATTR{idProduct}=="1353"
+ATTR{idProduct}=="1351", SYMLINK+="android_adb"
 #		Blade S (Crescent, Orange San Francisco 2)
-ATTR{idVendor}=="19d2", ATTR{idProduct}=="1355"
-ATTR{idVendor}=="19d2", ATTR{idProduct}=="1354", SYMLINK+="android_adb"
+ATTR{idProduct}=="1355"
+ATTR{idProduct}=="1354", SYMLINK+="android_adb"
 
 #	XiaoMi
 ATTR{idVendor}=="2717", ENV{adb_user}="yes"
 #		Mi2A
-ATTR{idVendor}=="2717", ATTR{idProduct}=="904e", SYMLINK+="android_adb"
-ATTR{idVendor}=="2717", ATTR{idProduct}=="9039", SYMLINK+="android_adb"
+ATTR{idProduct}=="904e", SYMLINK+="android_adb"
+ATTR{idProduct}=="9039", SYMLINK+="android_adb"
 #		Mi3
-ATTR{idVendor}=="2717", ATTR{idProduct}=="0368", SYMLINK+="android_adb"
+ATTR{idProduct}=="0368", SYMLINK+="android_adb"
 
 # Skip other vendor tests
 LABEL="android_usb_rule_match"
