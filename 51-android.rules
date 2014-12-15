@@ -218,7 +218,7 @@ ATTR{idProduct}=="618f"
 ATTR{idProduct}=="618e", SYMLINK+="android_adb"
 #		G2 D803
 ATTR{idProduct}=="631f", SYMLINK+="android_adb"
-#   G3 D855
+#		G3 D855
 ATTR{idProduct}=="633e", SYMLINK+="android_adb"
 #		Optimus LTE
 ATTR{idProduct}=="6315", SYMLINK+="android_adb"
