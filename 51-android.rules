@@ -36,10 +36,14 @@ LABEL="not_Archos"
 #	Asus
 ATTR{idVendor}=="0b05", ENV{adb_user}="yes"
 #		Zenphone 5
-ATTR{idProduct}=="4c90"					# normal
-ATTR{idProduct}=="4c91", SYMLINK+="android_adb"		# USB Debugging
-ATTR{idProduct}=="4daf", SYMLINK+="android_fastboot"	# Fastboot
-ATTR{idProduct}=="7030"					# Tegra APX
+#			normal
+ATTR{idProduct}=="4c90"
+#			USB Debugging
+ATTR{idProduct}=="4c91", SYMLINK+="android_adb"
+#			Fastboot
+ATTR{idProduct}=="4daf", SYMLINK+="android_fastboot"
+#			Tegra APX
+ATTR{idProduct}=="7030"
 
 #	Azpen Onda
 ATTR{idVendor}=="1f3a", ENV{adb_user}="yes"
