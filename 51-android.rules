@@ -1,3 +1,7 @@
+# These rules refer: http://developer.android.com/guide/developing/device.html
+# and include many suggestions from Archlinux, Github and other Communities.
+# Latest version can be found at: https://github.com/M0Rf30/android-udev-rules
+
 # Skip this section below if this device is not connected by USB
 SUBSYSTEM!="usb", GOTO="android_usb_rules_end"
 
@@ -116,24 +120,25 @@ ATTR{idVendor}=="109b", ENV{adb_user}="yes"
 
 #	HTC
 ATTR{idVendor}!="0bb4", GOTO="not_HTC"
+#		skip if debug mode off
+ATTR{idProduct}=="0ff9", GOTO="android_usb_rules_end"
+
 ENV{adb_user}="yes"
+#		fastboot mode enabled
+ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot", GOTO="android_usb_rule_match"
+
 #		ChaCha
 ATTR{idProduct}=="0cb2", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Desire (Bravo)
-ATTR{idProduct}=="0ff9"
 ATTR{idProduct}=="0c87", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Desire HD
 ATTR{idProduct}=="0ca2", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Desire S (Saga)
 ATTR{idProduct}=="0cab", SYMLINK+="android_adb"
 #		Desire Z
 ATTR{idProduct}=="0c91", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Evo Shift
-ATTR{idProduct}=="0ff9"
 ATTR{idProduct}=="0ca5", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		G1
 ATTR{idProduct}=="0c01", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		HD2
@@ -141,40 +146,28 @@ ATTR{idProduct}=="0c02", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Hero H2000
 ATTR{idProduct}=="0001", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Hero (GSM), Desire
-ATTR{idProduct}=="0ff9"
 ATTR{idProduct}=="0c99", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Hero (CDMA)
-ATTR{idProduct}=="0ff9"
 ATTR{idProduct}=="0c9a", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Incredible
-ATTR{idProduct}=="0ff9"
 ATTR{idProduct}=="0c9e", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Incredible rev 0002
-ATTR{idProduct}=="0ff9"
 ATTR{idProduct}=="0c8d", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		MyTouch 4G
-ATTR{idProduct}=="0ff9"
 ATTR{idProduct}=="0c96", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		One (m7)
 ATTR{idProduct}=="0c93"
 ATTR{idProduct}=="0f87", SYMLINK+="android_adb"
 ATTR{idProduct}=="0ff0", SYMLINK+="android_fastboot"
+#		One V
+ATTR{idProduct}=="0ce5", SYMLINK+="android_adb"
 #		Slide
-ATTR{idProduct}=="0ff9"
 ATTR{idProduct}=="0e03", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Tatoo, Dream, ADP1, G1, Magic
 ATTR{idProduct}=="0c01"
 ATTR{idProduct}=="0c02", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Vision
-ATTR{idProduct}=="0ff9"
 ATTR{idProduct}=="0c91", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Wildfire
 ATTR{idProduct}=="0c8b", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Wildfire S
@@ -221,7 +214,7 @@ ATTR{idVendor}=="17ef", ENV{adb_user}="yes"
 #	LG
 ATTR{idVendor}!="1004", GOTO="not_LG"
 ENV{adb_user}="yes"
-#		Ally, Vortex, P500
+#		Ally, Vortex, P500, P500h
 ATTR{idProduct}=="618f"
 ATTR{idProduct}=="618e", SYMLINK+="android_adb"
 #		G2 D803
@@ -313,6 +306,11 @@ ATTR{idVendor}=="1f53", ENV{adb_user}="yes"
 
 #	Samsung
 ATTR{idVendor}!="04e8", GOTO="not_Samsung"
+#		False positive printer
+ATTR{idProduct}=="3252", GOTO="android_usb_rules_end"
+#		False positive {non-phone devices}
+ATTR{idProduct}!="6???", GOTO="android_usb_rules_end"
+
 ENV{adb_user}="yes"
 #		Galaxy i5700
 ATTR{idProduct}=="681c", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
@@ -333,7 +331,7 @@ ATTR{idProduct}=="6877", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Galaxy Nexus (GSM)
 ATTR{idProduct}=="685c"
 ATTR{idProduct}=="6860", SYMLINK+="android_adb"
-#		Galaxy Tab 10.1, i9100 S2, i9300 S3, N5100 Note (8.0)
+#		Galaxy Core, Tab 10.1, i9100 S2, i9300 S3, N5100 Note (8.0)
 ATTR{idProduct}=="6860"
 ATTR{idProduct}=="685e", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 ATTR{idProduct}=="6860", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
@@ -341,8 +339,6 @@ ATTR{idProduct}=="6860", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_ME
 ATTR{idProduct}=="6866", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 #		Galaxy S4 GT-I9500
 ATTR{idProduct}=="685d", SYMLINK+="android_adb"
-#		False positive printer
-ATTR{idProduct}=="3252", OPTIONS=="ignore_device"
 GOTO="android_usb_rule_match"
 LABEL="not_Samsung"
 
