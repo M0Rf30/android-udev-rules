@@ -217,7 +217,7 @@ ATTR{idVendor}=="17ef", ENV{adb_user}="yes"
 #	LG
 ATTR{idVendor}!="1004", GOTO="not_LG"
 ENV{adb_user}="yes"
-#		Ally, Vortex, P500
+#		Ally, Vortex, P500, P500h
 ATTR{idProduct}=="618f"
 ATTR{idProduct}=="618e", SYMLINK+="android_adb"
 #		G2 D803
@@ -329,7 +329,7 @@ ATTR{idProduct}=="6877", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Galaxy Nexus (GSM)
 ATTR{idProduct}=="685c"
 ATTR{idProduct}=="6860", SYMLINK+="android_adb"
-#		Galaxy Tab 10.1, i9100 S2, i9300 S3, N5100 Note (8.0)
+#		Galaxy Core, Tab 10.1, i9100 S2, i9300 S3, N5100 Note (8.0)
 ATTR{idProduct}=="6860"
 ATTR{idProduct}=="685e", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 ATTR{idProduct}=="6860", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
