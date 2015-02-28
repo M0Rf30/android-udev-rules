@@ -120,21 +120,21 @@ ATTR{idVendor}!="0bb4", GOTO="not_HTC"
 ATTR{idProduct}=="0ff9", GOTO="android_usb_rules_end"
 
 ENV{adb_user}="yes"
+#		fastboot mode enabled
+ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot", GOTO="android_usb_rule_match"
+
 #		ChaCha
 ATTR{idProduct}=="0cb2", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Desire (Bravo)
 ATTR{idProduct}=="0c87", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Desire HD
 ATTR{idProduct}=="0ca2", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Desire S (Saga)
 ATTR{idProduct}=="0cab", SYMLINK+="android_adb"
 #		Desire Z
 ATTR{idProduct}=="0c91", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Evo Shift
 ATTR{idProduct}=="0ca5", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		G1
 ATTR{idProduct}=="0c01", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		HD2
@@ -143,19 +143,14 @@ ATTR{idProduct}=="0c02", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 ATTR{idProduct}=="0001", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Hero (GSM), Desire
 ATTR{idProduct}=="0c99", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Hero (CDMA)
 ATTR{idProduct}=="0c9a", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Incredible
 ATTR{idProduct}=="0c9e", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Incredible rev 0002
 ATTR{idProduct}=="0c8d", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		MyTouch 4G
 ATTR{idProduct}=="0c96", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		One (m7)
 ATTR{idProduct}=="0c93"
 ATTR{idProduct}=="0f87", SYMLINK+="android_adb"
@@ -164,13 +159,11 @@ ATTR{idProduct}=="0ff0", SYMLINK+="android_fastboot"
 ATTR{idProduct}=="0ce5", SYMLINK+="android_adb"
 #		Slide
 ATTR{idProduct}=="0e03", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Tatoo, Dream, ADP1, G1, Magic
 ATTR{idProduct}=="0c01"
 ATTR{idProduct}=="0c02", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Vision
 ATTR{idProduct}=="0c91", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Wildfire
 ATTR{idProduct}=="0c8b", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Wildfire S
