@@ -1,3 +1,7 @@
+# These rules refer: http://developer.android.com/guide/developing/device.html
+# and include many suggestions from Archlinux, Github and other Communities.
+# Latest version can be found at: https://github.com/M0Rf30/android-udev-rules
+
 # Skip this section below if this device is not connected by USB
 SUBSYSTEM!="usb", GOTO="android_usb_rules_end"
 
