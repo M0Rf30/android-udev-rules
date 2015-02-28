@@ -160,6 +160,8 @@ ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 ATTR{idProduct}=="0c93"
 ATTR{idProduct}=="0f87", SYMLINK+="android_adb"
 ATTR{idProduct}=="0ff0", SYMLINK+="android_fastboot"
+#		One V
+ATTR{idProduct}=="0ce5", SYMLINK+="android_adb"
 #		Slide
 ATTR{idProduct}=="0e03", SYMLINK+="android_adb"
 ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
