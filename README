@@ -17,3 +17,6 @@ chmod a+r /etc/udev/rules.d/51-android.rules
 Try group plugdev rather than plugindev. Then restart udev:
 sudo udevadm control --reload-rules
 sudo service udev restart
+
+Add plugdev to <ubuntuloginid>
+sudo useradd -G plugdev <ubuntuloginid>
