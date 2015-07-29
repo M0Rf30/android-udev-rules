@@ -155,7 +155,7 @@ ATTR{idProduct}=="0c9e", SYMLINK+="android_adb"
 ATTR{idProduct}=="0c8d", SYMLINK+="android_adb"
 #		MyTouch 4G
 ATTR{idProduct}=="0c96", SYMLINK+="android_adb"
-#		One (m7)
+#		One (m7) && One (m8)
 ATTR{idProduct}=="0c93"
 ATTR{idProduct}=="0f87", SYMLINK+="android_adb"
 ATTR{idProduct}=="0ff0", SYMLINK+="android_fastboot"
