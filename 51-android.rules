@@ -120,8 +120,6 @@ ATTR{idVendor}=="109b", ENV{adb_user}="yes"
 
 #	HTC
 ATTR{idVendor}!="0bb4", GOTO="not_HTC"
-#		skip if debug mode off
-ATTR{idProduct}=="0ff9", GOTO="android_usb_rules_end"
 
 ENV{adb_user}="yes"
 #		fastboot mode enabled
