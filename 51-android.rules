@@ -216,6 +216,8 @@ ENV{adb_user}="yes"
 ATTR{idProduct}=="618f"
 ATTR{idProduct}=="618e", SYMLINK+="android_adb"
 #		G2 D803
+ATTR{idProduct}=="618c", SYMLINK+="android_adb"
+#   G2 D803 rogers
 ATTR{idProduct}=="631f", SYMLINK+="android_adb"
 #		G3 D855
 ATTR{idProduct}=="633e", SYMLINK+="android_adb"
