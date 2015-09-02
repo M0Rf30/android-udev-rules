@@ -120,8 +120,6 @@ ATTR{idVendor}=="109b", ENV{adb_user}="yes"
 
 #	HTC
 ATTR{idVendor}!="0bb4", GOTO="not_HTC"
-#		skip if debug mode off
-ATTR{idProduct}=="0ff9", GOTO="android_usb_rules_end"
 
 ENV{adb_user}="yes"
 #		fastboot mode enabled
@@ -155,7 +153,7 @@ ATTR{idProduct}=="0c9e", SYMLINK+="android_adb"
 ATTR{idProduct}=="0c8d", SYMLINK+="android_adb"
 #		MyTouch 4G
 ATTR{idProduct}=="0c96", SYMLINK+="android_adb"
-#		One (m7)
+#		One (m7) && One (m8)
 ATTR{idProduct}=="0c93"
 ATTR{idProduct}=="0f87", SYMLINK+="android_adb"
 ATTR{idProduct}=="0ff0", SYMLINK+="android_fastboot"
@@ -218,6 +216,8 @@ ENV{adb_user}="yes"
 ATTR{idProduct}=="618f"
 ATTR{idProduct}=="618e", SYMLINK+="android_adb"
 #		G2 D803
+ATTR{idProduct}=="618c", SYMLINK+="android_adb"
+#		G2 D803 rogers
 ATTR{idProduct}=="631f", SYMLINK+="android_adb"
 #		G3 D855
 ATTR{idProduct}=="633e", SYMLINK+="android_adb"
