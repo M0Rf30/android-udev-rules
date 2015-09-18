@@ -250,6 +250,8 @@ ATTR{idProduct}=="70a8", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 ATTR{idProduct}=="70a9", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Razr XT912
 ATTR{idProduct}=="4362", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
+#		Moto XT1052
+ATTR{idProduct}=="2e83", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Moto E/G
 ATTR{idProduct}=="2e76", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Moto E/G (Dual SIM)
