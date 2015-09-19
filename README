@@ -9,8 +9,10 @@ Log in as root and create this file: /etc/udev/rules.d/51-android.rules.
 Use this format to add each vendor to the file:
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", MODE="0666", GROUP="plugdev" 
 
-In this example, the vendor ID is for HTC. The MODE assignment specifies read/write permissions, and GROUP defines which Unix group owns the device node.
-Note: The rule syntax may vary slightly depending on your environment. Consult the udev documentation for your system as needed. For an overview of rule syntax, see this guide to writing udev rules. please refere to 51-android.rules in [ubuntu directory](ubuntu).
+In this example, the vendor ID is for HTC. 
+The MODE assignment specifies read/write permissions, and GROUP defines which Unix group owns the device node.
+Note: The rule syntax may vary slightly depending on your environment. Consult the udev documentation for your system as needed. For an overview of rule syntax, see this guide to writing udev rules. 
+please refer to 51-android.rules in [ubuntu directory](ubuntu)
 Now execute:
 chmod a+r /etc/udev/rules.d/51-android.rules
 
