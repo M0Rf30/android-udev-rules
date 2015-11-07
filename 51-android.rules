@@ -220,6 +220,7 @@ ATTR{idProduct}=="618e", SYMLINK+="android_adb"
 ATTR{idProduct}=="618c", SYMLINK+="android_adb"
 #		G2 D803 rogers
 ATTR{idProduct}=="631f", SYMLINK+="android_adb"
+ATTR{idProduct}=="631c", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 #		G3 D855
 ATTR{idProduct}=="633e", SYMLINK+="android_adb"
 #		Optimus LTE
