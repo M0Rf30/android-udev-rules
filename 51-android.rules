@@ -333,12 +333,9 @@ ATTR{idProduct}=="689e", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 ATTR{idProduct}=="6877", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Galaxy Nexus (GSM)
 ATTR{idProduct}=="685c"
-#		Galaxy S3 SHW-M440S 3G (Korea only)
+#		Galaxy Core, Tab 10.1, i9100 S2, i9300 S3, N5100 Note (8.0), Galaxy S3 SHW-M440S 3G (Korea only)
 ATTR{idProduct}=="6860", SYMLINK+="android_adb"
-#		Galaxy Core, Tab 10.1, i9100 S2, i9300 S3, N5100 Note (8.0)
-ATTR{idProduct}=="6860"
 ATTR{idProduct}=="685e", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
-ATTR{idProduct}=="6860", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 #		Galaxy i9300 S3
 ATTR{idProduct}=="6866", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 #		Galaxy S4 GT-I9500
