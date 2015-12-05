@@ -385,6 +385,8 @@ ATTR{idProduct}=="5176", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 ATTR{idProduct}=="51a7", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		Xperia Z3 Compact
 ATTR{idProduct}=="01bb", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
+#		Xperia Z3+ Dual
+ATTR{idProduct}=="51c9", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 GOTO="android_usb_rule_match"
 LABEL="not_Sony_Ericsson"
 
