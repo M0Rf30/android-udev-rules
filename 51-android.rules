@@ -186,6 +186,10 @@ ATTR{idProduct}=="1038", SYMLINK+="android_fastboot"
 #		U8850 Vision
 ATTR{idProduct}=="1021", SYMLINK+="android_adb"
 ATTR{idProduct}=="1021", SYMLINK+="android_fastboot"
+#		HiKey adb
+ATTR{idProduct}=="1057", SYMLINK+="android_adb"
+#		HiKey usbnet
+ATTR{idProduct}=="1050", SYMLINK+="android_adb"
 
 #	Intel
 ATTR{idVendor}=="8087", ENV{adb_user}="yes"
