@@ -38,16 +38,17 @@ GOTO="android_usb_rule_match"
 LABEL="not_Archos"
 
 #	Asus
-ATTR{idVendor}=="0b05", ENV{adb_user}="yes"
-#		Zenphone 5
-#			normal
-ATTR{idProduct}=="4c90"
-#			USB Debugging
+ATTR{idVendor}!="0b05", GOTO="not_Asus"
+#		False positive - accessory
+ATTR{idProduct}=="1???", GOTO="android_usb_rules_end"
+ENV{adb_user}="yes"
+#		Zenphone 5 (4c90=normal,4c91=debug,4daf=Fastboot)
 ATTR{idProduct}=="4c91", SYMLINK+="android_adb"
-#			Fastboot
 ATTR{idProduct}=="4daf", SYMLINK+="android_fastboot"
 #			Tegra APX
 ATTR{idProduct}=="7030"
+GOTO="android_usb_rule_match"
+LABEL="not_Asus"
 
 #	Azpen Onda
 ATTR{idVendor}=="1f3a", ENV{adb_user}="yes"
@@ -179,17 +180,18 @@ GOTO="android_usb_rule_match"
 LABEL="not_HTC"
 
 #	Huawei
-ATTR{idVendor}=="12d1", ENV{adb_user}="yes"
+ATTR{idVendor}!="12d1", GOTO="not_Huawei"
+ENV{adb_user}="yes"
 #		IDEOS
-ATTR{idProduct}=="1038", SYMLINK+="android_adb"
-ATTR{idProduct}=="1038", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="1038", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		U8850 Vision
-ATTR{idProduct}=="1021", SYMLINK+="android_adb"
-ATTR{idProduct}=="1021", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="1021", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		HiKey adb
 ATTR{idProduct}=="1057", SYMLINK+="android_adb"
 #		HiKey usbnet
 ATTR{idProduct}=="1050", SYMLINK+="android_adb"
+GOTO="android_usb_rule_match"
+LABEL="not_Huawei"
 
 #	Intel
 ATTR{idVendor}=="8087", ENV{adb_user}="yes"
@@ -208,8 +210,7 @@ ATTR{idVendor}=="0482", ENV{adb_user}="yes"
 #	Lab126
 ATTR{idVendor}=="1949", ENV{adb_user}="yes"
 #		Amazon Kindle Fire
-ATTR{idProduct}=="0006", SYMLINK+="android_adb"
-ATTR{idProduct}=="0006", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0006", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 
 #	Lenovo
 ATTR{idVendor}=="17ef", ENV{adb_user}="yes"
@@ -305,9 +306,7 @@ ENV{adb_user}="yes"
 #		Geeksphone Zero
 ATTR{idProduct}=="9025", SYMLINK+="android_adb"
 #		OnePlus One
-ATTR{idProduct}=="6769", SYMLINK+="android_adb"
-ATTR{idProduct}=="6764", SYMLINK+="android_adb"
-ATTR{idProduct}=="6765", SYMLINK+="android_adb"
+ATTR{idProduct}=="676?", SYMLINK+="android_adb"
 #		OnePlus Two
 ATTR{idProduct}=="9011", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
@@ -319,9 +318,7 @@ ATTR{idVendor}=="1f53", ENV{adb_user}="yes"
 #	Samsung
 ATTR{idVendor}!="04e8", GOTO="not_Samsung"
 #		False positive printer
-ATTR{idProduct}=="3252", GOTO="android_usb_rules_end"
-#		False positive {non-phone devices}
-ATTR{idProduct}!="6???", GOTO="android_usb_rules_end"
+ATTR{idProduct}=="3???", GOTO="android_usb_rules_end"
 
 ENV{adb_user}="yes"
 #		Galaxy i5700
@@ -411,8 +408,8 @@ ATTR{idProduct}=="00f2", SYMLINK+="android_adb"
 ATTR{idVendor}=="2340", ENV{adb_user}="yes"
 
 #	Texas Instruments UsbBoot
-ATTR{idVendor}=="0451", ATTR{idProduct}=="d00f"
-ATTR{idVendor}=="0451", ATTR{idProduct}=="d010"
+ATTR{idVendor}=="0451", ATTR{idProduct}=="d00f", ENV{adb_user}="yes"
+ATTR{idVendor}=="0451", ATTR{idProduct}=="d010", ENV{adb_user}="yes"
 
 #	Toshiba
 ATTR{idVendor}=="0930", ENV{adb_user}="yes"
@@ -420,17 +417,9 @@ ATTR{idVendor}=="0930", ENV{adb_user}="yes"
 #	WEARNERS
 ATTR{idVendor}=="05c6", ENV{adb_user}="yes"
 
-#	ZTE
-ATTR{idVendor}=="19d2", ENV{adb_user}="yes"
-#		Blade
-ATTR{idProduct}=="1353"
-ATTR{idProduct}=="1351", SYMLINK+="android_adb"
-#		Blade S (Crescent, Orange San Francisco 2)
-ATTR{idProduct}=="1355"
-ATTR{idProduct}=="1354", SYMLINK+="android_adb"
-
 #	XiaoMi
-ATTR{idVendor}=="2717", ENV{adb_user}="yes"
+ATTR{idVendor}!="2717", GOTO="not_XiaoMi"
+ENV{adb_user}="yes"
 #		Mi2A
 ATTR{idProduct}=="904e", SYMLINK+="android_adb"
 ATTR{idProduct}=="9039", SYMLINK+="android_adb"
@@ -450,6 +439,17 @@ ATTR{idProduct}=="1368", SYMLINK+="android_adb"
 ATTR{idProduct}=="1318", SYMLINK+="android_adb"
 #		RedMi / RedMi Note 4G WCDMA (Usb+Debug)
 ATTR{idProduct}=="1328", SYMLINK+="android_adb"
+GOTO="android_usb_rule_match"
+LABEL="not_XiaoMi"
+
+#	ZTE
+ATTR{idVendor}=="19d2", ENV{adb_user}="yes"
+#		Blade
+ATTR{idProduct}=="1353"
+ATTR{idProduct}=="1351", SYMLINK+="android_adb"
+#		Blade S (Crescent, Orange San Francisco 2)
+ATTR{idProduct}=="1355"
+ATTR{idProduct}=="1354", SYMLINK+="android_adb"
 
 # Skip other vendor tests
 LABEL="android_usb_rule_match"
