@@ -180,17 +180,18 @@ GOTO="android_usb_rule_match"
 LABEL="not_HTC"
 
 #	Huawei
-ATTR{idVendor}=="12d1", ENV{adb_user}="yes"
+ATTR{idVendor}!="12d1", GOTO="not_Huawei"
+ENV{adb_user}="yes"
 #		IDEOS
-ATTR{idProduct}=="1038", SYMLINK+="android_adb"
-ATTR{idProduct}=="1038", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="1038", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		U8850 Vision
-ATTR{idProduct}=="1021", SYMLINK+="android_adb"
-ATTR{idProduct}=="1021", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="1021", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 #		HiKey adb
 ATTR{idProduct}=="1057", SYMLINK+="android_adb"
 #		HiKey usbnet
 ATTR{idProduct}=="1050", SYMLINK+="android_adb"
+GOTO="android_usb_rule_match"
+LABEL="not_Huawei"
 
 #	Intel
 ATTR{idVendor}=="8087", ENV{adb_user}="yes"
