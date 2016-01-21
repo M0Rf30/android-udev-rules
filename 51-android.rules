@@ -421,15 +421,6 @@ ATTR{idVendor}=="0930", ENV{adb_user}="yes"
 #	WEARNERS
 ATTR{idVendor}=="05c6", ENV{adb_user}="yes"
 
-#	ZTE
-ATTR{idVendor}=="19d2", ENV{adb_user}="yes"
-#		Blade
-ATTR{idProduct}=="1353"
-ATTR{idProduct}=="1351", SYMLINK+="android_adb"
-#		Blade S (Crescent, Orange San Francisco 2)
-ATTR{idProduct}=="1355"
-ATTR{idProduct}=="1354", SYMLINK+="android_adb"
-
 #	XiaoMi
 ATTR{idVendor}!="2717", GOTO="not_XiaoMi"
 ENV{adb_user}="yes"
@@ -454,6 +445,15 @@ ATTR{idProduct}=="1318", SYMLINK+="android_adb"
 ATTR{idProduct}=="1328", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_XiaoMi"
+
+#	ZTE
+ATTR{idVendor}=="19d2", ENV{adb_user}="yes"
+#		Blade
+ATTR{idProduct}=="1353"
+ATTR{idProduct}=="1351", SYMLINK+="android_adb"
+#		Blade S (Crescent, Orange San Francisco 2)
+ATTR{idProduct}=="1355"
+ATTR{idProduct}=="1354", SYMLINK+="android_adb"
 
 # Skip other vendor tests
 LABEL="android_usb_rule_match"
