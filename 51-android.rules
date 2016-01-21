@@ -38,16 +38,17 @@ GOTO="android_usb_rule_match"
 LABEL="not_Archos"
 
 #	Asus
-ATTR{idVendor}=="0b05", ENV{adb_user}="yes"
-#		Zenphone 5
-#			normal
-ATTR{idProduct}=="4c90"
-#			USB Debugging
+ATTR{idVendor}!="0b05", GOTO="not_Asus"
+#		False positive - accessory
+ATTR{idProduct}=="1???", GOTO="android_usb_rules_end"
+ENV{adb_user}="yes"
+#		Zenphone 5 (4c90=normal,4c91=debug,4daf=Fastboot)
 ATTR{idProduct}=="4c91", SYMLINK+="android_adb"
-#			Fastboot
 ATTR{idProduct}=="4daf", SYMLINK+="android_fastboot"
 #			Tegra APX
 ATTR{idProduct}=="7030"
+GOTO="android_usb_rule_match"
+LABEL="not_Asus"
 
 #	Azpen Onda
 ATTR{idVendor}=="1f3a", ENV{adb_user}="yes"
