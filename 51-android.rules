@@ -210,8 +210,7 @@ ATTR{idVendor}=="0482", ENV{adb_user}="yes"
 #	Lab126
 ATTR{idVendor}=="1949", ENV{adb_user}="yes"
 #		Amazon Kindle Fire
-ATTR{idProduct}=="0006", SYMLINK+="android_adb"
-ATTR{idProduct}=="0006", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="0006", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
 
 #	Lenovo
 ATTR{idVendor}=="17ef", ENV{adb_user}="yes"
@@ -307,9 +306,7 @@ ENV{adb_user}="yes"
 #		Geeksphone Zero
 ATTR{idProduct}=="9025", SYMLINK+="android_adb"
 #		OnePlus One
-ATTR{idProduct}=="6769", SYMLINK+="android_adb"
-ATTR{idProduct}=="6764", SYMLINK+="android_adb"
-ATTR{idProduct}=="6765", SYMLINK+="android_adb"
+ATTR{idProduct}=="676?", SYMLINK+="android_adb"
 #		OnePlus Two
 ATTR{idProduct}=="9011", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
@@ -321,9 +318,7 @@ ATTR{idVendor}=="1f53", ENV{adb_user}="yes"
 #	Samsung
 ATTR{idVendor}!="04e8", GOTO="not_Samsung"
 #		False positive printer
-ATTR{idProduct}=="3252", GOTO="android_usb_rules_end"
-#		False positive {non-phone devices}
-ATTR{idProduct}!="6???", GOTO="android_usb_rules_end"
+ATTR{idProduct}=="3???", GOTO="android_usb_rules_end"
 
 ENV{adb_user}="yes"
 #		Galaxy i5700
@@ -413,8 +408,8 @@ ATTR{idProduct}=="00f2", SYMLINK+="android_adb"
 ATTR{idVendor}=="2340", ENV{adb_user}="yes"
 
 #	Texas Instruments UsbBoot
-ATTR{idVendor}=="0451", ATTR{idProduct}=="d00f"
-ATTR{idVendor}=="0451", ATTR{idProduct}=="d010"
+ATTR{idVendor}=="0451", ATTR{idProduct}=="d00f", ENV{adb_user}="yes"
+ATTR{idVendor}=="0451", ATTR{idProduct}=="d010", ENV{adb_user}="yes"
 
 #	Toshiba
 ATTR{idVendor}=="0930", ENV{adb_user}="yes"
