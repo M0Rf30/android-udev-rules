@@ -117,6 +117,12 @@ ATTR{idVendor}=="201e", ENV{adb_user}="yes"
 #	Hisense
 ATTR{idVendor}=="109b", ENV{adb_user}="yes"
 
+# Honeywell/Foxconn
+ATTR{idVendor}=="0c2e", ENV{adb_user}="yes"
+#	D70e
+ATTR{idProduct}=="0ba3", SYMLINK+="android_adb"
+GOTO="android_usb_rule_match"
+
 #	HTC
 ATTR{idVendor}!="0bb4", GOTO="not_HTC"
 ENV{adb_user}="yes"
@@ -400,6 +406,8 @@ ATTR{idVendor}=="1782", ENV{adb_user}="yes"
 ATTR{idVendor}=="1bbb", ENV{adb_user}="yes"
 #		Alcatel OT991D
 ATTR{idProduct}=="00f2", SYMLINK+="android_adb"
+#		Alcatel OT6012A
+ATTR{idProduct}=="0167", SYMLINK+="android_adb"
 
 #	Teleepoch
 ATTR{idVendor}=="2340", ENV{adb_user}="yes"
@@ -438,6 +446,12 @@ ATTR{idProduct}=="1318", SYMLINK+="android_adb"
 ATTR{idProduct}=="1328", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_XiaoMi"
+
+#	Zebra
+ATTR{idVendor}=="05e0", ENV{adb_user}="yes"
+#	TC55
+ATTR{idProduct}=="2101", SYMLINK+="android_adb"
+GOTO="android_usb_rule_match"
 
 #	ZTE
 ATTR{idVendor}=="19d2", ENV{adb_user}="yes"
