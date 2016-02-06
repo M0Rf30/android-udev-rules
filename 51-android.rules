@@ -449,7 +449,7 @@ LABEL="not_XiaoMi"
 
 #	Zebra
 ATTR{idVendor}=="05e0", ENV{adb_user}="yes"
-#	TC55
+#		TC55
 ATTR{idProduct}=="2101", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 
@@ -459,6 +459,9 @@ ATTR{idVendor}=="19d2", ENV{adb_user}="yes"
 ATTR{idProduct}=="1351", SYMLINK+="android_adb"
 #		Blade S (Crescent, Orange San Francisco 2) (1355=normal,1354=debug)
 ATTR{idProduct}=="1354", SYMLINK+="android_adb"
+
+#	ZUK
+ATTR{idVendor}=="2b4c", ENV{adb_user}="yes"
 
 # Skip other vendor tests
 LABEL="android_usb_rule_match"
