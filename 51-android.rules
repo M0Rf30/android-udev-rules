@@ -444,6 +444,8 @@ ATTR{idProduct}=="1368", SYMLINK+="android_adb"
 ATTR{idProduct}=="1318", SYMLINK+="android_adb"
 #		RedMi / RedMi Note 4G WCDMA (Usb+Debug)
 ATTR{idProduct}=="1328", SYMLINK+="android_adb"
+#		RedMi / RedMi Note 4G CDMA (Usb+Debug)
+ATTR{idProduct}=="ff68", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_XiaoMi"
 
