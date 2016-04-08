@@ -1,5 +1,5 @@
 # These rules refer: http://developer.android.com/guide/developing/device.html
-# and include many suggestions from Archlinux, Github and other Communities.
+# and include many suggestions from Arch Linux, GitHub and other Communities.
 # Latest version can be found at: https://github.com/M0Rf30/android-udev-rules
 
 # Skip this section below if this device is not connected by USB
@@ -44,7 +44,7 @@ ENV{adb_user}="yes"
 #		Zenphone 5 (4c90=normal,4c91=debug,4daf=Fastboot)
 ATTR{idProduct}=="4c91", SYMLINK+="android_adb"
 ATTR{idProduct}=="4daf", SYMLINK+="android_fastboot"
-#			Tegra APX
+#		Tegra APX
 ATTR{idProduct}=="7030"
 GOTO="android_usb_rule_match"
 LABEL="not_Asus"
@@ -410,7 +410,7 @@ LABEL="not_Sony_Ericsson"
 #	Spreadtrum
 ATTR{idVendor}=="1782", ENV{adb_user}="yes"
 
-#       T & A Mobile Phones
+#		T & A Mobile Phones
 ATTR{idVendor}=="1bbb", ENV{adb_user}="yes"
 #		Alcatel OT991D
 ATTR{idProduct}=="00f2", SYMLINK+="android_adb"
