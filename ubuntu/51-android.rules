@@ -51,6 +51,9 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="17ef", MODE="0666", GROUP="plugdev"
 ## LG
 SUBSYSTEM=="usb", ATTR{idVendor}=="1004", MODE="0666", GROUP="plugdev" 
 
+## Micromax
+SUBSYSTEM=="usb", ATTR{idVendor}=="2a96", MODE="0666", GROUP="plugdev" 
+
 ## Motorola
 SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", MODE="0666", GROUP="plugdev" 
 
