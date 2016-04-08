@@ -244,6 +244,14 @@ ATTR{idProduct}=="61f9", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_LG"
 
+#	Micromax
+ATTR{idVendor}!="2a96", GOTO="not_Micromax"
+ENV{adb_user}="yes"
+#		P702
+ATTR{idProduct}=="201d", SYMLINK+="android_adb", SYMLINK+="android_fastboot"
+GOTO="android_usb_rule_match"
+LABEL="not_Micromax"
+
 #	Motorola
 ATTR{idVendor}!="22b8", GOTO="not_Motorola"
 ENV{adb_user}="yes"
