@@ -193,6 +193,8 @@ ATTR{idProduct}=="1021", ENV{adb_adbfast}="yes"
 ATTR{idProduct}=="1057", SYMLINK+="android_adb"
 #		HiKey usbnet
 ATTR{idProduct}=="1050", SYMLINK+="android_adb"
+#		MediaPad M2-A01L
+ATTR{idProduct}=="1052", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Huawei"
 
