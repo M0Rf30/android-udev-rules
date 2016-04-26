@@ -122,9 +122,9 @@ ATTR{idVendor}=="201e", ENV{adb_user}="yes"
 #	Hisense
 ATTR{idVendor}=="109b", ENV{adb_user}="yes"
 
-# Honeywell/Foxconn
+#	Honeywell/Foxconn
 ATTR{idVendor}=="0c2e", ENV{adb_user}="yes"
-#	D70e
+#		D70e
 ATTR{idProduct}=="0ba3", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 
