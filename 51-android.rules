@@ -19,6 +19,11 @@ ATTR{idProduct}=="3203", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Acer"
 
+#	Actions Semiconductor Co., Ltd
+ATTR{idVendor}=="10d6", ENV{adb_user}="yes"
+#		Denver TAD 70111
+ATTR{idVendor}=="10d6", ATTR{idProduct}=="0c02", SYMLINK+="android_adb"
+
 #	ADVANCE
 ATTR{idVendor}=="0a5c", ENV{adb_user}="yes"
 #		S5
