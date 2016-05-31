@@ -18,7 +18,7 @@ Note: The rule syntax may vary slightly depending on your environment. Consult t
 # Clone the repo (replace repo-url with the Github URL)
 git clone <repo-url>
 # Create a sym-link to the rules file
-sudo ln -s ./android-udev-rules/51-android.rules /etc/udev/rules.d/
+sudo ln -s `pwd`/android-udev-rules/51-android.rules /etc/udev/rules.d/
 # Change file permissions
 sudo chmod a+r /etc/udev/rules.d/51-android.rules
 # Restart UDEV
