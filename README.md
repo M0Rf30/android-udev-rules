@@ -45,10 +45,7 @@ Try group plug**in**dev rather than plugdev, then restart udev.
 
 ## Note
 
-#### For Xiaomi devices(including RedMi), the following lines should be add to `~/.android/adb_usb.ini`:
-```
-# ANDROID 3RD PARTY USB VENDOR ID LIST -- DO NOT EDIT.
-# USE 'android update adb' TO GENERATE.
-# 1 USB VENDOR ID PER LINE.
-0x2717
-```
+Some devices (particularly MediaTek and Xiaomi) also require an entry in $HOME/.android/adb\_usb.ini. You can use the adb_usb.ini
+  
+`ln -s `pwd`/adb_usb.ini $HOME/.android/
+
