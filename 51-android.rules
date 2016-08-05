@@ -234,6 +234,8 @@ ENV{adb_user}="yes"
 #		Ally, Vortex, P500, P500h
 ATTR{idProduct}=="618f"
 ATTR{idProduct}=="618e", SYMLINK+="android_adb"
+#		G2 D802
+ATTR{idProduct}=="61f1", SYMLINK+="android_adb"
 #		G2 D803
 ATTR{idProduct}=="618c", SYMLINK+="android_adb"
 #		G2 D803 rogers
