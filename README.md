@@ -1,5 +1,5 @@
 ## Description
-These rules refer to http://developer.android.com/guide/developing/device.html and include many suggestions from the Archlinux and Github Community.
+These rules refer to https://developer.android.com/studio/run/device.html and include many suggestions from the Archlinux and Github Community.
 
 If you're developing on Ubuntu Linux, you need to add a udev rules file that contains a USB configuration for each type of device you want to use for development. In the rules file, each device manufacturer is identified by a unique vendor ID, as specified by the ATTR{idVendor} property. For a list of vendor IDs, see USB Vendor IDs, below.
 
