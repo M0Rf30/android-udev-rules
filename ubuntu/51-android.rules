@@ -1,4 +1,4 @@
-# These rules refer: http://developer.android.com/tools/device.html
+# These rules refer: https://developer.android.com/studio/run/device.html
 
 ## Acer
 SUBSYSTEM=="usb", ATTR{idVendor}=="0502", MODE="0666", GROUP="plugdev"
