@@ -1,4 +1,4 @@
-# These rules refer: http://developer.android.com/guide/developing/device.html
+# These rules refer: https://developer.android.com/studio/run/device.html
 # and include many suggestions from Arch Linux, GitHub and other Communities.
 # Latest version can be found at: https://github.com/M0Rf30/android-udev-rules
 
