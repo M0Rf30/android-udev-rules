@@ -484,6 +484,12 @@ ATTR{idProduct}=="1351", SYMLINK+="android_adb"
 #		Blade S (Crescent, Orange San Francisco 2) (1355=normal,1354=debug)
 ATTR{idProduct}=="1354", SYMLINK+="android_adb"
 
+#Wileyfox
+ATTR{idVendor}=="2970", ENV{adb_user}="yes"
+
+#YU
+ATTR{idVendor}=="1ebf", ENV{adb_user}="yes"
+
 #	ZUK
 ATTR{idVendor}=="2b4c", ENV{adb_user}="yes"
 
