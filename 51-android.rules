@@ -126,10 +126,12 @@ ATTR{idVendor}=="201e", ENV{adb_user}="yes"
 ATTR{idVendor}=="109b", ENV{adb_user}="yes"
 
 #	Honeywell/Foxconn
-ATTR{idVendor}=="0c2e", ENV{adb_user}="yes"
+ATTR{idVendor}!="0c2e", GOTO="not_Honeywell"
+ENV{adb_user}="yes"
 #		D70e
 ATTR{idProduct}=="0ba3", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
+LABEL="not_Honeywell"
 
 #	HTC
 ATTR{idVendor}!="0bb4", GOTO="not_HTC"
@@ -472,10 +474,12 @@ GOTO="android_usb_rule_match"
 LABEL="not_XiaoMi"
 
 #	Zebra
-ATTR{idVendor}=="05e0", ENV{adb_user}="yes"
+ATTR{idVendor}!="05e0", GOTO="not_Zebra"
+ENV{adb_user}="yes"
 #		TC55
 ATTR{idProduct}=="2101", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
+LABEL="not_Zebra"
 
 #	ZTE
 ATTR{idVendor}=="19d2", ENV{adb_user}="yes"
