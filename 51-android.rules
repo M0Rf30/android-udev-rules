@@ -462,6 +462,8 @@ ATTR{idProduct}=="904e", SYMLINK+="android_adb"
 ATTR{idProduct}=="9039", SYMLINK+="android_adb"
 #		Mi3
 ATTR{idProduct}=="0368", SYMLINK+="android_adb"
+#		Mi4c
+ATTR{idProduct}=="ff68", SYMLINK+="android_adb"
 #		RedMi 1S WCDMA (MTP+Debug)
 ATTR{idProduct}=="1268", SYMLINK+="android_adb"
 #		RedMi / RedMi Note WCDMA (MTP+Debug)
