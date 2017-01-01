@@ -260,6 +260,12 @@ ATTR{idProduct}=="61f9", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_LG"
 
+#	IUNI
+ATTR{idVendor}!="271d", GOTO="not_IUNI"
+ENV{adb_user}="yes"
+#		U3
+ATTR{idProduct}=="bf39", SYMLINK+="android_adb"
+
 #	Micromax
 ATTR{idVendor}!="2a96", GOTO="not_Micromax"
 ENV{adb_user}="yes"
