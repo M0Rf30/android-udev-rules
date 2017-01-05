@@ -485,6 +485,14 @@ ATTR{idProduct}=="ff68", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_XiaoMi"
 
+#	Yota
+ATTR{idVendor}!="2916", GOTO="not_Yota"
+ENV{adb_user}="yes"
+#               YotaPhone2 (f003=normal,9139=debug)
+ATTR{idProduct}=="9139", SYMLINK+="android_adb"
+OTO="android_usb_rule_match"
+LABEL="not_Yota"
+
 #	Zebra
 ATTR{idVendor}!="05e0", GOTO="not_Zebra"
 ENV{adb_user}="yes"
