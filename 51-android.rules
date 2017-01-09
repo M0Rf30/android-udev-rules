@@ -22,12 +22,17 @@ LABEL="not_Acer"
 #	Actions Semiconductor Co., Ltd
 ATTR{idVendor}=="10d6", ENV{adb_user}="yes"
 #		Denver TAD 70111
-ATTR{idVendor}=="10d6", ATTR{idProduct}=="0c02", SYMLINK+="android_adb"
+ATTR{idProduct}=="0c02", SYMLINK+="android_adb"
 
 #	ADVANCE
 ATTR{idVendor}=="0a5c", ENV{adb_user}="yes"
 #		S5
 ATTR{idProduct}=="e681", SYMLINK+="android_adb"
+
+#	Amazon Lab126
+ATTR{idVendor}=="1949", ENV{adb_user}="yes"
+#		Amazon Kindle Fire
+ATTR{idProduct}=="0006", ENV{adb_adbfast}="yes"
 
 #	Archos
 ATTR{idVendor}!="0e79", GOTO="not_Archos"
@@ -41,7 +46,7 @@ ATTR{idProduct}=="1549", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Archos"
 
-#	Asus
+#	ASUSTeK
 ATTR{idVendor}!="0b05", GOTO="not_Asus"
 #		False positive - accessory
 ATTR{idProduct}=="1???", GOTO="android_usb_rules_end"
@@ -138,7 +143,6 @@ ATTR{idVendor}!="0bb4", GOTO="not_HTC"
 ENV{adb_user}="yes"
 #		fastboot mode enabled
 ATTR{idProduct}=="0fff", ENV{adb_adbfast}="yes", GOTO="android_usb_rule_match"
-
 #		ChaCha
 ATTR{idProduct}=="0cb2", ENV{adb_adbfast}="yes"
 #		Desire (Bravo)
@@ -232,11 +236,6 @@ ATTR{idVendor}=="2116", ENV{adb_user}="yes"
 #	Kyocera
 ATTR{idVendor}=="0482", ENV{adb_user}="yes"
 
-#	Lab126
-ATTR{idVendor}=="1949", ENV{adb_user}="yes"
-#		Amazon Kindle Fire
-ATTR{idProduct}=="0006", ENV{adb_adbfast}="yes"
-
 #	Lenovo
 ATTR{idVendor}=="17ef", ENV{adb_user}="yes"
 
@@ -308,7 +307,7 @@ ATTR{idVendor}=="0e8d", ENV{adb_user}="yes"
 #	NEC
 ATTR{idVendor}=="0409", ENV{adb_user}="yes"
 
-#       Nokia X
+#	Nokia X
 ATTR{idVendor}=="0421", ENV{adb_user}="yes"
 
 #	Nook
@@ -359,7 +358,6 @@ ATTR{idVendor}=="1f53", ENV{adb_user}="yes"
 ATTR{idVendor}!="04e8", GOTO="not_Samsung"
 #		False positive printer
 ATTR{idProduct}=="3???", GOTO="android_usb_rules_end"
-
 ENV{adb_user}="yes"
 #		Galaxy i5700
 ATTR{idProduct}=="681c", ENV{adb_adbfast}="yes"
@@ -439,7 +437,7 @@ LABEL="not_Sony_Ericsson"
 #	Spreadtrum
 ATTR{idVendor}=="1782", ENV{adb_user}="yes"
 
-#		T & A Mobile Phones
+#	T & A Mobile Phones
 ATTR{idVendor}=="1bbb", ENV{adb_user}="yes"
 #		Alcatel OT991D
 ATTR{idProduct}=="00f2", SYMLINK+="android_adb"
@@ -496,6 +494,12 @@ ATTR{idProduct}=="9139", SYMLINK+="android_adb"
 OTO="android_usb_rule_match"
 LABEL="not_Yota"
 
+#	Wileyfox
+ATTR{idVendor}=="2970", ENV{adb_user}="yes"
+
+#	YU
+ATTR{idVendor}=="1ebf", ENV{adb_user}="yes"
+
 #	Zebra
 ATTR{idVendor}!="05e0", GOTO="not_Zebra"
 ENV{adb_user}="yes"
@@ -510,12 +514,6 @@ ATTR{idVendor}=="19d2", ENV{adb_user}="yes"
 ATTR{idProduct}=="1351", SYMLINK+="android_adb"
 #		Blade S (Crescent, Orange San Francisco 2) (1355=normal,1354=debug)
 ATTR{idProduct}=="1354", SYMLINK+="android_adb"
-
-#	Wileyfox
-ATTR{idVendor}=="2970", ENV{adb_user}="yes"
-
-#	YU
-ATTR{idVendor}=="1ebf", ENV{adb_user}="yes"
 
 #	ZUK
 ATTR{idVendor}=="2b4c", ENV{adb_user}="yes"
