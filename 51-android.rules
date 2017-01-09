@@ -348,6 +348,8 @@ ATTR{idProduct}=="9025", SYMLINK+="android_adb"
 ATTR{idProduct}=="676?", SYMLINK+="android_adb"
 #		OnePlus Two
 ATTR{idProduct}=="9011", SYMLINK+="android_adb"
+#		OnePlus 3
+ATTR{idProduct}=="900e", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Qualcomm"
 
