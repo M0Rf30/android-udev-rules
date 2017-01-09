@@ -308,6 +308,9 @@ ATTR{idVendor}=="0e8d", ENV{adb_user}="yes"
 #	NEC
 ATTR{idVendor}=="0409", ENV{adb_user}="yes"
 
+#       Nokia X
+ATTR{idVendor}=="0421", ENV{adb_user}="yes"
+
 #	Nook
 ATTR{idVendor}=="2080", ENV{adb_user}="yes"
 
