@@ -467,10 +467,6 @@ ATTR{idProduct}=="904e", SYMLINK+="android_adb"
 ATTR{idProduct}=="9039", SYMLINK+="android_adb"
 #		Mi3
 ATTR{idProduct}=="0368", SYMLINK+="android_adb"
-#		Mi4c
-ATTR{idProduct}=="ff68", SYMLINK+="android_adb"
-#		Mi5
-ATTR{idProduct}=="ff68", SYMLINK+="android_adb"
 #		RedMi 1S WCDMA (MTP+Debug)
 ATTR{idProduct}=="1268", SYMLINK+="android_adb"
 #		RedMi / RedMi Note WCDMA (MTP+Debug)
@@ -485,7 +481,7 @@ ATTR{idProduct}=="1368", SYMLINK+="android_adb"
 ATTR{idProduct}=="1318", SYMLINK+="android_adb"
 #		RedMi / RedMi Note 4G WCDMA (Usb+Debug)
 ATTR{idProduct}=="1328", SYMLINK+="android_adb"
-#		RedMi / RedMi Note 4G CDMA (Usb+Debug)
+#		RedMi / RedMi Note 4G CDMA (Usb+Debug) / Mi4c / Mi5
 ATTR{idProduct}=="ff68", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_XiaoMi"
@@ -493,7 +489,7 @@ LABEL="not_XiaoMi"
 #	Yota
 ATTR{idVendor}!="2916", GOTO="not_Yota"
 ENV{adb_user}="yes"
-#               YotaPhone2 (f003=normal,9139=debug)
+#   YotaPhone2 (f003=normal,9139=debug)
 ATTR{idProduct}=="9139", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Yota"
