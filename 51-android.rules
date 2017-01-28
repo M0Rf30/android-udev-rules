@@ -469,6 +469,8 @@ ATTR{idProduct}=="9039", SYMLINK+="android_adb"
 ATTR{idProduct}=="0368", SYMLINK+="android_adb"
 #		Mi4c
 ATTR{idProduct}=="ff68", SYMLINK+="android_adb"
+#		Mi5
+ATTR{idProduct}=="ff68", SYMLINK+="android_adb"
 #		RedMi 1S WCDMA (MTP+Debug)
 ATTR{idProduct}=="1268", SYMLINK+="android_adb"
 #		RedMi / RedMi Note WCDMA (MTP+Debug)
@@ -495,6 +497,8 @@ ENV{adb_user}="yes"
 ATTR{idProduct}=="9139", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Yota"
+GOTO="android_usb_rule_match"
+LABEL="not_Yota"
 
 #	Wileyfox
 ATTR{idVendor}=="2970", ENV{adb_user}="yes"
@@ -516,6 +520,12 @@ ATTR{idVendor}=="19d2", ENV{adb_user}="yes"
 ATTR{idProduct}=="1351", SYMLINK+="android_adb"
 #		Blade S (Crescent, Orange San Francisco 2) (1355=normal,1354=debug)
 ATTR{idProduct}=="1354", SYMLINK+="android_adb"
+
+#	Wileyfox
+ATTR{idVendor}=="2970", ENV{adb_user}="yes"
+
+#	YU
+ATTR{idVendor}=="1ebf", ENV{adb_user}="yes"
 
 #	ZUK
 ATTR{idVendor}=="2b4c", ENV{adb_user}="yes"
