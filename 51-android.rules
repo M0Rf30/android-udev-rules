@@ -239,6 +239,14 @@ ATTR{idVendor}=="0482", ENV{adb_user}="yes"
 #	Lenovo
 ATTR{idVendor}=="17ef", ENV{adb_user}="yes"
 
+#	LeTv
+ATTR{idVendor}!="2b0e", GOTO="not_letv"
+ENV{adb_user}="yes"
+#   LEX720 LeEco Pro3 6GB (610c=normal,610d=debug, 610b=camera)
+ATTR{idProduct}=="610d", ENV{adb_fastboot}="yes"
+GOTO="android_usb_rule_match"
+LABEL="not_letv"
+
 #	LG
 ATTR{idVendor}!="1004", GOTO="not_LG"
 ENV{adb_user}="yes"
@@ -495,8 +503,6 @@ ATTR{idVendor}!="2916", GOTO="not_Yota"
 ENV{adb_user}="yes"
 #   YotaPhone2 (f003=normal,9139=debug)
 ATTR{idProduct}=="9139", SYMLINK+="android_adb"
-GOTO="android_usb_rule_match"
-LABEL="not_Yota"
 GOTO="android_usb_rule_match"
 LABEL="not_Yota"
 
