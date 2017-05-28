@@ -444,6 +444,8 @@ ATTR{idProduct}=="5176", ENV{adb_adbfast}="yes"
 #		Xperia Z1 Compact
 ATTR{idProduct}=="51a7", ENV{adb_adbfast}="yes"
 #		Xperia Z2
+ATTR{idProduct}=="51ba", ENV{adb_adbfast}="yes"
+#		Xperia Z3
 ATTR{idProduct}=="01af", ENV{adb_adbfast}="yes"
 #		Xperia Z3 Compact
 ATTR{idProduct}=="01bb", ENV{adb_adbfast}="yes"
