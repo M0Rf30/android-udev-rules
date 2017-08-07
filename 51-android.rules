@@ -364,6 +364,8 @@ ATTR{idProduct}=="9011", SYMLINK+="android_adb"
 ATTR{idProduct}=="900e", SYMLINK+="android_adb"
 #		OnePlus 3T
 ATTR{idProduct}=="676c", SYMLINK+="android_adb"
+#		OnePlus 5
+ATTR{idProduct}=="9011", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Qualcomm"
 
