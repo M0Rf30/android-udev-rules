@@ -51,6 +51,17 @@ ATTR{idVendor}!="0b05", GOTO="not_Asus"
 #		False positive - accessory
 ATTR{idProduct}=="1???", GOTO="android_usb_rules_end"
 ENV{adb_user}="yes"
+#		Zenphone 2 (ZE500CL) (7770=adb 7773=mtp,adb 7777=ptp,adb  7775=rndis,adb,mass_storage 5F03=mtp,adb,pclink,mass_storage 5F07=ptp,adb,pclink 5F05=rndis,adb,pclink,mass_storage
+ATTR{idProduct}=="7770", SYMLINK+="android_adb"
+ATTR{idProduct}=="7773", SYMLINK+="android_adb"
+ATTR{idProduct}=="7777", SYMLINK+="android_adb"
+ATTR{idProduct}=="7775", SYMLINK+="android_adb"
+ATTR{idProduct}=="5F03", SYMLINK+="android_adb"
+ATTR{idProduct}=="5F07", SYMLINK+="android_adb"
+ATTR{idProduct}=="5F05", SYMLINK+="android_adb"
+#		Zenphone 4 (581f=mtp,adb 583f=rndis,adb)
+ATTR{idProduct}=="581f", SYMLINK+="android_adb"
+ATTR{idProduct}=="583f", SYMLINK+="android_adb"
 #		Zenphone 5 (4c90=normal,4c91=debug,4daf=Fastboot)
 ATTR{idProduct}=="4c91", SYMLINK+="android_adb"
 ATTR{idProduct}=="4daf", SYMLINK+="android_fastboot"
