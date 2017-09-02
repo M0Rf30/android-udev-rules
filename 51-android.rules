@@ -249,7 +249,7 @@ ATTR{idVendor}=="24e3", ENV{adb_user}="yes"
 ATTR{idVendor}=="2116", ENV{adb_user}="yes"
 
 #	Kyocera
-ATTR{idVendor}=="0482", ENV{adb_user}="yes"
+#ATTR{idVendor}=="0482", ENV{adb_user}="yes"
 
 #	Lenovo
 ATTR{idVendor}=="17ef", ENV{adb_user}="yes"
