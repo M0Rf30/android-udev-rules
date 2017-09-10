@@ -220,6 +220,9 @@ ATTR{idProduct}=="1021", ENV{adb_adbfast}="yes"
 ATTR{idProduct}=="1057", SYMLINK+="android_adb"
 #		HiKey usbnet
 ATTR{idProduct}=="1050", SYMLINK+="android_adb"
+#		Honor 6
+ATTR{idProduct}=="103a", SYMLINK+="android_adb"
+ATTR{idProduct}=="1051", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 #		MediaPad M2-A01L
 ATTR{idProduct}=="1052", SYMLINK+="android_adb"
 #		Huawei Watch
