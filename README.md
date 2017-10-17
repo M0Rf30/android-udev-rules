@@ -15,7 +15,7 @@ On Arch it should be enough to follow the [instructions for connecting a device 
 ### Ubuntu
 
     # Clone this repository
-    git clone git@github.com:M0Rf30/android-udev-rules.git
+    git clone https://github.com/M0Rf30/android-udev-rules.git
     # Create a sym-link to the rules file
     sudo cp android-udev-rules/51-android.rules /etc/udev/rules.d/
     # Change file permissions
