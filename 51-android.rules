@@ -388,10 +388,10 @@ ATTR{idProduct}=="9011", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Qualcomm"
 
-#       Research In Motion, Ltd.
+#	Research In Motion, Ltd.
 ATTR{idVendor}!="0fca", GOTO="not_RIM"
 ENV{adb_user}="yes"
-#   BlackBerry DTEK60
+#		BlackBerry DTEK60
 ATTR{idProduct}=="8042", ENV{adb_fastboot}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_RIM"
