@@ -83,7 +83,7 @@ GOTO="android_usb_rule_match"
 LABEL="not_BQ"
 
 #	Dell
-#ATTR{idVendor}=="413c", ENV{adb_user}="yes"
+ATTR{idVendor}=="413c", ENV{adb_user}="yes"
 
 #	Fairphone 2
 ATTR{idVendor}=="2ae5", ENV{adb_user}="yes"
