@@ -375,6 +375,9 @@ ATTR{idVendor}=="1d4d", ENV{adb_user}="yes"
 #	Philips
 ATTR{idVendor}=="0471", ENV{adb_user}="yes"
 
+# Pico i.MX7 Dual Development Board
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", MODE="0660", GROUP="plugdev", SYMLINK+="android%n"%
+
 #	PMC-Sierra
 ATTR{idVendor}=="04da", ENV{adb_user}="yes"
 
