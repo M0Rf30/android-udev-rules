@@ -109,19 +109,26 @@ ATTR{idVendor}=="091e", ENV{adb_user}="yes"
 #	Google
 ATTR{idVendor}!="18d1", GOTO="not_Google"
 ENV{adb_user}="yes"
-#               Nexus 6P (4ee0=fastboot)
-ATTR{idProduct}=="4ee7", SYMLINK+="android_adb"
-#		Nexus 4, Nexus 7 2013
+#               Nexus, Pixel, Pixel XL, Pixel 2, Pixel 2XL (4ee2=mtp,adb 4ee4=rndis,adb 4ee6=ptp,adb 4ee7=adb 4ee9=midi,adb 2d01=accessory,adb 2d03=audio_source,adb 2d05=accessory,audio_source,adb)
+#               See https://android.googlesource.com/device/google/wahoo/+/master/init.hardware.usb.rc
 ATTR{idProduct}=="4ee2", SYMLINK+="android_adb"
+ATTR{idProduct}=="4ee4", SYMLINK+="android_adb"
+ATTR{idProduct}=="4ee6", SYMLINK+="android_adb"
+ATTR{idProduct}=="4ee7", SYMLINK+="android_adb"
+ATTR{idProduct}=="4ee9", SYMLINK+="android_adb"
+ATTR{idProduct}=="2d01", SYMLINK+="android_adb"
+ATTR{idProduct}=="2d03", SYMLINK+="android_adb"
+ATTR{idProduct}=="2d05", SYMLINK+="android_adb"
 ATTR{idProduct}=="4ee0", SYMLINK+="android_fastboot"
 #		Nexus 7
 ATTR{idProduct}=="4e42", SYMLINK+="android_adb"
 ATTR{idProduct}=="4e40", SYMLINK+="android_fastboot"
 #		Nexus 5, Nexus 10
 ATTR{idProduct}=="4ee1", ENV{adb_adbfast}="yes"
-#		Nexus S
-ATTR{idProduct}=="4e21"
+#		Nexus S (4e22=mass_storage,adb 4e24=rndis,adb)
+#               See https://android.googlesource.com/device/samsung/crespo/+/android-4.1.2_r2.1/init.herring.usb.rc
 ATTR{idProduct}=="4e22", SYMLINK+="android_adb"
+ATTR{idProduct}=="4e24", SYMLINK+="android_adb"
 ATTR{idProduct}=="4e20", SYMLINK+="android_fastboot"
 #		Galaxy Nexus
 ATTR{idProduct}=="4e30", ENV{adb_adbfast}="yes"
@@ -431,8 +438,11 @@ ATTR{idProduct}=="68c3", MODE="0660"
 ATTR{idProduct}=="689e", ENV{adb_adbfast}="yes"
 #		Galaxy Tab
 ATTR{idProduct}=="6877", ENV{adb_adbfast}="yes"
-#		Galaxy Nexus (GSM)
-ATTR{idProduct}=="685c"
+#		Galaxy Nexus (GSM) (6860=mtp,adb 6864=rndis,adb 6866=ptp,adb)
+#               See https://android.googlesource.com/device/samsung/tuna/+/android-4.3.1_r1/init.tuna.usb.rc
+ATTR{idProduct}=="6860", SYMLINK+="android_adb"
+ATTR{idProduct}=="6864", SYMLINK+="android_adb"
+ATTR{idProduct}=="6866", SYMLINK+="android_adb"
 #		Galaxy Core, Tab 10.1, i9100 S2, i9300 S3, N5100 Note (8.0), Galaxy S3 SHW-M440S 3G (Korea only)
 ATTR{idProduct}=="6860", SYMLINK+="android_adb"
 ATTR{idProduct}=="685e", ENV{adb_adbfast}="yes"
