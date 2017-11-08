@@ -243,6 +243,9 @@ ATTR{idVendor}=="8087", ATTR{idProduct}=="0a16", SYMLINK+="android_adb", ENV{adb
 #		Chuwi Hi 10 Pro (HQ64)
 ATTR{idVendor}=="8087", ATTR{idProduct}=="2a65", SYMLINK+="android_adb", ENV{adb_user}="yes"
 ATTR{idVendor}=="8087", ATTR{idProduct}=="07ef", SYMLINK+="android_adb", ENV{adb_user}="yes"
+#		Reference Boards using kernelflinger
+#		See https://github.com/intel/kernelflinger/blob/master/libefiusb/usb.c#L56
+ATTR{idVendor}=="8087", ATTR{idProduct}=="09ef", ENV{adb_adbfast}="yes"
 
 #	IUNI
 ATTR{idVendor}!="271d", GOTO="not_IUNI"
