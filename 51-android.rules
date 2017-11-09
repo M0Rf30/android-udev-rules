@@ -406,6 +406,9 @@ ATTR{idProduct}=="900e", SYMLINK+="android_adb"
 ATTR{idProduct}=="676c", SYMLINK+="android_adb"
 #		OnePlus 5
 ATTR{idProduct}=="9011", SYMLINK+="android_adb"
+#		Xiaomi A1 (90bb=midi+adb)
+#		See https://gist.github.com/ganadist/4d22558f80a59311f859d57171932dcb
+ATTR{idProduct}=="90bb", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Qualcomm"
 
@@ -552,8 +555,12 @@ ATTR{idProduct}=="1368", SYMLINK+="android_adb"
 ATTR{idProduct}=="1318", SYMLINK+="android_adb"
 #		RedMi / RedMi Note 4G WCDMA (Usb+Debug)
 ATTR{idProduct}=="1328", SYMLINK+="android_adb"
-#		Mi Mix
+#		Mi Mix / A1 (ff88=rndis+adb, ff18=ptp+adb, ff48=mtp+adb, ff28=storage+adb)
+#		See https://gist.github.com/ganadist/4d22558f80a59311f859d57171932dcb
+ATTR{idProduct}=="ff88", SYMLINK+="android_adb"
+ATTR{idProduct}=="ff18", SYMLINK+="android_adb"
 ATTR{idProduct}=="ff48", SYMLINK+="android_adb"
+ATTR{idProduct}=="ff28", SYMLINK+="android_adb"
 #		RedMi / RedMi Note 4G CDMA (Usb+Debug) / Mi4c / Mi5
 ATTR{idProduct}=="ff68", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
