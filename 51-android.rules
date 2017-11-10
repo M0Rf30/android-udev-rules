@@ -306,12 +306,12 @@ GOTO="android_usb_rule_match"
 LABEL="not_LG"
 
 #	Meizu
-ATTR{idVendor}!="2a45”, GOTO="not_Meizu”
+ATTR{idVendor}!="2a45", GOTO="not_Meizu"
 ENV{adb_user}="yes"
 #		MX6
-ATTR{idProduct}==“0c02”, SYMLINK+="android_adb"
+ATTR{idProduct}=="0c02", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
-LABEL="not_Meizu”
+LABEL="not_Meizu"
 
 #	Micromax
 ATTR{idVendor}!="2a96", GOTO="not_Micromax"
