@@ -137,6 +137,8 @@ ATTR{idProduct}=="4e12", SYMLINK+="android_adb"
 ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
 #		Generic and unspecified debug interface
 ATTR{idProduct}=="d00d", SYMLINK+="android_fastboot"
+# 		Pico i.MX7 Dual Development Board
+ATTR{idProduct}=="4ee7", SYMLINK+="android_adb"
 #		Include: Samsung Galaxy Nexus (GSM)
 ATTR{idProduct}=="4e30", SYMLINK+="android_fastboot"
 #		Recovery adb entry for Nexus Family (orig d001, OP3 has 18d1:d002)
@@ -245,7 +247,7 @@ ATTR{idVendor}=="8087", ATTR{idProduct}=="2a65", SYMLINK+="android_adb", ENV{adb
 ATTR{idVendor}=="8087", ATTR{idProduct}=="07ef", SYMLINK+="android_adb", ENV{adb_user}="yes"
 #		Reference Boards using kernelflinger
 #		See https://github.com/intel/kernelflinger/blob/master/libefiusb/usb.c#L56
-ATTR{idVendor}=="8087", ATTR{idProduct}=="09ef", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="09ef", ENV{adb_adbfast}="yes"
 
 #	IUNI
 ATTR{idVendor}!="271d", GOTO="not_IUNI"
@@ -384,9 +386,6 @@ ATTR{idVendor}=="1d4d", ENV{adb_user}="yes"
 
 #	Philips
 ATTR{idVendor}=="0471", ENV{adb_user}="yes"
-
-# Pico i.MX7 Dual Development Board
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", MODE="0660", GROUP="plugdev", SYMLINK+="android%n"%
 
 #	PMC-Sierra
 ATTR{idVendor}=="04da", ENV{adb_user}="yes"
