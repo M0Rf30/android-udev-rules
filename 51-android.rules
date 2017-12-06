@@ -369,13 +369,22 @@ ATTR{idVendor}=="0955", ENV{adb_user}="yes"
 #               Audi SDIS Rear Seat Entertainment Tablet
 ATTR{idProduct}=="7000", SYMLINK+="android_fastboot"
 
-#   OnePlus(Oreo)
+#	OnePlus(Oreo)
 ATTR{idVendor}!="2a70", GOTO="not_OnePlus"
 ENV{adb_user}="yes"
-#       OnePlus 3
+# Charging mode
 ATTR{idProduct}=="4ee7", SYMLINK+="android_adb"
+# MTP mode
+ATTR{idProduct}=="9011", SYMLINK+="android_adb"
+# PTP mode
+ATTR{idProduct}=="904e", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_OnePlus"
+
+#	OnePlus 3T w/ Oreo MIDI mode
+ATTR{idVendor}!="05c6", GOTO="not_OnePlus_MIDI"
+ATTR{idProduct}=="90bb", SYMLINK+="android_adb"
+LABEL="not_OnePlus_MIDI"
 
 #	Oppo
 ATTR{idVendor}=="22d9", ENV{adb_user}="yes"
@@ -418,23 +427,6 @@ ATTR{idProduct}=="9011", SYMLINK+="android_adb"
 ATTR{idProduct}=="90bb", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Qualcomm"
-
-# OnePlus 3T with Android Oreo
-ATTR{idVendor}!="2a70", GOTO="not_OnePlus_bitch"
-ENV{adb_user}="yes"
-# Charging mode
-ATTR{idProduct}=="4ee7", SYMLINK+="android_adb"
-# MTP mode
-ATTR{idProduct}=="9011", SYMLINK+="android_adb"
-# PTP mode
-ATTR{idProduct}=="904e", SYMLINK+="android_adb"
-GOTO="android_usb_rule_match"
-LABEL="not_OnePlus_bitch"
-
-# OnePlus 3T w/ Oreo MIDI mode
-ATTR{idVendor}!="05c6", GOTO="not_OnePlus_MIDI_bitch"
-ATTR{idProduct}=="90bb", SYMLINK+="android_adb"
-LABEL="not_OnePlus_MIDI_bitch"
 
 #	Research In Motion, Ltd.
 ATTR{idVendor}!="0fca", GOTO="not_RIM"
