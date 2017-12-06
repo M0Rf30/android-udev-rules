@@ -411,6 +411,23 @@ ATTR{idProduct}=="90bb", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Qualcomm"
 
+# OnePlus 3T with Android Oreo
+ATTR{idVendor}!="2a70", GOTO="not_OnePlus_bitch"
+ENV{adb_user}="yes"
+# Charging mode
+ATTR{idProduct}=="4ee7", SYMLINK+="android_adb"
+# MTP mode
+ATTR{idProduct}=="9011", SYMLINK+="android_adb"
+# PTP mode
+ATTR{idProduct}=="904e", SYMLINK+="android_adb"
+GOTO="android_usb_rule_match"
+LABEL="not_OnePlus_bitch"
+
+# OnePlus 3T w/ Oreo MIDI mode
+ATTR{idVendor}!="05c6", GOTO="not_OnePlus_MIDI_bitch"
+ATTR{idProduct}=="90bb", SYMLINK+="android_adb"
+LABEL="not_OnePlus_MIDI_bitch"
+
 #	Research In Motion, Ltd.
 ATTR{idVendor}!="0fca", GOTO="not_RIM"
 ENV{adb_user}="yes"
