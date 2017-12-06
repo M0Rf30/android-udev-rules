@@ -369,6 +369,14 @@ ATTR{idVendor}=="0955", ENV{adb_user}="yes"
 #               Audi SDIS Rear Seat Entertainment Tablet
 ATTR{idProduct}=="7000", SYMLINK+="android_fastboot"
 
+#   OnePlus(Oreo)
+ATTR{idVendor}!="2a70", GOTO="not_OnePlus"
+ENV{adb_user}="yes"
+#       OnePlus 3
+ATTR{idProduct}=="4ee7", SYMLINK+="android_adb"
+GOTO="android_usb_rule_match"
+LABEL="not_OnePlus"
+
 #	Oppo
 ATTR{idVendor}=="22d9", ENV{adb_user}="yes"
 #		Find 5
@@ -588,11 +596,14 @@ GOTO="android_usb_rule_match"
 LABEL="not_Zebra"
 
 #	ZTE
-ATTR{idVendor}=="19d2", ENV{adb_user}="yes"
+ATTR{idVendor}!="19d2", GOTO="not_ZTE"
+ENV{adb_user}="yes"
 #		Blade (1353=normal,1351=debug)
 ATTR{idProduct}=="1351", SYMLINK+="android_adb"
 #		Blade S (Crescent, Orange San Francisco 2) (1355=normal,1354=debug)
 ATTR{idProduct}=="1354", SYMLINK+="android_adb"
+GOTO="android_usb_rule_match"
+LABEL="not_ZTE"
 
 #	Wileyfox
 ATTR{idVendor}=="2970", ENV{adb_user}="yes"
