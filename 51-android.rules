@@ -85,6 +85,11 @@ LABEL="not_BQ"
 #	Dell
 ATTR{idVendor}=="413c", ENV{adb_user}="yes"
 
+#	Essential
+ATTR{idVendor}=="2e17", ENV{adb_user}="yes"
+#		Essential PH-1
+ATTR{idVendor}=="2e17", ATTR{idProduct}=="c009", SYMLINK+="android_adb"
+
 #	Fairphone 2
 ATTR{idVendor}=="2ae5", ENV{adb_user}="yes"
 
