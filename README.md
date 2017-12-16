@@ -22,8 +22,11 @@ On Arch it should be enough to follow the [instructions for connecting a device 
     sudo ln -sf $PWD/android-udev-rules/51-android.rules /etc/udev/rules.d/51-android.rules
     # Change file permissions
     sudo chmod a+r /etc/udev/rules.d/51-android.rules
+    # If adbusers group already exists remove old adbusers group
+    groupdel adbusers
     # add the adbusers group if it's doesn't already exist
     sudo cp android-udev.conf to /usr/lib/sysusers.d/
+    sudo systemd-sysusers
     # Add your user to the adbusers group
     sudo usermod -a -G adbusers $(whoami)
     # Restart UDEV
