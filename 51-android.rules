@@ -86,9 +86,13 @@ LABEL="not_BQ"
 ATTR{idVendor}=="413c", ENV{adb_user}="yes"
 
 #	Essential
-ATTR{idVendor}=="2e17", ENV{adb_user}="yes"
+ATTR{idVendor}!="2e17", GOTO="not_Essential"
+ENV{adb_user}="yes"
 #		Essential PH-1
-ATTR{idVendor}=="2e17", ATTR{idProduct}=="c009", SYMLINK+="android_adb"
+ATTR{idProduct}=="c009", SYMLINK+="android_adb"
+ATTR{idProduct}=="c030", SYMLINK+="android_adb"
+GOTO="android_usb_rule_match"
+LABEL="not_Essential"
 
 #	Fairphone 2
 ATTR{idVendor}=="2ae5", ENV{adb_user}="yes"
