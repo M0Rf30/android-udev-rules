@@ -355,6 +355,9 @@ ATTR{idProduct}=="2e76", ENV{adb_adbfast}="yes"
 ATTR{idProduct}=="2e80", ENV{adb_adbfast}="yes"
 #		Moto E/G (Global GSM)
 ATTR{idProduct}=="2e82", ENV{adb_adbfast}="yes"
+# Motorola (DROID TURBO 2) 
+# [a.k.a. the "infamous" phone that never works on Linux or Windows 10!]
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="2ea4", ENV{adb_user}="yes", ENV{adb_adbfast}="yes", MODE="0660" GROUP="plugdev", SYMLINK+="android%n"
 GOTO="android_usb_rule_match"
 LABEL="not_Motorola"
 
