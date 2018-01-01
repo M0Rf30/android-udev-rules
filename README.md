@@ -16,16 +16,17 @@ On Arch it should be enough to follow the [instructions for connecting a device 
 
     # Clone this repository
     git clone https://github.com/M0Rf30/android-udev-rules.git
+    cd android-udev-rules
     # Copy rules file
-    sudo cp -v ./android-udev-rules/51-android.rules /etc/udev/rules.d/51-android.rules
-    # OR oreate a sym-link to the rules file - choose this option if you'd like to update your udev rules using git.
-    sudo ln -sf $PWD/android-udev-rules/51-android.rules /etc/udev/rules.d/51-android.rules
+    sudo cp -v 51-android.rules /etc/udev/rules.d/51-android.rules
+    # OR create a sym-link to the rules file - choose this option if you'd like to update your udev rules using git.
+    sudo ln -sf 51-android.rules /etc/udev/rules.d/51-android.rules
     # Change file permissions
     sudo chmod a+r /etc/udev/rules.d/51-android.rules
     # If adbusers group already exists remove old adbusers group
     groupdel adbusers
     # add the adbusers group if it's doesn't already exist
-    sudo cp android-udev.conf to /usr/lib/sysusers.d/
+    sudo mkdir -p /usr/lib/sysusers.d/ && sudo cp android-udev.conf /usr/lib/sysusers.d/
     sudo systemd-sysusers
     # Add your user to the adbusers group
     sudo usermod -a -G adbusers $(whoami)
