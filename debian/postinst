@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Setup permissions
+chmod a+r /etc/udev/rules.d/51-android.rules
+
+# Make sure adbusers is setup properly
+groupadd adbusers
+usermod -a -G adbusers $(whoami)
+
+# Reload udev and reset adb
+udevadm control --reload-rules
+service udev restart
+adb kill-server
