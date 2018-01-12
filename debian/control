@@ -1,0 +1,12 @@
+Source: android-udev-rules
+Section: developer-tools
+Priority: extra
+Maintainer: Simon Sickle <simon@simonsickle.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+Vcs-Git: https://github.com/M0Rf30/android-udev-rules.git
+
+Package: android-udev-rules
+Architecture: any
+Depends: android-tools-adb, android-tools-fastboot
+Description: udev rules to get ADB working

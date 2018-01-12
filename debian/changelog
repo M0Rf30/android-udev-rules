@@ -1,0 +1,5 @@
+android-udev-rules (0.0.1-1) stable; urgency=low
+
+        * First build of a deb
+
+        -- builder <builder@wheezy-builder> Mon, 24 Mar 2014 16:05:35 +0100
