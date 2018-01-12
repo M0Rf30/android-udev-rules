@@ -355,6 +355,8 @@ ATTR{idProduct}=="2e76", ENV{adb_adbfast}="yes"
 ATTR{idProduct}=="2e80", ENV{adb_adbfast}="yes"
 #		Moto E/G (Global GSM)
 ATTR{idProduct}=="2e82", ENV{adb_adbfast}="yes"
+#		Droid Turbo 2) 
+ATTR{idProduct}=="2ea4", ENV{adb_adbfast}="yes", SYMLINK+="android%n"
 GOTO="android_usb_rule_match"
 LABEL="not_Motorola"
 
@@ -432,7 +434,6 @@ ATTR{idProduct}=="676c", SYMLINK+="android_adb"
 #		OnePlus 5
 ATTR{idProduct}=="9011", SYMLINK+="android_adb"
 #		Xiaomi A1 (90bb=midi+adb)
-#		See https://gist.github.com/ganadist/4d22558f80a59311f859d57171932dcb
 ATTR{idProduct}=="90bb", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Qualcomm"
@@ -470,7 +471,6 @@ ATTR{idProduct}=="689e", ENV{adb_adbfast}="yes"
 #		Galaxy Tab
 ATTR{idProduct}=="6877", ENV{adb_adbfast}="yes"
 #		Galaxy Nexus (GSM) (6860=mtp,adb 6864=rndis,adb 6866=ptp,adb)
-#               See https://android.googlesource.com/device/samsung/tuna/+/android-4.3.1_r1/init.tuna.usb.rc
 ATTR{idProduct}=="6860", SYMLINK+="android_adb"
 ATTR{idProduct}=="6864", SYMLINK+="android_adb"
 ATTR{idProduct}=="6866", SYMLINK+="android_adb"
@@ -581,7 +581,6 @@ ATTR{idProduct}=="1318", SYMLINK+="android_adb"
 #		RedMi / RedMi Note 4G WCDMA (Usb+Debug)
 ATTR{idProduct}=="1328", SYMLINK+="android_adb"
 #		Mi Mix / A1 (ff88=rndis+adb, ff18=ptp+adb, ff48=mtp+adb, ff28=storage+adb)
-#		See https://gist.github.com/ganadist/4d22558f80a59311f859d57171932dcb
 ATTR{idProduct}=="ff88", SYMLINK+="android_adb"
 ATTR{idProduct}=="ff18", SYMLINK+="android_adb"
 ATTR{idProduct}=="ff48", SYMLINK+="android_adb"
