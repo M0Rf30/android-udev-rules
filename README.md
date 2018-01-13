@@ -33,6 +33,8 @@ On Arch it should be enough to follow the [instructions for connecting a device 
     # Restart UDEV
     sudo udevadm control --reload-rules
     sudo service udev restart
+    # OR on Fedora:
+    sudo systemctl restart systemd-udevd.service
     # Restart the ADB server
     adb kill-server
     # Replug your Android device and verify that USB debugging is enabled in developer options
