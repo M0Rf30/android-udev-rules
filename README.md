@@ -27,7 +27,7 @@ On Arch it should be enough to follow the [instructions for connecting a device 
     groupdel adbusers
     # add the adbusers group if it's doesn't already exist
     sudo mkdir -p /usr/lib/sysusers.d/ && sudo cp android-udev.conf /usr/lib/sysusers.d/
-    sudo systemd-sysusers
+    sudo systemd-sysusers (1)
     # Add your user to the adbusers group
     sudo usermod -a -G adbusers $(whoami)
     # Restart UDEV
@@ -41,6 +41,7 @@ On Arch it should be enough to follow the [instructions for connecting a device 
     adb devices
     # You should now see your device
 
+(1) Not available on Ubuntu 16.04 and mint 18, use `sudo groupadd adbusers` instead.
 
 ## To Contribute:
 
