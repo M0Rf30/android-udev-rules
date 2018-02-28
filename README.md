@@ -28,6 +28,8 @@ On Arch it should be enough to follow the [instructions for connecting a device 
     # add the adbusers group if it's doesn't already exist
     sudo mkdir -p /usr/lib/sysusers.d/ && sudo cp android-udev.conf /usr/lib/sysusers.d/
     sudo systemd-sysusers (1)
+    # OR on Fedora:
+    groupadd adbusers
     # Add your user to the adbusers group
     sudo usermod -a -G adbusers $(whoami)
     # Restart UDEV
