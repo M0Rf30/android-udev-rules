@@ -20,7 +20,7 @@ On Arch it should be enough to follow the [instructions for connecting a device 
     # Copy rules file
     sudo cp -v 51-android.rules /etc/udev/rules.d/51-android.rules
     # OR create a sym-link to the rules file - choose this option if you'd like to update your udev rules using git.
-    sudo ln -sf 51-android.rules /etc/udev/rules.d/51-android.rules
+    sudo ln -sf "$PWD"/51-android.rules /etc/udev/rules.d/51-android.rules
     # Change file permissions
     sudo chmod a+r /etc/udev/rules.d/51-android.rules
     # If adbusers group already exists remove old adbusers group
