@@ -366,6 +366,9 @@ ATTR{idVendor}=="0e8d", ENV{adb_user}="yes"
 #	NEC
 ATTR{idVendor}=="0409", ENV{adb_user}="yes"
 
+#	Nextbit
+ATTR{idVendor}=="2c3f", ENV{adb_user}="yes"
+
 #	Nokia X
 ATTR{idVendor}=="0421", ENV{adb_user}="yes"
 
@@ -630,9 +633,6 @@ ATTR{idVendor}=="1ebf", ENV{adb_user}="yes"
 
 #	ZUK
 ATTR{idVendor}=="2b4c", ENV{adb_user}="yes"
-
-#	Nextbit Robin
-ATTR{idVendor}=="2c3f", ENV{adb_user}="yes"
 
 # Skip other vendor tests
 LABEL="android_usb_rule_match"
