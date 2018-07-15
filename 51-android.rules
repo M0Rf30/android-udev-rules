@@ -631,6 +631,9 @@ ATTR{idVendor}=="1ebf", ENV{adb_user}="yes"
 #	ZUK
 ATTR{idVendor}=="2b4c", ENV{adb_user}="yes"
 
+#	Nextbit Robin
+ATTR{idVendor}=="2c3f", ENV{adb_user}="yes"
+
 # Skip other vendor tests
 LABEL="android_usb_rule_match"
 
