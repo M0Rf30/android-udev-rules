@@ -5,6 +5,10 @@
 # Skip this section below if this device is not connected by USB
 SUBSYSTEM!="usb", GOTO="android_usb_rules_end"
 
+LABEL="android_universal_rule"
+ENV{ID_USB_INTERFACES}!="*:ff420?:*", GOTO="android_usb_rules_begin"
+ACTION=="add", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ENV{ID_USB_INTERFACES}=="*:ff420?:*", MODE="0666", GROUP="plugdev", SYMLINK+="android/$env{ID_SERIAL_SHORT}"
+
 LABEL="android_usb_rules_begin"
 # Devices listed here in android_usb_rules_{begin...end} are connected by USB
 #	Acer
