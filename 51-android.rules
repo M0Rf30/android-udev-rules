@@ -249,6 +249,8 @@ ATTR{idProduct}=="1051", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_ME
 ATTR{idProduct}=="1052", SYMLINK+="android_adb"
 #		Huawei Watch
 ATTR{idProduct}=="1c2c", SYMLINK+="android_adb"
+#		Mate 9
+ATTR{idProduct}=="107e", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Huawei"
 
