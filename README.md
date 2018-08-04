@@ -51,10 +51,3 @@ On Arch it should be enough to follow the [instructions for connecting a device 
 2. Make your edits.
 3. TEST THEM!
 4. Create a pull request.
-
-
-## Note
-
-Some devices (particularly MediaTek and Xiaomi) additionally require an entry in `$HOME/.android/adb_usb.ini`. You can use the adb_usb.ini from this repository:
-
-    ln -s `pwd`/adb_usb.ini $HOME/.android/
