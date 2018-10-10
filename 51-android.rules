@@ -361,6 +361,8 @@ ATTR{idProduct}=="2e76", ENV{adb_adbfast}="yes"
 ATTR{idProduct}=="2e80", ENV{adb_adbfast}="yes"
 #		Moto E/G (Global GSM)
 ATTR{idProduct}=="2e82", ENV{adb_adbfast}="yes"
+#		Moto x4
+ATTR{idProduct}=="2e81", ENV{adb_adbfast}="yes"
 #		Droid Turbo 2) 
 ATTR{idProduct}=="2ea4", ENV{adb_adbfast}="yes", SYMLINK+="android%n"
 GOTO="android_usb_rule_match"
