@@ -7,7 +7,8 @@ SUBSYSTEM!="usb", GOTO="android_usb_rules_end"
 
 LABEL="android_universal_rule"
 ENV{ID_USB_INTERFACES}!="*:ff420?:*", GOTO="android_usb_rules_begin"
-ACTION=="add", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ENV{ID_USB_INTERFACES}=="*:ff420?:*", MODE="0666", GROUP="plugdev", SYMLINK+="android/$env{ID_SERIAL_SHORT}"
+ACTION=="add", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ENV{ID_USB_INTERFACES}=="*:ff420?:*", MODE="0660", GROUP="adbusers", SYMLINK+="android/$env{ID_SERIAL_SHORT}"
+GOTO="android_usb_rule_match"
 
 LABEL="android_usb_rules_begin"
 # Devices listed here in android_usb_rules_{begin...end} are connected by USB
@@ -287,7 +288,7 @@ ATTR{idVendor}=="17ef", ENV{adb_user}="yes"
 #	LeTv
 ATTR{idVendor}!="2b0e", GOTO="not_letv"
 ENV{adb_user}="yes"
-#   LEX720 LeEco Pro3 6GB (610c=normal,610d=debug, 610b=camera)
+#       LEX720 LeEco Pro3 6GB (610c=normal,610d=debug, 610b=camera)
 ATTR{idProduct}=="610d", ENV{adb_fastboot}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_letv"
@@ -388,25 +389,20 @@ ATTR{idVendor}=="2080", ENV{adb_user}="yes"
 
 #	Nvidia
 ATTR{idVendor}=="0955", ENV{adb_user}="yes"
-#               Audi SDIS Rear Seat Entertainment Tablet
+#       Audi SDIS Rear Seat Entertainment Tablet
 ATTR{idProduct}=="7000", SYMLINK+="android_fastboot"
 
 #	OnePlus(Oreo)
 ATTR{idVendor}!="2a70", GOTO="not_OnePlus"
 ENV{adb_user}="yes"
-# Charging mode
+#       Charging mode
 ATTR{idProduct}=="4ee7", SYMLINK+="android_adb"
-# MTP mode
+#       MTP mode
 ATTR{idProduct}=="9011", SYMLINK+="android_adb"
-# PTP mode
+#       PTP mode
 ATTR{idProduct}=="904e", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_OnePlus"
-
-#	OnePlus 3T w/ Oreo MIDI mode
-ATTR{idVendor}!="05c6", GOTO="not_OnePlus_MIDI"
-ATTR{idProduct}=="90bb", SYMLINK+="android_adb"
-LABEL="not_OnePlus_MIDI"
 
 #	Oppo
 ATTR{idVendor}=="22d9", ENV{adb_user}="yes"
@@ -442,6 +438,8 @@ ATTR{idProduct}=="9011", SYMLINK+="android_adb"
 ATTR{idProduct}=="900e", SYMLINK+="android_adb"
 #		OnePlus 3T
 ATTR{idProduct}=="676c", SYMLINK+="android_adb"
+#       OnePlus 3T w/ Oreo MIDI mode
+ATTR{idProduct}=="90bb", SYMLINK+="android_adb"
 #		OnePlus 5
 ATTR{idProduct}=="9011", SYMLINK+="android_adb"
 #		Xiaomi A1 (90bb=midi+adb)
