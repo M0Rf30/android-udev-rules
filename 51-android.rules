@@ -542,6 +542,8 @@ ATTR{idProduct}=="01af", ENV{adb_adbfast}="yes"
 ATTR{idProduct}=="01bb", ENV{adb_adbfast}="yes"
 #		Xperia Z3+ Dual
 ATTR{idProduct}=="51c9", ENV{adb_adbfast}="yes"
+#		Xperia XZ
+ATTR{idProduct}=="51e7", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Sony_Ericsson"
 
