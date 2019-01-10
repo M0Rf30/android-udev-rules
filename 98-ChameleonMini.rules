@@ -1,0 +1,8 @@
+# Rule for ChameleonMini RFID Research tool (RevG)
+ATTRS{product}=="Chameleon-Mini", SUBSYSTEMS=="usb", ATTRS{idVendor}=="16d0", ATTRS{idProduct}=="04b2", GROUP="plugdev", MODE="0666", SYMLINK+="chameleonG", ENV{ID_MM_DEVICE_IGNORE}="1"
+
+# Rule for ChameleonMini RFID Research tool (RevE)
+ATTRS{product}=="Chameleon-Mini", SUBSYSTEMS=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2044", GROUP="plugdev", MODE="0666", SYMLINK+="chameleonE", ENV{ID_MM_DEVICE_IGNORE}="1"
+
+# DFU mode (i.e., flashing the devices)
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2fde", GROUP="users", MODE="0666"
