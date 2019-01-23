@@ -253,6 +253,7 @@ ATTR{idProduct}=="1052", SYMLINK+="android_adb"
 ATTR{idProduct}=="1c2c", SYMLINK+="android_adb"
 #		Mate 9
 ATTR{idProduct}=="107e", SYMLINK+="android_adb"
+ATTR{idProduct}=="107d", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Huawei"
 
