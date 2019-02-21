@@ -323,6 +323,8 @@ ATTR{idProduct}=="61b4", SYMLINK+="android_adb"
 ATTR{idProduct}=="61a6", SYMLINK+="android_adb"
 #		4X HD P880
 ATTR{idProduct}=="61f9", SYMLINK+="android_adb"
+#		L90 D410
+ATTR{idProduct}=="6300", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_LG"
 
