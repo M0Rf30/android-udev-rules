@@ -9,7 +9,7 @@ These rules refer to [Run Apps on a Hardware Device - Android Studio](https://de
 
 ### Arch
 
-On Arch it should be enough to follow the [instructions for connecting a device on the Arch wiki](https://wiki.archlinux.org/index.php/android#Connect_device). There's no need to clone this repository.
+On Arch it should be enough to follow the [instructions for connecting a device on the Arch wiki](https://wiki.archlinux.org/index.php/Android_Debug_Bridge). There's no need to clone this repository.
 
 
 ### Ubuntu
