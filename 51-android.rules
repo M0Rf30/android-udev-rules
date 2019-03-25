@@ -448,8 +448,10 @@ ATTR{idProduct}=="900e", SYMLINK+="android_adb"
 ATTR{idProduct}=="676c", SYMLINK+="android_adb"
 #       OnePlus 3T w/ Oreo MIDI mode
 ATTR{idProduct}=="90bb", SYMLINK+="android_adb"
-#		OnePlus 5
+#		OnePlus 5 / 6 / 6T
 ATTR{idProduct}=="9011", SYMLINK+="android_adb"
+#		OnePlus 6 / Asia
+ATTR{idProduct}=="f003", SYMLINK+="android_adb"
 #		Xiaomi A1 (90bb=midi+adb)
 ATTR{idProduct}=="90bb", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
