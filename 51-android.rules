@@ -430,6 +430,9 @@ ATTR{idVendor}=="1d4d", ENV{adb_user}="yes"
 #	Philips
 ATTR{idVendor}=="0471", ENV{adb_user}="yes"
 
+#	Pico
+ATTR{idVendor}=="2d40", ENV{adb_user}="yes"
+
 #	PMC-Sierra
 ATTR{idVendor}=="04da", ENV{adb_user}="yes"
 
