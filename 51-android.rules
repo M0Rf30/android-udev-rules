@@ -393,9 +393,14 @@ ATTR{idVendor}=="2e04", ENV{adb_user}="yes"
 ATTR{idVendor}=="2080", ENV{adb_user}="yes"
 
 #	Nvidia
-ATTR{idVendor}=="0955", ENV{adb_user}="yes"
-#       Audi SDIS Rear Seat Entertainment Tablet
+ATTR{idVendor}!="0995", GOTO="not_Nvidia"
+ENV{adb_user}="yes"
+#		Audi SDIS Rear Seat Entertainment Tablet
 ATTR{idProduct}=="7000", SYMLINK+="android_fastboot"
+#		Shield TV
+ATTR{idProduct}=="b442", SYMLINK+="android_fastboot"
+GOTO="android_usb_rule_match"
+LABEL="not_Motorola"
 
 #	Oculus
 ATTR{idVendor}=="2833", ENV{adb_user}="yes"
