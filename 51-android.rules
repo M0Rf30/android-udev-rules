@@ -400,7 +400,7 @@ ATTR{idProduct}=="7000", SYMLINK+="android_fastboot"
 #		Shield TV
 ATTR{idProduct}=="b442", SYMLINK+="android_fastboot"
 GOTO="android_usb_rule_match"
-LABEL="not_Motorola"
+LABEL="not_Nvidia"
 
 #	Oculus
 ATTR{idVendor}=="2833", ENV{adb_user}="yes"
