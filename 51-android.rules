@@ -616,6 +616,8 @@ ATTR{idProduct}=="ff48", SYMLINK+="android_adb"
 ATTR{idProduct}=="ff28", SYMLINK+="android_adb"
 #		RedMi / RedMi Note 4G CDMA (Usb+Debug) / Mi4c / Mi5
 ATTR{idProduct}=="ff68", SYMLINK+="android_adb"
+#		RedMi 7
+ATTR{idProduct}=="ff40", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_XiaoMi"
 
