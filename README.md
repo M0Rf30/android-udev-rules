@@ -3,7 +3,7 @@
 ## _Intro_
 ________________________________
 
-To create an easy-to-install version of _M0RF30's_ work which can be found [here](https://github.com/M0Rf30/android-udev-rules.git). This installer should work on most linux distros, but is focused on Ubuntu (try others at your own risk).
+To create an easy-to-install version of _M0RF30's_ work which can be found [here](https://github.com/M0Rf30/android-udev-rules.git). This installer should work on most linux distros but is focused on Ubuntu (try others at your own risk).
 
 ## _Installation_
 __________________________________
