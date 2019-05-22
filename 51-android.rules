@@ -2,187 +2,187 @@
 ## FOR NEXUS DEVICES ##
 #######################
 # adb protocol on passion (Nexus One)
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e12", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e12", MODE="0666", GROUP="adbusers"
 # fastboot protocol on passion (Nexus One)
-SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", MODE="0666", GROUP="adbusers"
 # adb protocol on crespo/crespo4g (Nexus S)
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e22", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e22", MODE="0666", GROUP="adbusers"
 # fastboot protocol on crespo/crespo4g (Nexus S)
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e20", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e20", MODE="0666", GROUP="adbusers"
 # adb protocol on stingray/wingray (Xoom)
-SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a9", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a9", MODE="0666", GROUP="adbusers"
 # fastboot protocol on stingray/wingray (Xoom)
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="708c", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="708c", MODE="0666", GROUP="adbusers"
 # adb protocol on maguro/toro (Galaxy Nexus)
-SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", MODE="0666", GROUP="adbusers"
 # fastboot protocol on maguro/toro (Galaxy Nexus)
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e30", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e30", MODE="0666", GROUP="adbusers"
 # adb protocol on panda (PandaBoard)
-SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d101", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d101", MODE="0666", GROUP="adbusers"
 # adb protocol on panda (PandaBoard ES)
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="d002", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="d002", MODE="0666", GROUP="adbusers"
 # fastboot protocol on panda (PandaBoard)
-SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d022", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d022", MODE="0666", GROUP="adbusers"
 # usbboot protocol on panda (PandaBoard)
-SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d00f", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d00f", MODE="0666", GROUP="adbusers"
 # usbboot protocol on panda (PandaBoard ES)
-SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d010", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d010", MODE="0666", GROUP="adbusers"
 # adb protocol on grouper/tilapia (Nexus 7)
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e42", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e42", MODE="0666", GROUP="adbusers"
 # fastboot protocol on grouper/tilapia (Nexus 7)
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e40", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e40", MODE="0666", GROUP="adbusers"
 # adb protocol on manta (Nexus 10)
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee2", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee2", MODE="0666", GROUP="adbusers"
 # fastboot protocol on manta (Nexus 10)
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", MODE="0666", GROUP="adbusers"
 # adb protocol on Sony Xperia Z2
-SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="51af", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="51af", MODE="0666", GROUP="adbusers"
 # fastboot protocol on Sony Xperia Z2
-SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="0dde", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="0dde", MODE="0666", GROUP="adbusers"
 # adb protocol on Samsung Galaxy S5 / Note 10.1 2014
-SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", MODE="0666", GROUP="adbusers"
 # adb protocol on HTC One X (Tegra3)
-SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0cd6", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0cd6", MODE="0666", GROUP="adbusers"
 # adb protocol on HTC M8 GPE
-SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="061a", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="061a", MODE="0666", GROUP="adbusers"
 # recovery protocol on HTC M8 GPE
-SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c02", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c02", MODE="0666", GROUP="adbusers"
 # adb protocol on Moto X
-SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="2e63", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="2e63", MODE="0666", GROUP="adbusers"
 # adb protocol on Find7
-SUBSYSTEM=="usb", ATTR{idVendor}=="22d9", ATTR{idProduct}=="2765", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="22d9", ATTR{idProduct}=="2765", MODE="0666", GROUP="adbusers"
 # adb protocol on Moto G
-SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="2e76", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="2e76", MODE="0666", GROUP="adbusers"
 # fastboot protocol on Oppo Find7
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="d00d", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="d00d", MODE="0666", GROUP="adbusers"
 # fastboot protocol on Moto X
-SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="2e23", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="2e23", MODE="0666", GROUP="adbusers"
 #
 #######################
 ### ASSORTED LG IDs ###
 #######################
 # LG G2/G3 (D855) or LG V10 (H962) or LG STYLO2 (lgl82vl) in download mode
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="633e", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="633e", MODE="0666", GROUP="adbusers"
 # LG G3 (VS985) in download mode
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="627f", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="627f", MODE="0666", GROUP="adbusers"
 # LG G4 (VS986) in download mode
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6298", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6298", MODE="0666", GROUP="adbusers"
 # LG G3 (D852) in download mode
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="633a", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="633a", MODE="0666", GROUP="adbusers"
 # LG various devices
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6000", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6005", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6018", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="618e", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="618f", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61c5", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61c6", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61cc", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61da", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61f1", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61f9", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61fc", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61fe", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6300", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="631c", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="631d", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="631e", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="631f", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6344", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6356", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6800", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="7000", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="d109", MODE="0666", GROUP="adbusers", OWNER="<username>"
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="d10a", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6000", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6005", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6018", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="618e", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="618f", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61c5", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61c6", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61cc", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61da", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61f1", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61f9", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61fc", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="61fe", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6300", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="631c", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="631d", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="631e", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="631f", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6344", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6356", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="6800", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="7000", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="d109", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="d10a", MODE="0666", GROUP="adbusers"
 #
 #######################
 ## LESS SPECIFIC RLS ##
 #######################
 #Acer
-SUBSYSTEM=="usb", ATTR{idVendor}=="0502", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0502", MODE="0666", GROUP="adbusers"
 #Asus
-SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", MODE="0666", GROUP="adbusers"
 #BQ
-SUBSYSTEM=="usb", ATTR{idVendor}=="2a47", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="2a47", MODE="0666", GROUP="adbusers"
 #Coolpad
-SUBSYSTEM=="usb", ATTR{idVendor}=="1ebf", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1ebf", MODE="0666", GROUP="adbusers"
 #Dell
-SUBSYSTEM=="usb", ATTR{idVendor}=="413c", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="413c", MODE="0666", GROUP="adbusers"
 #Essential
-SUBSYSTEM=="usb", ATTR{idVendor}=="2e17", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="2e17", MODE="0666", GROUP="adbusers"
 #Foxconn
-SUBSYSTEM=="usb", ATTR{idVendor}=="0489", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0489", MODE="0666", GROUP="adbusers"
 #Fujitsu & Fujitsu Toshiba
-SUBSYSTEM=="usb", ATTR{idVendor}=="04c5", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="04c5", MODE="0666", GROUP="adbusers"
 #Garmin-Asus
-SUBSYSTEM=="usb", ATTR{idVendor}=="091E", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="091E", MODE="0666", GROUP="adbusers"
 #Glass
-SUBSYSTEM=="usb", ATTR{idVendor}=="0451", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0451", MODE="0666", GROUP="adbusers"
 #Google
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="adbusers"
 #Haier
-SUBSYSTEM=="usb", ATTR{idVendor}=="201e", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="201e", MODE="0666", GROUP="adbusers"
 #Hisense
-SUBSYSTEM=="usb", ATTR{idVendor}=="109b", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="109b", MODE="0666", GROUP="adbusers"
 #HTC
-SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", MODE="0666", GROUP="adbusers"
 #Huawei
-SUBSYSTEM=="usb", ATTR{idVendor}=="12d1", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="12d1", MODE="0666", GROUP="adbusers"
 #Intel
-SUBSYSTEM=="usb", ATTR{idVendor}=="8087", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="8087", MODE="0666", GROUP="adbusers"
 #K-Touch
-SUBSYSTEM=="usb", ATTR{idVendor}=="24e3", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="24e3", MODE="0666", GROUP="adbusers"
 #KT Tech
-SUBSYSTEM=="usb", ATTR{idVendor}=="2116", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="2116", MODE="0666", GROUP="adbusers"
 #Kyocera
-SUBSYSTEM=="usb", ATTR{idVendor}=="0482", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0482", MODE="0666", GROUP="adbusers"
 #Lenovo
-SUBSYSTEM=="usb", ATTR{idVendor}=="17ef", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="17ef", MODE="0666", GROUP="adbusers"
 #LG
-SUBSYSTEM=="usb", ATTR{idVendor}=="1004", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1004", MODE="0666", GROUP="adbusers"
 #Micromax
-SUBSYSTEM=="usb", ATTR{idVendor}=="2a96", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="2a96", MODE="0666", GROUP="adbusers"
 #Motorola
-SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", MODE="0666", GROUP="adbusers"
 #MTK
-SUBSYSTEM=="usb", ATTR{idVendor}=="0e8d", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0e8d", MODE="0666", GROUP="adbusers"
 #NEC
-SUBSYSTEM=="usb", ATTR{idVendor}=="0409", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0409", MODE="0666", GROUP="adbusers"
 #Nextbit
-SUBSYSTEM=="usb", ATTR{idVendor}=="2c3f", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="2c3f", MODE="0666", GROUP="adbusers"
 #Nook
-SUBSYSTEM=="usb", ATTR{idVendor}=="2080", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="2080", MODE="0666", GROUP="adbusers"
 #Nvidia
-SUBSYSTEM=="usb", ATTR{idVendor}=="0955", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0955", MODE="0666", GROUP="adbusers"
 #Oppo
-SUBSYSTEM=="usb", ATTR{idVendor}=="22d9", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="22d9", MODE="0666", GROUP="adbusers"
 #OTGV
-SUBSYSTEM=="usb", ATTR{idVendor}=="2257", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="2257", MODE="0666", GROUP="adbusers"
 #Pantech
-SUBSYSTEM=="usb", ATTR{idVendor}=="10A9", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="10A9", MODE="0666", GROUP="adbusers"
 #Pegatron
-SUBSYSTEM=="usb", ATTR{idVendor}=="1d4d", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1d4d", MODE="0666", GROUP="adbusers"
 #Philips
-SUBSYSTEM=="usb", ATTR{idVendor}=="0471", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0471", MODE="0666", GROUP="adbusers"
 #PMC-Sierra
-SUBSYSTEM=="usb", ATTR{idVendor}=="04da", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="04da", MODE="0666", GROUP="adbusers"
 #Qualcomm
-SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", MODE="0666", GROUP="adbusers"
 #Samsung
-SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="adbusers"
 #Sharp
-SUBSYSTEM=="usb", ATTR{idVendor}=="04dd", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="04dd", MODE="0666", GROUP="adbusers"
 #SK Telesys
-SUBSYSTEM=="usb", ATTR{idVendor}=="1f53", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1f53", MODE="0666", GROUP="adbusers"
 #Sony
-SUBSYSTEM=="usb", ATTR{idVendor}=="054c", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="054c", MODE="0666", GROUP="adbusers"
 #Sony Ericsson
-SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", MODE="0666", GROUP="adbusers"
 #Teleepoch
-SUBSYSTEM=="usb", ATTR{idVendor}=="2340", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="2340", MODE="0666", GROUP="adbusers"
 #Toshiba
-SUBSYSTEM=="usb", ATTR{idVendor}=="0930", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0930", MODE="0666", GROUP="adbusers"
 #Wileyfox
-SUBSYSTEM=="usb", ATTR{idVendor}=="2970", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="2970", MODE="0666", GROUP="adbusers"
 #ZTE
-SUBSYSTEM=="usb", ATTR{idVendor}=="19D2", MODE="0666", GROUP="adbusers", OWNER="<username>"
+SUBSYSTEM=="usb", ATTR{idVendor}=="19D2", MODE="0666", GROUP="adbusers"

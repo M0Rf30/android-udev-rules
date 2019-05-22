@@ -1,6 +1,9 @@
 #!/bin/bash
+#
 ################################
+##                            ##
 ## Install android-udev-rules ##
+##                            ##
 ################################
 #
 ## Install adb and fastboot
