@@ -1,4 +1,4 @@
-# __51-android-rules *UBUNTU*__
+# 51-android-rules __UBUNTU__
 
 ## _Intro_
 ________________________________
