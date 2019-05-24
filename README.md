@@ -15,14 +15,21 @@ _____________________________________
 To install simply clone [this](https://github.com/lehmancurtis147/android-udev-rules.git) repository.
 
 ```bash
-$cd ./android-udev-rules.git
+$cd ./android-udev-rules
 ```
 
-followed by
+followed by...
+
+```bash
+$chmod +x ./install.sh
+```
+and finally...
 
 ```bash
 $sudo bash ./install.sh
 ```
+
+
 ##### _Extra_
 ______________________________________
 
