@@ -11,8 +11,7 @@ sudo apt-get install android-tools-adb android-tools-fastboot
 
 ## Clone rules
 # git clone https://github.com/M0Rf30/android-udev-rules.git
-# this line has been included to give credit to the work I built on
-git clone https://github.com/lehmancurtis147/android-udev-rules.git
+## this line has been included to give credit to the work I built on
 
 ## Install rules
 if [ ! /usr/lib/sysusers.d/android-udev.conf ]; then
@@ -53,4 +52,5 @@ sudo service udev restart
 
 # Reset adb server
 sudo adb kill-server
+
 sudo adb devices

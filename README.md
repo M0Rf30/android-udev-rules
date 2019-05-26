@@ -1,26 +1,39 @@
-# __51-android-rules *UBUNTU*__
+# 51-android-rules __UBUNTU__
+-------------------------------------
+
 
 ## _Intro_
-________________________________
+_____________________________________
+
 
 To create an easy-to-install version of _M0RF30's_ work which can be found [here](https://github.com/M0Rf30/android-udev-rules.git). This installer should work on most linux distros but is focused on Ubuntu (try others at your own risk).
 
 ## _Installation_
-__________________________________
+_____________________________________
+
 
 To install simply clone [this](https://github.com/lehmancurtis147/android-udev-rules.git) repository.
 
 ```bash
-$cd ./android-udev-rules.git
+$cd ./android-udev-rules
 ```
 
-followed by
+followed by...
+
+```bash
+$chmod +x ./install.sh
+```
+and finally...
 
 ```bash
 $sudo bash ./install.sh
 ```
-### _Extra_
+
+
+##### _Extra_
 ______________________________________
+
+
 Things seem to go smoother without having devices plugged in until after installation.
 
 *Special thanks to M0RF30 for the original effort*.
