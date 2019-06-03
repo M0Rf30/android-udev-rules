@@ -96,6 +96,40 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="d109", MODE="0666", 
 SUBSYSTEM=="usb", ATTR{idVendor}=="1004", ATTR{idProduct}=="d10a", MODE="0666", GROUP="adbusers"
 #
 #######################
+##  KINDLE FIRE 7 HD ##
+#######################
+#Kindle HD
+SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="0006", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="0008", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="000A", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="0007", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="000B", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="000C", MODE="0666", GROUP="adbusers"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="000D", MODE="0666", GROUP="adbusers"
+#
+######################
+## SOFTWINNER ASTAR ##
+######################
+#Astar Mass Storage
+SUBSYSTEM=="usb", ATTR{idVendor}=="1f3a", ATTR{idProduct}=="1000", MODE="0666", GROUP="adbusers"
+#Astar Mass Storage, ADB
+SUBSYSTEM=="usb", ATTR{idVendor}=="1f3a", ATTR{idProduct}=="1002", MODE="0666", GROUP="adbusers"
+#Astar MTP
+SUBSYSTEM=="usb", ATTR{idVendor}=="1f3a", ATTR{idProduct}=="1006", MODE="0666", GROUP="adbusers"
+#Astar MTP, ADB
+SUBSYSTEM=="usb", ATTR{idVendor}=="1f3a", ATTR{idProduct}=="1007", MODE="0666", GROUP="adbusers"
+#Astar PTP
+SUBSYSTEM=="usb", ATTR{idVendor}=="1f3a", ATTR{idProduct}=="1008", MODE="0666", GROUP="adbusers"
+#Astar PTP, ADB
+SUBSYSTEM=="usb", ATTR{idVendor}=="1f3a", ATTR{idProduct}=="1009", MODE="0666", GROUP="adbusers"
+#Astar rndis
+SUBSYSTEM=="usb", ATTR{idVendor}=="1f3a", ATTR{idProduct}=="100a", MODE="0666", GROUP="adbusers"
+#Astar rndis, ADB
+SUBSYSTEM=="usb", ATTR{idVendor}=="1f3a", ATTR{idProduct}=="100b", MODE="0666", GROUP="adbusers"
+#Astar rndis, dm
+SUBSYSTEM=="usb", ATTR{idVendor}=="1f3a", ATTR{idProduct}=="100c", MODE="0666", GROUP="adbusers"
+#
+#######################
 ## LESS SPECIFIC RLS ##
 #######################
 #Acer
@@ -130,8 +164,6 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", MODE="0666", GROUP="adbusers"
 SUBSYSTEM=="usb", ATTR{idVendor}=="12d1", MODE="0666", GROUP="adbusers"
 #Intel
 SUBSYSTEM=="usb", ATTR{idVendor}=="8087", MODE="0666", GROUP="adbusers"
-#Kindle HD
-SUBSYSTEM=="usb", ATTR{idVendor}=="1949", MODE="0666", GROUP="adbusers"
 #K-Touch
 SUBSYSTEM=="usb", ATTR{idVendor}=="24e3", MODE="0666", GROUP="adbusers"
 #KT Tech
