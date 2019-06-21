@@ -53,8 +53,8 @@ fi
 
 sudo systemd-sysusers # (1)
 
-# Add user to adb group
-sudo usermod -aG adbusers $(whoami)
+# Add user to adbusers
+sudo usermod -a -G adbusers $(whoami)
 
 # Reload rules
 sudo udevadm control --reload-rules

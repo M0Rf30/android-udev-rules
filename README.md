@@ -36,4 +36,10 @@ ______________________________________
 
 Things seem to go smoother without having devices plugged in until after installation.
 
-*Special thanks to M0RF30 for the original effort*.
+*Special thanks to M0RF30 for the original effort*
+###### Credits
+_______________________________________
+
+>>>I'd also like to thank everyone at XDA; if I haven't borrowed something from someone there I'm sure I will at some point.
+>>>Also, thanks to SNOWDREAMS for the very long list of device IDs from your list.
+>>>If I missed anyone let me know and I'll make corrections.
