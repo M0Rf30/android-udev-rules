@@ -110,7 +110,7 @@ ATTR{idVendor}!="2e17", GOTO="not_Essential"
 ENV{adb_user}="yes"
 #		Essential PH-1
 ATTR{idProduct}=="c009", SYMLINK+="android_adb"
-ATTR{idProduct}=="c030", SYMLINK+="android_adb"
+ATTR{idProduct}=="c03[02]", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Essential"
 
