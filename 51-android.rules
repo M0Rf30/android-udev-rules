@@ -530,6 +530,9 @@ LABEL="not_Samsung"
 #	Sharp
 ATTR{idVendor}=="04dd", ENV{adb_user}="yes"
 
+#	Sonim
+ATTR{idVendor}=="1d9c", ENV{adb_user}="yes"
+
 #	Sony
 ATTR{idVendor}=="054c", ENV{adb_user}="yes"
 
@@ -677,9 +680,6 @@ ATTR{idVendor}=="1ebf", ENV{adb_user}="yes"
 
 #	ZUK
 ATTR{idVendor}=="2b4c", ENV{adb_user}="yes"
-
-#	Sonim
-ATTR{idVendor}=="1d9c", ENV{adb_user}="yes"
 
 # Skip other vendor tests
 LABEL="android_usb_rule_match"
