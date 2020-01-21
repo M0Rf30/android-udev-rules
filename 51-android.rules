@@ -103,7 +103,7 @@ GOTO="android_usb_rule_match"
 LABEL="not_BQ"
 
 #	Dell
-ATTR{idVendor}=="413c", ENV{adb_user}="yes"
+#ATTR{idVendor}=="413c", ENV{adb_user}="yes"
 
 #	Essential
 ATTR{idVendor}!="2e17", GOTO="not_Essential"
