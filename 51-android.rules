@@ -86,7 +86,7 @@ ATTR{idProduct}=="583f", SYMLINK+="android_adb"
 ATTR{idProduct}=="4c91", SYMLINK+="android_adb"
 ATTR{idProduct}=="4daf", SYMLINK+="android_fastboot"
 #		Tegra APX
-ATTR{idProduct}=="7030"
+ATTR{idProduct}=="7030", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Asus"
 
@@ -223,7 +223,7 @@ ATTR{idProduct}=="0c8d", SYMLINK+="android_adb"
 #		MyTouch 4G
 ATTR{idProduct}=="0c96", SYMLINK+="android_adb"
 #		One (m7) && One (m8)
-ATTR{idProduct}=="0c93"
+ATTR{idProduct}=="0c93", SYMLINK+="android_adb"
 #		Sensation
 ATTR{idProduct}=="0f87", SYMLINK+="android_adb"
 ATTR{idProduct}=="0ff0", SYMLINK+="android_fastboot"
@@ -233,8 +233,7 @@ ATTR{idProduct}=="0ce5", SYMLINK+="android_adb"
 ATTR{idProduct}=="0cd6", SYMLINK+="android_adb"
 #		Slide
 ATTR{idProduct}=="0e03", SYMLINK+="android_adb"
-#		Tatoo, Dream, ADP1, G1, Magic
-ATTR{idProduct}=="0c01"
+#		Tatoo, Dream, ADP1, G1, Magic (0c01=mass_storage)
 ATTR{idProduct}=="0c02", ENV{adb_adbfast}="yes"
 #		Vision
 ATTR{idProduct}=="0c91", SYMLINK+="android_adb"
@@ -315,8 +314,7 @@ LABEL="not_letv"
 #	LG
 ATTR{idVendor}!="1004", GOTO="not_LG"
 ENV{adb_user}="yes"
-#		Ally, Vortex, P500, P500h
-ATTR{idProduct}=="618f"
+#		Ally, Vortex, P500, P500h (618f=mass_storage)
 ATTR{idProduct}=="618e", SYMLINK+="android_adb"
 #		G2 D802
 ATTR{idProduct}=="61f1", SYMLINK+="android_adb"
@@ -364,11 +362,11 @@ LABEL="not_Micromax"
 ATTR{idVendor}!="22b8", GOTO="not_Motorola"
 ENV{adb_user}="yes"
 #		CLIQ XT/Quench
-ATTR{idProduct}=="2d66"
+ATTR{idProduct}=="2d66", SYMLINK+="android_adb"
 #		Defy/MB525
-ATTR{idProduct}=="428c"
+ATTR{idProduct}=="428c", SYMLINK+="android_adb"
 #		Droid
-ATTR{idProduct}=="41db"
+ATTR{idProduct}=="41db", SYMLINK+="android_adb"
 #		Xoom ID 1
 ATTR{idProduct}=="70a8", ENV{adb_adbfast}="yes"
 #		Xoom ID 2
@@ -539,17 +537,13 @@ ATTR{idVendor}=="054c", ENV{adb_user}="yes"
 #	Sony Ericsson
 ATTR{idVendor}!="0fce", GOTO="not_Sony_Ericsson"
 ENV{adb_user}="yes"
-#		Xperia X10 mini
-ATTR{idProduct}=="3137"
+#		Xperia X10 mini (3137=mass_storage)
 ATTR{idProduct}=="2137", SYMLINK+="android_adb"
-#		Xperia X10 mini pro
-ATTR{idProduct}=="3138"
+#		Xperia X10 mini pro (3138=mass_storage)
 ATTR{idProduct}=="2138", SYMLINK+="android_adb"
-#		Xperia X8
-ATTR{idProduct}=="3149"
+#		Xperia X8 (3149=mass_storage)
 ATTR{idProduct}=="2149", SYMLINK+="android_adb"
-#		Xperia X12
-ATTR{idProduct}=="e14f"
+#		Xperia X12 (e14f=mass_storage)
 ATTR{idProduct}=="614f", SYMLINK+="android_adb"
 #		Xperia Arc S
 ATTR{idProduct}=="414f", ENV{adb_adbfast}="yes"
