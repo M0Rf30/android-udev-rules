@@ -577,6 +577,9 @@ ATTR{idProduct}=="51e7", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Sony_Ericsson"
 
+#	Spectralink
+ATTR{idVendor}=="1973", ENV{adb_user}="yes"
+
 #	Spreadtrum
 ATTR{idVendor}=="1782", ENV{adb_user}="yes"
 
