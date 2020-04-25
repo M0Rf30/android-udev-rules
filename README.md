@@ -35,7 +35,7 @@ On Arch it should be enough to follow the [instructions for connecting a device 
     sudo systemd-sysusers # (if not Ubuntu 16.04 and Mint 18)
     
     # if Ubuntu 16.04 and Mint 18
-    `sudo groupadd adbusers`
+    sudo groupadd adbusers
     
     # OR on Fedora:
     groupadd adbusers
