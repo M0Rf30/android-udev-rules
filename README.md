@@ -38,7 +38,6 @@ On Arch it should be enough to follow the [instructions for connecting a device 
     `sudo groupadd adbusers`
     
     # OR on Fedora:
-    
     groupadd adbusers
     
     # Add your user to the adbusers group (back to Debian again)
