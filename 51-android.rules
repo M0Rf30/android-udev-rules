@@ -266,6 +266,8 @@ ATTR{idProduct}=="1051", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_ME
 ATTR{idProduct}=="1052", SYMLINK+="android_adb"
 #		MediaPad T3
 ATTR{idProduct}=="107d", SYMLINK+="android_adb"
+#       P10 Lite
+ATTR{idProduct}=="107e", SYMLINK+="android_adb"
 #		Watch
 ATTR{idProduct}=="1c2c", SYMLINK+="android_adb"
 #		Mate 9
