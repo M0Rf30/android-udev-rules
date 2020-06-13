@@ -602,9 +602,6 @@ ATTR{idVendor}=="0451", ATTR{idProduct}=="d010", ENV{adb_user}="yes"
 #	Toshiba
 ATTR{idVendor}=="0930", ENV{adb_user}="yes"
 
-#	WEARNERS
-ATTR{idVendor}=="05c6", ENV{adb_user}="yes"
-
 #	XiaoMi
 ATTR{idVendor}!="2717", GOTO="not_XiaoMi"
 ENV{adb_user}="yes"
