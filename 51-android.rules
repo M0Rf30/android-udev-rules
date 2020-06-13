@@ -44,8 +44,8 @@ ATTR{idVendor}=="10d6", ENV{adb_user}="yes"
 #		Denver TAD 70111
 ATTR{idProduct}=="0c02", SYMLINK+="android_adb"
 
-#	ADVANCE
-ATTR{idVendor}=="0a5c", ENV{adb_user}="yes"
+#	ADVANCE (Need product specific rules)
+#ATTR{idVendor}=="0a5c", ENV{adb_user}="yes"
 #		S5
 ATTR{idProduct}=="e681", SYMLINK+="android_adb"
 
@@ -102,7 +102,7 @@ ATTR{idProduct}=="2008", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_BQ"
 
-#	Dell
+#	Dell (Need product specific rules)
 #ATTR{idVendor}=="413c", ENV{adb_user}="yes"
 
 #	Essential
