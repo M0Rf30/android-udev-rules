@@ -409,10 +409,14 @@ ATTR{idVendor}=="2e04", ENV{adb_user}="yes"
 ATTR{idVendor}=="2080", ENV{adb_user}="yes"
 
 #	Nvidia
-ATTR{idVendor}!="0995", GOTO="not_Nvidia"
+ATTR{idVendor}!="0955", GOTO="not_Nvidia"
 ENV{adb_user}="yes"
 #		Audi SDIS Rear Seat Entertainment Tablet
+#		Folio
 ATTR{idProduct}=="7000", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="7100", ENV{adb_user}="yes"
+#		SHIELD Tablet (debug)
+ATTR{idProduct}=="CF05", SYMLINK+="android_adb"
 #		Shield TV
 ATTR{idProduct}=="b442", SYMLINK+="android_fastboot"
 GOTO="android_usb_rule_match"
