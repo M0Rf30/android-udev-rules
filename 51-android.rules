@@ -489,9 +489,6 @@ ATTR{idProduct}=="8042", ENV{adb_fastboot}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_RIM"
 
-#	SK Telesys
-ATTR{idVendor}=="1f53", ENV{adb_user}="yes"
-
 #	Samsung
 ATTR{idVendor}!="04e8", GOTO="not_Samsung"
 #		False positive printer
@@ -529,6 +526,9 @@ LABEL="not_Samsung"
 
 #	Sharp
 ATTR{idVendor}=="04dd", ENV{adb_user}="yes"
+
+#	SK Telesys
+ATTR{idVendor}=="1f53", ENV{adb_user}="yes"
 
 #	Sonim
 ATTR{idVendor}=="1d9c", ENV{adb_user}="yes"
@@ -602,6 +602,9 @@ ATTR{idVendor}=="0451", ATTR{idProduct}=="d010", ENV{adb_user}="yes"
 #	Toshiba
 ATTR{idVendor}=="0930", ENV{adb_user}="yes"
 
+#	Wileyfox
+ATTR{idVendor}=="2970", ENV{adb_user}="yes"
+
 #	XiaoMi
 ATTR{idVendor}!="2717", GOTO="not_XiaoMi"
 ENV{adb_user}="yes"
@@ -644,9 +647,6 @@ ATTR{idProduct}=="9139", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Yota"
 
-#	Wileyfox
-ATTR{idVendor}=="2970", ENV{adb_user}="yes"
-
 #	YU
 ATTR{idVendor}=="1ebf", ENV{adb_user}="yes"
 
@@ -667,12 +667,6 @@ ATTR{idProduct}=="1351", SYMLINK+="android_adb"
 ATTR{idProduct}=="1354", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_ZTE"
-
-#	Wileyfox
-ATTR{idVendor}=="2970", ENV{adb_user}="yes"
-
-#	YU
-ATTR{idVendor}=="1ebf", ENV{adb_user}="yes"
 
 #	ZUK
 ATTR{idVendor}=="2b4c", ENV{adb_user}="yes"
