@@ -390,7 +390,7 @@ ATTR{idProduct}=="2ea4", ENV{adb_adbfast}="yes", SYMLINK+="android%n"
 GOTO="android_usb_rule_match"
 LABEL="not_Motorola"
 
-#	MTK
+#	MTK (MediaTek Inc)
 ATTR{idVendor}=="0e8d", ENV{adb_user}="yes"
 
 #	NEC
@@ -405,7 +405,7 @@ ATTR{idVendor}=="0421", ENV{adb_user}="yes"
 #	Nokia 3
 ATTR{idVendor}=="2e04", ENV{adb_user}="yes"
 
-#	Nook
+#	Nook (Barnes & Noble)
 ATTR{idVendor}=="2080", ENV{adb_user}="yes"
 
 #	Nvidia
@@ -446,19 +446,22 @@ ATTR{idProduct}=="2764", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_ME
 #	OTGV
 ATTR{idVendor}=="2257", ENV{adb_user}="yes"
 
-#	Pantech
+#	Pantech (SK Teletech Co, Ltd.)
 ATTR{idVendor}=="10a9", ENV{adb_user}="yes"
+
+#	Parrot SA (Car HUD)
+ATTR{idVendor}=="19cf", ENV{adb_user}="yes"
 
 #	Pegatron
 ATTR{idVendor}=="1d4d", ENV{adb_user}="yes"
 
-#	Philips
+#	Philips (and NXP)
 ATTR{idVendor}=="0471", ENV{adb_user}="yes"
 
 #	Pico
 ATTR{idVendor}=="2d40", ENV{adb_user}="yes"
 
-#	PMC-Sierra
+#	PMC-Sierra, (Panasonic Mobile communications, Matsushita)
 ATTR{idVendor}=="04da", ENV{adb_user}="yes"
 
 #	Qualcomm
