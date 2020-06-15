@@ -40,19 +40,16 @@ GOTO="android_usb_rule_match"
 LABEL="not_Acer"
 
 #	Actions Semiconductor Co., Ltd
-ATTR{idVendor}=="10d6", ENV{adb_user}="yes"
 #		Denver TAD 70111
-ATTR{idProduct}=="0c02", SYMLINK+="android_adb"
+ATTR{idVendor}=="10d6", ATTR{idProduct}=="0c02", ENV{adb_adb}="yes"
 
 #	ADVANCE (Need product specific rules)
-#ATTR{idVendor}=="0a5c", ENV{adb_user}="yes"
 #		S5
-ATTR{idProduct}=="e681", SYMLINK+="android_adb"
+ATTR{idVendor}=="0a5c", ATTR{idProduct}=="e681", ENV{adb_adb}="yes"
 
 #	Amazon Lab126
-ATTR{idVendor}=="1949", ENV{adb_user}="yes"
 #		Amazon Kindle Fire
-ATTR{idProduct}=="0006", ENV{adb_adbfast}="yes"
+ATTR{idVendor}=="1949", ATTR{idProduct}=="0006", ENV{adb_adbfast}="yes"
 
 #	Archos
 ATTR{idVendor}!="0e79", GOTO="not_Archos"
@@ -118,19 +115,17 @@ LABEL="not_Essential"
 ATTR{idVendor}=="2ae5", ENV{adb_user}="yes"
 
 #	Foxconn
-ATTR{idVendor}=="0489", ENV{adb_user}="yes"
 #		Commtiva Z71, Geeksphone One
-ATTR{idVendor}=="0489", ATTR{idProduct}=="c001", SYMLINK+="android_adb"
+ATTR{idVendor}=="0489", ATTR{idProduct}=="c001", ENV{adb_adb}="yes"
 
 #	Fujitsu/Fujitsu Toshiba
 ATTR{idVendor}=="04c5", ENV{adb_user}="yes"
 
 #	Fuzhou Rockchip Electronics
-ATTR{idVendor}=="2207", ENV{adb_user}="yes"
 #		Mediacom Smartpad 715i
-ATTR{idVendor}=="2207", ATTR{idProduct}=="0000", SYMLINK+="android_adb"
+ATTR{idVendor}=="2207", ATTR{idProduct}=="0000", ENV{adb_adb}="yes"
 #		Ubislate 7Ci
-ATTR{idVendor}=="2207", ATTR{idProduct}=="0010", SYMLINK+="android_adb"
+ATTR{idVendor}=="2207", ATTR{idProduct}=="0010", ENV{adb_adb}="yes"
 
 #	Garmin-Asus
 ATTR{idVendor}=="091e", ENV{adb_user}="yes"
@@ -277,13 +272,13 @@ LABEL="not_Huawei"
 
 #	Intel
 #		Geeksphone Revolution
-ATTR{idVendor}=="8087", ATTR{idProduct}=="0a16", SYMLINK+="android_adb", ENV{adb_user}="yes"
+ATTR{idVendor}=="8087", ATTR{idProduct}=="0a16", ENV{adb_adb}="yes"
 #		Chuwi Hi 10 Pro (HQ64)
-ATTR{idVendor}=="8087", ATTR{idProduct}=="2a65", SYMLINK+="android_adb", ENV{adb_user}="yes"
-ATTR{idVendor}=="8087", ATTR{idProduct}=="07ef", SYMLINK+="android_adb", ENV{adb_user}="yes"
+ATTR{idVendor}=="8087", ATTR{idProduct}=="2a65", ENV{adb_adb}="yes"
+ATTR{idVendor}=="8087", ATTR{idProduct}=="07ef", ENV{adb_adb}="yes"
 #		Reference Boards using kernelflinger
 #		See https://github.com/intel/kernelflinger/blob/master/libefiusb/usb.c#L56
-ATTR{idProduct}=="09ef", ENV{adb_adbfast}="yes"
+ATTR{idVendor}=="8087", ATTR{idProduct}=="09ef", ENV{adb_adbfast}="yes"
 
 #	IUNI
 ATTR{idVendor}!="271d", GOTO="not_IUNI"
@@ -305,11 +300,11 @@ ATTR{idVendor}=="2116", ENV{adb_user}="yes"
 #	Lenovo
 ATTR{idVendor}=="17ef", ENV{adb_user}="yes"
 
-#	LeTv
+#	LeTv (LeECo)
 ATTR{idVendor}!="2b0e", GOTO="not_letv"
 ENV{adb_user}="yes"
 #		LEX720 LeEco Pro3 6GB (610c=normal,610d=debug, 610b=camera)
-ATTR{idProduct}=="610d", ENV{adb_fastboot}="yes"
+ATTR{idProduct}=="610d", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_letv"
 
@@ -416,7 +411,7 @@ ENV{adb_user}="yes"
 ATTR{idProduct}=="7000", SYMLINK+="android_fastboot"
 ATTR{idProduct}=="7100", ENV{adb_user}="yes"
 #		SHIELD Tablet (debug)
-ATTR{idProduct}=="CF05", SYMLINK+="android_adb"
+ATTR{idProduct}=="CF05", ENV{adb_adb}="yes"
 #		Shield TV
 ATTR{idProduct}=="b442", SYMLINK+="android_fastboot"
 GOTO="android_usb_rule_match"
@@ -438,10 +433,13 @@ GOTO="android_usb_rule_match"
 LABEL="not_OnePlus"
 
 #	Oppo
-ATTR{idVendor}=="22d9", ENV{adb_user}="yes"
-#		Find 5
-ATTR{idProduct}=="2767", SYMLINK+="android_adb"
+ATTR{idVendor}!="22d9", GOTO="not_Oppo"
+ENV{adb_adbuser}="yes"
+#		Find 5 (2767=debug)
+ATTR{idProduct}=="2767", ENV{adb_adb}="yes"
 ATTR{idProduct}=="2764", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+GOTO="android_usb_rule_match"
+LABEL="not_Oppo"
 
 #	OTGV
 ATTR{idVendor}=="2257", ENV{adb_user}="yes"
@@ -593,11 +591,10 @@ ATTR{idVendor}=="1973", ENV{adb_user}="yes"
 ATTR{idVendor}=="1782", ENV{adb_user}="yes"
 
 #	T & A Mobile Phones
-ATTR{idVendor}=="1bbb", ENV{adb_user}="yes"
 #		Alcatel OT991D
-ATTR{idProduct}=="00f2", SYMLINK+="android_adb"
+ATTR{idVendor}=="1bbb", ATTR{idProduct}=="00f2", ENV{adb_adb}="yes"
 #		Alcatel OT6012A
-ATTR{idProduct}=="0167", SYMLINK+="android_adb"
+ATTR{idVendor}=="1bbb", ATTR{idProduct}=="0167", ENV{adb_adb}="yes"
 
 #	Teleepoch
 ATTR{idVendor}=="2340", ENV{adb_user}="yes"
@@ -650,7 +647,7 @@ LABEL="not_XiaoMi"
 ATTR{idVendor}!="2916", GOTO="not_Yota"
 ENV{adb_user}="yes"
 #		YotaPhone2 (f003=normal,9139=debug)
-ATTR{idProduct}=="9139", SYMLINK+="android_adb"
+ATTR{idProduct}=="9139", ENV{adb_adb}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Yota"
 
@@ -661,7 +658,7 @@ ATTR{idVendor}=="1ebf", ENV{adb_user}="yes"
 ATTR{idVendor}!="05e0", GOTO="not_Zebra"
 ENV{adb_user}="yes"
 #		TC55
-ATTR{idProduct}=="2101", SYMLINK+="android_adb"
+ATTR{idProduct}=="2101", ENV{adb_adb}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Zebra"
 
@@ -684,7 +681,7 @@ LABEL="android_usb_rule_match"
 # Symlink shortcuts to reduce code in tests above
 ENV{adb_adbfast}=="yes", ENV{adb_adb}="yes", ENV{adb_fast}="yes"
 ENV{adb_adb}=="yes", ENV{adb_user}="yes", SYMLINK+="android_adb"
-ENV{adb_fast}=="yes", ENV{adb_user}="yes", SYMLINK+="android_fastboot"
+ENV{adb_fast}=="yes", SYMLINK+="android_fastboot"
 
 # Enable device as a user device if found (add an "android" SYMLINK)
 ENV{adb_user}=="yes", MODE="0660", GROUP="adbusers", TAG+="uaccess", SYMLINK+="android"
