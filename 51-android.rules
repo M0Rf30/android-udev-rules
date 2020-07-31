@@ -339,6 +339,12 @@ ATTR{idProduct}=="6300", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_LG"
 
+#       Idea
+ATTR{idVendor}!="18d1", GOTO="not_IDEA"
+ATTR{idProduct}=="2c11", SYMLINK="android_adb"
+GOTO="android_usb_rule_match"
+LABEL="not_IDEA"
+
 #	Meizu
 ATTR{idVendor}!="2a45", GOTO="not_Meizu"
 ENV{adb_user}="yes"
