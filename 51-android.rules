@@ -16,6 +16,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 # Skip this section below if this device is not connected by USB
+ACTION!="add", GOTO="android_usb_rules_end"
 SUBSYSTEM!="usb", GOTO="android_usb_rules_end"
 
 # This is the universal rule suggested here:
@@ -189,6 +190,8 @@ ATTR{idVendor}!="0bb4", GOTO="not_HTC"
 ENV{adb_user}="yes"
 #		fastboot mode enabled
 ATTR{idProduct}=="0fff", ENV{adb_adbfast}="yes", GOTO="android_usb_rule_match"
+#		ADP1, Dream, G1, HD2, Magic, Tatoo (0c01=mass_storage)
+ATTR{idProduct}=="0c02", ENV{adb_adbfast}="yes"
 #		ChaCha
 ATTR{idProduct}=="0cb2", ENV{adb_adbfast}="yes"
 #		Desire (Bravo)
@@ -201,10 +204,6 @@ ATTR{idProduct}=="0cab", SYMLINK+="android_adb"
 ATTR{idProduct}=="0c91", ENV{adb_adbfast}="yes"
 #		Evo Shift
 ATTR{idProduct}=="0ca5", SYMLINK+="android_adb"
-#		G1
-ATTR{idProduct}=="0c01", ENV{adb_adbfast}="yes"
-#		HD2
-ATTR{idProduct}=="0c02", ENV{adb_adbfast}="yes"
 #		Hero H2000
 ATTR{idProduct}=="0001", ENV{adb_adbfast}="yes"
 #		Hero (GSM), Desire
@@ -228,8 +227,6 @@ ATTR{idProduct}=="0ce5", SYMLINK+="android_adb"
 ATTR{idProduct}=="0cd6", SYMLINK+="android_adb"
 #		Slide
 ATTR{idProduct}=="0e03", SYMLINK+="android_adb"
-#		Tatoo, Dream, ADP1, G1, Magic (0c01=mass_storage)
-ATTR{idProduct}=="0c02", ENV{adb_adbfast}="yes"
 #		Vision
 ATTR{idProduct}=="0c91", SYMLINK+="android_adb"
 #		Wildfire
@@ -271,14 +268,17 @@ GOTO="android_usb_rule_match"
 LABEL="not_Huawei"
 
 #	Intel
+ATTR{idVendor}!="8087", GOTO="not_Intel"
 #		Geeksphone Revolution
-ATTR{idVendor}=="8087", ATTR{idProduct}=="0a16", ENV{adb_adb}="yes"
+ATTR{idProduct}=="0a16", ENV{adb_adb}="yes"
 #		Chuwi Hi 10 Pro (HQ64)
-ATTR{idVendor}=="8087", ATTR{idProduct}=="2a65", ENV{adb_adb}="yes"
-ATTR{idVendor}=="8087", ATTR{idProduct}=="07ef", ENV{adb_adb}="yes"
+ATTR{idProduct}=="2a65", ENV{adb_adb}="yes"
+ATTR{idProduct}=="07ef", ENV{adb_adb}="yes"
 #		Reference Boards using kernelflinger
 #		See https://github.com/intel/kernelflinger/blob/master/libefiusb/usb.c#L56
-ATTR{idVendor}=="8087", ATTR{idProduct}=="09ef", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="09ef", ENV{adb_adbfast}="yes"
+GOTO="android_usb_rule_match"
+LABEL="not_Intel"
 
 #	IUNI
 ATTR{idVendor}!="271d", GOTO="not_IUNI"
