@@ -131,41 +131,39 @@ ATTR{idVendor}=="091e", ENV{adb_user}="yes"
 
 #	Google
 ATTR{idVendor}!="18d1", GOTO="not_Google"
-ENV{adb_user}="yes"
 #		Nexus, Pixel, Pixel XL, Pixel 2, Pixel 2XL (4ee2=mtp,adb 4ee4=rndis,adb 4ee6=ptp,adb 4ee7=adb 4ee9=midi,adb 2d01=accessory,adb 2d03=audio_source,adb 2d05=accessory,audio_source,adb)
 #		See https://android.googlesource.com/device/google/wahoo/+/master/init.hardware.usb.rc
-ATTR{idProduct}=="4ee2", SYMLINK+="android_adb"
-ATTR{idProduct}=="4ee4", SYMLINK+="android_adb"
-ATTR{idProduct}=="4ee6", SYMLINK+="android_adb"
-ATTR{idProduct}=="4ee7", SYMLINK+="android_adb"
-ATTR{idProduct}=="4ee9", SYMLINK+="android_adb"
-ATTR{idProduct}=="2d01", SYMLINK+="android_adb"
-ATTR{idProduct}=="2d03", SYMLINK+="android_adb"
-ATTR{idProduct}=="2d05", SYMLINK+="android_adb"
-ATTR{idProduct}=="4ee0", SYMLINK+="android_fastboot"
+#		OnePlus 6, 4ee1=charging, 4ee2=MTP+debug, 4ee6=PTP+debug, 4ee7=charging+debug
+# 		Pico i.MX7 Dual Development Board 4ee7=debug
+ATTR{idProduct}=="4ee0", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="4ee2", ENV{adb_adb}="yes"
+ATTR{idProduct}=="4ee4", ENV{adb_adb}="yes"
+ATTR{idProduct}=="4ee6", ENV{adb_adb}="yes"
+ATTR{idProduct}=="4ee7", ENV{adb_adb}="yes"
+ATTR{idProduct}=="4ee9", ENV{adb_adb}="yes"
+
+ATTR{idProduct}=="2d01", ENV{adb_adb}="yes"
+ATTR{idProduct}=="2d03", ENV{adb_adb}="yes"
+ATTR{idProduct}=="2d05", ENV{adb_adb}="yes"
 #		Nexus 7
-ATTR{idProduct}=="4e42", SYMLINK+="android_adb"
-ATTR{idProduct}=="4e40", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="4e42", ENV{adb_adb}="yes"
+ATTR{idProduct}=="4e40", ENV{adb_adbfast}="yes"
 #		Nexus 5, Nexus 10
 ATTR{idProduct}=="4ee1", ENV{adb_adbfast}="yes"
 #		Nexus S (4e22=mass_storage,adb 4e24=rndis,adb)
 #		See https://android.googlesource.com/device/samsung/crespo/+/android-4.1.2_r2.1/init.herring.usb.rc
-ATTR{idProduct}=="4e22", SYMLINK+="android_adb"
-ATTR{idProduct}=="4e24", SYMLINK+="android_adb"
-ATTR{idProduct}=="4e20", SYMLINK+="android_fastboot"
-#		Galaxy Nexus
+ATTR{idProduct}=="4e22", ENV{adb_adb}="yes"
+ATTR{idProduct}=="4e24", ENV{adb_adb}="yes"
+ATTR{idProduct}=="4e20", ENV{adb_adbfast}="yes"
+#		Galaxy Nexus, Galaxy Nexus (GSM)
 ATTR{idProduct}=="4e30", ENV{adb_adbfast}="yes"
 #		Nexus One (4e11=normal,4e12=debug,0fff=debug)
-ATTR{idProduct}=="4e12", SYMLINK+="android_adb"
-ATTR{idProduct}=="0fff", SYMLINK+="android_fastboot"
-#		Generic and unspecified debug interface
-ATTR{idProduct}=="d00d", SYMLINK+="android_fastboot"
-# 		Pico i.MX7 Dual Development Board
-ATTR{idProduct}=="4ee7", SYMLINK+="android_adb"
-#		Include: Samsung Galaxy Nexus (GSM)
-ATTR{idProduct}=="4e30", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="4e12", ENV{adb_adb}="yes"
+ATTR{idProduct}=="0fff", ENV{adb_adbfast}="yes"
 #		Recovery adb entry for Nexus Family (orig d001, OP3 has 18d1:d002)
-ATTR{idProduct}=="d00?", SYMLINK+="android_adb"
+ATTR{idProduct}=="d00?", ENV{adb_adb}="yes"
+#		Generic and unspecified debug interface (test after d00?)
+ATTR{idProduct}=="d00d", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Google"
 
@@ -423,13 +421,14 @@ ATTR{idVendor}=="2833", ENV{adb_user}="yes"
 
 #	OnePlus(Oreo)
 ATTR{idVendor}!="2a70", GOTO="not_OnePlus"
-ENV{adb_user}="yes"
-#		Charging mode
-ATTR{idProduct}=="4ee7", SYMLINK+="android_adb"
+#		OnePlus 6, 4ee1=charging, 4ee2=MTP+debug, 4ee6=PTP+debug, 4ee7=charging+debug
+ATTR{idProduct}=="4ee2", ENV{adb_adb}="yes"
+ATTR{idProduct}=="4ee6", ENV{adb_adb}="yes"
+ATTR{idProduct}=="4ee7", ENV{adb_adb}="yes"
 #		MTP mode
-ATTR{idProduct}=="9011", SYMLINK+="android_adb"
+ATTR{idProduct}=="9011", ENV{adb_adb}="yes"
 #		PTP mode
-ATTR{idProduct}=="904e", SYMLINK+="android_adb"
+ATTR{idProduct}=="904e", ENV{adb_adb}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_OnePlus"
 
