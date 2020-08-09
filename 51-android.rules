@@ -15,18 +15,18 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-# Skip section below if device not add, usb, or is a hub or printer
+# Skip testing for android devices if device is not add, or usb
 ACTION!="add", GOTO="android_usb_rules_end"
 SUBSYSTEM!="usb", GOTO="android_usb_rules_end"
-ATTR{bDeviceClass}=="09", GOTO="android_usb_rules_end"
-ENV{ID_USB_INTERFACES}=="*:0701??:*", GOTO="android_usb_rules_end"
 
-# This is the universal rule suggested here:
+# For Android devices that enable this universal rule suggested here:
 # http://ktnr74.blogspot.com/2013/04/universal-udev-rule-for-all-android.html
 # Commented as a reminder (we prefer a punctual device detection)
-# LABEL="android_universal_rule"
-# ENV{ID_USB_INTERFACES}!="*:ff420?:*", GOTO="android_usb_rules_begin"
-# ACTION=="add", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ENV{ID_USB_INTERFACES}=="*:ff420?:*", MODE="0660", GROUP="adbusers", SYMLINK+="android/$env{ID_SERIAL_SHORT}"
+# ENV{ID_USB_INTERFACES}=="*:ff420?:*", SYMLINK+="android/$env{ID_SERIAL_SHORT}", GOTO="android_usb_rule_match"
+
+# Skip testing for unexpected devices like hubs or printers
+ATTR{bDeviceClass}=="09", GOTO="android_usb_rules_end"
+ENV{ID_USB_INTERFACES}=="*:0701??:*", ENV{adb_adb}="yes", GOTO="android_usb_rules_end"
 
 LABEL="android_usb_rules_begin"
 # Devices listed here in android_usb_rules_{begin...end} are connected by USB
