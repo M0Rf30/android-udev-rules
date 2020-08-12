@@ -105,8 +105,8 @@ LABEL="not_BQ"
 #	Essential
 ATTR{idVendor}!="2e17", GOTO="not_Essential"
 #		Essential PH-1
-ATTR{idProduct}=="c009", ENV{adb_adb}=="yes"
-ATTR{idProduct}=="c03[02]", ENV{adb_adb}=="yes"
+ATTR{idProduct}=="c009", ENV{adb_adb}="yes"
+ATTR{idProduct}=="c03[02]", ENV{adb_adb}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Essential"
 
@@ -176,7 +176,7 @@ ATTR{idVendor}=="109b", ENV{adb_user}="yes"
 #	Honeywell/Foxconn
 ATTR{idVendor}!="0c2e", GOTO="not_Honeywell"
 #		D70e
-ATTR{idProduct}=="0ba3", ENV{adb_adb}=="yes"
+ATTR{idProduct}=="0ba3", ENV{adb_adb}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Honeywell"
 
@@ -278,7 +278,7 @@ LABEL="not_Intel"
 #	IUNI
 ATTR{idVendor}!="271d", GOTO="not_IUNI"
 #		U3
-ATTR{idProduct}=="bf39", ENV{adb_adb}=="yes"
+ATTR{idProduct}=="bf39", ENV{adb_adb}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_IUNI"
 
@@ -336,21 +336,21 @@ LABEL="not_LG"
 #       Idea
 ATTR{idVendor}!="18d1", GOTO="not_IDEA"
 #       XDS-1078
-ATTR{idProduct}=="2c11", ENV{adb_adb}=="yes"
+ATTR{idProduct}=="2c11", ENV{adb_adb}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_IDEA"
 
 #	Meizu
 ATTR{idVendor}!="2a45", GOTO="not_Meizu"
 #		MX6
-ATTR{idProduct}=="0c02", ENV{adb_adb}=="yes"
+ATTR{idProduct}=="0c02", ENV{adb_adb}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Meizu"
 
 #	Micromax
 ATTR{idVendor}!="2a96", GOTO="not_Micromax"
 #		P702
-ATTR{idProduct}=="201d", ENV{adb_adbfast}=="yes"
+ATTR{idProduct}=="201d", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Micromax"
 
