@@ -464,6 +464,9 @@ ATTR{idVendor}=="2d40", ENV{adb_user}="yes"
 #	PMC-Sierra, (Panasonic Mobile communications, Matsushita)
 ATTR{idVendor}=="04da", ENV{adb_user}="yes"
 
+#	Point Mobile
+ATTR{idVendor}=="2a48", ATTR{idProduct}=="5101", ENV{adb_user}="yes"
+
 #	Qualcomm
 ATTR{idVendor}!="05c6", GOTO="not_Qualcomm"
 ENV{adb_user}="yes"
