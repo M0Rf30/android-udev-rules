@@ -99,6 +99,9 @@ ATTR{idProduct}=="2008", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_BQ"
 
+#	Castles
+ATTR{idVendor}=="0ca6", ATTR{idProduct}=="a051", ENV{adb_user}="yes"
+
 #	Dell (Need product specific rules)
 #ATTR{idVendor}=="413c", ENV{adb_user}="yes"
 
