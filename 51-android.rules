@@ -100,7 +100,11 @@ GOTO="android_usb_rule_match"
 LABEL="not_BQ"
 
 #	Castles
-ATTR{idVendor}=="0ca6", ATTR{idProduct}=="a051", ENV{adb_user}="yes"
+ATTR{idVendor}!="0ca6", GOTO="not_Castles"
+#		Saturn1000-E
+ATTR{idProduct}=="a051", ENV{adb_user}="yes"
+GOTO="android_usb_rule_match"
+LABEL="not_Castles"
 
 #	Dell (Need product specific rules)
 #ATTR{idVendor}=="413c", ENV{adb_user}="yes"
@@ -465,7 +469,11 @@ ATTR{idVendor}=="2d40", ENV{adb_user}="yes"
 ATTR{idVendor}=="04da", ENV{adb_user}="yes"
 
 #	Point Mobile
-ATTR{idVendor}=="2a48", ATTR{idProduct}=="5101", ENV{adb_user}="yes"
+ATTR{idVendor}!="2a48", GOTO="not_Point_Mobile"
+#		PM90
+ATTR{idProduct}=="5101", ENV{adb_user}="yes"
+GOTO="android_usb_rule_match"
+LABEL="not_Point_Mobile"
 
 #	Qualcomm
 ATTR{idVendor}!="05c6", GOTO="not_Qualcomm"
