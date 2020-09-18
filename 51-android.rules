@@ -657,6 +657,9 @@ ATTR{idProduct}=="ff48", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_XiaoMi"
 
+#	Yandex Phone
+ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7"
+
 #	Yota
 ATTR{idVendor}!="2916", GOTO="not_Yota"
 ENV{adb_user}="yes"
