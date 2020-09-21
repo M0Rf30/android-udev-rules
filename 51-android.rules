@@ -141,7 +141,8 @@ ATTR{idVendor}!="18d1", GOTO="not_Google"
 #		Nexus, Pixel, Pixel XL, Pixel 2, Pixel 2XL (4ee2=mtp,adb 4ee4=rndis,adb 4ee6=ptp,adb 4ee7=adb 4ee9=midi,adb 2d01=accessory,adb 2d03=audio_source,adb 2d05=accessory,audio_source,adb)
 #		See https://android.googlesource.com/device/google/wahoo/+/master/init.hardware.usb.rc
 #		OnePlus 6, 4ee1=charging, 4ee2=MTP+debug, 4ee6=PTP+debug, 4ee7=charging+debug
-# 		Pico i.MX7 Dual Development Board 4ee7=debug
+#		Pico i.MX7 Dual Development Board 4ee7=debug
+#		Yandex Phone 4ee7=debug
 ATTR{idProduct}=="4ee0", ENV{adb_adbfast}="yes"
 ATTR{idProduct}=="4ee2", ENV{adb_adb}="yes"
 ATTR{idProduct}=="4ee4", ENV{adb_adb}="yes"
@@ -656,9 +657,6 @@ ATTR{idProduct}=="ff40", SYMLINK+="android_adb"
 ATTR{idProduct}=="ff48", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_XiaoMi"
-
-#	Yandex Phone
-ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7"
 
 #	Yota
 ATTR{idVendor}!="2916", GOTO="not_Yota"
