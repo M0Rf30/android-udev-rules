@@ -418,7 +418,8 @@ ENV{adb_user}="yes"
 ATTR{idProduct}=="7000", SYMLINK+="android_fastboot"
 ATTR{idProduct}=="7100", ENV{adb_user}="yes"
 #		SHIELD Tablet (debug)
-ATTR{idProduct}=="CF05", ENV{adb_adb}="yes"
+ATTR{idProduct}=="cf05", ENV{adb_adb}="yes"
+ATTR{idProduct}=="cf09", ENV{adb_adb}="yes"
 #		Shield TV
 ATTR{idProduct}=="b442", SYMLINK+="android_fastboot"
 GOTO="android_usb_rule_match"
