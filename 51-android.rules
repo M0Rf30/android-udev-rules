@@ -150,8 +150,9 @@ ATTR{idProduct}=="4ee6", ENV{adb_adb}="yes"
 ATTR{idProduct}=="4ee7", ENV{adb_adb}="yes"
 ATTR{idProduct}=="4ee9", ENV{adb_adb}="yes"
 
-# Pixel C Tablet
-ATTR{idProduct}=="5201", ENV{adb_adbfast}="yes"
+#		Pixel C Tablet
+ATTR{idProduct}=="5201", ENV{adb_fast}="yes"
+ATTR{idProduct}=="5208", ENV{adb_adb}="yes"
 
 ATTR{idProduct}=="2d01", ENV{adb_adb}="yes"
 ATTR{idProduct}=="2d03", ENV{adb_adb}="yes"
