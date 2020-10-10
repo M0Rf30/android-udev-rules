@@ -501,6 +501,13 @@ ATTR{idProduct}=="90bb", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Qualcomm"
 
+#	Razer USA, Ltd.
+ATTR{idVendor}!="1532", GOTO="not_Razer"
+#		Razer Phone 2
+ATTR{idProduct}=="9050", ENV{adb_adbfast}="yes"
+GOTO="android_usb_rule_match"
+LABEL="not_Razer"
+
 #	Research In Motion, Ltd.
 ATTR{idVendor}!="0fca", GOTO="not_RIM"
 #		BlackBerry DTEK60
