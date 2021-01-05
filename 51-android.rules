@@ -607,6 +607,12 @@ ATTR{idProduct}=="01bb", ENV{adb_adbfast}="yes"
 ATTR{idProduct}=="51c9", ENV{adb_adbfast}="yes"
 #		Xperia XZ
 ATTR{idProduct}=="51e7", ENV{adb_adbfast}="yes"
+#		Xperia XZ1 Compact
+ATTR{idProduct}=="01f4", ENV{adb_adbfast}="yes"
+#		Xperia XZ2 Compact
+ATTR{idProduct}=="b00b", ENV{adb_adbfast}="yes"
+#		Xperia 5 II
+ATTR{idProduct}=="020d", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Sony_Ericsson"
 
