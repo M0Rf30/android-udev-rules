@@ -638,6 +638,14 @@ ATTR{idVendor}=="0451", ATTR{idProduct}=="d010", ENV{adb_user}="yes"
 #	Toshiba
 ATTR{idVendor}=="0930", ENV{adb_user}="yes"
 
+#	Unitech Electronics
+ATTR{idVendor}!="2e8e", GOTO="not_Unitech_Electronics"
+ENV{adb_user}="yes"
+#		EA630 (96e1=normal,96e7=debug)
+ATTR{idProduct}=="96e7", ENV{adb_adb}="yes"
+GOTO="android_usb_rule_match"
+LABEL="not_Unitech_Electronics"
+
 #	Wileyfox
 ATTR{idVendor}=="2970", ENV{adb_user}="yes"
 
