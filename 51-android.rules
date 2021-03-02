@@ -700,6 +700,8 @@ ATTR{idVendor}=="1ebf", ENV{adb_user}="yes"
 ATTR{idVendor}!="05e0", GOTO="not_Zebra"
 #		TC55
 ATTR{idProduct}=="2101", ENV{adb_adb}="yes"
+#		TC72
+ATTR{idProduct}=="2106", ENV{adb_adb}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Zebra"
 
