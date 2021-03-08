@@ -367,6 +367,10 @@ ATTR{idProduct}=="201d", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Micromax"
 
+#	Microsoft
+#		Surface Duo
+SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="0c26", ENV{adb_user}="yes"
+
 #	Motorola
 ATTR{idVendor}!="22b8", GOTO="not_Motorola"
 ENV{adb_user}="yes"
