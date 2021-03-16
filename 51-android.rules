@@ -369,8 +369,9 @@ LABEL="not_Micromax"
 
 #	Microsoft
 ATTR{idVendor}!="045e", GOTO="not_Microsoft"
+ENV{adb_user}="yes"
 #		Surface Duo
-ATTR{idProduct}=="0c26", ENV{adb_user}="yes"
+ATTR{idProduct}=="0c26", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Microsoft"
 
@@ -405,7 +406,12 @@ GOTO="android_usb_rule_match"
 LABEL="not_Motorola"
 
 #	MTK (MediaTek Inc)
-ATTR{idVendor}=="0e8d", ENV{adb_user}="yes"
+ATTR{idVendor}=="0e8d", GOTO="not_MTK"
+ENV{adb_user}="yes"
+#       Umidigi F1
+ATTR{idProduct}=="201c", ENV{adb_adbfast}="yes"
+GOTO="android_usb_rule_match"
+LABEL="not_MTK"
 
 #	NEC
 ATTR{idVendor}=="0409", ENV{adb_user}="yes"
