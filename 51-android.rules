@@ -16,7 +16,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 # Skip testing for android devices if device is not add, or usb
-ACTION!="add", GOTO="android_usb_rules_end"
+ACTION!="add", ACTION!="bind", GOTO="android_usb_rules_end"
 SUBSYSTEM!="usb", GOTO="android_usb_rules_end"
 
 # For Android devices that enable this universal rule suggested here:
