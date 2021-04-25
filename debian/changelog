@@ -1,5 +1,6 @@
-android-udev-rules (0.0.1-1) stable; urgency=low
+android-udev-rules (20210425-1) stable; urgency=low
 
-        * First build of a deb
+  * Latest stable tag.
 
-        -- builder <builder@wheezy-builder> Mon, 24 Mar 2014 16:05:35 +0100
+ -- Builder <builder@builder.com>  Sun, 25 Apr 2021 16:11:00 +0100
+

@@ -1,5 +1,5 @@
 Name:           android-udev-rules
-Version:        0.0.1
+Version:        20210425
 Release:        1%{?dist}
 Summary:        Udev rules to allow communication with Android devices
 License:        GPLv3+
@@ -35,6 +35,6 @@ rm -rf %{buildroot}
 
 %changelog
 
-* Sun Dec 15 2019 Håkon Løvdal <kode@denkule.no> - 0.0.1-1
-- Created.
+* Sun Apr 25 2021 Håkon Løvdal <kode@denkule.no> - 20210425-1
+- Latest stable tag.
 

@@ -34,7 +34,7 @@ sudo ln -sf "$PWD"/51-android.rules /etc/udev/rules.d/51-android.rules
 # Change file permissions
 sudo chmod a+r /etc/udev/rules.d/51-android.rules
     
-# add the adbusers group if it's doesn't already exist
+# Add the adbusers group if it's doesn't already exist
 sudo cp android-udev.conf /usr/lib/sysusers.d/
 sudo systemd-sysusers
 
