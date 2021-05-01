@@ -413,7 +413,7 @@ GOTO="android_usb_rule_match"
 LABEL="not_Motorola"
 
 #	MTK (MediaTek Inc)
-ATTR{idVendor}=="0e8d", GOTO="not_MTK"
+ATTR{idVendor}!="0e8d", GOTO="not_MTK"
 ENV{adb_user}="yes"
 #       Umidigi F1
 ATTR{idProduct}=="201c", ENV{adb_adbfast}="yes"
