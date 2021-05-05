@@ -296,6 +296,8 @@ ATTR{idProduct}=="0a16", ENV{adb_adb}="yes"
 #		Chuwi Hi 10 Pro (HQ64)
 ATTR{idProduct}=="2a65", ENV{adb_adb}="yes"
 ATTR{idProduct}=="07ef", ENV{adb_adb}="yes"
+#		Asus ZenFone 2 (ADB Sideload in TWRP Recovery)
+ATTR{idProduct}=="0a5d", ENV{adb_adb}="yes"
 #		Reference Boards using kernelflinger
 #		See https://github.com/intel/kernelflinger/blob/master/libefiusb/usb.c#L56
 ATTR{idProduct}=="09ef", ENV{adb_adbfast}="yes"
