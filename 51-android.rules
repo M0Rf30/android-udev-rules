@@ -732,6 +732,8 @@ ATTR{idVendor}!="19d2", GOTO="not_ZTE"
 ATTR{idProduct}=="1351", ENV{adb_adb}="yes"
 #		Blade S (Crescent, Orange San Francisco 2) (1355=normal,1354=debug)
 ATTR{idProduct}=="1354", ENV{adb_adb}="yes"
+#		P685M LTE modem
+ATTR{idProduct}=="1275", ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_ZTE"
 
