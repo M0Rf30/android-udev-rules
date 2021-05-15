@@ -701,6 +701,8 @@ ATTR{idProduct}=="ff28", SYMLINK+="android_adb"
 ATTR{idProduct}=="ff68", SYMLINK+="android_adb"
 #		RedMi 7
 ATTR{idProduct}=="ff40", SYMLINK+="android_adb"
+#		RedMi Note 8T
+ATTR{idProduct}=="ff08", SYMLINK+="android_adb"
 #		RedMi 8 Pro
 ATTR{idProduct}=="ff48", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
