@@ -649,6 +649,8 @@ ATTR{idVendor}=="1782", ENV{adb_user}="yes"
 ATTR{idVendor}=="1bbb", ATTR{idProduct}=="00f2", ENV{adb_adb}="yes"
 #		Alcatel OT6012A
 ATTR{idVendor}=="1bbb", ATTR{idProduct}=="0167", ENV{adb_adb}="yes"
+# Alcatel 1 5033F 2019
+ATTR{idVendor}=="1bbb", ATTR{idProduct}=="0c01", ENV{adb_adb}="yes"
 
 #	Teleepoch
 ATTR{idVendor}=="2340", ENV{adb_user}="yes"
