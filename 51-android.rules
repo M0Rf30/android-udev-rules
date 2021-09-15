@@ -418,7 +418,7 @@ LABEL="not_Motorola"
 #	MTK (MediaTek Inc)
 ATTR{idVendor}!="0e8d", GOTO="not_MTK"
 ENV{adb_user}="yes"
-#       Umidigi F1
+#		Umidigi F1
 ATTR{idProduct}=="201c", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_MTK"
@@ -645,12 +645,16 @@ ATTR{idVendor}=="1973", ENV{adb_user}="yes"
 ATTR{idVendor}=="1782", ENV{adb_user}="yes"
 
 #	T & A Mobile Phones
+ATTR{idVendor}!="1bbb", GOTO="not_T_A_Mobile"
+ENV{adb_user}="yes"
+#		Alcatel 1 2019 5033F
+ATTR{idProduct}=="0c01", ENV{adb_adb}="yes"
 #		Alcatel OT991D
-ATTR{idVendor}=="1bbb", ATTR{idProduct}=="00f2", ENV{adb_adb}="yes"
+ATTR{idProduct}=="00f2", ENV{adb_adb}="yes"
 #		Alcatel OT6012A
-ATTR{idVendor}=="1bbb", ATTR{idProduct}=="0167", ENV{adb_adb}="yes"
-# Alcatel 1 5033F 2019
-ATTR{idVendor}=="1bbb", ATTR{idProduct}=="0c01", ENV{adb_adb}="yes"
+ATTR{idProduct}=="0167", ENV{adb_adb}="yes"
+GOTO="android_usb_rule_match"
+LABEL="not_T_A_Mobile"
 
 #	Teleepoch
 ATTR{idVendor}=="2340", ENV{adb_user}="yes"
