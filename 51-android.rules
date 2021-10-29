@@ -66,6 +66,16 @@ ATTR{idProduct}=="1549", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Archos"
 
+#       Ascom
+ATTR{idVendor}!="1768", GOTO="not_Ascom"
+ATTR{idProduct}=="0007", ENV{adb_adb}="yes"
+ATTR{idProduct}=="000e", ENV{adb_adb}="yes"
+ATTR{idProduct}=="4ee7", ENV{adb_adb}="yes"
+ATTR{idProduct}=="0013", ENV{adb_adb}="yes"
+ATTR{idProduct}=="0011", ENV{adb_adb}="yes"
+GOTO="android_usb_rule_match"
+LABEL="not_Ascom"
+
 #	ASUSTeK
 ATTR{idVendor}!="0b05", GOTO="not_Asus"
 #		False positive - accessory
