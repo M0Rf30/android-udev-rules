@@ -645,6 +645,8 @@ ATTR{idProduct}=="01f4", ENV{adb_adbfast}="yes"
 ATTR{idProduct}=="b00b", ENV{adb_adbfast}="yes"
 #		Xperia 5 II
 ATTR{idProduct}=="020d", ENV{adb_adbfast}="yes"
+#		Xperia Z Ultra
+ATTR{idProduct}=="519c", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Sony_Ericsson"
 
