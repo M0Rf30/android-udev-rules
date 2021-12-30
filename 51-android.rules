@@ -542,6 +542,7 @@ LABEL="not_Qualcomm"
 ATTR{idVendor}!="1532", GOTO="not_Razer"
 #		Razer Phone 2
 ATTR{idProduct}=="9050", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="9051", ENV{adb_adb}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Razer"
 
