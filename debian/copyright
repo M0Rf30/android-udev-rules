@@ -3,7 +3,7 @@ Upstream-Name: android-udev-rules
 Source: https://github.com/M0Rf30/android-udev-rules
 
 Files: *
-Copyright: 2018 Free Software Foundation, Inc. <http://fsf.org/>
+Copyright: JoesCat, M0Rf30 and contributors
 License: GPL-3+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by

@@ -1,6 +1,6 @@
-android-udev-rules (20210425-1) stable; urgency=low
+android-udev-rules (20220102-1) stable; urgency=low
 
   * Latest stable tag.
 
- -- Builder <builder@builder.com>  Sun, 25 Apr 2021 16:11:00 +0100
+ -- Builder <builder@builder.com>  Sun, 02 Jan 2022 19:41:00 +0100
 

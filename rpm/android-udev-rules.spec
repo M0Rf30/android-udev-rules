@@ -1,7 +1,7 @@
 Name:           android-udev-rules
-Version:        20210425
+Version:        20220102
 Release:        1%{?dist}
-Summary:        Udev rules to allow communication with Android devices
+Summary:        Udev rules to connect Android devices to your linux box
 License:        GPLv3+
 URL:            https://github.com/M0Rf30/android-udev-rules
 Source0:        https://github.com/M0Rf30/android-udev-rules/raw/master/51-android.rules
@@ -35,6 +35,6 @@ rm -rf %{buildroot}
 
 %changelog
 
-* Sun Apr 25 2021 Håkon Løvdal <kode@denkule.no> - 20210425-1
+* Sun Jan 02 2022 Håkon Løvdal <kode@denkule.no> - 20220102-1
 - Latest stable tag.
 
