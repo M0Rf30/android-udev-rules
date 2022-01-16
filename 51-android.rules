@@ -572,7 +572,6 @@ ATTR{idProduct}=="6860", SYMLINK+="android_adb"
 ATTR{idProduct}=="6864", SYMLINK+="android_adb"
 ATTR{idProduct}=="6866", SYMLINK+="android_adb"
 #		Galaxy Core, Tab 10.1, i9100 S2, i9300 S3, N5100 Note (8.0), Galaxy S3 SHW-M440S 3G (Korea only)
-ATTR{idProduct}=="6860", SYMLINK+="android_adb"
 ATTR{idProduct}=="685e", ENV{adb_adbfast}="yes"
 #		Galaxy i9300 S3
 ATTR{idProduct}=="6866", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
