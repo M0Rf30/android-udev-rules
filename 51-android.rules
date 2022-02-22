@@ -530,6 +530,8 @@ ATTR{idProduct}=="90bb", ENV{adb_adb}="yes"
 ATTR{idProduct}=="9011", SYMLINK+="android_adb"
 #		OnePlus 6 / Asia
 ATTR{idProduct}=="f003", SYMLINK+="android_adb"
+#   Yongnuo YN450m (identified in lsusb as Intex Aqua Fish & Jolla C Diagnostic Mode)
+ATTR{idProduct}=="9091", SYMLINK+="android_adb"
 GOTO="android_usb_rule_match"
 LABEL="not_Qualcomm"
 
