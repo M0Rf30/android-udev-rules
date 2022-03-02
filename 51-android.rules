@@ -476,6 +476,7 @@ LABEL="not_OnePlus"
 ATTR{idVendor}!="22d9", GOTO="not_Oppo"
 #		Find 5 (2767=debug)
 ATTR{idProduct}=="2767", ENV{adb_adb}="yes"
+#       Realme 8
 ATTR{idProduct}=="2769", ENV{adb_adb}="yes"
 ATTR{idProduct}=="2764", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 #       A94 5G
