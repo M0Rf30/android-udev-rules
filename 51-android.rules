@@ -760,6 +760,9 @@ LABEL="not_ZTE"
 # ZUK
 ATTR{idVendor}=="2b4c", ENV{adb_user}="yes"
 
+# Verifone
+ATTR{idVendor}=="11ca", ENV{adb_user}="yes"
+
 # Skip other vendor tests
 LABEL="android_usb_rule_match"
 
