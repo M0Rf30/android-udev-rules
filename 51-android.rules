@@ -750,6 +750,17 @@ LABEL="not_Zebra"
 
 # ZTE
 ATTR{idVendor}!="19d2", GOTO="not_ZTE"
+#   ZTE Blade A5 2020
+#   mtp,adb
+ATTR{idProduct}=="0306", ENV{adb_adb}="yes"
+#   ptp,adb
+ATTR{idProduct}=="0310", ENV{adb_adb}="yes"
+#   cdrom,adb
+ATTR{idProduct}=="0501", ENV{adb_adb}="yes"
+#   charging,adb
+ATTR{idProduct}=="1352", ENV{adb_adb}="yes"
+#   rndis,adb
+ATTR{idProduct}=="1373", ENV{adb_adb}="yes"
 #   Blade (1353=normal,1351=debug)
 ATTR{idProduct}=="1351", ENV{adb_adb}="yes"
 #   Blade S (Crescent, Orange San Francisco 2) (1355=normal,1354=debug)
