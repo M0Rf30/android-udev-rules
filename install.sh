@@ -1,12 +1,6 @@
 #!/usr/bin/env sh
 
-SELECTED_USER="$1"
 CURRENT_UID="$(id -u)"
-
-if [ "$SELECTED_USER" = "" ]; then
-  echo "Please specify a user!"
-  exit 1
-fi
 
 if [ "$CURRENT_UID" -ne 0 ]; then
   echo "Please run using sudo!"
