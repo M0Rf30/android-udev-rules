@@ -767,6 +767,12 @@ ATTR{idProduct}=="1351", ENV{adb_adb}="yes"
 ATTR{idProduct}=="1354", ENV{adb_adb}="yes"
 #   P685M LTE modem
 ATTR{idProduct}=="1275", ENV{adb_user}="yes"
+#   MF286[A] internal LTE modem
+ATTR{idProduct}=="1432", ENV{adb_user}="yes"
+#   MF286D internal LTE modem
+ATTR{idProduct}=="1485", ENV{adb_user}="yes"
+#   MF286R internal LTE modem
+ATTR{idProduct}=="1489", ENV{adb_user}="yes"
 #   Nubia / RedMagic Series (NX***)
 #   See https://github.com/TadiT7/nubia_nx619j_dump/blob/NX619J-user-9-PKQ1.180929.001-eng.nubia.20181220.181559-release-keys/vendor/etc/init/hw/init.nubia.usb.rc
 #   ptp,adb
