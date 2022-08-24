@@ -12,8 +12,9 @@
 ACTION!="add", ACTION!="bind", GOTO="android_usb_rules_end"
 SUBSYSTEM!="usb", GOTO="android_usb_rules_end"
 
-# Skip testing for unexpected devices like hubs or printers
+# Skip testing for unexpected devices like hubs, controllers or printers
 ATTR{bDeviceClass}=="09", GOTO="android_usb_rules_end"
+ENV{ID_MODEL}=="Controller", GOTO="android_usb_rules_end"
 ENV{ID_USB_INTERFACES}=="*:0701??:*", ENV{adb_adb}="yes", GOTO="android_usb_rules_end"
 
 LABEL="android_usb_rules_begin"
