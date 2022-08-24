@@ -12,11 +12,6 @@
 ACTION!="add", ACTION!="bind", GOTO="android_usb_rules_end"
 SUBSYSTEM!="usb", GOTO="android_usb_rules_end"
 
-# For Android devices that enable this universal rule suggested here:
-# http://ktnr74.blogspot.com/2013/04/universal-udev-rule-for-all-android.html
-# Commented as a reminder (we prefer a punctual device detection)
-# ENV{ID_USB_INTERFACES}=="*:ff420?:*", SYMLINK+="android/$env{ID_SERIAL_SHORT}", GOTO="android_usb_rule_match"
-
 # Skip testing for unexpected devices like hubs or printers
 ATTR{bDeviceClass}=="09", GOTO="android_usb_rules_end"
 ENV{ID_USB_INTERFACES}=="*:0701??:*", ENV{adb_adb}="yes", GOTO="android_usb_rules_end"
