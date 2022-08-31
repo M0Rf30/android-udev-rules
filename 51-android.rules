@@ -159,6 +159,9 @@ ATTR{idProduct}=="4ee6", ENV{adb_adb}="yes"
 ATTR{idProduct}=="4ee7", ENV{adb_adb}="yes"
 ATTR{idProduct}=="4ee9", ENV{adb_adb}="yes"
 
+#   Tensor Pixel phones (Pixel 6/6A/6 Pro) 4eeb=cdc-ncm; 4eec=cdc-ncm,adb
+ATTR{idProduct}=="4eec", ENV{adb_adb}="yes"
+
 #   Pixel C Tablet
 ATTR{idProduct}=="5201", ENV{adb_adbfast}="yes"
 ATTR{idProduct}=="5203", ENV{adb_adb}="yes"
