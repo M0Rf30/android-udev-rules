@@ -482,6 +482,10 @@ ATTR{idProduct}=="2764", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_ME
 ATTR{idProduct}=="2769", ENV{adb_adb}="yes"
 #   Oppo Watch, fastboot
 ATTR{idProduct}=="2024", ENV{adb_user}="yes"
+#   RMX3231 - Realme C11 20221, normal, rndis, mtp
+ATTR{idProduct}=="200e", ENV{adb_user}="yes"
+ATTR{idProduct}=="2028", ENV{adb_user}="yes"
+ATTR{idProduct}=="2026", ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Oppo"
 
