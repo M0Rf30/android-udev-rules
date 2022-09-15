@@ -690,6 +690,9 @@ ATTR{idProduct}=="96e7", ENV{adb_adb}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Unitech_Electronics"
 
+# Vivo
+ATTR{idVendor}=="2d95", ENV{adb_user}="yes"
+
 # Wileyfox
 ATTR{idVendor}=="2970", ENV{adb_user}="yes"
 
