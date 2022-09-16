@@ -21,7 +21,7 @@ else
   groupadd adbusers
 fi
 
-usermod -a -G adbusers "$USER"
+usermod -a -G adbusers "$(logname)"
 udevadm control --reload-rules
 
 if [ "$USE_SERVICE_CMD" = "true" ]; then
