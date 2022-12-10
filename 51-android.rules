@@ -125,7 +125,6 @@ ATTR{idProduct}=="9015", ENV{adb_adb}="yes"
 ATTR{idProduct}=="9039", ENV{adb_adb}="yes"
 ATTR{idProduct}=="904e", ENV{adb_adb}="yes"
 ATTR{idProduct}=="90dc", ENV{adb_adb}="yes"
-ATTR{idProduct}=="90bb", ENV{adb_adb}="yes", ENV{midi_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Fairphone2"
 
@@ -486,6 +485,9 @@ ATTR{idProduct}=="2024", ENV{adb_user}="yes"
 ATTR{idProduct}=="200e", ENV{adb_user}="yes"
 ATTR{idProduct}=="2028", ENV{adb_user}="yes"
 ATTR{idProduct}=="2026", ENV{adb_user}="yes"
+#   OnePlus 8T (22d9:2771=adb,PTP, 22d9:2772=adb,MTP)
+ATTR{idProduct}=="2771", ENV{adb_adb}="yes"
+ATTR{idProduct}=="2772", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 GOTO="android_usb_rule_match"
 LABEL="not_Oppo"
 
