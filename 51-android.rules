@@ -366,6 +366,8 @@ LABEL="not_LG"
 
 # Meizu
 ATTR{idVendor}!="2a45", GOTO="not_Meizu"
+#   M1E
+ATTR{idProduct}=="0c01", ENV{adb_adb}="yes"
 #   MX6
 ATTR{idProduct}=="0c02", ENV{adb_adb}="yes"
 GOTO="android_usb_rule_match"
