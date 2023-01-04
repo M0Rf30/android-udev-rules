@@ -521,6 +521,9 @@ ATTR{idProduct}=="5101", ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Point_Mobile"
 
+# Polar M600
+ATTR{idVendor}=="0da4", ENV{adb_user}="yes"
+
 # Qualcomm (Wearners also 05c6)
 ATTR{idVendor}!="05c6", GOTO="not_Qualcomm"
 ENV{adb_user}="yes"
