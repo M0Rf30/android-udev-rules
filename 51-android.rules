@@ -521,8 +521,14 @@ ATTR{idProduct}=="5101", ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Point_Mobile"
 
-# Polar M600
-ATTR{idVendor}=="0da4", ENV{adb_user}="yes"
+# Polar
+ATTR{idVendor}!="0da4", GOTO="not_Polar"
+ENV{adb_user}="yes"
+#   Polar M600 (0010=adb,000b=fastboot)
+ATTR{idProduct}=="0010", SYMLINK+="android_adb"
+ATTR{idProduct}=="000b", SYMLINK+="android_fastboot"
+GOTO="android_usb_rule_match"
+LABEL="not_Polar"
 
 # Qualcomm (Wearners also 05c6)
 ATTR{idVendor}!="05c6", GOTO="not_Qualcomm"
