@@ -552,6 +552,8 @@ ATTR{idProduct}=="9011", SYMLINK+="android_adb"
 ATTR{idProduct}=="f003", SYMLINK+="android_adb"
 #   Yongnuo YN450m (identified in lsusb as Intex Aqua Fish & Jolla C Diagnostic Mode)
 ATTR{idProduct}=="9091", SYMLINK+="android_adb"
+#   Wileyfox Swift 2 Plus
+ATTR{idProduct}=="0001", ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Qualcomm"
 
