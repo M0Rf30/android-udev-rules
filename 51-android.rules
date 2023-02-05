@@ -43,6 +43,9 @@ ATTR{idVendor}=="0a5c", ATTR{idProduct}=="e681", ENV{adb_adb}="yes"
 # Amazon Lab126
 #   Amazon Kindle Fire
 ATTR{idVendor}=="1949", ATTR{idProduct}=="0006", ENV{adb_adbfast}="yes"
+#   Amazon Fire TV Stick Lite (3rd gen)
+ATTR{idVendor}=="1949", ATTR{idProduct}=="03a8", ENV{adb_adbfast}="yes"
+
 
 # Archos
 ATTR{idVendor}!="0e79", GOTO="not_Archos"
