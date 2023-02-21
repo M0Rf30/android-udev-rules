@@ -385,6 +385,9 @@ LABEL="not_Micromax"
 
 # Microsoft
 ATTR{idVendor}!="045e", GOTO="not_Microsoft"
+#   False positive xbox controllers 028e, 02ea, 0719
+ATTR{idProduct}=="02??", GOTO="android_usb_rules_end"
+ATTR{idProduct}=="07??", GOTO="android_usb_rules_end"
 ENV{adb_user}="yes"
 #   Surface Duo
 ATTR{idProduct}=="0c26", ENV{adb_adbfast}="yes"
@@ -619,7 +622,16 @@ ATTR{idVendor}=="1f53", ENV{adb_user}="yes"
 ATTR{idVendor}=="1d9c", ENV{adb_user}="yes"
 
 # Sony
-ATTR{idVendor}=="054c", ENV{adb_user}="yes"
+ATTR{idVendor}!="054c", GOTO="not_Sony"
+#   False positives dualshock 0268,05c4,05c5, adapters 0ba0, bluetooth 09cc, 0ce6, VR 09af
+ATTR{idProduct}=="02??", GOTO="android_usb_rules_end"
+ATTR{idProduct}=="05??", GOTO="android_usb_rules_end"
+ATTR{idProduct}=="09??", GOTO="android_usb_rules_end"
+ATTR{idProduct}=="0b??", GOTO="android_usb_rules_end"
+ATTR{idProduct}=="0c??", GOTO="android_usb_rules_end"
+ENV{adb_user}="yes"
+GOTO="android_usb_rule_match"
+LABEL="not_Sony"
 
 # Sony Ericsson
 ATTR{idVendor}!="0fce", GOTO="not_Sony_Ericsson"
