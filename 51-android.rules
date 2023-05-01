@@ -471,6 +471,8 @@ ATTR{idVendor}!="2a70", GOTO="not_OnePlus"
 ATTR{idProduct}=="4ee2", ENV{adb_adb}="yes"
 ATTR{idProduct}=="4ee6", ENV{adb_adb}="yes"
 ATTR{idProduct}=="4ee7", ENV{adb_adb}="yes"
+#   OnePlus Nord N10 4G USB tethering mode
+ATTR{idProduct}=="9024", ENV{adb_adb}="yes"
 #   OnePlus 3T with Oreo MIDI mode 90bb=adb+midi, 9011=MTP, 904e=PTP
 ATTR{idProduct}=="90bb", ENV{adb_adb}="yes"
 ATTR{idProduct}=="9011", SYMLINK+="android_adb"
