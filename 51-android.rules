@@ -41,14 +41,22 @@ ATTR{idVendor}=="10d6", ATTR{idProduct}=="0c02", ENV{adb_adb}="yes"
 ATTR{idVendor}=="0a5c", ATTR{idProduct}=="e681", ENV{adb_adb}="yes"
 
 # Amazon Lab126
+ATTR{idVendor}!="1949", GOTO="not_Amazon"
 #   Amazon Kindle Fire
-ATTR{idVendor}=="1949", ATTR{idProduct}=="0006", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="0006", ENV{adb_adbfast}="yes"
 #   Amazon Kindle 8 2016 (giza) (0bb4:0c01=fastboot 0231=mtp 0232=adb,mtp 0233=ptp 0234=adb,ptp)
-#   Amazon Kindle 10 2021 (trona) (05e0=fastboot 05e1=mtp 05e2=adb,mtp 05e3=ptp 05e4=adb,ptp 05e8=adb,chg=05e8 2046=midi 2048=adb,midi)
-ATTR{idVendor}=="1949", ATTR{idProduct}=="05e0", ENV{adb_adbfast}="yes"
-ATTR{idVendor}=="1949", ATTR{idProduct}=="05e8", ENV{adb_adb}="yes"
+ATTR{idProduct}=="0232", ENV{adb_adbmtp}="yes"
+ATTR{idProduct}=="0234", ENV{adb_adbptp}="yes"
+#   Amazon Kindle 10 2021 (trona) (05e0=fastboot 05e1=mtp 05e1=chg 05e2=adb,mtp 05e3=ptp 05e4=adb,ptp 05e8=adb,chg=05e8 2046=midi 2048=adb,midi)
+ATTR{idProduct}=="05e0", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="05e2", ENV{adb_adbmtp}="yes"
+ATTR{idProduct}=="05e4", ENV{adb_adbptp}="yes"
+ATTR{idProduct}=="05e8", ENV{adb_adb}="yes"
+ATTR{idProduct}=="2048", ENV{adb_adbmidi}="yes"
 #   Amazon Fire TV Stick Lite (3rd gen)
-ATTR{idVendor}=="1949", ATTR{idProduct}=="03a8", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="03a8", ENV{adb_adbfast}="yes"
+GOTO="android_usb_rule_match"
+LABEL="not_Amazon"
 
 
 # Archos
@@ -144,14 +152,17 @@ ATTR{idVendor}=="04c5", ENV{adb_user}="yes"
 
 # Fuzhou Rockchip Electronics
 #   Mediacom Smartpad 715i
-ATTR{idVendor}=="2207", ATTR{idProduct}=="0000", ENV{adb_adb}="yes"
+ATTR{idVendor}!="2207", GOTO="not_Fuzhou"
+ATTR{idProduct}=="0000", ENV{adb_adb}="yes"
 #   Ubislate 7Ci
-ATTR{idVendor}=="2207", ATTR{idProduct}=="0010", ENV{adb_adb}="yes"
+ATTR{idProduct}=="0010", ENV{adb_adb}="yes"
 #   Anbernic RG353P - AOSP12beta#1 (0003=rndis 0006=adb,chg 0007=mtp 0008=ptp 0013=adb,rndis 0017=adb,mtp 0018=adb,ptp)
-ATTR{idVendor}=="2207", ATTR{idProduct}=="0006", ENV{adb_adb}="yes"
-ATTR{idVendor}=="2207", ATTR{idProduct}=="0013", ENV{adb_adb}="yes"
-ATTR{idVendor}=="2207", ATTR{idProduct}=="0017", ENV{adb_adb}="yes"
-ATTR{idVendor}=="2207", ATTR{idProduct}=="0018", ENV{adb_adb}="yes"
+ATTR{idProduct}=="0006", ENV{adb_adb}="yes"
+ATTR{idProduct}=="0013", ENV{adb_adbtet}="yes"
+ATTR{idProduct}=="0017", ENV{adb_adbmtp}="yes"
+ATTR{idProduct}=="0018", ENV{adb_adbptp}="yes"
+GOTO="android_usb_rule_match"
+LABEL="not_Fuzhou"
 
 # Garmin-Asus
 ATTR{idVendor}=="091e", ENV{adb_user}="yes"
@@ -857,6 +868,10 @@ LABEL="android_usb_rule_match"
 
 # Symlink shortcuts to reduce code in tests above
 ENV{adb_adbfast}=="yes", ENV{adb_adb}="yes", ENV{adb_fast}="yes"
+ENV{adb_adbmtp}=="yes", ENV{adb_adb}="yes", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+ENV{adb_adbptp}=="yes", ENV{adb_adb}="yes"
+ENV{adb_adbtet}=="yes", ENV{adb_adb}="yes"
+ENV{adb_adbmidi}=="yes", ENV{adb_adb}="yes", SYMLINK+="midi", SYMLINK+="midi0%n"
 ENV{adb_adb}=="yes", ENV{adb_user}="yes", SYMLINK+="android_adb"
 ENV{adb_fast}=="yes", SYMLINK+="android_fastboot"
 
