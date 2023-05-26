@@ -57,6 +57,7 @@ ATTR{idProduct}=="2048", ENV{adb_adbmidi}="yes"
 ATTR{idProduct}=="03a8", ENV{adb_adbfast}="yes"
 #   Amazone Fire 7 (mustang)
 ATTR{idProduct}=="03c8", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="03cb", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Amazon"
 
