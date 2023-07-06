@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2022 JoesCat, M0Rf30 and contributors
 #
-# SPDX-License-Identifier: GPL-3.0
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 # These rules refer to:
 # https://developer.android.com/studio/run/device.html
