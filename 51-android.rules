@@ -399,6 +399,8 @@ ATTR{idVendor}!="2a45", GOTO="not_Meizu"
 ATTR{idProduct}=="0c01", ENV{adb_adb}="yes"
 #   MX6
 ATTR{idProduct}=="0c02", ENV{adb_adb}="yes"
+#   M6T (untested; See <https://github.com/M0Rf30/android-udev-rules/issues/262>
+ATTR{idProduct}=="201c", ENV{adb_adb}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Meizu"
 
