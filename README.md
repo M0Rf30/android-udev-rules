@@ -66,3 +66,6 @@ adb devices
 2. Make your edits.
 3. TEST THEM!
 4. Create a pull request.
+
+You may also want to take a look at the
+[wiki](https://github.com/M0Rf30/android-udev-rules/wiki).
