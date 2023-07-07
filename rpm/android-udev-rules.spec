@@ -55,4 +55,3 @@ systemctl restart systemd-udevd.service
 
 * Sun Jan 02 2022 Håkon Løvdal <kode@denkule.no> - 20220102-1
 - Latest stable tag.
-
