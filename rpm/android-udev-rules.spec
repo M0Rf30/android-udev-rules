@@ -2,7 +2,7 @@ Name:           android-udev-rules
 Version:        20230310
 Release:        1%{?dist}
 Summary:        Udev rules to connect Android devices to your linux box
-License:        GPLv3+
+License:        GPL-3.0-or-later
 URL:            https://github.com/M0Rf30/android-udev-rules
 Source0:        https://raw.githubusercontent.com/M0Rf30/android-udev-rules/main/51-android.rules
 Source1:        https://raw.githubusercontent.com/M0Rf30/android-udev-rules/main/README.md
@@ -55,4 +55,3 @@ systemctl restart systemd-udevd.service
 
 * Sun Jan 02 2022 Håkon Løvdal <kode@denkule.no> - 20220102-1
 - Latest stable tag.
-

@@ -1,5 +1,5 @@
 Source: android-udev-rules
-Section: developer-tools
+Section: devel
 Priority: extra
 Maintainer: Simon Sickle <simon@simonsickle.com>
 Build-Depends: debhelper (>= 9)

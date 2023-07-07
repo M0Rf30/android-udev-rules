@@ -1,12 +1,13 @@
-# SPDX-FileCopyrightText: 2022 JoesCat, M0Rf30 and contributors
-#
-# SPDX-License-Identifier: GPL-3.0
+# SPDX-FileCopyrightText: 2012-2023 JoesCat, M0Rf30 and contributors
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+# Latest version can be found at:
+# <https://github.com/M0Rf30/android-udev-rules>
 
 # These rules refer to:
-# https://developer.android.com/studio/run/device.html
+# <https://developer.android.com/studio/run/device.html>
 # and include many suggestions from Arch Linux, GitHub and other Communities.
-# Latest version can be found at: 
-# https://github.com/M0Rf30/android-udev-rules
+
 
 # Skip testing for android devices if device is not add, or usb
 ACTION!="add", ACTION!="bind", GOTO="android_usb_rules_end"
@@ -19,6 +20,7 @@ ENV{ID_USB_INTERFACES}=="*:0701??:*", ENV{adb_adb}="yes", GOTO="android_usb_rule
 
 LABEL="android_usb_rules_begin"
 # Devices listed here in android_usb_rules_{begin...end} are connected by USB
+
 # Acer
 ATTR{idVendor}!="0502", GOTO="not_Acer"
 #   Iconia Tab A1-830
@@ -60,7 +62,6 @@ ATTR{idProduct}=="03c8", ENV{adb_adbfast}="yes"
 ATTR{idProduct}=="03cb", ENV{adb_adbfast}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Amazon"
-
 
 # Archos
 ATTR{idVendor}!="0e79", GOTO="not_Archos"
@@ -399,6 +400,8 @@ ATTR{idVendor}!="2a45", GOTO="not_Meizu"
 ATTR{idProduct}=="0c01", ENV{adb_adb}="yes"
 #   MX6
 ATTR{idProduct}=="0c02", ENV{adb_adb}="yes"
+#   M6T (untested; See <https://github.com/M0Rf30/android-udev-rules/issues/262>
+ATTR{idProduct}=="201c", ENV{adb_adb}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Meizu"
 
