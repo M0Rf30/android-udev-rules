@@ -36,11 +36,11 @@ LABEL="not_Acer"
 
 # Actions Semiconductor Co., Ltd
 #   Denver TAD 70111
-ATTR{idVendor}=="10d6", ATTR{idProduct}=="0c02", ENV{adb_adb}="yes"
+ATTR{idVendor}=="10d6", ATTR{idProduct}=="0c02", GOTO="go_adb"
 
 # ADVANCE (Need product specific rules)
 #   S5
-ATTR{idVendor}=="0a5c", ATTR{idProduct}=="e681", ENV{adb_adb}="yes"
+ATTR{idVendor}=="0a5c", ATTR{idProduct}=="e681", GOTO="go_adb"
 
 # Amazon Lab126
 ATTR{idVendor}!="1949", GOTO="not_Amazon"
