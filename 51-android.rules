@@ -24,14 +24,14 @@ LABEL="android_usb_rules_begin"
 # Acer
 ATTR{idVendor}!="0502", GOTO="not_Acer"
 #   Iconia Tab A1-830
-ATTR{idProduct}=="3604", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="3604", GOTO="go_adbfast"
 #   Iconia Tab A210 (33cc=normal,33cb=debug)
-ATTR{idProduct}=="33cb", ENV{adb_adb}="yes"
+ATTR{idProduct}=="33cb", GOTO="go_adb"
 #   Iconia Tab A500
-ATTR{idProduct}=="3325", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="3325", GOTO="go_adbfast"
 #   Liquid (3202=normal,3203=debug)
-ATTR{idProduct}=="3203", ENV{adb_user}="yes"
-GOTO="android_usb_rule_match"
+ATTR{idProduct}=="3203", GOTO="go_adb"
+GOTO="android_usb_rules_end"
 LABEL="not_Acer"
 
 # Actions Semiconductor Co., Ltd
