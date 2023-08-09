@@ -66,12 +66,12 @@ LABEL="not_Amazon"
 # Archos
 ATTR{idVendor}!="0e79", GOTO="not_Archos"
 #   43
-ATTR{idProduct}=="1417", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="1417", GOTO="go_adbfast"
 #   101
-ATTR{idProduct}=="1411", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="1411", GOTO="go_adbfast"
 #   101 xs
-ATTR{idProduct}=="1549", ENV{adb_adbfast}="yes"
-GOTO="android_usb_rule_match"
+ATTR{idProduct}=="1549", GOTO="go_adbfast"
+GOTO="android_usb_rules_end"
 LABEL="not_Archos"
 
 # Ascom
