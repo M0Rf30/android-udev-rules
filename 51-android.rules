@@ -871,15 +871,40 @@ ATTR{idVendor}=="2b4c", ENV{adb_user}="yes"
 # Verifone
 ATTR{idVendor}=="11ca", ENV{adb_user}="yes"
 
-# Skip other vendor tests
-LABEL="android_usb_rule_match"
+# Skip past LABEL=found_env,set_env
+GOTO="android_usb_rule_match"
+
+# ADB Debug User (default)
+LABEL="go_adb"
+ENV{adb_adb}="yes", GOTO="android_usb_rule_match"
+
+# ADB Debug and Fastboot mode
+LABEL="go_adbfast"
+ENV{adb_adbfast}="yes", GOTO="android_usb_rule_match"
+
+# ADB Debug and MTP mode
+LABEL="go_adbmtp"
+ENV{adb_adbmtp}="yes", GOTO="android_usb_rule_match"
+
+# ADB Debug and PTP mode
+LABEL="go_adbptp"
+ENV{adb_adbptp}="yes", GOTO="android_usb_rule_match"
+
+# ADB Debug and MIDI mode
+LABEL="go_adbmidi"
+ENV{adb_adbmidi}="yes", GOTO="android_usb_rule_match"
+
+# ADB Debug and Tether mode
+LABEL="go_adbrndis"
+ENV{adb_adbrndis}="yes", GOTO="android_usb_rule_match"
 
 # Symlink shortcuts to reduce code in tests above
+LABEL="android_usb_rule_match"
 ENV{adb_adbfast}=="yes", ENV{adb_adb}="yes", ENV{adb_fast}="yes"
 ENV{adb_adbmtp}=="yes", ENV{adb_adb}="yes", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 ENV{adb_adbptp}=="yes", ENV{adb_adb}="yes"
 ENV{adb_adbtet}=="yes", ENV{adb_adb}="yes"
-ENV{adb_adbmidi}=="yes", ENV{adb_adb}="yes", SYMLINK+="midi", SYMLINK+="midi0%n"
+ENV{adb_adbmidi}=="yes", ENV{adb_adb}="yes", SYMLINK+="android_midi", SYMLINK+="android_midi0%n"
 ENV{adb_adb}=="yes", ENV{adb_user}="yes", SYMLINK+="android_adb"
 ENV{adb_fast}=="yes", SYMLINK+="android_fastboot"
 
