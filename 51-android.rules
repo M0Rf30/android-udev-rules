@@ -76,12 +76,12 @@ LABEL="not_Archos"
 
 # Ascom
 ATTR{idVendor}!="1768", GOTO="not_Ascom"
-ATTR{idProduct}=="0007", ENV{adb_adb}="yes"
-ATTR{idProduct}=="000e", ENV{adb_adb}="yes"
-ATTR{idProduct}=="4ee7", ENV{adb_adb}="yes"
-ATTR{idProduct}=="0013", ENV{adb_adb}="yes"
-ATTR{idProduct}=="0011", ENV{adb_adb}="yes"
-GOTO="android_usb_rule_match"
+ATTR{idProduct}=="0007", GOTO="go_adb"
+ATTR{idProduct}=="000e", GOTO="go_adb"
+ATTR{idProduct}=="4ee7", GOTO="go_adb"
+ATTR{idProduct}=="0013", GOTO="go_adb"
+ATTR{idProduct}=="0011", GOTO="go_adb"
+GOTO="android_usb_rules_end"
 LABEL="not_Ascom"
 
 # ASUSTeK
