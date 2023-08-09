@@ -45,22 +45,22 @@ ATTR{idVendor}=="0a5c", ATTR{idProduct}=="e681", GOTO="go_adb"
 # Amazon Lab126
 ATTR{idVendor}!="1949", GOTO="not_Amazon"
 #   Amazon Kindle Fire
-ATTR{idProduct}=="0006", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="0006", GOTO="go_adbfast"
 #   Amazon Kindle 8 2016 (giza) (0bb4:0c01=fastboot 0231=mtp 0232=adb,mtp 0233=ptp 0234=adb,ptp)
-ATTR{idProduct}=="0232", ENV{adb_adbmtp}="yes"
-ATTR{idProduct}=="0234", ENV{adb_adbptp}="yes"
+ATTR{idProduct}=="0232", GOTO="go_adbmtp"
+ATTR{idProduct}=="0234", GOTO="go_adbptp"
 #   Amazon Kindle 10 2021 (trona) (05e0=fastboot 05e1=mtp 05e1=chg 05e2=adb,mtp 05e3=ptp 05e4=adb,ptp 05e8=adb,chg=05e8 2046=midi 2048=adb,midi)
-ATTR{idProduct}=="05e0", ENV{adb_adbfast}="yes"
-ATTR{idProduct}=="05e2", ENV{adb_adbmtp}="yes"
-ATTR{idProduct}=="05e4", ENV{adb_adbptp}="yes"
-ATTR{idProduct}=="05e8", ENV{adb_adb}="yes"
-ATTR{idProduct}=="2048", ENV{adb_adbmidi}="yes"
+ATTR{idProduct}=="05e0", GOTO="go_adbfast"
+ATTR{idProduct}=="05e2", GOTO="go_adbmtp"
+ATTR{idProduct}=="05e4", GOTO="go_adbptp"
+ATTR{idProduct}=="05e8", GOTO="go_adb"
+ATTR{idProduct}=="2048", GOTO="go_adbmidi"
 #   Amazon Fire TV Stick Lite (3rd gen)
-ATTR{idProduct}=="03a8", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="03a8", GOTO="go_adbfast"
 #   Amazone Fire 7 (mustang)
-ATTR{idProduct}=="03c8", ENV{adb_adbfast}="yes"
-ATTR{idProduct}=="03cb", ENV{adb_adbfast}="yes"
-GOTO="android_usb_rule_match"
+ATTR{idProduct}=="03c8", GOTO="go_adbfast"
+ATTR{idProduct}=="03cb", GOTO="go_adbfast"
+GOTO="android_usb_rules_end"
 LABEL="not_Amazon"
 
 # Archos
