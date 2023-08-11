@@ -725,13 +725,13 @@ ATTR{idVendor}=="1782", ENV{adb_user}="yes"
 
 # T & A Mobile Phones
 ATTR{idVendor}!="1bbb", GOTO="not_T_A_Mobile"
-ENV{adb_user}="yes"
 #   Alcatel 1 2019 5033F
-ATTR{idProduct}=="0c01", ENV{adb_adb}="yes"
+ATTR{idProduct}=="0c01", GOTO="go_adb"
 #   Alcatel OT991D
-ATTR{idProduct}=="00f2", ENV{adb_adb}="yes"
+ATTR{idProduct}=="00f2", GOTO="go_adb"
 #   Alcatel OT6012A
-ATTR{idProduct}=="0167", ENV{adb_adb}="yes"
+ATTR{idProduct}=="0167", GOTO="go_adb"
+ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_T_A_Mobile"
 
@@ -747,9 +747,9 @@ ATTR{idVendor}=="0930", ENV{adb_user}="yes"
 
 # Unitech Electronics
 ATTR{idVendor}!="2e8e", GOTO="not_Unitech_Electronics"
-ENV{adb_user}="yes"
 #   EA630 (96e1=normal,96e7=debug)
-ATTR{idProduct}=="96e7", ENV{adb_adb}="yes"
+ATTR{idProduct}=="96e7", GOTO="go_adb"
+ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Unitech_Electronics"
 
@@ -799,9 +799,9 @@ LABEL="not_XiaoMi"
 
 # Yota
 ATTR{idVendor}!="2916", GOTO="not_Yota"
-ENV{adb_user}="yes"
 #   YotaPhone2 (f003=normal,9139=debug)
-ATTR{idProduct}=="9139", ENV{adb_adb}="yes"
+ATTR{idProduct}=="9139", GOTO="go_adb"
+ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Yota"
 
@@ -811,29 +811,24 @@ ATTR{idVendor}=="1ebf", ENV{adb_user}="yes"
 # Zebra
 ATTR{idVendor}!="05e0", GOTO="not_Zebra"
 #   TC55
-ATTR{idProduct}=="2101", ENV{adb_adb}="yes"
+ATTR{idProduct}=="2101", GOTO="go_adb"
 #   TC72
-ATTR{idProduct}=="2106", ENV{adb_adb}="yes"
-GOTO="android_usb_rule_match"
+ATTR{idProduct}=="2106", GOTO="go_adb"
+GOTO="android_usb_rules_end"
 LABEL="not_Zebra"
 
 # ZTE
 ATTR{idVendor}!="19d2", GOTO="not_ZTE"
-#   ZTE Blade A5 2020
-#   mtp,adb
-ATTR{idProduct}=="0306", ENV{adb_adb}="yes"
-#   ptp,adb
-ATTR{idProduct}=="0310", ENV{adb_adb}="yes"
-#   cdrom,adb
-ATTR{idProduct}=="0501", ENV{adb_adb}="yes"
-#   charging,adb
-ATTR{idProduct}=="1352", ENV{adb_adb}="yes"
-#   rndis,adb
-ATTR{idProduct}=="1373", ENV{adb_adb}="yes"
+#   ZTE Blade A5 2020 (0306=mtp,adb 0310=ptp,adb 0501=cdrom,adb 1352=charging,adb 1373=rndis,adb)
+ATTR{idProduct}=="0306", GOTO="go_adbmtp"
+ATTR{idProduct}=="0310", GOTO="go_adbptp"
+ATTR{idProduct}=="0501", GOTO="go_adb"
+ATTR{idProduct}=="1352", GOTO="go_adb"
+ATTR{idProduct}=="1373", GOTO="go_adbrndis"
 #   Blade (1353=normal,1351=debug)
-ATTR{idProduct}=="1351", ENV{adb_adb}="yes"
+ATTR{idProduct}=="1351", GOTO="go_adb"
 #   Blade S (Crescent, Orange San Francisco 2) (1355=normal,1354=debug)
-ATTR{idProduct}=="1354", ENV{adb_adb}="yes"
+ATTR{idProduct}=="1354", GOTO="go_adb"
 #   P685M LTE modem
 ATTR{idProduct}=="1275", ENV{adb_user}="yes"
 #   MF286[A] internal LTE modem
@@ -844,14 +839,13 @@ ATTR{idProduct}=="1485", ENV{adb_user}="yes"
 ATTR{idProduct}=="1489", ENV{adb_user}="yes"
 #   Nubia / RedMagic Series (NX***)
 #   See https://github.com/TadiT7/nubia_nx619j_dump/blob/NX619J-user-9-PKQ1.180929.001-eng.nubia.20181220.181559-release-keys/vendor/etc/init/hw/init.nubia.usb.rc
-#   ptp,adb
-ATTR{idProduct}=="ffd1", ENV{adb_adb}="yes"
-#   mtp,adb
-ATTR{idProduct}=="ffcf", ENV{adb_adb}="yes"
+#   (... ffc1=adb ffcb=rndis,adb ffcf=mtp,adb ffd1=ptp,adb)
+ATTR{idProduct}=="ffc1", GOTO="go_adb"
+ATTR{idProduct}=="ffcb", GOTO="go_adbrndis"
+ATTR{idProduct}=="ffcf", GOTO="go_adbmtp"
+ATTR{idProduct}=="ffd1", GOTO="go_adbptp"
 #   mass_storage,adb
 ATTR{idProduct}=="ffcd", ENV{adb_adb}="yes"
-#   rndis,adb
-ATTR{idProduct}=="ffcb", ENV{adb_adb}="yes"
 #   modem,service,nema,adb
 ATTR{idProduct}=="ffc9", ENV{adb_adb}="yes"
 #   modem,service,nema,mass_storage,adb
@@ -860,8 +854,6 @@ ATTR{idProduct}=="ffc7", ENV{adb_adb}="yes"
 ATTR{idProduct}=="ffb0", ENV{adb_adb}="yes"
 #   diag,modem,service,mass_storage,adb
 ATTR{idProduct}=="ffb2", ENV{adb_adb}="yes"
-#   adb
-ATTR{idProduct}=="ffc1", ENV{adb_adb}="yes"
 #   diag,mass_storage,adb
 ATTR{idProduct}=="ffc0", ENV{adb_adb}="yes"
 GOTO="android_usb_rule_match"
@@ -913,7 +905,6 @@ LABEL="android_usb_rule_match"
 ENV{adb_adbfast}=="yes", ENV{adb_adb}="yes", ENV{adb_fast}="yes"
 ENV{adb_adbmtp}=="yes", ENV{adb_adb}="yes", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 ENV{adb_adbptp}=="yes", ENV{adb_adb}="yes"
-ENV{adb_adbtet}=="yes", ENV{adb_adb}="yes"
 ENV{adb_adbmidi}=="yes", ENV{adb_adb}="yes", SYMLINK+="android_midi", SYMLINK+="android_midi0%n"
 ENV{adb_adbrndis}=="yes", ENV{adb_adb}="yes"
 ENV{adb_adb}=="yes", ENV{adb_user}="yes", SYMLINK+="android_adb"
