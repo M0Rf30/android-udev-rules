@@ -132,19 +132,21 @@ LABEL="not_Castles"
 # Essential
 ATTR{idVendor}!="2e17", GOTO="not_Essential"
 #   Essential PH-1
-ATTR{idProduct}=="c009", ENV{adb_adb}="yes"
-ATTR{idProduct}=="c03[02]", ENV{adb_adb}="yes"
-GOTO="android_usb_rule_match"
+ATTR{idProduct}=="c009", GOTO="go_adb"
+ATTR{idProduct}=="c03[02]", GOTO="go_adb"
+GOTO="android_usb_rules_end"
 LABEL="not_Essential"
 
 # Fairphone 1 (see Hisense 109b)
 # Fairphone 2 (f005=tether, f00e=rndis, 90de=charge, 90dc=charge,adb f000=MTP, 9039=MTP,adb, 904d=PTP, 904e=PTP,adb, 9015=storage,adb, 9024=rndis,adb) 90bb=qualcom midi+adb
 ATTR{idVendor}!="2ae5", GOTO="not_Fairphone2"
-ATTR{idProduct}=="9015", ENV{adb_adb}="yes"
-ATTR{idProduct}=="9039", ENV{adb_adb}="yes"
-ATTR{idProduct}=="904e", ENV{adb_adb}="yes"
-ATTR{idProduct}=="90dc", ENV{adb_adb}="yes"
-GOTO="android_usb_rule_match"
+ATTR{idProduct}=="9015", GOTO="go_adb"
+ATTR{idProduct}=="9024", GOTO="go_adbrndis"
+ATTR{idProduct}=="9039", GOTO="go_adbmtp"
+ATTR{idProduct}=="904e", GOTO="go_adbptp"
+ATTR{idProduct}=="90bb", GOTO="go_adbmidi"
+ATTR{idProduct}=="90dc", GOTO="go_adb"
+GOTO="android_usb_rules_end"
 LABEL="not_Fairphone2"
 
 # Foxconn
