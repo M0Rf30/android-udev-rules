@@ -151,7 +151,7 @@ LABEL="not_Fairphone2"
 
 # Foxconn
 #   Commtiva Z71, Geeksphone One
-ATTR{idVendor}=="0489", ATTR{idProduct}=="c001", ENV{adb_adb}="yes"
+ATTR{idVendor}=="0489", ATTR{idProduct}=="c001", GOTO="go_adb"
 
 # Fujitsu/Fujitsu Toshiba
 ATTR{idVendor}=="04c5", ENV{adb_user}="yes"
@@ -159,15 +159,15 @@ ATTR{idVendor}=="04c5", ENV{adb_user}="yes"
 # Fuzhou Rockchip Electronics
 #   Mediacom Smartpad 715i
 ATTR{idVendor}!="2207", GOTO="not_Fuzhou"
-ATTR{idProduct}=="0000", ENV{adb_adb}="yes"
+ATTR{idProduct}=="0000", GOTO="go_adb"
 #   Ubislate 7Ci
-ATTR{idProduct}=="0010", ENV{adb_adb}="yes"
+ATTR{idProduct}=="0010", GOTO="go_adb"
 #   Anbernic RG353P - AOSP12beta#1 (0003=rndis 0006=adb,chg 0007=mtp 0008=ptp 0013=adb,rndis 0017=adb,mtp 0018=adb,ptp)
-ATTR{idProduct}=="0006", ENV{adb_adb}="yes"
-ATTR{idProduct}=="0013", ENV{adb_adbtet}="yes"
-ATTR{idProduct}=="0017", ENV{adb_adbmtp}="yes"
-ATTR{idProduct}=="0018", ENV{adb_adbptp}="yes"
-GOTO="android_usb_rule_match"
+ATTR{idProduct}=="0006", GOTO="go_adb"
+ATTR{idProduct}=="0013", GOTO="go_adbrndis"
+ATTR{idProduct}=="0017", GOTO="go_adbmtp"
+ATTR{idProduct}=="0018", GOTO="go_adbptp"
+GOTO="android_usb_rules_end"
 LABEL="not_Fuzhou"
 
 # Garmin-Asus
