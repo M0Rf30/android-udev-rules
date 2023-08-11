@@ -177,54 +177,54 @@ ATTR{idVendor}=="091e", ENV{adb_user}="yes"
 ATTR{idVendor}!="18d1", GOTO="not_Google"
 #   Nexus, Pixel, Pixel XL, Pixel 2, Pixel 2XL (4ee1=mtp, 4ee2=mtp,adb 4ee3=rndis, 4ee4=rndis,adb 4ee5=ptp, 4ee6=ptp,adb 4ee7=adb 4ee8=midi, 4ee9=midi,adb 2d00=accessory 2d01=accessory,adb 2d03=audio_source,adb 2d05=accessory,audio_source,adb)
 #   See https://android.googlesource.com/device/google/wahoo/+/master/init.hardware.usb.rc
+#   Nexus/Pixel/MotoG3 Devices (4ee9=midi,adb 4ee8=midi, 2d02=audio_source, 2d03=audio_source,adb)
 #   OnePlus 6, 4ee1=charging, 4ee2=MTP+debug, 4ee6=PTP+debug, 4ee7=charging+debug
 #   Pico i.MX7 Dual Development Board 4ee7=debug
 #   PinePhone (v1.2) (4ee0=fast 4ee1=mtp, 4ee2=mtp,adb 4ee3=rndis 4ee4=rndis,adb 4ee5=ptp, 4ee6=ptp,adb 4ee7=adb)
-#   Yandex Phone 4ee7=debug
-ATTR{idProduct}=="4ee0", ENV{adb_adbfast}="yes"
-ATTR{idProduct}=="4ee2", ENV{adb_adb}="yes"
-ATTR{idProduct}=="4ee4", ENV{adb_adb}="yes"
-ATTR{idProduct}=="4ee6", ENV{adb_adb}="yes"
-ATTR{idProduct}=="4ee7", ENV{adb_adb}="yes"
-ATTR{idProduct}=="4ee9", ENV{adb_adb}="yes"
-
 #   Tensor Pixel phones (Pixel 7/7 pro/6/6A/6 Pro) 4eeb=cdc-ncm; 4eec=cdc-ncm,adb
-ATTR{idProduct}=="4eec", ENV{adb_adb}="yes"
+#   Yandex Phone 4ee7=debug
+ATTR{idProduct}=="4ee0", GOTO="go_adbfast"
+ATTR{idProduct}=="4ee2", GOTO="go_adbmtp"
+ATTR{idProduct}=="4ee4", GOTO="go_adbrndis"
+ATTR{idProduct}=="4ee6", GOTO="go_adbptp"
+ATTR{idProduct}=="4ee7", GOTO="go_adb"
+ATTR{idProduct}=="4ee9", GOTO="go_adbmidi"
+ATTR{idProduct}=="4eec", GOTO="go_adbcdc"
 
 #   Pixel C Tablet
-ATTR{idProduct}=="5201", ENV{adb_adbfast}="yes"
-ATTR{idProduct}=="5203", ENV{adb_adb}="yes"
-ATTR{idProduct}=="5208", ENV{adb_adb}="yes"
+ATTR{idProduct}=="5201", GOTO="go_adbfast"
+ATTR{idProduct}=="5203", GOTO="go_adb"
+ATTR{idProduct}=="5208", GOTO="go_adb"
 
-ATTR{idProduct}=="2d00", ENV{adb_adb}="yes"
-ATTR{idProduct}=="2d01", ENV{adb_adb}="yes"
-ATTR{idProduct}=="2d03", ENV{adb_adb}="yes"
-ATTR{idProduct}=="2d05", ENV{adb_adb}="yes"
+ATTR{idProduct}=="2d00", GOTO="go_adb" # accessory?
+ATTR{idProduct}=="2d01", GOTO="go_adb"
+ATTR{idProduct}=="2d03", GOTO="go_adbaud"
+ATTR{idProduct}=="2d05", GOTO="go_adbaud"
 #   Nexus 7
-ATTR{idProduct}=="4e42", ENV{adb_adb}="yes"
-ATTR{idProduct}=="4e40", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="4e42", GOTO="go_adb"
+ATTR{idProduct}=="4e40", GOTO="go_adbfast"
 #   Nexus 5, Nexus 10
-ATTR{idProduct}=="4ee1", ENV{adb_adbfast}="yes"
+#ATTR{idProduct}=="4ee1", GOTO="go_adbfast" # overlaps mtp, charging?
 #   Nexus S (4e22=mass_storage,adb 4e24=rndis,adb)
 #   See https://android.googlesource.com/device/samsung/crespo/+/android-4.1.2_r2.1/init.herring.usb.rc
-ATTR{idProduct}=="4e22", ENV{adb_adb}="yes"
-ATTR{idProduct}=="4e24", ENV{adb_adb}="yes"
-ATTR{idProduct}=="4e20", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="4e22", GOTO="go_adb"
+ATTR{idProduct}=="4e24", GOTO="go_adbrndis"
+ATTR{idProduct}=="4e20", GOTO="go_adbfast"
 #   Galaxy Nexus, Galaxy Nexus (GSM)
-ATTR{idProduct}=="4e30", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="4e30", GOTO="go_adbfast"
 #   Nexus One (4e11=normal,4e12=debug,0fff=debug)
-ATTR{idProduct}=="4e12", ENV{adb_adb}="yes"
-ATTR{idProduct}=="0fff", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="4e12", GOTO="go_adb"
+ATTR{idProduct}=="0fff", GOTO="go_adbfast"
 #   Generic and unspecified debug interface (test after d00?)
 #   examples: Xiaomi Mi/Redmi 2, Anbernic RG353P
-ATTR{idProduct}=="d00d", ENV{adb_adbfast}="yes"
+ATTR{idProduct}=="d00d", GOTO="go_adbfast"
 #   Recovery adb entry for Nexus Family (orig d001, OP3 has 18d1:d002)
-ATTR{idProduct}=="d00?", ENV{adb_adb}="yes"
+ATTR{idProduct}=="d00?", GOTO="go_adb"
 
 # Other vendors that also used duplicated Google's idVendor code follows:
 # IDEA XDS-1078 (debug=2c11)
-ATTR{idProduct}=="2c11", ENV{adb_adb}="yes"
-GOTO="android_usb_rule_match"
+ATTR{idProduct}=="2c11", GOTO="go_adb"
+GOTO="android_usb_rules_end"
 LABEL="not_Google"
 
 # Haier
@@ -880,6 +880,14 @@ GOTO="android_usb_rule_match"
 LABEL="go_adb"
 ENV{adb_adb}="yes", GOTO="android_usb_rule_match"
 
+# ADB Debug and Audio Source
+LABEL="go_adbaud"
+ENV{adb_adb}="yes", GOTO="android_usb_rule_match"
+
+# ADB Debug and AT-commands CDC Serial
+LABEL="go_adbcdc"
+ENV{adb_adb}="yes", GOTO="android_usb_rule_match"
+
 # ADB Debug and Fastboot mode
 LABEL="go_adbfast"
 ENV{adb_adbfast}="yes", GOTO="android_usb_rule_match"
@@ -892,7 +900,7 @@ ENV{adb_adbmtp}="yes", GOTO="android_usb_rule_match"
 LABEL="go_adbptp"
 ENV{adb_adbptp}="yes", GOTO="android_usb_rule_match"
 
-# ADB Debug and MIDI mode
+# ADB Debug and MIDI mode (also see /dev/midi)
 LABEL="go_adbmidi"
 ENV{adb_adbmidi}="yes", GOTO="android_usb_rule_match"
 
