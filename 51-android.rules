@@ -459,10 +459,15 @@ LABEL="not_Motorola"
 
 # MTK (MediaTek Inc)
 ATTR{idVendor}!="0e8d", GOTO="not_MTK"
-ENV{adb_user}="yes"
 #   Umidigi F1
-ATTR{idProduct}=="201c", ENV{adb_adbfast}="yes"
-GOTO="android_usb_rule_match"
+#ATTR{idProduct}=="201c", GOTO="go_adbfast"
+#   Moto E22i (2005=rndis,adb 200c=ptp,adb 2048=midi,adb 201c=adb 201d=mtp,adb)
+ATTR{idProduct}=="2005", GOTO="go_adbrndis"
+ATTR{idProduct}=="200c", GOTO="go_adbptp"
+ATTR{idProduct}=="2048", GOTO="go_adbmidi"
+ATTR{idProduct}=="201c", GOTO="go_adb"
+ATTR{idProduct}=="201d", GOTO="go_adbmtp"
+GOTO="android_usb_rules_end"
 LABEL="not_MTK"
 
 # NEC
