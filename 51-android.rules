@@ -88,23 +88,23 @@ LABEL="not_Ascom"
 ATTR{idVendor}!="0b05", GOTO="not_Asus"
 #   False positive - accessory
 ATTR{idProduct}=="1???", GOTO="android_usb_rules_end"
-ENV{adb_user}="yes"
-#   Zenphone 2 (ZE500CL) (7770=adb 7773=mtp,adb 7777=ptp,adb   7775=rndis,adb,mass_storage 5F03=mtp,adb,pclink,mass_storage 5F07=ptp,adb,pclink 5F05=rndis,adb,pclink,mass_storage
-ATTR{idProduct}=="7770", SYMLINK+="android_adb"
-ATTR{idProduct}=="7773", SYMLINK+="android_adb"
-ATTR{idProduct}=="7777", SYMLINK+="android_adb"
-ATTR{idProduct}=="7775", SYMLINK+="android_adb"
-ATTR{idProduct}=="5F03", SYMLINK+="android_adb"
-ATTR{idProduct}=="5F07", SYMLINK+="android_adb"
-ATTR{idProduct}=="5F05", SYMLINK+="android_adb"
+#   Zenphone 2 (ZE500CL) (7770=adb 7773=mtp,adb 7777=ptp,adb 7775=rndis,adb,mass_storage 5F03=mtp,adb,pclink,mass_storage 5F05=rndis,adb,pclink,mass_storage 5F07=ptp,adb,pclink
+ATTR{idProduct}=="7770", GOTO="go_adb"
+ATTR{idProduct}=="7773", GOTO="go_adbmtp"
+ATTR{idProduct}=="7777", GOTO="go_adbptp"
+ATTR{idProduct}=="7775", ENV{adb_adbmass}=="yes", GOTO="go_adbrndis"
+ATTR{idProduct}=="5F03", ENV{adb_adbmass}=="yes", GOTO="go_adbmtp"
+ATTR{idProduct}=="5F05", ENV{adb_adbmass}=="yes", GOTO="go_adbrndis"
+ATTR{idProduct}=="5F07", GOTO="go_adbptp"
 #   Zenphone 4 (581f=mtp,adb 583f=rndis,adb)
-ATTR{idProduct}=="581f", SYMLINK+="android_adb"
-ATTR{idProduct}=="583f", SYMLINK+="android_adb"
+ATTR{idProduct}=="581f", GOTO="go_adbmtp"
+ATTR{idProduct}=="583f", GOTO="go_adbrndis"
 #   Zenphone 5 (4c90=normal,4c91=debug,4daf=Fastboot)
-ATTR{idProduct}=="4c91", SYMLINK+="android_adb"
-ATTR{idProduct}=="4daf", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="4c91", GOTO="go_adb"
+ATTR{idProduct}=="4daf", GOTO="go_adbfast"
 #   Tegra APX
 ATTR{idProduct}=="7030", SYMLINK+="android_adb"
+ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Asus"
 
@@ -207,7 +207,7 @@ ATTR{idProduct}=="4e40", GOTO="go_adbfast"
 #ATTR{idProduct}=="4ee1", GOTO="go_adbfast" # overlaps mtp, charging?
 #   Nexus S (4e22=mass_storage,adb 4e24=rndis,adb)
 #   See https://android.googlesource.com/device/samsung/crespo/+/android-4.1.2_r2.1/init.herring.usb.rc
-ATTR{idProduct}=="4e22", GOTO="go_adb"
+ATTR{idProduct}=="4e22", GOTO="go_adbmass"
 ATTR{idProduct}=="4e24", GOTO="go_adbrndis"
 ATTR{idProduct}=="4e20", GOTO="go_adbfast"
 #   Galaxy Nexus, Galaxy Nexus (GSM)
@@ -244,7 +244,7 @@ LABEL="not_Honeywell"
 ATTR{idVendor}!="0bb4", GOTO="not_HTC"
 ENV{adb_user}="yes"
 #   fastboot mode enabled
-ATTR{idProduct}=="0fff", ENV{adb_adbfast}="yes", GOTO="android_usb_rule_match"
+ATTR{idProduct}=="0fff", GOTO="go_adbfast"
 #   ADP1, Dream, G1, HD2, Magic, Tatoo (0c01=mass_storage)
 #   NOTE: Amazon Kindle 8 2016 (giza) (fastboot=0bb4:0c01 conflicts with mass storage=0c01)
 ATTR{idProduct}=="0c02", ENV{adb_adbfast}="yes"
@@ -340,6 +340,8 @@ LABEL="not_Intel"
 
 # IUNI
 ATTR{idVendor}!="271d", GOTO="not_IUNI"
+#   Gionee
+ATTR{idProduct}=="bf39", GOTO="go_adbmass"
 #   U3
 ATTR{idProduct}=="bf39", GOTO="go_adb"
 GOTO="android_usb_rules_end"
@@ -516,19 +518,21 @@ ATTR{idVendor}!="22d9", GOTO="not_Oppo"
 #   Find 5 (2767=debug)
 ATTR{idProduct}=="2767", GOTO="go_adb"
 #   Realme 8
-ATTR{idProduct}=="2769", ENV{adb_adb}="yes"
+ATTR{idProduct}=="2769", GOTO="go_adb"
 ATTR{idProduct}=="2764", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 #   A94 5G
-ATTR{idProduct}=="2769", ENV{adb_adb}="yes"
+ATTR{idProduct}=="2769", GOTO="go_adb"
 #   Oppo Watch, fastboot
 ATTR{idProduct}=="2024", ENV{adb_user}="yes"
 #   RMX3231 - Realme C11 20221, normal, rndis, mtp
 ATTR{idProduct}=="200e", ENV{adb_user}="yes"
 ATTR{idProduct}=="2028", ENV{adb_user}="yes"
 ATTR{idProduct}=="2026", ENV{adb_user}="yes"
+#   OnePlus 7a (2774=adb,mass_storage)
 #   OnePlus 8T (22d9:2771=adb,PTP, 22d9:2772=adb,MTP)
 ATTR{idProduct}=="2771", GOTO="go_adbptp"
-ATTR{idProduct}=="2772", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+ATTR{idProduct}=="2772", GOTO="go_adbmtp"
+ATTR{idProduct}=="2774", GOTO="go_adbmass"
 GOTO="android_usb_rule_match"
 LABEL="not_Oppo"
 
@@ -562,11 +566,10 @@ LABEL="not_Point_Mobile"
 
 # Polar
 ATTR{idVendor}!="0da4", GOTO="not_Polar"
-ENV{adb_user}="yes"
 #   Polar M600 (0010=adb,000b=fastboot)
-ATTR{idProduct}=="0010", SYMLINK+="android_adb"
-ATTR{idProduct}=="000b", SYMLINK+="android_fastboot"
-GOTO="android_usb_rule_match"
+ATTR{idProduct}=="000b", GOTO="go_adbfast"
+ATTR{idProduct}=="0010", GOTO="go_adb"
+GOTO="android_usb_rules_end"
 LABEL="not_Polar"
 
 # Qualcomm (Wearners also 05c6)
@@ -584,7 +587,7 @@ ATTR{idProduct}=="900e", SYMLINK+="android_adb"
 ATTR{idProduct}=="676c", SYMLINK+="android_adb"
 #   Snapdragon, OnePlus 3T w/ Oreo MIDI mode (90bb=adb,midi, 9011=MTP, 904e=PTP)
 #   Xiaomi A1 (90bb=midi+adb)
-ATTR{idProduct}=="90bb", ENV{adb_adb}="yes"
+ATTR{idProduct}=="90bb", ENV{adb_adbmidi}="yes"
 #   OnePlus 5 / 6 / 6T
 ATTR{idProduct}=="9011", SYMLINK+="android_adb"
 #   OnePlus 6 / Asia
@@ -761,31 +764,27 @@ ATTR{idVendor}=="2970", ENV{adb_user}="yes"
 
 # XiaoMi
 ATTR{idVendor}!="2717", GOTO="not_XiaoMi"
-ENV{adb_user}="yes"
 #   Mi2A
 ATTR{idProduct}=="904e", SYMLINK+="android_adb"
 ATTR{idProduct}=="9039", SYMLINK+="android_adb"
 #   Mi3
 ATTR{idProduct}=="0368", SYMLINK+="android_adb"
 #   RedMi 1S WCDMA (MTP+Debug)
-ATTR{idProduct}=="1268", SYMLINK+="android_adb"
+ATTR{idProduct}=="1268", GOTO="go_adbmtp"
 #   RedMi / RedMi Note WCDMA (MTP+Debug)
-ATTR{idProduct}=="1248", SYMLINK+="android_adb"
-#   RedMi 1S / RedMi / RedMi Note WCDMA (PTP+Debug)
-ATTR{idProduct}=="1218", SYMLINK+="android_adb"
-#   RedMi 1S /RedMi / RedMi Note WCDMA (Usb+Debug)
-ATTR{idProduct}=="1228", SYMLINK+="android_adb"
-#   RedMi / RedMi Note 4G WCDMA (MTP+Debug)
-ATTR{idProduct}=="1368", SYMLINK+="android_adb"
-#   RedMi / RedMi Note 4G WCDMA (PTP+Debug)
-ATTR{idProduct}=="1318", SYMLINK+="android_adb"
-#   RedMi / RedMi Note 4G WCDMA (Usb+Debug)
-ATTR{idProduct}=="1328", SYMLINK+="android_adb"
-#   Mi Mix / A1 (ff88=rndis+adb, ff18=ptp+adb, ff48=mtp+adb, ff28=storage+adb)
-ATTR{idProduct}=="ff88", SYMLINK+="android_adb"
-ATTR{idProduct}=="ff18", SYMLINK+="android_adb"
-ATTR{idProduct}=="ff48", SYMLINK+="android_adb"
-ATTR{idProduct}=="ff28", SYMLINK+="android_adb"
+ATTR{idProduct}=="1248", GOTO="go_adbmtp"
+#   RedMi 1S / RedMi / RedMi Note WCDMA (1218=ptp,adb 1228=adb)
+ATTR{idProduct}=="1218", GOTO="go_adbptp"
+ATTR{idProduct}=="1228", GOTO="go_adb"
+#   RedMi / RedMi Note 4G WCDMA (1318=ptp,adb 1328=adb 1368=mtp,adb)
+ATTR{idProduct}=="1318", GOTO="go_adbptp"
+ATTR{idProduct}=="1328", GOTO="go_adb"
+ATTR{idProduct}=="1368", GOTO="go_adbmtp"
+#   Mi Mix / A1 (ff18=ptp+adb ff28=storage+adb ff48=mtp+adb ff88=rndis+adb)
+ATTR{idProduct}=="ff18", GOTO="go_adbptp"
+ATTR{idProduct}=="ff28", GOTO="go_adbmass"
+ATTR{idProduct}=="ff48", GOTO="go_adbmtp"
+ATTR{idProduct}=="ff88", GOTO="go_adbrndis"
 #   RedMi / RedMi Note 4G CDMA (Usb+Debug) / Mi4c / Mi5
 ATTR{idProduct}=="ff68", SYMLINK+="android_adb"
 #   RedMi 7
@@ -794,6 +793,7 @@ ATTR{idProduct}=="ff40", SYMLINK+="android_adb"
 ATTR{idProduct}=="ff08", SYMLINK+="android_adb"
 #   RedMi 8 Pro
 ATTR{idProduct}=="ff48", SYMLINK+="android_adb"
+ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_XiaoMi"
 
@@ -839,13 +839,12 @@ ATTR{idProduct}=="1485", ENV{adb_user}="yes"
 ATTR{idProduct}=="1489", ENV{adb_user}="yes"
 #   Nubia / RedMagic Series (NX***)
 #   See https://github.com/TadiT7/nubia_nx619j_dump/blob/NX619J-user-9-PKQ1.180929.001-eng.nubia.20181220.181559-release-keys/vendor/etc/init/hw/init.nubia.usb.rc
-#   (... ffc1=adb ffcb=rndis,adb ffcf=mtp,adb ffd1=ptp,adb)
+#   (... ffc1=adb ffcb=rndis,adb ffcd=mass_storage,adb ffcf=mtp,adb ffd1=ptp,adb)
 ATTR{idProduct}=="ffc1", GOTO="go_adb"
 ATTR{idProduct}=="ffcb", GOTO="go_adbrndis"
 ATTR{idProduct}=="ffcf", GOTO="go_adbmtp"
+ATTR{idProduct}=="ffcd", GOTO="go_adbmass"
 ATTR{idProduct}=="ffd1", GOTO="go_adbptp"
-#   mass_storage,adb
-ATTR{idProduct}=="ffcd", ENV{adb_adb}="yes"
 #   modem,service,nema,adb
 ATTR{idProduct}=="ffc9", ENV{adb_adb}="yes"
 #   modem,service,nema,mass_storage,adb
@@ -884,6 +883,10 @@ ENV{adb_adb}="yes", GOTO="android_usb_rule_match"
 LABEL="go_adbfast"
 ENV{adb_adbfast}="yes", GOTO="android_usb_rule_match"
 
+# ADB Debug and mass storage (note: android_ver<4.3)
+LABEL="go_adbmass"
+ENV{adb_adbmass}="yes", GOTO="android_usb_rule_match"
+
 # ADB Debug and MTP mode
 LABEL="go_adbmtp"
 ENV{adb_adbmtp}="yes", GOTO="android_usb_rule_match"
@@ -900,11 +903,12 @@ ENV{adb_adbmidi}="yes", GOTO="android_usb_rule_match"
 LABEL="go_adbrndis"
 ENV{adb_adbrndis}="yes", GOTO="android_usb_rule_match"
 
-# Symlink shortcuts to reduce code in tests above
+# Symlink shortcuts to reduce code above
 LABEL="android_usb_rule_match"
 ENV{adb_adbfast}=="yes", ENV{adb_adb}="yes", ENV{adb_fast}="yes"
+ENV{adb_adbmass}=="yes", ENV{adb_adb}="yes"
+ENV{adb_adbptp}=="yes", ENV{adb_adb}="yes", ATTR{bDeviceClass}=="00|02|06|ef|ff", ENV{adb_adbmtp}="yes"
 ENV{adb_adbmtp}=="yes", ENV{adb_adb}="yes", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
-ENV{adb_adbptp}=="yes", ENV{adb_adb}="yes"
 ENV{adb_adbmidi}=="yes", ENV{adb_adb}="yes", SYMLINK+="android_midi", SYMLINK+="android_midi0%n"
 ENV{adb_adbrndis}=="yes", ENV{adb_adb}="yes"
 ENV{adb_adb}=="yes", ENV{adb_user}="yes", SYMLINK+="android_adb"
