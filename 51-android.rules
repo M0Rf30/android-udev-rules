@@ -429,6 +429,16 @@ LABEL="not_Microsoft"
 
 # Motorola
 ATTR{idVendor}!="22b8", GOTO="not_Motorola"
+#   XT1541/MotoZ3 (2e24=rndis 2e25=rndis,adb 2e76=mtp,adb 2e80=fastboot 2e81=adb 2e82=mtp 2e83=ptp 2e84=ptp,adb 2eb7=charging 2ee5=bptools 2ee6=bptools,adb,ptp 2ee7=bptools,rndis 2ee8=bptools,rndis,adb)
+#   MotoG3 (2e24=rndis 2e25=rndis,adb 2e76=mtp,adb 2e82=mtp 2e83=ptp 2e84=ptp,adb)
+ATTR{idProduct}=="2e25", GOTO="go_adbrndis"
+ATTR{idProduct}=="2e76", GOTO="go_adbmtp"
+ATTR{idProduct}=="2e80", GOTO="go_adbfast"
+ATTR{idProduct}=="2e81", GOTO="go_adb"
+ATTR{idProduct}=="2e84", GOTO="go_adbptp"
+ATTR{idProduct}=="2ee6", GOTO="go_adbptp"
+ATTR{idProduct}=="2ee8", GOTO="go_adbrndis"
+
 ENV{adb_user}="yes"
 #   CLIQ XT/Quench
 ATTR{idProduct}=="2d66", SYMLINK+="android_adb"
@@ -443,15 +453,15 @@ ATTR{idProduct}=="70a9", ENV{adb_adbfast}="yes"
 #   Razr XT912
 ATTR{idProduct}=="4362", ENV{adb_adbfast}="yes"
 #   Moto XT1052
-ATTR{idProduct}=="2e83", ENV{adb_adbfast}="yes"
+#ATTR{idProduct}=="2e83", ENV{adb_adbfast}="yes"
 #   Moto E/G
-ATTR{idProduct}=="2e76", ENV{adb_adbfast}="yes"
+#ATTR{idProduct}=="2e76", ENV{adb_adbfast}="yes"
 #   Moto E/G (Dual SIM)
-ATTR{idProduct}=="2e80", ENV{adb_adbfast}="yes"
+#ATTR{idProduct}=="2e80", ENV{adb_adbfast}="yes"
 #   Moto E/G (Global GSM)
-ATTR{idProduct}=="2e82", ENV{adb_adbfast}="yes"
+#ATTR{idProduct}=="2e82", ENV{adb_adbfast}="yes"
 #   Moto x4
-ATTR{idProduct}=="2e81", ENV{adb_adbfast}="yes"
+#ATTR{idProduct}=="2e81", ENV{adb_adbfast}="yes"
 #   Droid Turbo 2
 ATTR{idProduct}=="2ea4", ENV{adb_adbfast}="yes", SYMLINK+="android%n"
 GOTO="android_usb_rule_match"
