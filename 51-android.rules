@@ -616,9 +616,8 @@ LABEL="not_RIM"
 
 # Samsung
 ATTR{idVendor}!="04e8", GOTO="not_Samsung"
-#   False positive printer
-ATTR{idProduct}=="3???", GOTO="android_usb_rules_end"
-ENV{adb_user}="yes"
+#   False positives, 3-printer, 7=HIDs, 8=SSD
+ATTR{idProduct}!="6???", GOTO="android_usb_rules_end"
 #   Galaxy i5700
 ATTR{idProduct}=="681c", ENV{adb_adbfast}="yes"
 #   Galaxy i5800 (681c=debug,6601=fastboot,68a0=mediaplayer)
@@ -635,16 +634,17 @@ ATTR{idProduct}=="68c3", MODE="0660"
 ATTR{idProduct}=="689e", ENV{adb_adbfast}="yes"
 #   Galaxy Tab
 ATTR{idProduct}=="6877", ENV{adb_adbfast}="yes"
-#   Galaxy Nexus (GSM) (6860=mtp,adb 6864=rndis,adb 6866=ptp,adb)
+#   Galaxy Nexus (GSM) / Core (6860=mtp 6860=mtp,adb 6863=rndis 6864=rndis,adb 6865=ptp 6866=ptp,adb)
 ATTR{idProduct}=="6860", SYMLINK+="android_adb"
-ATTR{idProduct}=="6864", SYMLINK+="android_adb"
-ATTR{idProduct}=="6866", SYMLINK+="android_adb"
+ATTR{idProduct}=="6864", GOTO="go_adbrndis"
+ATTR{idProduct}=="6866", GOTO="go_adbptp"
 #   Galaxy Core, Tab 10.1, i9100 S2, i9300 S3, N5100 Note (8.0), Galaxy S3 SHW-M440S 3G (Korea only)
 ATTR{idProduct}=="685e", ENV{adb_adbfast}="yes"
 #   Galaxy i9300 S3
 ATTR{idProduct}=="6866", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 #   Galaxy S4 GT-I9500
 ATTR{idProduct}=="685d", SYMLINK+="android_adb"
+ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Samsung"
 
