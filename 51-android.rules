@@ -16,7 +16,7 @@ SUBSYSTEM!="usb", GOTO="android_usb_rules_end"
 # Skip testing for unexpected devices like hubs, controllers or printers
 ATTR{bDeviceClass}=="09", GOTO="android_usb_rules_end"
 ENV{ID_MODEL}=="Controller", GOTO="android_usb_rules_end"
-ENV{ID_USB_INTERFACES}=="*:0701??:*", ENV{adb_adb}="yes", GOTO="android_usb_rules_end"
+ENV{ID_USB_INTERFACES}=="*:0701??:*", GOTO="android_usb_rules_end"
 
 LABEL="android_usb_rules_begin"
 # Devices listed here in android_usb_rules_{begin...end} are connected by USB
