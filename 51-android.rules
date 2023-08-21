@@ -330,6 +330,8 @@ ATTR{idProduct}=="2a65", GOTO="adb"
 ATTR{idProduct}=="07ef", GOTO="adb"
 #   Asus ZenFone 2 (ADB Sideload in TWRP Recovery)
 ATTR{idProduct}=="0a5d", GOTO="adb"
+#   ASUS MeMo Pad 7 ME176C/CX (DNX/Rescue mode)
+ATTR{idProduct}=="0a65", GOTO="adbfast"
 #   Reference Boards using kernelflinger
 #   See https://github.com/intel/kernelflinger/blob/master/libefiusb/usb.c#L56
 ATTR{idProduct}=="09ef", GOTO="adbfast"
