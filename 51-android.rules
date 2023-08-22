@@ -457,10 +457,16 @@ LABEL="not_Motorola"
 
 # MTK (MediaTek Inc)
 ATTR{idVendor}!="0e8d", GOTO="not_MTK"
-#   Umidigi F1
-ATTR{idProduct}=="201c", GOTO="adbfast"
-ENV{adb_user}="yes"
-GOTO="android_usb_rule_match"
+#   Umidigi F1 (201c=adbfast)
+#   MT65xx/67xx (2000=cdc 2008=mtp 200a=mtp,cdc,adb 2012=mtp,cdc 201d=mtp,adb)
+#   Moto E22i (2005=rndis,adb 200c=ptp,adb 2048=midi,adb 201c=adb 201d=mtp,adb)
+ATTR{idProduct}=="2005", GOTO="adbrndis"
+ATTR{idProduct}=="200a", ENV{adb_adbcdc}="yes", GOTO="adbmtp"
+ATTR{idProduct}=="200c", GOTO="adbptp"
+ATTR{idProduct}=="2048", GOTO="adbmidi"
+ATTR{idProduct}=="201c", GOTO="adb"
+ATTR{idProduct}=="201d", GOTO="adbmtp"
+GOTO="android_usb_rules_end"
 LABEL="not_MTK"
 
 # NEC
@@ -884,7 +890,8 @@ LABEL="adbaud", ENV{adb_adb}="yes"
 LABEL="aud", ENV{adb_user}="yes", GOTO="android_usb_rule_match"
 
 # ADB Debug and AT-commands CDC Serial
-LABEL="adbcdc", ENV{adb_adb}="yes"
+LABEL="adbcdc", ENV{adb_adbcdc}="yes"
+# check if exists /dev/ttyACM%n, GROUP=dialout, modeprobe cdc_acm)
 LABEL="cdc", ENV{adb_user}="yes", GOTO="android_usb_rule_match"
 
 # ADB Debug and Fastboot mode
@@ -915,6 +922,7 @@ LABEL="user", ENV{adb_user}="yes"
 
 # Symlink common code to reduce steps above
 LABEL="android_usb_rule_match"
+ENV{adb_adbcdc}=="yes", ENV{adb_adb}="yes", SYMLINK+="android_cdc", SYMLINK+="android_cdc%n"
 ENV{adb_adbfast}=="yes", ENV{adb_adb}="yes", ENV{adb_fast}="yes"
 ENV{adb_adbmtp}=="yes", ENV{adb_adb}="yes", ENV{adb_mtp}="yes"
 ENV{adb_adbptp}=="yes", ENV{adb_adb}="yes", ENV{adb_ptp}="yes"
