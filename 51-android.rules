@@ -888,7 +888,8 @@ LABEL="adbcdc", ENV{adb_adb}="yes"
 LABEL="cdc", ENV{adb_user}="yes", GOTO="android_usb_rule_match"
 
 # ADB Debug and Fastboot mode
-LABEL="adbfast", ENV{adb_adbfast}="yes", GOTO="android_usb_rule_match"
+LABEL="adbfast", ENV{adb_adb}="yes"
+LABEL="fast", ENV{adb_fast}="yes", GOTO="android_usb_rule_match"
 
 # ADB Debug and mass storage (note: android_ver<4.3)
 LABEL="adbmass", ENV{adb_adbmass}="yes"
