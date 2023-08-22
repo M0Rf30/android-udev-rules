@@ -184,7 +184,8 @@ ATTR{idProduct}=="4ee2", GOTO="adb"
 ATTR{idProduct}=="4ee4", GOTO="adb"
 ATTR{idProduct}=="4ee6", GOTO="adb"
 ATTR{idProduct}=="4ee7", GOTO="adb"
-ATTR{idProduct}=="4ee9", GOTO="adb"
+ATTR{idProduct}=="4ee8", GOTO="midi" # some non-Google phones as well
+ATTR{idProduct}=="4ee9", GOTO="adbmidi" # some non-Google phones as well
 
 #   Tensor Pixel phones (Pixel 7/7 pro/6/6A/6 Pro) 4eeb=cdc-ncm; 4eec=cdc-ncm,adb
 ATTR{idProduct}=="4eec", GOTO="adb"
@@ -440,21 +441,34 @@ ATTR{idProduct}=="70a9", GOTO="adbfast"
 #   Razr XT912
 ATTR{idProduct}=="4362", GOTO="adbfast"
 #   Moto XT1052
-ATTR{idProduct}=="2e83", GOTO="adbfast"
+#ATTR{idProduct}=="2e83", GOTO="adbfast"
 #   Moto E/G
-ATTR{idProduct}=="2e76", GOTO="adbfast"
+#ATTR{idProduct}=="2e76", GOTO="adbfast"
 #   Moto E/G (Dual SIM)
-ATTR{idProduct}=="2e80", GOTO="adbfast"
+#ATTR{idProduct}=="2e80", GOTO="adbfast"
 #   Moto E/G (Global GSM)
-ATTR{idProduct}=="2e82", GOTO="adbfast"
+#ATTR{idProduct}=="2e82", GOTO="adbfast"
 #   Moto x4
-ATTR{idProduct}=="2e81", GOTO="adbfast"
+#ATTR{idProduct}=="2e81", GOTO="adbfast"
 #   Droid Turbo 2
 ATTR{idProduct}=="2ea4", GOTO="adbfast"
+#   Moto Z3 Play, beckham, XT1929
+#     For details see: <https://github.com/M0Rf30/android-udev-rules/issues/264>
+#     18d1:4ee8=midi; 18d1:4ee9=midi+adb
+#     BP TOOLS: 2ee5=charging, mtp, ptp; 2ee6=charging+adb, mtp+adb, ptp+adb; 2ee7=rndis; 2ee8=rndis+adb; 18d1:4ee8=midi; 18d1:4ee9=midi+adb
+#     QCOM: 05c6:9091=charing+adb, mtp+adb, ptp+adb; 05c6:9092=charging, mtp, ptp; 18d1:4ee8=midi; 18d1:4ee9=midi+adb; 22b8:2e24=rndis; 22b8:2e25=rndis+adb
+ATTR{idProduct}=="2e24", GOTO="rndis"
+ATTR{idProduct}=="2e25", GOTO="adbrndis"
+ATTR{idProduct}=="2e76", GOTO="adbmtp"
+ATTR{idProduct}=="2e80", GOTO="fast"
+ATTR{idProduct}=="2e81", GOTO="adb" # also sideload
+ATTR{idProduct}=="2e82", GOTO="mtp" # also charging
+ATTR{idProduct}=="2e83", GOTO="ptp"
+ATTR{idProduct}=="2e84", GOTO="adbptp"
+ATTR{idProduct}=="2eb7", GOTO="mass" # off
 ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Motorola"
-
 # MTK (MediaTek Inc)
 ATTR{idVendor}!="0e8d", GOTO="not_MTK"
 #   Umidigi F1
@@ -891,7 +905,7 @@ LABEL="cdc", ENV{adb_user}="yes", GOTO="android_usb_rule_match"
 LABEL="adbfast", ENV{adb_adb}="yes"
 LABEL="fast", ENV{adb_fast}="yes", GOTO="android_usb_rule_match"
 
-# ADB Debug and mass storage (note: android_ver<4.3)
+# ADB Debug and mass storage (note: generally android_ver<4.3; Moto Z3 Play when powered off)
 LABEL="adbmass", ENV{adb_adbmass}="yes"
 LABEL="mass", ENV{adb_mass}="yes", GOTO="android_usb_rule_match"
 
