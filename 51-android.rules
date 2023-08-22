@@ -362,7 +362,7 @@ ATTR{idVendor}!="2b0e", GOTO="not_letv"
 #   LEX720 LeEco Pro3 6GB (610c=normal,610d=debug, 610b=camera)
 ATTR{idProduct}=="610d", GOTO="adbfast"
 ENV{adb_user}="yes"
-GOTO="android_usb_rules_end"
+GOTO="android_usb_rule_match"
 LABEL="not_letv"
 
 # LG
