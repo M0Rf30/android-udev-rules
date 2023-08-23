@@ -138,12 +138,14 @@ GOTO="android_usb_rules_end"
 LABEL="not_Essential"
 
 # Fairphone 1 (see Hisense 109b)
-# Fairphone 2 (f005=tether, f00e=rndis, 90de=charge, 90dc=charge,adb f000=MTP, 9039=MTP,adb, 904d=PTP, 904e=PTP,adb, 9015=storage,adb, 9024=rndis,adb) 90bb=qualcom midi+adb
+# Fairphone 2 (f000=mtp,mass f003=mtp f005=tether f00e=rndis 90de=charge 90dc=charge,adb 9015=storage,adb, 9024=rndis,adb, 9039=mtp,adb 904d=ptp 904e=ptp,adb) 90bb=qualcom midi+adb
 ATTR{idVendor}!="2ae5", GOTO="not_Fairphone2"
-ATTR{idProduct}=="9015", GOTO="adb"
-ATTR{idProduct}=="9039", GOTO="adb"
-ATTR{idProduct}=="904e", GOTO="adb"
-ATTR{idProduct}=="90dc", GOTO="adb"
+ATTR{idProduct}=="9015", GOTO="go_adb"
+ATTR{idProduct}=="9024", GOTO="go_adbrndis"
+ATTR{idProduct}=="9039", GOTO="go_adbmtp"
+ATTR{idProduct}=="904e", GOTO="go_adbptp"
+ATTR{idProduct}=="90bb", GOTO="go_adbmidi"
+ATTR{idProduct}=="90dc", GOTO="go_adb"
 GOTO="android_usb_rules_end"
 LABEL="not_Fairphone2"
 
@@ -179,6 +181,7 @@ ATTR{idVendor}!="18d1", GOTO="not_Google"
 #   Pico i.MX7 Dual Development Board 4ee7=debug
 #   PinePhone (v1.2) (4ee0=fast 4ee1=mtp, 4ee2=mtp,adb 4ee3=rndis 4ee4=rndis,adb 4ee5=ptp, 4ee6=ptp,adb 4ee7=adb)
 #   Yandex Phone 4ee7=debug
+#   Fairphone3 (4ee1=mtp)
 ATTR{idProduct}=="4ee0", GOTO="adbfast"
 ATTR{idProduct}=="4ee2", GOTO="adb"
 ATTR{idProduct}=="4ee4", GOTO="adb"
