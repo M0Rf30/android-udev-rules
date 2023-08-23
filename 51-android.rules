@@ -88,24 +88,39 @@ LABEL="not_Ascom"
 ATTR{idVendor}!="0b05", GOTO="not_Asus"
 #   False positive - accessory
 ATTR{idProduct}=="1???", GOTO="android_usb_rules_end"
-#   Zenphone 2 (ZE500CL) (7770=adb 7773=mtp,adb 7777=ptp,adb   7775=rndis,adb,mass_storage 5F03=mtp,adb,pclink,mass_storage 5F07=ptp,adb,pclink 5F05=rndis,adb,pclink,mass_storage
+#   Zenphone 2 (ZE500CL) (7770=adb 7773=mtp,adb 7775=rndis,adb,mass_storage 7777=ptp,adb 5F03=mtp,adb,pclink,mass_storage 5F05=rndis,adb,pclink,mass_storage 5F07=ptp,adb,pclink)
+#   Zenfone GO (ZB500KL) (7772=mtp 7773=mtp,adb 7774=rndis 7775=rndis,adb 7776=ptp 7777=ptp,adb)
 ATTR{idProduct}=="7770", GOTO="adb"
-ATTR{idProduct}=="7773", GOTO="adb"
-ATTR{idProduct}=="7777", GOTO="adb"
-ATTR{idProduct}=="7775", GOTO="adb"
-ATTR{idProduct}=="5F03", GOTO="adb"
-ATTR{idProduct}=="5F07", GOTO="adb"
-ATTR{idProduct}=="5F05", GOTO="adb"
+ATTR{idProduct}=="7773", GOTO="adbmtp"
+ATTR{idProduct}=="7775", ENV{adb_adbmass}="yes", GOTO="adbrndis"
+ATTR{idProduct}=="7777", GOTO="adbptp"
+ATTR{idProduct}=="5F03", GOTO="adbmtp"
+ATTR{idProduct}=="5F07", GOTO="adbptp"
+ATTR{idProduct}=="5F05", ENV{adb_adbmass}="yes", GOTO="adbrndis"
 #   Zenphone 4 (581f=mtp,adb 583f=rndis,adb)
-ATTR{idProduct}=="581f", GOTO="adb"
-ATTR{idProduct}=="583f", GOTO="adb"
-#   Zenphone 5 (4c90=normal,4c91=debug,4daf=Fastboot)
-ATTR{idProduct}=="4c91", GOTO="adb"
+ATTR{idProduct}=="581f", GOTO="adbmtp"
+ATTR{idProduct}=="583f", GOTO="adbrndis"
+#   TF300 (4c80=mtp 4c81=mtp,adb)
+#   TF700 (4c90=mtp 4c91=mtp,adb)
+#   Zenphone 5 (4c90=normal 4c91=debug 4daf=Fastboot 7780=mtp 7781=mtp,adb)
+#   TF701T (4ca0=mtp, 4ca1=mtp,adb)
+#   ME302KL (4cc0=mtp, 4cc1=mtp,adb)
+#   ME301T (4cd0=mtp, 4cd1=mtp,adb)
+#   Fonepad 6 (4ce0=mtp, 4ce1=mtp,adb)
+ATTR{idProduct}=="4c81", GOTO="adbmtp"
+ATTR{idProduct}=="4c91", GOTO="adbmtp"
+ATTR{idProduct}=="4ca1", GOTO="adbmtp"
+ATTR{idProduct}=="4cc1", GOTO="adbmtp"
+ATTR{idProduct}=="4cd1", GOTO="adbmtp"
+ATTR{idProduct}=="4ce1", GOTO="adbmtp"
 ATTR{idProduct}=="4daf", GOTO="adbfast"
+ATTR{idProduct}=="7781", GOTO="adbmtp"
+#   SL101 (4e00=mtp, 4e01=mtp,adb)
+#   TF101 (4e0f=mtp, 4e1f=mtp,adb)
+ATTR{idProduct}=="4e1f", GOTO="adbmtp"
 #   Tegra APX
 ATTR{idProduct}=="7030", GOTO="adb"
-ENV{adb_user}="yes"
-GOTO="android_usb_rule_match"
+GOTO="android_usb_rules_end"
 LABEL="not_Asus"
 
 # Azpen Onda
