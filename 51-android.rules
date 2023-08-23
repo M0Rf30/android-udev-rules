@@ -197,6 +197,7 @@ ATTR{idVendor}!="18d1", GOTO="not_Google"
 #   PinePhone (v1.2) (4ee0=fast 4ee1=mtp, 4ee2=mtp,adb 4ee3=rndis 4ee4=rndis,adb 4ee5=ptp, 4ee6=ptp,adb 4ee7=adb)
 #   Yandex Phone 4ee7=debug
 #   Fairphone3 (4ee1=mtp)
+#   Motorola G3 (2d02=audio 2d03=audio,adb 4ee8=midi 4ee9=midi,adb)
 ATTR{idProduct}=="4ee0", GOTO="adbfast"
 ATTR{idProduct}=="4ee2", GOTO="adb"
 ATTR{idProduct}=="4ee4", GOTO="adb"
@@ -215,7 +216,7 @@ ATTR{idProduct}=="5208", GOTO="adb"
 
 ATTR{idProduct}=="2d00", GOTO="adb"
 ATTR{idProduct}=="2d01", GOTO="adb"
-ATTR{idProduct}=="2d03", GOTO="adb"
+ATTR{idProduct}=="2d03", GOTO="adbaud"
 ATTR{idProduct}=="2d05", GOTO="adb"
 #   Nexus 7
 ATTR{idProduct}=="4e42", GOTO="adb"
@@ -458,24 +459,18 @@ ATTR{idProduct}=="2d66", SYMLINK+="android_adb"
 ATTR{idProduct}=="428c", SYMLINK+="android_adb"
 #   Droid
 ATTR{idProduct}=="41db", SYMLINK+="android_adb"
-#   Xoom ID 1
-ATTR{idProduct}=="70a8", GOTO="adbfast"
-#   Xoom ID 2
-ATTR{idProduct}=="70a9", GOTO="adbfast"
+#   Xoom (70a8=mtp 70a9=mtp,adb)
+ATTR{idProduct}=="70a8", GOTO="mtp"
+ATTR{idProduct}=="70a9", GOTO="adbmtp"
+#   XT890/907/Razr (710d=mtp 710e=mtp,adb)
+ATTR{idProduct}=="710e", GOTO="adbmtp"
 #   Razr XT912
 ATTR{idProduct}=="4362", GOTO="adbfast"
-#   Moto XT1052
-#ATTR{idProduct}=="2e83", GOTO="adbfast"
-#   Moto E/G
-#ATTR{idProduct}=="2e76", GOTO="adbfast"
-#   Moto E/G (Dual SIM)
-#ATTR{idProduct}=="2e80", GOTO="adbfast"
-#   Moto E/G (Global GSM)
-#ATTR{idProduct}=="2e82", GOTO="adbfast"
-#   Moto x4
-#ATTR{idProduct}=="2e81", GOTO="adbfast"
 #   Droid Turbo 2
 ATTR{idProduct}=="2ea4", GOTO="adbfast"
+#   Atrix/Razr HD (2e32=mtp 2e33=mtp,adb)
+#   Razr M (2e50=mtp 2e51=mtp,adb)
+#   Moto G3 (2e76=mtp,adb 2e81=charge,adb 2e82=mtp 2e83=ptp 2e84=ptp,adb 2e24=rndis 2e25=rndis,adb)
 #   Moto Z3 Play, beckham, XT1929
 #     For details see: <https://github.com/M0Rf30/android-udev-rules/issues/264>
 #     18d1:4ee8=midi; 18d1:4ee9=midi+adb
@@ -483,6 +478,8 @@ ATTR{idProduct}=="2ea4", GOTO="adbfast"
 #     QCOM: 05c6:9091=charing+adb, mtp+adb, ptp+adb; 05c6:9092=charging, mtp, ptp; 18d1:4ee8=midi; 18d1:4ee9=midi+adb; 22b8:2e24=rndis; 22b8:2e25=rndis+adb
 ATTR{idProduct}=="2e24", GOTO="rndis"
 ATTR{idProduct}=="2e25", GOTO="adbrndis"
+ATTR{idProduct}=="2e33", GOTO="adbmtp"
+ATTR{idProduct}=="2e51", GOTO="adbmtp"
 ATTR{idProduct}=="2e76", GOTO="adbmtp"
 ATTR{idProduct}=="2e80", GOTO="fast"
 ATTR{idProduct}=="2e81", GOTO="adb" # also sideload
