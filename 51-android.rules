@@ -232,8 +232,12 @@ ATTR{idProduct}=="4e30", GOTO="adbfast"
 #   Nexus One (4e11=normal,4e12=debug,0fff=debug)
 ATTR{idProduct}=="4e12", GOTO="adb"
 ATTR{idProduct}=="0fff", GOTO="adbfast"
+#   Xiaomi MiPhone Mi1/Mi1S (9024=ndis,adb 9025=mass_storage,adb 9026=mass storage f00e=ndis)
+ATTR{idProduct}=="8024", GOTO="adb"
+ATTR{idProduct}=="9025", GOTO="adbmass"
 #   Generic and unspecified debug interface (test after d00?)
 #   examples: Xiaomi Mi/Redmi 2, Anbernic RG353P
+#   Xiaomi Mi2 (d00d=bootloader d002=charger)
 ATTR{idProduct}=="d00d", GOTO="adbfast"
 #   Recovery adb entry for Nexus Family (orig d001, OP3 has 18d1:d002)
 ATTR{idProduct}=="d00?", GOTO="adb"
@@ -807,39 +811,43 @@ ATTR{idVendor}=="2970", GOTO="user"
 
 # XiaoMi
 ATTR{idVendor}!="2717", GOTO="not_XiaoMi"
-ENV{adb_user}="yes"
 #   Mi2A
 ATTR{idProduct}=="904e", SYMLINK+="android_adb"
 ATTR{idProduct}=="9039", SYMLINK+="android_adb"
 #   Mi3
 ATTR{idProduct}=="0368", SYMLINK+="android_adb"
 #   RedMi 1S WCDMA (MTP+Debug)
-ATTR{idProduct}=="1268", SYMLINK+="android_adb"
+ATTR{idProduct}=="1268", GOTO="adbmtp"
 #   RedMi / RedMi Note WCDMA (MTP+Debug)
-ATTR{idProduct}=="1248", SYMLINK+="android_adb"
+ATTR{idProduct}=="1248", GOTO="adbmtp"
 #   RedMi 1S / RedMi / RedMi Note WCDMA (PTP+Debug)
-ATTR{idProduct}=="1218", SYMLINK+="android_adb"
+ATTR{idProduct}=="1218", GOTO="adbptp"
 #   RedMi 1S /RedMi / RedMi Note WCDMA (Usb+Debug)
 ATTR{idProduct}=="1228", SYMLINK+="android_adb"
 #   RedMi / RedMi Note 4G WCDMA (MTP+Debug)
-ATTR{idProduct}=="1368", SYMLINK+="android_adb"
+ATTR{idProduct}=="1368", GOTO="adbmtp"
 #   RedMi / RedMi Note 4G WCDMA (PTP+Debug)
-ATTR{idProduct}=="1318", SYMLINK+="android_adb"
+ATTR{idProduct}=="1318", GOTO="adbptp"
 #   RedMi / RedMi Note 4G WCDMA (Usb+Debug)
-ATTR{idProduct}=="1328", SYMLINK+="android_adb"
-#   Mi Mix / A1 (ff88=rndis+adb, ff18=ptp+adb, ff48=mtp+adb, ff28=storage+adb)
-ATTR{idProduct}=="ff88", SYMLINK+="android_adb"
-ATTR{idProduct}=="ff18", SYMLINK+="android_adb"
-ATTR{idProduct}=="ff48", SYMLINK+="android_adb"
-ATTR{idProduct}=="ff28", SYMLINK+="android_adb"
+ATTR{idProduct}=="1328", GOTO="adb"
+#   Mi2 (f003=mtp,mass_storage 9039=mtp,adb,mass_storage 904d=ptp 904e=ptp,adb f000=mass_storage 9015=mass_storage,adb f00e=ndis 9024=ndis,adb f00f=ndis 803e=ndis,adb)
+ATTR{idProduct}=="9039", GOTO="adbmtp"
+ATTR{idProduct}=="904e", GOTO="adbptp"
+ATTR{idProduct}=="9015", GOTO="adbmass"
+ATTR{idProduct}=="9024", GOTO="adb"
+ATTR{idProduct}=="803e", GOTO="adb"
+#   Redmi Note 3 (ff08=adb)
+#   Mi/Redmi (ff10=ptp ff18=ptp,adb ff40=mtp ff48=mtp,adb ff80=rndis ff88=rndis,adb)
+#   Mi Mix / A1 (ff18=ptp,adb ff28=storage,adb ff48=mtp,adb ff88=rndis,adb)
+ATTR{idProduct}=="ff08", GOTO="adb"
+ATTR{idProduct}=="ff18", GOTO="adbptp"
+ATTR{idProduct}=="ff28", GOTO="adbmass"
+ATTR{idProduct}=="ff40", GOTO="mtp"
+ATTR{idProduct}=="ff48", GOTO="adbmtp"
+ATTR{idProduct}=="ff88", GOTO="adbrndis"
 #   RedMi / RedMi Note 4G CDMA (Usb+Debug) / Mi4c / Mi5
-ATTR{idProduct}=="ff68", SYMLINK+="android_adb"
-#   RedMi 7
-ATTR{idProduct}=="ff40", SYMLINK+="android_adb"
-#   RedMi Note 8T
-ATTR{idProduct}=="ff08", SYMLINK+="android_adb"
-#   RedMi 8 Pro
-ATTR{idProduct}=="ff48", SYMLINK+="android_adb"
+ATTR{idProduct}=="ff68", GOTO="adb"
+ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_XiaoMi"
 
