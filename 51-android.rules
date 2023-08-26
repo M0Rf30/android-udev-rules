@@ -872,17 +872,12 @@ LABEL="not_Zebra"
 
 # ZTE
 ATTR{idVendor}!="19d2", GOTO="not_ZTE"
-#   ZTE Blade A5 2020
-#   mtp,adb
-ATTR{idProduct}=="0306", GOTO="adb"
-#   ptp,adb
-ATTR{idProduct}=="0310", GOTO="adb"
-#   cdrom,adb
+#   ZTE Blade A5 2020 (0306=mtp,adb 0310=ptp,adb 0501=cdrom,adb 1352=charging,adb 1373=rndis,adb)
+ATTR{idProduct}=="0306", GOTO="adbmtp"
+ATTR{idProduct}=="0310", GOTO="adbptp"
 ATTR{idProduct}=="0501", GOTO="adb"
-#   charging,adb
 ATTR{idProduct}=="1352", GOTO="adb"
-#   rndis,adb
-ATTR{idProduct}=="1373", GOTO="adb"
+ATTR{idProduct}=="1373", GOTO="adbrndis"
 #   Blade (1353=normal,1351=debug)
 ATTR{idProduct}=="1351", GOTO="adb"
 #   Blade S (Crescent, Orange San Francisco 2) (1355=normal,1354=debug)
@@ -897,14 +892,13 @@ ATTR{idProduct}=="1485", GOTO="user"
 ATTR{idProduct}=="1489", GOTO="user"
 #   Nubia / RedMagic Series (NX***)
 #   See https://github.com/TadiT7/nubia_nx619j_dump/blob/NX619J-user-9-PKQ1.180929.001-eng.nubia.20181220.181559-release-keys/vendor/etc/init/hw/init.nubia.usb.rc
-#   ptp,adb
-ATTR{idProduct}=="ffd1", GOTO="adb"
-#   mtp,adb
-ATTR{idProduct}=="ffcf", GOTO="adb"
-#   mass_storage,adb
-ATTR{idProduct}=="ffcd", GOTO="adb"
-#   rndis,adb
-ATTR{idProduct}=="ffcb", GOTO="adb"
+#   (... ffc0=diag,mass_storage,adb ffc1=adb ffcb=rndis,adb ffcd=mass_storage,adb ffcf=mtp,adb ffd1=ptp,adb)
+ATTR{idProduct}=="ffc0", GOTO="adbmass"
+ATTR{idProduct}=="ffc1", GOTO="adb"
+ATTR{idProduct}=="ffcb", GOTO="adbrndis"
+ATTR{idProduct}=="ffcd", GOTO="adbmass"
+ATTR{idProduct}=="ffcf", GOTO="adbmtp"
+ATTR{idProduct}=="ffd1", GOTO="adbptp"
 #   modem,service,nema,adb
 ATTR{idProduct}=="ffc9", GOTO="adb"
 #   modem,service,nema,mass_storage,adb
@@ -913,10 +907,6 @@ ATTR{idProduct}=="ffc7", GOTO="adb"
 ATTR{idProduct}=="ffb0", GOTO="adb"
 #   diag,modem,service,mass_storage,adb
 ATTR{idProduct}=="ffb2", GOTO="adb"
-#   adb
-ATTR{idProduct}=="ffc1", GOTO="adb"
-#   diag,mass_storage,adb
-ATTR{idProduct}=="ffc0", GOTO="adb"
 GOTO="android_usb_rules_end"
 LABEL="not_ZTE"
 
