@@ -525,10 +525,10 @@ ATTR{idVendor}!="0955", GOTO="not_Nvidia"
 #   Folio
 ATTR{idProduct}=="7000", SYMLINK+="android_fastboot"
 ATTR{idProduct}=="7100", GOTO="user"
-#   SHIELD Tablet (debug)
-ATTR{idProduct}=="cf05", GOTO="adb"
+#   SHIELD Tablet (cf05=mtp,adb cf06= cf07=mtp cf08= cf09=)
+ATTR{idProduct}=="cf05", GOTO="adbmtp"
 ATTR{idProduct}=="cf09", GOTO="adb"
-#   Shield TV
+#   Shield TV (b42a=mtp)
 ATTR{idProduct}=="b442", SYMLINK+="android_fastboot"
 ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
@@ -630,13 +630,14 @@ ATTR{idProduct}=="900e", SYMLINK+="android_adb"
 ATTR{idProduct}=="676c", SYMLINK+="android_adb"
 #   Snapdragon, OnePlus 3T w/ Oreo MIDI mode (90bb=adb,midi, 9011=MTP, 904e=PTP)
 #   Xiaomi A1 (90bb=midi+adb)
-ATTR{idProduct}=="90bb", GOTO="adb"
+ATTR{idProduct}=="90bb", GOTO="adbmidi"
+ATTR{idProduct}=="90dc", GOTO="adb"
 #   OnePlus 5 / 6 / 6T
 ATTR{idProduct}=="9011", SYMLINK+="android_adb"
 #   OnePlus 6 / Asia
 ATTR{idProduct}=="f003", SYMLINK+="android_adb"
 #   Yongnuo YN450m (identified in lsusb as Intex Aqua Fish & Jolla C Diagnostic Mode)
-ATTR{idProduct}=="9091", SYMLINK+="android_adb"
+ATTR{idProduct}=="9091", GOTO="adb"
 #   Wileyfox Swift 2 Plus
 ATTR{idProduct}=="0001", GOTO="user"
 ENV{adb_user}="yes"
