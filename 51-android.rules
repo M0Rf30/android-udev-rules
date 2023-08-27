@@ -264,25 +264,28 @@ LABEL="not_Honeywell"
 
 # HTC
 ATTR{idVendor}!="0bb4", GOTO="not_HTC"
-#   fastboot mode enabled
+#   Android phone (0fff=fastboot 0001=mass_storage)
+ATTR{idProduct}=="0001", GOTO="mass"
 ATTR{idProduct}=="0fff", GOTO="adbfast"
-#   ADP1, Dream, G1, HD2, Magic, Tatoo (0c01=mass_storage)
+#   ADP1, Dream, G1, HD2, Magic, Tatoo (0c01=mass_storage, 0c02=mass_storage,adb)
+#   Desire/desire HD/Hero (0ff8=tether 0ff9=charge 0ffe=modem 0fb4=rndis)
 #   NOTE: Amazon Kindle 8 2016 (giza) (fastboot=0bb4:0c01 conflicts with mass storage=0c01)
-ATTR{idProduct}=="0c02", GOTO="adbfast"
+ATTR{idProduct}=="0c01", GOTO="mass"
+ATTR{idProduct}=="0c02", GOTO="adbmass"
 #   ChaCha
 ATTR{idProduct}=="0cb2", GOTO="adbfast"
-#   Desire (Bravo)
-ATTR{idProduct}=="0c87", SYMLINK+="android_adb"
-#   Desire HD
-ATTR{idProduct}=="0ca2", SYMLINK+="android_adb"
-#   Desire S (Saga)
+#   Desire (Bravo) (0c87=debug 0c99=debug)
+ATTR{idProduct}=="0c87", GOTO="adb"
+ATTR{idProduct}=="0c99", GOTO="adb"
+#   Desire HD (0ca2=debug 0ff8=tether 0ff9=charge 0ffe=modem)
+ATTR{idProduct}=="0ca2", GOTO="adb"
+#   Desire S (Saga), Desire HD, Hero, Thunderbolt (0cab=syncmode 0ff9=charge)
 ATTR{idProduct}=="0cab", SYMLINK+="android_adb"
 #   Desire Z
 ATTR{idProduct}=="0c91", GOTO="adbfast"
-#   Evo Shift
+#   Evo Shift 4G (0c8d=debug 0ca5=?)
+ATTR{idProduct}=="0c8d", GOTO="adb"
 ATTR{idProduct}=="0ca5", SYMLINK+="android_adb"
-#   Hero H2000
-ATTR{idProduct}=="0001", GOTO="adbfast"
 #   Hero (GSM), Desire
 ATTR{idProduct}=="0c99", SYMLINK+="android_adb"
 #   Hero (CDMA)
@@ -310,10 +313,36 @@ ATTR{idProduct}=="0c91", SYMLINK+="android_adb"
 ATTR{idProduct}=="0c8b", GOTO="adbfast"
 #   Wildfire S
 ATTR{idProduct}=="0c86", GOTO="adbfast"
-#   Zopo ZP900, Fairphone
+#   Zopo ZP900, Fairphone 1
 ATTR{idProduct}=="0c03", GOTO="adbfast"
-#   Zopo C2
-ATTR{idProduct}=="2008", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+#   Zopo C2, Android phone via MTP [MT65xx] (2008=mtp)
+ATTR{idProduct}=="2008", GOTO="mtp"
+#   Android phone via PTP [Wiko Cink Peax 2] (200b=ptp)
+ATTR{idProduct}=="200b", GOTO="ptp"
+#   Desire 510 (05fd=mtp,adb)
+ATTR{idProduct}=="05fd", GOTO="adbmtp"
+#   Droid DNA (0dff=mtp,ums,adb 0ebd=mtp,ums)
+ATTR{idProduct}=="0dff", GOTO="adbmtp"
+ATTR{idProduct}=="0ebd", GOTO="mtp"
+#   Droid Incredible 4G LTE (0e31=mtp 0e32=mtp,adb)
+ATTR{idProduct}=="0e31", GOTO="mtp"
+ATTR{idProduct}=="0e32", GOTO="adbmtp"
+#   One (0dea=mtp,ums,adb 0f87=mtp,?,adb 0f5f=mtp,cdc,adb 0f60=mtp,cdc 0f63=mtp,adb 0f64=mtp)
+ATTR{idProduct}=="0dea", GOTO="adbmtp"
+ATTR{idProduct}=="0f87", GOTO="adbmtp"
+ATTR{idProduct}=="0f5f", ENV{adb_adbcdc}="yes", GOTO="adbmtp"
+ATTR{idProduct}=="0f60", ENV{adb_cdc}="yes", GOTO="mtp"
+ATTR{idProduct}=="0f63", GOTO="adbmtp"
+ATTR{idProduct}=="0f64", GOTO="mtp"
+#   One M8 Google Play Edition (060b=mtp,adb)
+ATTR{idProduct}=="060b", GOTO="adbmtp"
+#   One M8 (061a=mtp,adb 0f25=mtp 0fb4=mtp,ums,adb 0fb5=mtp,ums)
+ATTR{idProduct}=="061a", GOTO="adbmtp"
+ATTR{idProduct}=="0f25", GOTO="mtp"
+ATTR{idProduct}=="0fb4", GOTO="adbmtp"
+ATTR{idProduct}=="0fb5", GOTO="mtp"
+#   HP Touchpad (685c=mtp 6860=mtp,adb)
+ATTR{idProduct}=="6860", GOTO="adbmtp"
 ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_HTC"
@@ -960,11 +989,13 @@ LABEL="user", ENV{adb_user}="yes"
 LABEL="android_usb_rule_match"
 ENV{adb_adbcdc}=="yes", ENV{adb_adb}="yes", SYMLINK+="android_cdc", SYMLINK+="android_cdc%n"
 ENV{adb_adbfast}=="yes", ENV{adb_adb}="yes", ENV{adb_fast}="yes"
+ENV{adb_adbmass}=="yes", ENV{adb_mass}="yes"
 ENV{adb_adbmtp}=="yes", ENV{adb_adb}="yes", ENV{adb_mtp}="yes"
 ENV{adb_adbptp}=="yes", ENV{adb_adb}="yes", ENV{adb_ptp}="yes"
 ENV{adb_adbmidi}=="yes", ENV{adb_adb}="yes", SYMLINK+="android_midi", SYMLINK+="android_midi0%n"
 ENV{adb_adb}=="yes", ENV{adb_user}="yes", SYMLINK+="android_adb"
 ENV{adb_fast}=="yes", SYMLINK+="android_fastboot"
+ENV{adb_mass}=="yes", ENV{adb_mtp}="yes"
 ENV{adb_ptp}=="yes", ENV{adb_user}="yes", ATTR{bDeviceClass}=="00|02|06|ef|ff", ENV{adb_mtp}="yes"
 ENV{adb_mtp}=="yes", ENV{adb_user}="yes", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 
