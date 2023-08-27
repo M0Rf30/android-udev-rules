@@ -393,32 +393,36 @@ LABEL="not_letv"
 
 # LG
 ATTR{idVendor}!="1004", GOTO="not_LG"
-ENV{adb_user}="yes"
-#   Ally, Vortex, P500, P500h (618f=mass_storage)
-ATTR{idProduct}=="618e", SYMLINK+="android_adb"
-#   G2 D802
+#   Ally, Vortex, P500, P500h (618e=debug 618f=mass_storage)
+ATTR{idProduct}=="618e", GOTO="adb"
+ATTR{idProduct}=="618f", GOTO="mass"
+#   G2 D802 (61f1=LG software mode)
 ATTR{idProduct}=="61f1", SYMLINK+="android_adb"
 #   G2 D803
 ATTR{idProduct}=="618c", SYMLINK+="android_adb"
-#   G2 D803 rogers
+#   G2 D803 rogers (631f=charge)
 ATTR{idProduct}=="631f", SYMLINK+="android_adb"
-#   G2 mini D620r (PTP)
-ATTR{idProduct}=="631d", SYMLINK+="android_adb"
-#   G3 D855
-ATTR{idProduct}=="633e", SYMLINK+="android_adb"
-#   Optimus LTE
+#   G3 (VS985) Android Phone (627f=mtp)
+ATTR{idProduct}=="627f", GOTO="mtp"
+#   LM-X420xxx/G2/Optimus (6300=charge 631c=charge 631d=ptp 631e=ptp 633e=mtp 6344=tether 6348=midi 6356=CDrom)
+ATTR{idProduct}=="631c", GOTO="adb"
+ATTR{idProduct}=="631d", GOTO="ptp"
+ATTR{idProduct}=="631e", GOTO="ptp"
+ATTR{idProduct}=="633e", GOTO="mtp"
+ATTR{idProduct}=="6344", GOTO="rndis"
+ATTR{idProduct}=="6348", GOTO="midi"
+#   Optimus LTE (61f9=mtp 61fe=tether)
 ATTR{idProduct}=="6315", SYMLINK+="android_adb"
-ATTR{idProduct}=="61f9", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
+ATTR{idProduct}=="61f9", GOTO="mtp"
 #   Optimus One
 ATTR{idProduct}=="61c5", SYMLINK+="android_adb"
 #   Swift GT540
 ATTR{idProduct}=="61b4", SYMLINK+="android_adb"
 #   P500 CM10
 ATTR{idProduct}=="61a6", SYMLINK+="android_adb"
-#   4X HD P880
-ATTR{idProduct}=="61f9", SYMLINK+="android_adb"
-#   L90 D410
+#   L90 D410, Various (6300=charge)
 ATTR{idProduct}=="6300", SYMLINK+="android_adb"
+ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_LG"
 
