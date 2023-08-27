@@ -190,58 +190,62 @@ ATTR{idVendor}=="091e", GOTO="user"
 
 # Google
 ATTR{idVendor}!="18d1", GOTO="not_Google"
-#   Nexus, Pixel, Pixel XL, Pixel 2, Pixel 2XL (4ee1=mtp, 4ee2=mtp,adb 4ee3=rndis, 4ee4=rndis,adb 4ee5=ptp, 4ee6=ptp,adb 4ee7=adb 4ee8=midi, 4ee9=midi,adb 2d00=accessory 2d01=accessory,adb 2d03=audio_source,adb 2d05=accessory,audio_source,adb)
+#   Nexus, Pixel (/XL/2/2XL) (4ee1=mtp 4ee2=mtp,adb 4ee3=rndis 4ee4=rndis,adb 4ee5=ptp 4ee6=ptp,adb 4ee7=adb 4ee8=midi 4ee9=midi,adb 2d00=accessory 2d01=accessory,adb 2d03=audio,adb 2d05=accessory,audio,adb)
 #   See https://android.googlesource.com/device/google/wahoo/+/master/init.hardware.usb.rc
-#   OnePlus 6, 4ee1=charging, 4ee2=MTP+debug, 4ee6=PTP+debug, 4ee7=charging+debug
+#   OnePlus 6 (4ee1=charging 4ee2=mtp,adb 4ee6=ptp,adb 4ee7=charging,adb)
+#   Onda V972 (0001=mass_storage 0006=mtp 0007=ptp 0008=camera)
 #   Pico i.MX7 Dual Development Board 4ee7=debug
-#   PinePhone (v1.2) (4ee0=fast 4ee1=mtp, 4ee2=mtp,adb 4ee3=rndis 4ee4=rndis,adb 4ee5=ptp, 4ee6=ptp,adb 4ee7=adb)
+#   PinePhone (v1.2) (4ee0=fast 4ee1=mtp 4ee2=mtp,adb 4ee3=rndis 4ee4=rndis,adb 4ee5=ptp 4ee6=ptp,adb 4ee7=adb)
 #   Yandex Phone 4ee7=debug
 #   Fairphone3 (4ee1=mtp)
 #   Motorola G3 (2d02=audio 2d03=audio,adb 4ee8=midi 4ee9=midi,adb)
 ATTR{idProduct}=="4ee0", GOTO="adbfast"
-ATTR{idProduct}=="4ee2", GOTO="adb"
-ATTR{idProduct}=="4ee4", GOTO="adb"
-ATTR{idProduct}=="4ee6", GOTO="adb"
+ATTR{idProduct}=="4ee2", GOTO="adbmtp"
+ATTR{idProduct}=="4ee4", GOTO="adbrndis"
+ATTR{idProduct}=="4ee6", GOTO="adbptp"
 ATTR{idProduct}=="4ee7", GOTO="adb"
 ATTR{idProduct}=="4ee8", GOTO="midi" # some non-Google phones as well
 ATTR{idProduct}=="4ee9", GOTO="adbmidi" # some non-Google phones as well
 
 #   Tensor Pixel phones (Pixel 7/7 pro/6/6A/6 Pro) 4eeb=cdc-ncm; 4eec=cdc-ncm,adb
-ATTR{idProduct}=="4eec", GOTO="adb"
+ATTR{idProduct}=="4eec", GOTO="adbcdc"
 
-#   Pixel C Tablet
+#   Pixel C Tablet (5202=mtp 5203=mtp,adb)
 ATTR{idProduct}=="5201", GOTO="adbfast"
-ATTR{idProduct}=="5203", GOTO="adb"
+ATTR{idProduct}=="5203", GOTO="adbmtp"
 ATTR{idProduct}=="5208", GOTO="adb"
 
+#   Android Open Accessory device (2d00=accessory 2d01=accessory,adb 2d02=audio 2d03=audio,adb 2d04=accessory,audio 2d05=accessory,audio,adb)
 ATTR{idProduct}=="2d00", GOTO="adb"
 ATTR{idProduct}=="2d01", GOTO="adb"
 ATTR{idProduct}=="2d03", GOTO="adbaud"
-ATTR{idProduct}=="2d05", GOTO="adb"
-#   Nexus 7
-ATTR{idProduct}=="4e42", GOTO="adb"
+ATTR{idProduct}=="2d05", GOTO="adbaud"
+#   Nexus 7 (4e40=fastboot 4e41=mtp 4e42=mtp,adb 4e43=ptp) Nexus 7 2012 (4e44=ptp)
 ATTR{idProduct}=="4e40", GOTO="adbfast"
-#   Nexus 5, Nexus 10
-ATTR{idProduct}=="4ee1", GOTO="adbfast"
-#   Nexus S (4e22=mass_storage,adb 4e24=rndis,adb)
+ATTR{idProduct}=="4e42", GOTO="adbmtp"
+#   Nexus S (4e20=fastboot 4e21=? 4e22=mass_storage,adb 4e24=rndis,adb)
 #   See https://android.googlesource.com/device/samsung/crespo/+/android-4.1.2_r2.1/init.herring.usb.rc
-ATTR{idProduct}=="4e22", GOTO="adb"
-ATTR{idProduct}=="4e24", GOTO="adb"
 ATTR{idProduct}=="4e20", GOTO="adbfast"
-#   Galaxy Nexus, Galaxy Nexus (GSM)
+ATTR{idProduct}=="4e22", GOTO="adbmass"
+ATTR{idProduct}=="4e24", GOTO="adbrndis"
+ATTR{idProduct}=="4e20", GOTO="adbfast"
+#   Galaxy Nexus, Galaxy Nexus (GSM) (4e30=fastboot)
 ATTR{idProduct}=="4e30", GOTO="adbfast"
-#   Nexus One (4e11=normal,4e12=debug,0fff=debug)
-ATTR{idProduct}=="4e12", GOTO="adb"
+#   Nexus One (4e11=normal 4e12=mtp,adb 4e13=tether 0fff=debug)
+ATTR{idProduct}=="4e12", GOTO="adbmtp"
 ATTR{idProduct}=="0fff", GOTO="adbfast"
 #   Xiaomi MiPhone Mi1/Mi1S (9024=ndis,adb 9025=mass_storage,adb 9026=mass storage f00e=ndis)
-ATTR{idProduct}=="8024", GOTO="adb"
+ATTR{idProduct}=="9024", GOTO="adb"
 ATTR{idProduct}=="9025", GOTO="adbmass"
 #   Generic and unspecified debug interface (test after d00?)
 #   examples: Xiaomi Mi/Redmi 2, Anbernic RG353P
 #   Xiaomi Mi2 (d00d=bootloader d002=charger)
 ATTR{idProduct}=="d00d", GOTO="adbfast"
-#   Recovery adb entry for Nexus Family (orig d001, OP3 has 18d1:d002)
-ATTR{idProduct}=="d00?", GOTO="adb"
+#   Nexus 4 (d001=fastboot d002=debug)
+ATTR{idProduct}=="d001", GOTO="adbfast"
+ATTR{idProduct}=="d002", GOTO="adb"
+#   LG G2x (d109=mtp d10a=mtp,adb)
+ATTR{idProduct}=="d10a", GOTO="adbmtp"
 
 # Other vendors that also used duplicated Google's idVendor code follows:
 # IDEA XDS-1078 (debug=2c11)
