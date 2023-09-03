@@ -128,9 +128,8 @@ LABEL="not_Asus"
 
 # BQ
 ATTR{idVendor}!="2a47", GOTO="not_BQ"
-#   Aquaris 4.5
-ATTR{idProduct}=="0c02", GOTO="adbfast"
-ATTR{idProduct}=="2008", GOTO="adbfast"
+#   Aquaris 4.5, Krillin (0c02=mtp,adb 2008=mtp)
+ATTR{idProduct}=="0c02", GOTO="adbmtp"
 GOTO="android_usb_rules_end"
 LABEL="not_BQ"
 
@@ -523,6 +522,7 @@ ATTR{idProduct}=="2eb7", GOTO="mass" # off
 ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Motorola"
+
 # MTK (MediaTek Inc)
 ATTR{idVendor}!="0e8d", GOTO="not_MTK"
 #   Umidigi F1 (201c=adbfast)
