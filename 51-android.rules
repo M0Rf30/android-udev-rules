@@ -712,9 +712,11 @@ ATTR{idProduct}=="689e", GOTO="adbfast"
 ATTR{idProduct}=="6877", GOTO="adbfast"
 #   Galaxy Nexus (GSM) (6860=mtp,adb 6864=rndis,adb 6866=ptp,adb)
 #   Galaxy Core ([6860=mtp+6860=mtp,adb] 6863=tether 6864=tether,adb 6865=ptp 6866=ptp,adb)
+#   Galaxy A5   ([6860=mtp+6860=mtp,adb] 6863=rndis 6864=rndis,adb 6865=ptp 6866=ptp,adb 686c=midi 686c=midi,adb)
 ATTR{idProduct}=="6860", SYMLINK+="android_adb", GOTO="mtp"
 ATTR{idProduct}=="6864", GOTO="adbrndis"
 ATTR{idProduct}=="6866", GOTO="adbptp"
+ATTR{idProduct}=="686c", GOTO="adbmidi"
 #   Galaxy Core, Tab 10.1, i9100 S2, i9300 S3, N5100 Note (8.0), Galaxy S3 SHW-M440S 3G (Korea only)
 ATTR{idProduct}=="685e", GOTO="adbfast"
 #   Galaxy S4 GT-I9500
