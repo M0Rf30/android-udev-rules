@@ -719,8 +719,8 @@ ATTR{idProduct}=="6866", GOTO="adbptp"
 ATTR{idProduct}=="686c", GOTO="adbmidi"
 #   Galaxy Core, Tab 10.1, i9100 S2, i9300 S3, N5100 Note (8.0), Galaxy S3 SHW-M440S 3G (Korea only)
 ATTR{idProduct}=="685e", GOTO="adbfast"
-#   Galaxy S4 GT-I9500
-ATTR{idProduct}=="685d", SYMLINK+="android_adb"
+#   Galaxy A5, S4 GT-I9500 (seems to be universally used for this purpose)
+ATTR{idProduct}=="685d", GOTO="odin"
 ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Samsung"
@@ -989,6 +989,9 @@ LABEL="ptp", ENV{adb_ptp}="yes", GOTO="android_usb_rule_match"
 # ADB Debug and Tether mode
 LABEL="adbrndis", ENV{adb_adb}="yes"
 LABEL="rndis", ENV{adb_user}="yes", GOTO="android_usb_rule_match"
+
+# Odin (Samsung-specific flashing protocol, add user SYMLINK)
+LABEL="odin"
 
 # Add "android" SYMLINK
 LABEL="user", ENV{adb_user}="yes"
