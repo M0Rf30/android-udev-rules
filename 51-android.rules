@@ -154,12 +154,12 @@ LABEL="not_Essential"
 # Fairphone 1 (see Hisense 109b)
 # Fairphone 2 (f000=mtp,mass f003=mtp f005=tether f00e=rndis 90de=charge 90dc=charge,adb 9015=storage,adb, 9024=rndis,adb, 9039=mtp,adb 904d=ptp 904e=ptp,adb) 90bb=qualcom midi+adb
 ATTR{idVendor}!="2ae5", GOTO="not_Fairphone2"
-ATTR{idProduct}=="9015", GOTO="go_adb"
-ATTR{idProduct}=="9024", GOTO="go_adbrndis"
-ATTR{idProduct}=="9039", GOTO="go_adbmtp"
-ATTR{idProduct}=="904e", GOTO="go_adbptp"
-ATTR{idProduct}=="90bb", GOTO="go_adbmidi"
-ATTR{idProduct}=="90dc", GOTO="go_adb"
+ATTR{idProduct}=="9015", GOTO="adb"
+ATTR{idProduct}=="9024", GOTO="adbrndis"
+ATTR{idProduct}=="9039", GOTO="adbmtp"
+ATTR{idProduct}=="904e", GOTO="adbptp"
+ATTR{idProduct}=="90bb", GOTO="adbmidi"
+ATTR{idProduct}=="90dc", GOTO="adb"
 GOTO="android_usb_rules_end"
 LABEL="not_Fairphone2"
 
@@ -203,8 +203,8 @@ ATTR{idProduct}=="4ee2", GOTO="adbmtp"
 ATTR{idProduct}=="4ee4", GOTO="adbrndis"
 ATTR{idProduct}=="4ee6", GOTO="adbptp"
 ATTR{idProduct}=="4ee7", GOTO="adb"
-ATTR{idProduct}=="4ee8", GOTO="midi" # some non-Google phones as well
-ATTR{idProduct}=="4ee9", GOTO="adbmidi" # some non-Google phones as well
+ATTR{idProduct}=="4ee8", GOTO="midi"
+ATTR{idProduct}=="4ee9", GOTO="adbmidi"
 
 #   Tensor Pixel phones (Pixel 7/7 pro/6/6A/6 Pro) 4eeb=cdc-ncm; 4eec=cdc-ncm,adb
 ATTR{idProduct}=="4eec", GOTO="adbcdc"
@@ -514,11 +514,11 @@ ATTR{idProduct}=="2e33", GOTO="adbmtp"
 ATTR{idProduct}=="2e51", GOTO="adbmtp"
 ATTR{idProduct}=="2e76", GOTO="adbmtp"
 ATTR{idProduct}=="2e80", GOTO="fast"
-ATTR{idProduct}=="2e81", GOTO="adb" # also sideload
-ATTR{idProduct}=="2e82", GOTO="mtp" # also charging
+ATTR{idProduct}=="2e81", GOTO="adb"
+ATTR{idProduct}=="2e82", GOTO="mtp"
 ATTR{idProduct}=="2e83", GOTO="ptp"
 ATTR{idProduct}=="2e84", GOTO="adbptp"
-ATTR{idProduct}=="2eb7", GOTO="mass" # off
+ATTR{idProduct}=="2eb7", GOTO="mass"
 ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Motorola"
