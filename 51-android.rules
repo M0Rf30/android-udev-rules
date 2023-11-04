@@ -803,7 +803,7 @@ LABEL="not_Sony_Ericsson"
 ATTR{idVendor}=="1973", GOTO="user"
 
 # Spreadtrum
-ATTR{idVendor}=="1782", GOTO="not_Spreadtrum"
+ATTR{idVendor}!="1782", GOTO="not_Spreadtrum"
 #   (Unisoc) Various devices (4001=mtp 4002=mtp,adb 4003=mtp,adb)
 ATTR{idProduct}=="4002", GOTO="adbmtp"
 ATTR{idProduct}=="4003", GOTO="adbmtp"
