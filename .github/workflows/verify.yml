@@ -1,0 +1,19 @@
+name: Verify rules
+
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: docker.io/archlinux:latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test 51-android.rules
+        run: udevadm verify 51-android.rules
