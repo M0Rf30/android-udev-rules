@@ -18,8 +18,7 @@ ATTR{bDeviceClass}=="09", GOTO="android_usb_rules_end"
 ENV{ID_MODEL}=="Controller", GOTO="android_usb_rules_end"
 ENV{ID_USB_INTERFACES}=="*:0701??:*", GOTO="android_usb_rules_end"
 
-LABEL="android_usb_rules_begin"
-# Devices listed here in android_usb_rules_{begin...end} are connected by USB
+# Devices listed here are connected by USB
 
 # Acer
 ATTR{idVendor}!="0502", GOTO="not_Acer"
@@ -958,13 +957,10 @@ GOTO="android_usb_rules_end"
 LABEL="adb", ENV{adb_adb}="yes", GOTO="android_usb_rule_match"
 
 # ADB Debug and Audio Source
-LABEL="adbaud", ENV{adb_adb}="yes"
-LABEL="aud", ENV{adb_user}="yes", GOTO="android_usb_rule_match"
+LABEL="adbaud", ENV{adb_adb}="yes", GOTO="android_usb_rule_match"
 
 # ADB Debug and AT-commands CDC Serial
-LABEL="adbcdc", ENV{adb_adbcdc}="yes"
-# check if exists /dev/ttyACM%n, GROUP=dialout, modeprobe cdc_acm)
-LABEL="cdc", ENV{adb_user}="yes", GOTO="android_usb_rule_match"
+LABEL="adbcdc", ENV{adb_adbcdc}="yes", GOTO="android_usb_rule_match"
 
 # ADB Debug and Fastboot mode
 LABEL="adbfast", ENV{adb_adb}="yes"
