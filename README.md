@@ -55,7 +55,7 @@ adb devices
 # You should now see your device
 ```
 
-### Using the automtic install script
+### Using the automatic install script
 
 1. Clone this repository
 2. Run the `install.sh` as root on your terminal
