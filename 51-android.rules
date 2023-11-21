@@ -490,11 +490,6 @@ ATTR{idProduct}=="2d66", SYMLINK+="android_adb"
 ATTR{idProduct}=="428c", SYMLINK+="android_adb"
 #   Droid
 ATTR{idProduct}=="41db", SYMLINK+="android_adb"
-#   Xoom (70a8=mtp 70a9=mtp,adb)
-ATTR{idProduct}=="70a8", GOTO="mtp"
-ATTR{idProduct}=="70a9", GOTO="adbmtp"
-#   XT890/907/Razr (710d=mtp 710e=mtp,adb)
-ATTR{idProduct}=="710e", GOTO="adbmtp"
 #   Razr XT912
 ATTR{idProduct}=="4362", GOTO="adbfast"
 #   Droid Turbo 2
@@ -502,6 +497,7 @@ ATTR{idProduct}=="2ea4", GOTO="adbfast"
 #   Atrix/Razr HD (2e32=mtp 2e33=mtp,adb)
 #   Razr M (2e50=mtp 2e51=mtp,adb)
 #   Moto G3 (2e76=mtp,adb 2e81=charge,adb 2e82=mtp 2e83=ptp 2e84=ptp,adb 2e24=rndis 2e25=rndis,adb)
+#   Moto E/G dual sim (2e76=mtp,adb 2e80=fast 2e81=recovery 2e82=mtp 2e83=ptp 2e84=ptp,adb 2e24=rndis 2e25=rndis,adb)
 #   Moto Z3 Play, beckham, XT1929
 #     For details see: <https://github.com/M0Rf30/android-udev-rules/issues/264>
 #     18d1:4ee8=midi; 18d1:4ee9=midi+adb
@@ -512,14 +508,20 @@ ATTR{idProduct}=="2e25", GOTO="adbrndis"
 ATTR{idProduct}=="2e33", GOTO="adbmtp"
 ATTR{idProduct}=="2e51", GOTO="adbmtp"
 ATTR{idProduct}=="2e76", GOTO="adbmtp"
-ATTR{idProduct}=="2e80", GOTO="fast"
+ATTR{idProduct}=="2e80", GOTO="adbfast"
 ATTR{idProduct}=="2e81", GOTO="adb"
-ATTR{idProduct}=="2e82", GOTO="mtp"
-ATTR{idProduct}=="2e83", GOTO="ptp"
 ATTR{idProduct}=="2e84", GOTO="adbptp"
 ATTR{idProduct}=="2eb7", GOTO="mass"
-ENV{adb_user}="yes"
-GOTO="android_usb_rule_match"
+#   Xoom (70a8=mtp 70a9=mtp,adb 70ae=rndis 70af=rndis,adb 70b0=acm 70b1=acm,adb 70b2=acm,rndis 70b3=acm,rndis,adb 70b4=ptp 70b5ptp,adb)
+ATTR{idProduct}=="70a9", GOTO="adbmtp"
+ATTR{idProduct}=="70ae", GOTO="rndis"
+ATTR{idProduct}=="70af", GOTO="adbrndis"
+ATTR{idProduct}=="70b1", GOTO="adbcdc"
+ATTR{idProduct}=="70b3", GOTO="adbrndis"
+ATTR{idProduct}=="70b5", GOTO="adbptp"
+#   XT890/907/Razr (710d=mtp 710e=mtp,adb 710f=mass)
+ATTR{idProduct}=="710e", GOTO="adbmtp"
+GOTO="android_usb_rules_end"
 LABEL="not_Motorola"
 
 # MTK (MediaTek Inc)
@@ -963,8 +965,7 @@ LABEL="adbaud", ENV{adb_adb}="yes", GOTO="android_usb_rule_match"
 LABEL="adbcdc", ENV{adb_adbcdc}="yes", GOTO="android_usb_rule_match"
 
 # ADB Debug and Fastboot mode
-LABEL="adbfast", ENV{adb_adb}="yes"
-LABEL="fast", ENV{adb_fast}="yes", GOTO="android_usb_rule_match"
+LABEL="adbfast", ENV{adb_adbfast}="yes", GOTO="android_usb_rule_match"
 
 # ADB Debug and mass storage (note: generally android_ver<4.3; Moto Z3 Play when powered off)
 LABEL="adbmass", ENV{adb_adbmass}="yes"
