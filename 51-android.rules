@@ -578,10 +578,12 @@ ATTR{idVendor}!="2a70", GOTO="not_OnePlus"
 ATTR{idProduct}=="4ee2", GOTO="adbmtp"
 ATTR{idProduct}=="4ee6", GOTO="adbptp"
 ATTR{idProduct}=="4ee7", GOTO="adb"
+#   OnePlus 6T
+ATTR{idProduct}=="d001", GOTO="adb"
 #   OnePlus Nord N10 4G USB tethering mode
 ATTR{idProduct}=="9024", GOTO="adb"
 #   OnePlus 3T with Oreo MIDI mode 90bb=midi,adb 9011=mtp 904d=ptp 904e=ptp,adb
-#   OnePlus 7t (9012=mtp,adb)
+#   OnePlus 7T (9012=mtp,adb)
 ATTR{idProduct}=="9011", GOTO="mtp"
 ATTR{idProduct}=="9012", GOTO="adbmtp"
 ATTR{idProduct}=="904d", GOTO="ptp"
