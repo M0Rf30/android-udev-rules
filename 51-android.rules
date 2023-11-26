@@ -849,23 +849,20 @@ ATTR{idVendor}=="2d95", GOTO="user"
 
 # XiaoMi
 ATTR{idVendor}!="2717", GOTO="not_XiaoMi"
-#   Mi2A
-ATTR{idProduct}=="904e", SYMLINK+="android_adb"
-ATTR{idProduct}=="9039", SYMLINK+="android_adb"
 #   Mi3
-ATTR{idProduct}=="0368", SYMLINK+="android_adb"
+ATTR{idProduct}=="0368", GOTO="adbmtp"
 #   RedMi 1S WCDMA (MTP+Debug)
 ATTR{idProduct}=="1268", GOTO="adbmtp"
-#   RedMi / RedMi Note WCDMA (MTP+Debug)
-ATTR{idProduct}=="1248", GOTO="adbmtp"
-#   RedMi 1S / RedMi / RedMi Note WCDMA (1218=ptp,adb 1228=usb,adb)
+#   RedMi 1S / RedMi / RedMi Note WCDMA (1210=ptp 1218=ptp,adb 1220=CDrom 1228=usb,adb 1240=mtp 1248=mtp,adb)
 ATTR{idProduct}=="1218", GOTO="adbptp"
 ATTR{idProduct}=="1228", GOTO="adb"
+ATTR{idProduct}=="1248", GOTO="adbmtp"
 #   RedMi / RedMi Note 4G WCDMA (1311=ptp,adb 1328=usb,adb 1368=mtp,adb)
 ATTR{idProduct}=="1318", GOTO="adbptp"
 ATTR{idProduct}=="1328", GOTO="adb"
 ATTR{idProduct}=="1368", GOTO="adbmtp"
 #   Mi2 (f003=mtp,mass_storage 9039=mtp,adb,mass_storage 904d=ptp 904e=ptp,adb f000=mass_storage 9015=mass_storage,adb f00e=ndis 9024=ndis,adb f00f=ndis 803e=ndis,adb)
+#   Mi2A / Mi2S (9039=mtp,adb, 904e=adb,ptp)
 ATTR{idProduct}=="9039", GOTO="adbmtp"
 ATTR{idProduct}=="904e", GOTO="adbptp"
 ATTR{idProduct}=="9015", GOTO="adbmass"
@@ -882,8 +879,7 @@ ATTR{idProduct}=="ff48", GOTO="adbmtp"
 ATTR{idProduct}=="ff88", GOTO="adbrndis"
 #   RedMi / RedMi Note 4G CDMA (ff68=usb,adb) / Mi4c / Mi5
 ATTR{idProduct}=="ff68", GOTO="adb"
-ENV{adb_user}="yes"
-GOTO="android_usb_rule_match"
+GOTO="android_usb_rules_end"
 LABEL="not_XiaoMi"
 
 # Yota
