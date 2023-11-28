@@ -248,6 +248,8 @@ ATTR{idProduct}=="d10a", GOTO="adbmtp"
 # Other vendors that also used duplicated Google's idVendor code follows:
 # IDEA XDS-1078 (debug=2c11)
 ATTR{idProduct}=="2c11", GOTO="adb"
+# Hisense U8G Smart TV (MTK MT5895)
+ATTR{idProduct}=="0d02", GOTO="adbfast"
 GOTO="android_usb_rules_end"
 LABEL="not_Google"
 
