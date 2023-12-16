@@ -59,6 +59,9 @@ ATTR{idProduct}=="03a8", GOTO="adbfast"
 #   Amazone Fire 7 (mustang)
 ATTR{idProduct}=="03c8", GOTO="adbfast"
 ATTR{idProduct}=="03cb", GOTO="adbfast"
+# Amazon Fire HD 8 2018 (Karnak)
+ATTR{idProduct}=="0338", GOTO="adbfast"
+ATTR{idProduct}=="033b", GOTO="adbfast"
 GOTO="android_usb_rules_end"
 LABEL="not_Amazon"
 
