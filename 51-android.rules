@@ -56,10 +56,10 @@ ATTR{idProduct}=="05e8", GOTO="adb"
 ATTR{idProduct}=="2048", GOTO="adbmidi"
 #   Amazon Fire TV Stick Lite (3rd gen)
 ATTR{idProduct}=="03a8", GOTO="adbfast"
-#   Amazone Fire 7 (mustang)
+#   Amazon Fire 7 (mustang)
 ATTR{idProduct}=="03c8", GOTO="adbfast"
 ATTR{idProduct}=="03cb", GOTO="adbfast"
-# Amazon Fire HD 8 2018 (Karnak)
+#   Amazon Fire HD 8 2018 (karnak)
 ATTR{idProduct}=="0338", GOTO="adbfast"
 ATTR{idProduct}=="033b", GOTO="adbfast"
 GOTO="android_usb_rules_end"
