@@ -827,7 +827,7 @@ ATTR{idProduct}=="00f2", GOTO="adb"
 #   Alcatel OT6012A
 ATTR{idProduct}=="0167", GOTO="adb"
 #   Alcatel 5024L
-ATTR{idProduct}=="4ee7", ENV{adb_adb}="yes"
+ATTR{idProduct}=="4ee7", GOTO="adb"
 ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_T_A_Mobile"
