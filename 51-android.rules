@@ -62,6 +62,8 @@ ATTR{idProduct}=="03cb", GOTO="adbfast"
 #   Amazon Fire HD 8 2018 (karnak)
 ATTR{idProduct}=="0338", GOTO="adbfast"
 ATTR{idProduct}=="033b", GOTO="adbfast"
+#   Amazon Fire HD 8 2022 (raphite)
+ATTR{idProduct}=="0658", GOTO="adbfast"
 GOTO="android_usb_rules_end"
 LABEL="not_Amazon"
 
