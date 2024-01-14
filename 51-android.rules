@@ -95,6 +95,7 @@ ATTR{idProduct}=="1???", GOTO="android_usb_rules_end"
 #   Zenphone 2 (ZE500CL) (7770=adb 7773=mtp,adb 7775=rndis,adb,mass_storage 7777=ptp,adb 5F03=mtp,adb,pclink,mass_storage 5F05=rndis,adb,pclink,mass_storage 5F07=ptp,adb,pclink)
 #   Zenfone GO (ZB500KL) (7772=mtp 7773=mtp,adb 7774=rndis 7775=rndis,adb 7776=ptp 7777=ptp,adb)
 ATTR{idProduct}=="7770", GOTO="adb"
+ATTR{idProduct}=="7771", GOTO="adbfast"
 ATTR{idProduct}=="7773", GOTO="adbmtp"
 ATTR{idProduct}=="7775", ENV{adb_adbmass}="yes", GOTO="adbrndis"
 ATTR{idProduct}=="7777", GOTO="adbptp"
