@@ -579,8 +579,12 @@ ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Nvidia"
 
-# Oculus (Need product specific rules)
-#ATTR{idVendor}=="2833", GOTO="user"
+# Oculus
+ATTR{idVendor}!="2833", GOTO="not_Oculus"
+#   Oculus Quest 2
+ATTR{idProduct}=="0186", GOTO="user"
+GOTO="android_usb_rules_end"
+LABEL="not_Oculus"
 
 # OnePlus(Oreo)
 ATTR{idVendor}!="2a70", GOTO="not_OnePlus"
