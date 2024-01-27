@@ -581,7 +581,7 @@ LABEL="not_Nvidia"
 
 # Oculus
 ATTR{idVendor}!="2833", GOTO="not_Oculus"
-#   Oculus Quest 2
+#   Oculus Quest 2, Quest 3
 ATTR{idProduct}=="0186", GOTO="user"
 GOTO="android_usb_rules_end"
 LABEL="not_Oculus"
