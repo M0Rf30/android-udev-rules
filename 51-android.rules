@@ -41,6 +41,15 @@ ATTR{idVendor}=="10d6", ATTR{idProduct}=="0c02", GOTO="adb"
 #   S5
 ATTR{idVendor}=="0a5c", ATTR{idProduct}=="e681", GOTO="adb"
 
+# Allwinner Technology
+ATTR{idVendor}!="1f3a", GOTO="not_Allwinner"
+#   Prestigio PER3464B ebook reader (Mass storage mode)
+ATTR{idProduct}=="1000", GOTO="adbmtp"
+#   Allwinner Technology Android device in fastboot mode
+ATTR{idProduct}=="1010", GOTO="adbfast"
+GOTO="android_usb_rules_end"
+LABEL="not_Allwinner"
+
 # Amazon Lab126
 ATTR{idVendor}!="1949", GOTO="not_Amazon"
 #   Amazon Kindle Fire
@@ -127,9 +136,6 @@ ATTR{idProduct}=="4e1f", GOTO="adbmtp"
 ATTR{idProduct}=="7030", GOTO="adb"
 GOTO="android_usb_rules_end"
 LABEL="not_Asus"
-
-# Azpen Onda (Need product specific rules)
-#ATTR{idVendor}=="1f3a", GOTO="user"
 
 # BQ
 ATTR{idVendor}!="2a47", GOTO="not_BQ"
