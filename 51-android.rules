@@ -219,6 +219,7 @@ ATTR{idProduct}=="4ee9", GOTO="adbmidi"
 
 #   Tensor Pixel phones (Pixel 7/7 pro/6/6A/6 Pro) 4eeb=cdc-ncm; 4eec=cdc-ncm,adb
 ATTR{idProduct}=="4eec", GOTO="adbcdc"
+ATTR{idProduct}=="4ee0", GOTO="adbfast"
 
 #   Pixel Watch 2 (4ee0=fastboot 4e11=adb)
 ATTR{idProduct}=="4e11", GOTO="adb"
