@@ -753,6 +753,13 @@ LABEL="not_Samsung"
 # Sharp (Need product specific rules)
 #ATTR{idVendor}=="04dd", GOTO="user"
 
+# SHIFT GmbH
+ATTR{idVendor}!="3360", GOTO="not_shift"
+#   SHIFT5me
+ATTR{idProduct}=="201c", GOTO="adb"
+GOTO="android_usb_rules_end"
+LABEL="not_shift"
+
 # SK Telesys
 ATTR{idVendor}=="1f53", GOTO="user"
 
