@@ -201,7 +201,7 @@ LABEL="not_Fuzhou"
 # Google
 ATTR{idVendor}!="18d1", GOTO="not_Google"
 #   Nexus, Pixel (/XL/2/2XL) (4ee1=mtp 4ee2=mtp,adb 4ee3=rndis 4ee4=rndis,adb 4ee5=ptp 4ee6=ptp,adb 4ee7=adb 4ee8=midi 4ee9=midi,adb 2d00=accessory 2d01=accessory,adb 2d03=audio,adb 2d05=accessory,audio,adb)
-#   See https://android.googlesource.com/device/google/wahoo/+/master/init.hardware.usb.rc
+#   See https://android.googlesource.com/device/google/wahoo/+/master/usb/UsbGadget.cpp
 #   OnePlus 6 (4ee1=charging 4ee2=mtp,adb 4ee6=ptp,adb 4ee7=charging,adb)
 #   Onda V972 (0001=mass_storage 0006=mtp 0007=ptp 0008=camera)
 #   Pico i.MX7 Dual Development Board 4ee7=debug
