@@ -700,6 +700,13 @@ ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Qualcomm"
 
+# Quectel
+ATTR{idVendor}!="2c7c", GOTO="not_Quectel"
+#   EC25
+ATTR{idProduct}=="0125", GOTO="adb"
+GOTO="android_usb_rules_end"
+LABEL="not_Quectel"
+
 # Razer USA, Ltd.
 ATTR{idVendor}!="1532", GOTO="not_Razer"
 #   Razer Phone 2
