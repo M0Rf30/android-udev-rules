@@ -593,6 +593,13 @@ ATTR{idProduct}=="0186", GOTO="user"
 GOTO="android_usb_rules_end"
 LABEL="not_Oculus"
 
+# Pico XR
+ATTR{idVendor}!="2d40", GOTO="not_Pico"
+#   Pico 4
+ATTR{idProduct}=="00b7", GOTO="user"
+GOTO="android_usb_rules_end"
+LABEL="not_Pico"
+
 # OnePlus(Oreo)
 ATTR{idVendor}!="2a70", GOTO="not_OnePlus"
 #   Oneplus 3T/5T/6 (4ee7=charge,adb)
