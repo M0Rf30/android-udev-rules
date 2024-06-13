@@ -221,6 +221,10 @@ ATTR{idProduct}=="4ee9", GOTO="adbmidi"
 ATTR{idProduct}=="4eec", GOTO="adbcdc"
 ATTR{idProduct}=="4ee0", GOTO="adbfast"
 
+#   Tensor Pixel phones (Pixel 7/7 pro/6/6A/6 Pro) 4eed=uvc; 4eee=uvc,adb
+ATTR{idProduct}=="4eed", GOTO="uvc"
+ATTR{idProduct}=="4eee", GOTO="adbuvc"
+
 #   Pixel Watch 2 (4ee0=fastboot 4e11=adb)
 ATTR{idProduct}=="4e11", GOTO="adb"
 
@@ -1007,6 +1011,10 @@ LABEL="adbaud", ENV{adb_adb}="yes", GOTO="android_usb_rule_match"
 # ADB Debug and AT-commands CDC Serial
 LABEL="adbcdc", ENV{adb_adbcdc}="yes", GOTO="android_usb_rule_match"
 
+# ADB Debug and USB Video Class
+LABEL="adbuvc", ENV{adb_adbuvc}="yes"
+LABEL="uvc", ENV{adb_uvc}="yes", GOTO="android_usb_rule_match"
+
 # ADB Debug and Fastboot mode
 LABEL="adbfast", ENV{adb_adbfast}="yes", GOTO="android_usb_rule_match"
 
@@ -1044,6 +1052,7 @@ ENV{adb_adbmass}=="yes", ENV{adb_mass}="yes"
 ENV{adb_adbmtp}=="yes", ENV{adb_adb}="yes", ENV{adb_mtp}="yes"
 ENV{adb_adbptp}=="yes", ENV{adb_adb}="yes", ENV{adb_ptp}="yes"
 ENV{adb_adbmidi}=="yes", ENV{adb_adb}="yes", SYMLINK+="android_midi", SYMLINK+="android_midi0%n"
+ENV{adb_adbuvc}=="yes", ENV{adb_adb}="yes", ENV{adb_uvc}="yes"
 ENV{adb_adb}=="yes", ENV{adb_user}="yes", SYMLINK+="android_adb"
 ENV{adb_fast}=="yes", SYMLINK+="android_fastboot"
 ENV{adb_mass}=="yes", ENV{adb_mtp}="yes"
