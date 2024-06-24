@@ -566,6 +566,13 @@ ATTR{idVendor}=="0409", ATTR{idProduct}=="0300", GOTO="user"
 # Nextbit (Need product specific rules)
 #ATTR{idVendor}=="2c3f", GOTO="user"
 
+# Nintendo
+ATTR{idVendor}!="057e", GOTO="not_Nintendo"
+#   Switch
+ATTR{idProduct}=="2000", GOTO="adb"
+GOTO="android_usb_rules_end"
+LABEL="not_Nintendo"
+
 # Nokia X (Need product specific rules)
 #ATTR{idVendor}=="0421", GOTO="user"
 
