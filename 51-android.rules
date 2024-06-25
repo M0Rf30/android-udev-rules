@@ -134,6 +134,10 @@ ATTR{idProduct}=="7781", GOTO="adbmtp"
 ATTR{idProduct}=="4e1f", GOTO="adbmtp"
 #   Tegra APX
 ATTR{idProduct}=="7030", GOTO="adb"
+#   Zenfone 8
+ATTR{idProduct}=="4dae", GOTO="adb"
+ATTR{idProduct}=="4dae", GOTO="adbfast"
+ATTR{idProduct}=="4dae", GOTO="adbmtp"
 GOTO="android_usb_rules_end"
 LABEL="not_Asus"
 
