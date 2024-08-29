@@ -73,6 +73,8 @@ ATTR{idProduct}=="0338", GOTO="adbfast"
 ATTR{idProduct}=="033b", GOTO="adbfast"
 #   Amazon Fire HD 8 2022 (raphite)
 ATTR{idProduct}=="0658", GOTO="adbfast"
+#   Amazon Fire HD 10 2023 (tungsten)
+ATTR{idProduct}=="06f8", GOTO="adbfast"
 GOTO="android_usb_rules_end"
 LABEL="not_Amazon"
 
