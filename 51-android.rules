@@ -433,8 +433,12 @@ LABEL="not_IUNI"
 # Kyocera (Need product specific rules)
 #ATTR{idVendor}=="0482", ENV{adb_user}="yes"
 
-# Lenovo (Need product specific rules)
-#ATTR{idVendor}=="17ef", GOTO="user"
+# Lenovo
+ATTR{idVendor}!="17ef", GOTO="not_Lenovo"
+#   Lenovo Tab K10
+ATTR{idProduct}=="201c", GOTO="adb"
+GOTO="android_usb_rules_end"
+LABEL="not_Lenovo"
 
 # LeTv (LeECo)
 ATTR{idVendor}!="2b0e", GOTO="not_letv"
