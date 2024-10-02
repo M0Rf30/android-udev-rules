@@ -82,6 +82,8 @@ LABEL="not_Amazon"
 ATTR{idVendor}!="0e79", GOTO="not_Archos"
 #   43
 ATTR{idProduct}=="1417", GOTO="adbfast"
+#   79 Xenon
+ATTR{idProduct}=="303e", GOTO="adbfast"
 #   101
 ATTR{idProduct}=="1411", GOTO="adbfast"
 #   101 xs
