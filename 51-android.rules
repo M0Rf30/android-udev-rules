@@ -241,6 +241,7 @@ ATTR{idProduct}=="5208", GOTO="adb"
 ATTR{idProduct}=="2d00", GOTO="adb"
 ATTR{idProduct}=="2d01", GOTO="adb"
 ATTR{idProduct}=="2d03", GOTO="adbaud"
+ATTR{idProduct}=="2d04", GOTO="adbaud"
 ATTR{idProduct}=="2d05", GOTO="adbaud"
 #   Nexus 7 (4e40=fastboot 4e41=mtp 4e42=mtp,adb 4e43=ptp) Nexus 7 2012 (4e44=ptp)
 ATTR{idProduct}=="4e40", GOTO="adbfast"
