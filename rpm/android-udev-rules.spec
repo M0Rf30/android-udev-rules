@@ -1,5 +1,5 @@
 Name:           android-udev-rules
-Version:        20230310
+Version:        20241019
 Release:        1%{?dist}
 Summary:        Udev rules to connect Android devices to your linux box
 License:        GPL-3.0-or-later
