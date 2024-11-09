@@ -589,7 +589,11 @@ LABEL="not_Nintendo"
 #ATTR{idVendor}=="2e04", GOTO="user"
 
 # Nook (Barnes & Noble) (Need product specific rules)
-#ATTR{idVendor}=="2080", GOTO="user"
+ATTR{idVendor}!="2080", GOTO="not_Nook"
+#   Glowlight 3
+ATTR{idProduct}=="000b", GOTO="adb"
+GOTO="android_usb_rules_end"
+LABEL="not_Nook"
 
 # Nvidia
 ATTR{idVendor}!="0955", GOTO="not_Nvidia"
