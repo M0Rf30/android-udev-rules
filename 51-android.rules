@@ -199,6 +199,13 @@ ATTR{idProduct}=="0018", GOTO="adbptp"
 GOTO="android_usb_rules_end"
 LABEL="not_Fuzhou"
 
+# Fibocom
+ATTR{idVendor}!="2cb7", GOTO="not_Fibocom"
+#   FG180_NA
+ATTR{idProduct}=="010b", GOTO="adbcdc"
+GOTO="android_usb_rules_end"
+LABEL="not_Fibocom"
+
 # Garmin-Asus (Need product specific rules)
 #ATTR{idVendor}=="091e", GOTO="user"
 
