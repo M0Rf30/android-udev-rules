@@ -983,6 +983,8 @@ ATTR{idVendor}!="05e0", GOTO="not_Zebra"
 ATTR{idProduct}=="2101", GOTO="adb"
 #   TC72
 ATTR{idProduct}=="2106", GOTO="adb"
+#   TC78
+ATTR{idProduct}=="2107", GOTO="adb"
 GOTO="android_usb_rules_end"
 LABEL="not_Zebra"
 
