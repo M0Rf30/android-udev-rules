@@ -303,7 +303,7 @@ ATTR{idVendor}!="0bb4", GOTO="not_HTC"
 #   Android phone (0fff=fastboot 0001=mass_storage)
 ATTR{idProduct}=="0001", GOTO="mass"
 ATTR{idProduct}=="0fff", GOTO="adbfast"
-#   ADP1, Dream, G1, HD2, Magic, Tatoo (0c01=mass_storage, 0c02=mass_storage,adb)
+#   ADP1, Dream, G1, HD2, Magic, Tattoo (0c01=mass_storage, 0c02=mass_storage,adb)
 #   Desire/desire HD/Hero (0ce5=debug 0fb4=rndis 0ff8=tether 0ff9=charge,mass_storage 0ffc=sync_manager 0ffe=modem)
 #   NOTE: Amazon Kindle 8 2016 (giza) (fastboot=0bb4:0c01 conflicts with mass storage=0c01)
 ATTR{idProduct}=="0c01", GOTO="mass"
