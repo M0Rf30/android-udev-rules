@@ -670,9 +670,10 @@ ATTR{idProduct}=="200e", GOTO="user"
 ATTR{idProduct}=="2028", GOTO="user"
 ATTR{idProduct}=="2026", GOTO="user"
 #   OnePlus 7a (2774=mass,adb)
-#   OnePlus 7T (2765=adb,mtp)
+#   OnePlus 7T (2765=adb,mtp 2766=rndis,adb)
 #   OnePlus 8T (2771=adb,ptp 2772=adb,mtp)
 ATTR{idProduct}=="2765", GOTO="adbmtp"
+ATTR{idProduct}=="2766", GOTO="adbrndis"
 ATTR{idProduct}=="2771", GOTO="adbptp"
 ATTR{idProduct}=="2772", GOTO="adbmtp"
 ATTR{idProduct}=="2774", GOTO="adbmass"
