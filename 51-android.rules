@@ -879,6 +879,8 @@ ATTR{idProduct}=="b00b", GOTO="adbfast"
 ATTR{idProduct}=="020d", GOTO="adbfast"
 #   Xperia Z Ultra
 ATTR{idProduct}=="519c", GOTO="adbfast"
+#   Xperia Play
+ATTR{idProduct}=="615d", GOTO="adbfast"
 ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Sony_Ericsson"
