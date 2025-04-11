@@ -397,12 +397,14 @@ ATTR{idProduct}=="103a", SYMLINK+="android_adb"
 ATTR{idProduct}=="1051", GOTO="mtp"
 #   MediaPad M2-A01L
 ATTR{idProduct}=="1052", GOTO="mtp"
+#   P7-L10 (1052=?mtp 1053=ptp 1054=ptp,adb)
+ATTR{idProduct}=="1054", GOTO="adbptp"
 #   MediaPad T3
 ATTR{idProduct}=="107d", SYMLINK+="android_adb"
 #   P10 Lite
 ATTR{idProduct}=="107e", SYMLINK+="android_adb"
 #   Watch
-ATTR{idProduct}=="1c2c", SYMLINK+="android_adb"
+ATTR{idProduct}=="1c2c", GOTO="adb"
 #   Mate 9
 ATTR{idProduct}=="107e", SYMLINK+="android_adb"
 GOTO="android_usb_rules_end"
@@ -660,7 +662,7 @@ LABEL="not_OnePlus"
 ATTR{idVendor}!="22d9", GOTO="not_Oppo"
 #   Find 5 (2767=debug)
 ATTR{idProduct}=="2767", GOTO="adb"
-#   Realme 8
+#   Realme 8, OnePlus 9 Pro, Watch=adb
 ATTR{idProduct}=="2769", GOTO="adb"
 ATTR{idProduct}=="2764", GOTO="mtp"
 #   Oppo Watch, fastboot
