@@ -269,7 +269,7 @@ ATTR{idProduct}=="9024", GOTO="adb"
 ATTR{idProduct}=="9025", GOTO="adbmass"
 #   Generic and unspecified debug interface (test after d00?)
 #   examples: Xiaomi Mi/Redmi 2, Anbernic RG353P
-#   Xiaomi Mi2 (d00d=bootloader d002=charger)
+#   Xiaomi Mi2 (d00d=bootloader d002=charger), LG-V20 (d00d=bootloader)
 ATTR{idProduct}=="d00d", GOTO="adbfast"
 #   Nexus 4 (d001=fastboot d002=debug)
 ATTR{idProduct}=="d001", GOTO="adbfast"
@@ -474,9 +474,11 @@ ATTR{idProduct}=="631f", SYMLINK+="android_adb"
 #   G3 (VS985), Android Phone (627f=mtp)
 ATTR{idProduct}=="627f", GOTO="mtp"
 #   LM-X420xxx/G2/Optimus (6300=charge 631c=charge 631d=ptp 631e=ptp 633e=mtp 6344=tether 6348=midi 6356=CDrom)
+#   LG-V20 (62ce=mtp,cdc 633a=adp,cdc 18d1:d00d=fastboot)
 ATTR{idProduct}=="631c", GOTO="adb"
 ATTR{idProduct}=="631d", GOTO="ptp"
 ATTR{idProduct}=="631e", GOTO="ptp"
+ATTR{idProduct}=="633a", GOTO="adbcdc"
 ATTR{idProduct}=="633e", GOTO="mtp"
 ATTR{idProduct}=="6344", GOTO="rndis"
 ATTR{idProduct}=="6348", GOTO="midi"
