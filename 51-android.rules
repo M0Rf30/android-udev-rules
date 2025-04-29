@@ -824,6 +824,8 @@ ATTR{idVendor}=="1d9c", GOTO="user"
 
 # Sony
 ATTR{idVendor}!="054c", GOTO="not_Sony"
+#    Xperia XA2
+ATTR{idVendor}!="0fce", GOTO="user"
 # (Need product specific rules)
 GOTO="android_usb_rules_end"
 #   False positives dualshock 0268,05c4,05c5, adapters 0ba0, bluetooth 09cc, 0ce6, VR 09af
