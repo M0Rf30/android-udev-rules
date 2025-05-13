@@ -935,8 +935,8 @@ LABEL="not_Unitech_Electronics"
 # Vivo (Need product specific rules)
 ATTR{idVendor}=="2d95", GOTO="user"
 
-# Wileyfox (Need product specific rules)
-#ATTR{idVendor}=="2970", GOTO="user"
+# Wileyfox KAZAM Tornado 348 (0c03=mass,adb)
+ATTR{idVendor}=="2970", ATTR{idProduct}=="0c03", GOTO="adb"
 
 # XiaoMi
 ATTR{idVendor}!="2717", GOTO="not_XiaoMi"
