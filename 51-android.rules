@@ -71,6 +71,11 @@ ATTR{idProduct}=="03cb", GOTO="adbfast"
 #   Amazon Fire HD 8 2018 (karnak)
 ATTR{idProduct}=="0338", GOTO="adbfast"
 ATTR{idProduct}=="033b", GOTO="adbfast"
+#   Amazon Fire HD 8 2020 10th gen (onyx) (0581=mtp 0581=chg 0582=adb,mtp 0583=ptp 0584=adb,ptp 0588=adb,chg 2046=midi 2048=adb,midi)
+ATTR{idProduct}=="0582", GOTO="adbmtp"
+ATTR{idProduct}=="0584", GOTO="adbptp"
+ATTR{idProduct}=="0588", GOTO="adb"
+ATTR{idProduct}=="2048", GOTO="adbmidi"
 #   Amazon Fire HD 8 2022 (raphite)
 ATTR{idProduct}=="0658", GOTO="adbfast"
 #   Amazon Fire HD 10 2023 (tungsten)
