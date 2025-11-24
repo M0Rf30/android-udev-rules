@@ -15,6 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Install dependencies
+        run: |
+          pacman -Sy --noconfirm systemd
+
       - name: Test 51-android.rules
         run: | 
           groupadd adbusers
