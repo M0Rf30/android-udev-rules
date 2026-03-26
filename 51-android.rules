@@ -287,6 +287,10 @@ ATTR{idProduct}=="d10a", GOTO="adbmtp"
 ATTR{idProduct}=="2c11", GOTO="adb"
 # Hisense U8G Smart TV (MTK MT5895)
 ATTR{idProduct}=="0d02", GOTO="adbfast"
+
+#   Desktop
+ATTR{idProduct}=="506d", GOTO="adb"
+ATTR{idProduct}=="27a7", GOTO="adb"
 GOTO="android_usb_rules_end"
 LABEL="not_Google"
 
