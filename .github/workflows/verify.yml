@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     container: docker.io/archlinux:latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Test 51-android.rules
         run: |
