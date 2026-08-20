@@ -83,6 +83,15 @@ ATTR{idProduct}=="06f8", GOTO="adbfast"
 GOTO="android_usb_rules_end"
 LABEL="not_Amazon"
 
+# Amlogic
+ATTR{idVendor}!="1b8e", GOTO="not_Amlogic"
+#   SoC in USB burning mode (Worldcup Device, S805/S905 and older)
+ATTR{idProduct}=="c003", GOTO="amlogic"
+#   SoC in USB burning mode (GX-CHIP, GXL/GXM/G12 and newer)
+ATTR{idProduct}=="c004", GOTO="amlogic"
+GOTO="android_usb_rules_end"
+LABEL="not_Amlogic"
+
 # Archos
 ATTR{idVendor}!="0e79", GOTO="not_Archos"
 #   43
@@ -1102,6 +1111,9 @@ LABEL="ptp", ENV{adb_ptp}="yes", GOTO="android_usb_rule_match"
 # ADB Debug and Tether mode
 LABEL="adbrndis", ENV{adb_adb}="yes"
 LABEL="rndis", ENV{adb_user}="yes", GOTO="android_usb_rule_match"
+
+# Amlogic USB burning mode (Amlogic-specific flashing protocol, add user SYMLINK)
+LABEL="amlogic"
 
 # Odin (Samsung-specific flashing protocol, add user SYMLINK)
 LABEL="odin"
