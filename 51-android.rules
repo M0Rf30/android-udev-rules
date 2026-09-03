@@ -404,23 +404,21 @@ ATTR{idProduct}=="1038", GOTO="adbfast"
 #   U8850 Vision
 ATTR{idProduct}=="1021", GOTO="adbfast"
 #   HiKey (1050=usbnet 1057=adb)
-ATTR{idProduct}=="1050", SYMLINK+="android_adb"
+ATTR{idProduct}=="1050", GOTO="adb"
 ATTR{idProduct}=="1057", GOTO="adb"
 #   Honor 6
-ATTR{idProduct}=="103a", SYMLINK+="android_adb"
+ATTR{idProduct}=="103a", GOTO="adb"
 ATTR{idProduct}=="1051", GOTO="mtp"
 #   MediaPad M2-A01L
 ATTR{idProduct}=="1052", GOTO="mtp"
 #   P7-L10 (1052=?mtp 1053=ptp 1054=ptp,adb)
 ATTR{idProduct}=="1054", GOTO="adbptp"
 #   MediaPad T3
-ATTR{idProduct}=="107d", SYMLINK+="android_adb"
-#   P10 Lite
-ATTR{idProduct}=="107e", SYMLINK+="android_adb"
+ATTR{idProduct}=="107d", GOTO="adb"
+#   P10 Lite, Mate 9, Mate 20 Pro (LYA-L29) (107e=mtp,mass,adb)
+ATTR{idProduct}=="107e", GOTO="adbmtp"
 #   Watch
 ATTR{idProduct}=="1c2c", GOTO="adb"
-#   Mate 9
-ATTR{idProduct}=="107e", SYMLINK+="android_adb"
 GOTO="android_usb_rules_end"
 LABEL="not_Huawei"
 
@@ -555,11 +553,11 @@ LABEL="not_Microsoft"
 # Motorola
 ATTR{idVendor}!="22b8", GOTO="not_Motorola"
 #   CLIQ XT/Quench
-ATTR{idProduct}=="2d66", SYMLINK+="android_adb"
+ATTR{idProduct}=="2d66", GOTO="adb"
 #   Defy/MB525
-ATTR{idProduct}=="428c", SYMLINK+="android_adb"
+ATTR{idProduct}=="428c", GOTO="adb"
 #   Droid
-ATTR{idProduct}=="41db", SYMLINK+="android_adb"
+ATTR{idProduct}=="41db", GOTO="adb"
 #   Razr XT912
 ATTR{idProduct}=="4362", GOTO="adbfast"
 #   Droid Turbo 2
