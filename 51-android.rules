@@ -919,6 +919,13 @@ ENV{adb_user}="yes"
 GOTO="android_usb_rule_match"
 LABEL="not_Sony_Ericsson"
 
+# SpacemiT
+ATTR{idVendor}!="361c", GOTO="not_SpacemiT"
+# Key Stone USB download interface
+ATTR{idProduct}=="1001", GOTO="adbfast"
+GOTO="android_usb_rules_end"
+LABEL="not_SpacemiT"
+
 # Spectralink
 ATTR{idVendor}=="1973", GOTO="user"
 
