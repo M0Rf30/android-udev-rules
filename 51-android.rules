@@ -75,7 +75,6 @@ ATTR{idProduct}=="033b", GOTO="adbfast"
 ATTR{idProduct}=="0582", GOTO="adbmtp"
 ATTR{idProduct}=="0584", GOTO="adbptp"
 ATTR{idProduct}=="0588", GOTO="adb"
-ATTR{idProduct}=="2048", GOTO="adbmidi"
 #   Amazon Fire HD 8 2022 (raphite)
 ATTR{idProduct}=="0658", GOTO="adbfast"
 #   Amazon Fire HD 10 2023 (tungsten)
@@ -244,7 +243,6 @@ ATTR{idProduct}=="4ee9", GOTO="adbmidi"
 
 #   Tensor Pixel phones (Pixel 7/7 pro/6/6A/6 Pro) 4eeb=cdc-ncm; 4eec=cdc-ncm,adb
 ATTR{idProduct}=="4eec", GOTO="adbcdc"
-ATTR{idProduct}=="4ee0", GOTO="adbfast"
 
 #   Tensor Pixel phones (Pixel 7/7 pro/6/6A/6 Pro) 4eed=uvc; 4eee=uvc,adb
 ATTR{idProduct}=="4eed", GOTO="uvc"
@@ -272,7 +270,6 @@ ATTR{idProduct}=="4e42", GOTO="adbmtp"
 ATTR{idProduct}=="4e20", GOTO="adbfast"
 ATTR{idProduct}=="4e22", GOTO="adbmass"
 ATTR{idProduct}=="4e24", GOTO="adbrndis"
-ATTR{idProduct}=="4e20", GOTO="adbfast"
 #   Galaxy Nexus, Galaxy Nexus (GSM) (4e30=fastboot)
 ATTR{idProduct}=="4e30", GOTO="adbfast"
 #   Nexus One (4e11=normal 4e12=mtp,adb 4e13=tether 0fff=debug)
@@ -326,26 +323,22 @@ ATTR{idProduct}=="0ce5", GOTO="adb"
 ATTR{idProduct}=="0ff9", GOTO="mass"
 #   ChaCha
 ATTR{idProduct}=="0cb2", GOTO="adbfast"
-#   Desire (Bravo) (0c87=debug 0c99=debug)
+#   Desire (Bravo), Hero (GSM) (0c87=debug 0c99=debug)
 ATTR{idProduct}=="0c87", GOTO="adb"
 ATTR{idProduct}=="0c99", GOTO="adb"
 #   Desire HD (0ca2=debug 0ff8=tether 0ff9=charge 0ffe=modem)
 ATTR{idProduct}=="0ca2", GOTO="adb"
 #   Desire S (Saga), Desire HD, Hero, Thunderbolt (0cab=syncmode 0ff9=charge)
 ATTR{idProduct}=="0cab", SYMLINK+="android_adb"
-#   Desire Z
+#   Desire Z, Vision
 ATTR{idProduct}=="0c91", GOTO="adbfast"
-#   Evo Shift 4G (0c8d=debug 0ca5=?)
+#   Evo Shift 4G, Incredible rev 0002 (0c8d=debug 0ca5=?)
 ATTR{idProduct}=="0c8d", GOTO="adb"
 ATTR{idProduct}=="0ca5", SYMLINK+="android_adb"
-#   Hero (GSM), Desire
-ATTR{idProduct}=="0c99", SYMLINK+="android_adb"
 #   Hero (CDMA)
 ATTR{idProduct}=="0c9a", SYMLINK+="android_adb"
 #   Incredible
 ATTR{idProduct}=="0c9e", SYMLINK+="android_adb"
-#   Incredible rev 0002
-ATTR{idProduct}=="0c8d", SYMLINK+="android_adb"
 #   MyTouch 4G
 ATTR{idProduct}=="0c96", SYMLINK+="android_adb"
 #   One (m7) && One (m8)
@@ -357,8 +350,6 @@ ATTR{idProduct}=="0ff0", SYMLINK+="android_fastboot"
 ATTR{idProduct}=="0cd6", SYMLINK+="android_adb"
 #   Slide
 ATTR{idProduct}=="0e03", SYMLINK+="android_adb"
-#   Vision
-ATTR{idProduct}=="0c91", SYMLINK+="android_adb"
 #   Wildfire
 ATTR{idProduct}=="0c8b", GOTO="adbfast"
 #   Wildfire S
@@ -379,7 +370,6 @@ ATTR{idProduct}=="0e31", GOTO="mtp"
 ATTR{idProduct}=="0e32", GOTO="adbmtp"
 #   One (0dea=mtp,ums,adb 0f87=mtp,?,adb 0f5f=mtp,cdc,adb 0f60=mtp,cdc 0f63=mtp,adb 0f64=mtp)
 ATTR{idProduct}=="0dea", GOTO="adbmtp"
-ATTR{idProduct}=="0f87", GOTO="adbmtp"
 ATTR{idProduct}=="0f5f", ENV{adb_adbcdc}="yes", GOTO="adbmtp"
 ATTR{idProduct}=="0f60", ENV{adb_cdc}="yes", GOTO="mtp"
 ATTR{idProduct}=="0f63", GOTO="adbmtp"
@@ -658,13 +648,6 @@ ATTR{idProduct}=="0186", GOTO="user"
 GOTO="android_usb_rules_end"
 LABEL="not_Oculus"
 
-# Pico XR
-ATTR{idVendor}!="2d40", GOTO="not_Pico"
-#   Pico 4
-ATTR{idProduct}=="00b7", GOTO="user"
-GOTO="android_usb_rules_end"
-LABEL="not_Pico"
-
 # OnePlus(Oreo)
 ATTR{idVendor}!="2a70", GOTO="not_OnePlus"
 #   Oneplus 3T/5T/6 (4ee7=charge,adb)
@@ -725,8 +708,12 @@ ATTR{idVendor}=="1d4d", ATTR{idProduct}=="5035", GOTO="adb"
 # Philips (and NXP) (Need product specific rules)
 #ATTR{idVendor}=="0471", GOTO="user"
 
-# Pico (Need product specific rules)
-#ATTR{idVendor}=="2d40", GOTO="user"
+# Pico XR
+ATTR{idVendor}!="2d40", GOTO="not_Pico"
+#   Pico 4
+ATTR{idProduct}=="00b7", GOTO="user"
+GOTO="android_usb_rules_end"
+LABEL="not_Pico"
 
 # PMC-Sierra, (Panasonic Mobile communications, Matsushita) (Need product specific rules)
 #ATTR{idVendor}=="04da", GOTO="user"
@@ -753,7 +740,7 @@ ATTR{idVendor}!="05c6", GOTO="not_Qualcomm"
 ATTR{idProduct}=="9025", SYMLINK+="android_adb"
 #   OnePlus One (6765=mtp,adb 6764=mtp)
 ATTR{idProduct}=="6765", GOTO="adbmtp"
-#   OnePlus Two
+#   OnePlus Two, OnePlus 5 / 6 / 6T
 ATTR{idProduct}=="9011", SYMLINK+="android_adb"
 #   OnePlus 3
 ATTR{idProduct}=="900e", SYMLINK+="android_adb"
@@ -767,8 +754,6 @@ ATTR{idProduct}=="90dc", GOTO="adb"
 ATTR{idProduct}=="f00e", GOTO="rndis"
 #   Lenovo Legion Tab Y700 USB tethering mode
 ATTR{idProduct}=="9024", GOTO="adbrndis"
-#   OnePlus 5 / 6 / 6T
-ATTR{idProduct}=="9011", SYMLINK+="android_adb"
 #   OnePlus 6 / Asia
 ATTR{idProduct}=="f003", SYMLINK+="android_adb"
 #   Yongnuo YN450m (identified in lsusb as Intex Aqua Fish & Jolla C Diagnostic Mode)
@@ -808,15 +793,12 @@ ATTR{idProduct}!="6???", GOTO="android_usb_rules_end"
 #   Galaxy i5700
 ATTR{idProduct}=="681c", GOTO="adbfast"
 #   Galaxy i5800 (681c=debug 6601=fastboot 68a0=mediaplayer)
-ATTR{idProduct}=="681c", SYMLINK+="android_adb"
-ATTR{idProduct}=="6601", SYMLINK+="android_fastboot"
+ATTR{idProduct}=="6601", GOTO="adbfast"
 ATTR{idProduct}=="68a9", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
 #   Galaxy i7500
 ATTR{idProduct}=="6640", GOTO="adbfast"
 #   Galaxy i9000 S, i9300 S3
-ATTR{idProduct}=="6601", SYMLINK+="android_adb"
-ATTR{idProduct}=="685d", MODE="0660"
-ATTR{idProduct}=="68c3", MODE="0660"
+ATTR{idProduct}=="68c3", GOTO="user"
 #   Galaxy Ace (S5830) "Cooper"
 ATTR{idProduct}=="689e", GOTO="adbfast"
 #   Galaxy Tab
