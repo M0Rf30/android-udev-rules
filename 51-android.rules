@@ -771,6 +771,13 @@ ATTR{idProduct}=="0125", GOTO="adb"
 GOTO="android_usb_rules_end"
 LABEL="not_Quectel"
 
+# Rakuten Kobo
+ATTR{idVendor}!="1f85", GOTO="not_Kobo"
+#   Tolino Vision 3 HD (6052=mass,adb)
+ATTR{idProduct}=="6052", GOTO="adbmass"
+GOTO="android_usb_rules_end"
+LABEL="not_Kobo"
+
 # Razer USA, Ltd.
 ATTR{idVendor}!="1532", GOTO="not_Razer"
 #   Razer Phone 2
