@@ -79,6 +79,9 @@ ATTR{idProduct}=="0588", GOTO="adb"
 ATTR{idProduct}=="0658", GOTO="adbfast"
 #   Amazon Fire HD 10 2023 (tungsten)
 ATTR{idProduct}=="06f8", GOTO="adbfast"
+#   Amazon Echo Dot 2nd gen (biscuit) (0110=adb 0112=adb,mtp)
+ATTR{idProduct}=="0110", GOTO="adb"
+ATTR{idProduct}=="0112", GOTO="adbmtp"
 GOTO="android_usb_rules_end"
 LABEL="not_Amazon"
 
